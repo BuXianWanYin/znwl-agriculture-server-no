@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.agriculture.mapper.WarningInfoMapper">
+    
+    <resultMap type="WarningInfo" id="WarningInfoResult">
+        <result property="id"    column="id"    />
+        <result property="greenhouse"    column="greenhouse"    />
+        <result property="partitionInfo"    column="partition_info"    />
+        <result property="cropBatch"    column="crop_batch"    />
+        <result property="responsiblePerson"    column="responsible_person"    />
+        <result property="thresholdValue"    column="threshold_value"    />
+        <result property="warningStatus"    column="warning_status"    />
+        <result property="handler"    column="handler"    />
+        <result property="startTime"    column="start_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="createdAt"    column="created_at"    />
+        <result property="updatedAt"    column="updated_at"    />
+        <result property="delFlag"    column="del_flag"    />
+    </resultMap>
+
+    <sql id="selectWarningInfoVo">
+        select id, greenhouse, partition_info, crop_batch, responsible_person, threshold_value, warning_status, handler, start_time, end_time, created_at, updated_at, del_flag from warning_info
+    </sql>
+
+    <select id="selectWarningInfoList" parameterType="WarningInfo" resultMap="WarningInfoResult">
+        <include refid="selectWarningInfoVo"/>
+        <where>
+            <if test="greenhouse != null  and greenhouse != ''">and greenhouse = #{greenhouse}</if>
+            <if test="cropBatch != null  and cropBatch != ''">and crop_batch = #{cropBatch}</if>
+            <if test="delFlag != null and delFlag != ''">and del_flag = 0</if>
+        </where>
+        ORDER BY updated_at desc
+    </select>
+    
+    <select id="selectWarningInfoById" parameterType="Long" resultMap="WarningInfoResult">
+        <include refid="selectWarningInfoVo"/>
+        where id = #{id} and del_flag=0
+    </select>
+        
+    <insert id="insertWarningInfo" parameterType="WarningInfo" useGeneratedKeys="true" keyProperty="id">
+        insert into warning_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="greenhouse != null">greenhouse,</if>
+            <if test="partitionInfo != null">partition_info,</if>
+            <if test="cropBatch != null">crop_batch,</if>
+            <if test="responsiblePerson != null">responsible_person,</if>
+            <if test="thresholdValue != null">threshold_value,</if>
+            <if test="warningStatus != null">warning_status,</if>
+            <if test="handler != null">handler,</if>
+            <if test="startTime != null">start_time,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="createdAt != null">created_at,</if>
+            <if test="updatedAt != null">updated_at,</if>
+            <if test="delFlag != null">del_flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="greenhouse != null">#{greenhouse},</if>
+            <if test="partitionInfo != null">#{partitionInfo},</if>
+            <if test="cropBatch != null">#{cropBatch},</if>
+            <if test="responsiblePerson != null">#{responsiblePerson},</if>
+            <if test="thresholdValue != null">#{thresholdValue},</if>
+            <if test="warningStatus != null">#{warningStatus},</if>
+            <if test="handler != null">#{handler},</if>
+            <if test="startTime != null">#{startTime},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="createdAt != null">#{createdAt},</if>
+            <if test="updatedAt != null">#{updatedAt},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateWarningInfo" parameterType="WarningInfo">
+        update warning_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="greenhouse != null">greenhouse = #{greenhouse},</if>
+            <if test="partitionInfo != null">partition_info = #{partitionInfo},</if>
+            <if test="cropBatch != null">crop_batch = #{cropBatch},</if>
+            <if test="responsiblePerson != null">responsible_person = #{responsiblePerson},</if>
+            <if test="thresholdValue != null">threshold_value = #{thresholdValue},</if>
+            <if test="warningStatus != null">warning_status = #{warningStatus},</if>
+            <if test="handler != null">handler = #{handler},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="createdAt != null">created_at = #{createdAt},</if>
+            <if test="updatedAt != null">updated_at = #{updatedAt},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <update id="deleteWarningInfoById" parameterType="Long">
+        update warning_info set del_flag = 2 where id = #{id}
+    </update>
+
+    <update id="deleteWarningInfoByIds" parameterType="String">
+        update warning_info set del_flag = 2  where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>
