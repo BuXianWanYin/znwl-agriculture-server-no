@@ -11,7 +11,7 @@ bot:
   ttsMode: zero_shot
   spkId: 中文女
   promptText: 希望你以后能够做的比我还好呦。
-  promptWav: static/cross_lingual_prompt.wav
+  promptWav: static/zero_shot_prompt.wav
   instructText: Theo \'Crimson\', is a fiery, passionate rebel leader. \ Fights with fervor for justice, but struggles with impulsiveness.
 
 # 项目相关配置
@@ -26,7 +26,7 @@ ruoyi:
   demoEnabled: true
 
   # 文件路径，以uploadPath结尾 示例（ Windows配置 D:/uploadPath，Linux配置 /uploadPath, Mac /Users/xxx）
-  profile: C:\Users\tanmin\Desktop\智农物链\znwl-agriculture-server\uploadPath
+  profile: D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
   #  profile: F:/ny/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
 
   #  profile: C:/Users/tanmin/Desktop/区块链技术应用/若依农业/frog-smart-agriculture-master/frog-agriculture-server/uploadPath

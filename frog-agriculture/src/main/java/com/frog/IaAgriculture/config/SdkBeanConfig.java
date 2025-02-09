@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class SdkBeanConfig {
 
+
     @Autowired
     private SystemConfig config;
 
@@ -76,7 +77,7 @@ public class SdkBeanConfig {
     }
     @Bean
     public PlatformService platformService(Client client) {
-        return new PlatformService("0xc99a42a65608dc0e6e726ffc490489e67372fabd", client, client.getCryptoSuite().getCryptoKeyPair());
+        return new PlatformService("0x26d66588b50783b57684982bad1cb50296d1d717", client, client.getCryptoSuite().getCryptoKeyPair());
     }
 
 

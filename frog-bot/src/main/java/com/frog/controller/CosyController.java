@@ -44,6 +44,8 @@ public class CosyController {
      */
     @PostMapping(value = "/voice")
     public String cosyVoice(String text) {
+        log.info(text);
+
         Map<String, String> payload = new HashMap<>();
         String url = BotConfig.getTtsUrl();  // Adjust this to the correct URL for your service.
 
@@ -65,7 +67,7 @@ public class CosyController {
         }
 
        try {
-           byte[] response = HttpClientUtil.doPostBytes(url + mode, payload, BotConfig.getPromptWav(), mode);
+           byte[] response = HttpClientUtil.doPostRestTemplateByte(url + mode, payload, BotConfig.getPromptWav(), mode);
            if (response != null && response.length > 0) {
                // 将字节数组转换为int16数组
                short[] audioData = new short[response.length / 2];

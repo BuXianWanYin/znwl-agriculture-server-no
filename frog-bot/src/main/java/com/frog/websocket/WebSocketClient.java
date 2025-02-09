@@ -23,13 +23,13 @@ public class WebSocketClient {
 
     @OnOpen
     public void open(Session session) {
-        log.info("Client WebSocket is opening...");
+
         this.session = session;
     }
 
     @OnMessage
     public void onMessage(String message) {
-        log.info("Server sent message: " + message);
+
         // 这里可以处理来自 WebSocketServer 的消息
         WebSocketServer.sendToAllClient(message);
     }
@@ -55,7 +55,7 @@ public class WebSocketClient {
         if (this.session != null && this.session.isOpen()) { // 防止 session 为 null
             this.session.getAsyncRemote().sendText(message);
         } else {
-            log.warn("WebSocket session is not open!");
+           // log.warn("WebSocket session is not open!");
         }
     }
 
@@ -63,7 +63,7 @@ public class WebSocketClient {
         if (this.session != null && this.session.isOpen()) { // 防止 session 为 null
             this.session.getAsyncRemote().sendBinary(message);
         } else {
-            log.warn("WebSocket session is not open!");
+          //  log.warn("WebSocket session is not open!");
         }
     }
 }

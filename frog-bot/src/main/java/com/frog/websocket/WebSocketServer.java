@@ -38,7 +38,7 @@ public class WebSocketServer {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             Session sessionClient = container.connectToServer(webSocketClient, URI.create(BotConfig.getAsrUrl()));
             webSocketClient.open(sessionClient); // 这里记得调用 open 方法
-            log.info("Connected to client WebSocket");
+         //   log.info("Connected to client WebSocket");
         } catch (DeploymentException | IOException e) {
             e.printStackTrace();
         }
@@ -46,14 +46,14 @@ public class WebSocketServer {
 
     @OnMessage
     public void onMessage(String message, @PathParam("sid") String sid) {
-        log.info("收到来自客户端：" + sid + "的信息:" + message);
+      //  log.info("收到来自客户端：" + sid + "的信息:" + message);
         // 当接受到消息时，可以通过 WebSocketClient 发送消息
         webSocketClient.send(message); // 发送给 WebSocketClient
     }
 
     @OnMessage
     public void onMessage(ByteBuffer message, @PathParam("sid") String sid) {
-        log.info("收到来自客户端：" + sid + "的信息:" + message);
+      //  log.info("收到来自客户端：" + sid + "的信息:" + message);
         // 这里可以处理来自 WebSocketServer 的消息
         webSocketClient.send(message);
     }

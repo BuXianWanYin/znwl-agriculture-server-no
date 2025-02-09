@@ -89,12 +89,12 @@ public class MqttConfig {
 
         try {
             // 尝试建立连接并订阅主题
-            logger.info("正在连接站点: {}", broker);
+           // logger.info("正在连接站点: {}", broker);
             client.connect(connOpts);
             client.subscribe(subTopic, qos);
-            logger.info("已连接并订阅主题: {}", subTopic);
+           // logger.info("已连接并订阅主题: {}", subTopic);
         } catch (MqttException e) {
-            logger.error("连接站点失败，{} 秒后重试: {}", reconnectInterval, e.getMessage());
+          //  logger.error("连接站点失败，{} 秒后重试: {}", reconnectInterval, e.getMessage());
             retryConnect(); // 连接失败，尝试重连
         }
     }
@@ -112,13 +112,13 @@ public class MqttConfig {
                 MqttMessage message = new MqttMessage(payload.getBytes());
                 message.setQos(qos);
                 client.publish(topic, message);
-                logger.info("成功发布消息到主题: {}，消息内容: {}，使用的站点: {}", topic, payload, broker);
+              //  logger.info("成功发布消息到主题: {}，消息内容: {}，使用的站点: {}", topic, payload, broker);
             } catch (MqttException e) {
-                logger.error("发布消息失败，重新尝试: {}", e.getMessage());
+              //  logger.error("发布消息失败，重新尝试: {}", e.getMessage());
                 retryPublish(topic, payload); // 发布失败，尝试重发
             }
         } else {
-            logger.error("MQTT客户端未连接，无法发布消息");
+         //   logger.error("MQTT客户端未连接，无法发布消息");
             retryConnect(); // 尝试重新连接
         }
     }
@@ -131,12 +131,12 @@ public class MqttConfig {
             while (!client.isConnected()) {
                 try {
                     Thread.sleep(reconnectInterval * 1000L);
-                    logger.info("尝试重新连接...");
+                   // logger.info("尝试重新连接...");
                     client.connect();
                     client.subscribe(subTopic, qos);
-                    logger.info("重新连接并订阅主题: {}", subTopic);
+                   // logger.info("重新连接并订阅主题: {}", subTopic);
                 } catch (InterruptedException | MqttException e) {
-                    logger.error("重连失败: {}", e.getMessage());
+                   // logger.error("重连失败: {}", e.getMessage());
                 }
             }
         }).start();
@@ -155,18 +155,18 @@ public class MqttConfig {
             while (client == null || !client.isConnected()) {
                 try {
                     Thread.sleep(reconnectInterval * 1000L);
-                    logger.info("等待客户端重新连接...");
+                   // logger.info("等待客户端重新连接...");
                 } catch (InterruptedException e) {
-                    logger.error("等待连接时发生错误: {}", e.getMessage());
+                   // logger.error("等待连接时发生错误: {}", e.getMessage());
                 }
             }
             try {
                 MqttMessage message = new MqttMessage(payload.getBytes());
                 message.setQos(qos);
                 client.publish(topic, message);
-                logger.info("重试发布消息到主题: {}，消息内容: {}", topic, payload);
+               // logger.info("重试发布消息到主题: {}，消息内容: {}", topic, payload);
             } catch (MqttException e) {
-                logger.error("重试发布消息失败: {}", e.getMessage());
+                //logger.error("重试发布消息失败: {}", e.getMessage());
             }
         }).start();
     }
