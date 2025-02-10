@@ -46,6 +46,12 @@ public class AIModelApiUtils {
     public static CloseableHttpResponse generateStream(String prompt){
         try {
             paramMap.put("prompt",prompt);
+            Map options = new HashMap<String,Object>();
+            options.put("temperature",0.2);
+            options.put("top_p",0.7);
+            options.put("repeat_penalty",1.2);
+            options.put("mirostat_tau",3.0);
+            paramMap.put("options",options);
             return HttpClientUtil.doPost4JsonStream(URL, paramMap);
         } catch (IOException e) {
             log.error(e);

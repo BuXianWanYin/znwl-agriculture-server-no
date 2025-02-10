@@ -8,12 +8,11 @@ bot:
   aiTimeoutMsec: 60000
   asrUrl: ws://127.0.0.1:10095
   ttsUrl: http://10.0.28.24:50000/inference_
-  ttsMode: zero_shot
+  ttsMode: sft
   spkId: 中文女
   promptText: 希望你以后能够做的比我还好呦。
-  promptWav: static/zero_shot_prompt.wav
+  promptWav: static/cross_lingual_prompt.wav
   instructText: Theo \'Crimson\', is a fiery, passionate rebel leader. \ Fights with fervor for justice, but struggles with impulsiveness.
-
 # 项目相关配置
 ruoyi:
   # 名称
@@ -24,7 +23,6 @@ ruoyi:
   copyrightYear: 2028
   # 实例演示开关
   demoEnabled: true
-
   # 文件路径，以uploadPath结尾 示例（ Windows配置 D:/uploadPath，Linux配置 /uploadPath, Mac /Users/xxx）
   profile: D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
   #  profile: F:/ny/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
@@ -63,7 +61,6 @@ spring:
   messages:
     # 国际化资源文件路径
     basename: i18n/messages
-
   # 数据库配置
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -189,6 +186,10 @@ spring:
   mvc:
     async:
       request-timeout: 1000000
+  web:
+    resources:
+      #音频文件路径
+      static-locations: file:///D:/qkl-zhny/znwl-agriculture-server-no/wav/
 
 # token配置
 token:
@@ -207,6 +208,7 @@ mybatis:
   mapperLocations: classpath*:mapper/**/*Mapper.xml
   # 加载全局的配置文件
   configLocation: classpath:mybatis/mybatis-config.xml
+
 
 # PageHelper分页插件
 pagehelper:
@@ -260,12 +262,12 @@ xss:
 mybatis-plus:
   # 扫描所有 Mapper XML 文件
   mapper-locations: classpath*:mapper/**/*.xml
-
   # 自动扫描多个包路径的实体类，并注册为类型别名
   type-aliases-package: com.frog.**.domain
-
   # 加载全局的 MyBatis 配置文件（可选）
   config-location: classpath:mybatis/mybatis-config.xml
+
+
 
 
 
@@ -297,7 +299,7 @@ system:
   # 私钥
   privateKey: "b4499973e654a2327c6f1f5d3936475c18d1ec25269a3028aceeff5d15a3baf5"
   contract:
-    # 合约地址
+    # 合约地址 0x26d66588b50783b57684982bad1cb50296d1d717
     insurePlatformAddress: "0x26d66588b50783b57684982bad1cb50296d1d717"
 
 

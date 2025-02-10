@@ -10,6 +10,7 @@ import org.fisco.bcos.sdk.crypto.CryptoSuite;
 import org.fisco.bcos.sdk.crypto.keypair.CryptoKeyPair;
 import org.fisco.bcos.sdk.model.CryptoType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import vip.blockchain.agriculture.service.PlatformService;
@@ -28,7 +29,8 @@ public class SdkBeanConfig {
 
     @Autowired
     private SystemConfig config;
-
+    @Value("${system.contract.insurePlatformAddress}")
+    private String PlatformAddress;
     @Bean
     public Client client() throws Exception {
         String certPaths = this.config.getCertPath();
@@ -77,7 +79,7 @@ public class SdkBeanConfig {
     }
     @Bean
     public PlatformService platformService(Client client) {
-        return new PlatformService("0x26d66588b50783b57684982bad1cb50296d1d717", client, client.getCryptoSuite().getCryptoKeyPair());
+        return new PlatformService(PlatformAddress, client, client.getCryptoSuite().getCryptoKeyPair());
     }
 
 
