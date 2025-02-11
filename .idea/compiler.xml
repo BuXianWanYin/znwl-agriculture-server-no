@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="frog-common" />
+        <module name="frog-system" />
+        <module name="frog-admin" />
+        <module name="frog-bot" />
+        <module name="frog-quartz" />
+        <module name="frog-agriculture" />
+        <module name="frog-framework" />
+        <module name="frog-generator" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="frog-admin" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+      <module name="frog-agriculture" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+      <module name="frog-bot" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+      <module name="frog-common" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+      <module name="frog-framework" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+      <module name="frog-generator" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+      <module name="frog-quartz" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+      <module name="frog-system" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+    </option>
+  </component>
+</project>

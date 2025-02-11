@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.agriculture.mapper.UnitMapper">
+    
+    <resultMap type="Unit" id="UnitResult">
+        <result property="id"    column="id"    />
+        <result property="landId"    column="land_id"    />
+        <result property="type"    column="type"    />
+        <result property="elementId"    column="element_id"    />
+    </resultMap>
+
+    <resultMap type="com.frog.agriculture.iotDomain.Device" id="DeviceResult">
+        <result property="deviceId"    column="device_id"    />
+        <result property="deviceName"    column="device_name"    />
+        <result property="productId"    column="product_id"    />
+        <result property="productName"    column="product_name"    />
+        <result property="landId"    column="land_id"    />
+        <result property="isCamera"    column="is_camera"    />
+        <result property="landName"    column="land_name"    />
+        <result property="userId"    column="user_id"    />
+        <result property="userName"    column="user_name"    />
+        <result property="tenantId"    column="tenant_id"    />
+        <result property="tenantName"    column="tenant_name"    />
+        <result property="serialNumber"    column="serial_number"    />
+        <result property="firmwareVersion"    column="firmware_version"    />
+        <result property="status"    column="status"    />
+        <result property="deviceType"    column="device_type"    />
+        <result property="rssi"    column="rssi"    />
+        <result property="isShadow"    column="is_shadow"    />
+        <result property="locationWay"    column="location_way"    />
+        <result property="thingsModelValue"    column="things_model_value"    />
+        <result property="networkAddress"    column="network_address"    />
+        <result property="networkIp"    column="network_ip"    />
+        <result property="longitude"    column="longitude"    />
+        <result property="latitude"    column="latitude"    />
+        <result property="activeTime"    column="active_time"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <result property="imgUrl"    column="img_url"    />
+        <result property="summary"    column="summary"    />
+        <result property="isOwner"    column="is_owner"    />
+    </resultMap>
+
+    <resultMap type="com.frog.agriculture.iotDomain.Scene" id="SceneResult">
+        <result property="sceneId"    column="scene_id"    />
+        <result property="sceneName"    column="scene_name"    />
+        <result property="status"    column="status"    />
+        <result property="userId"    column="user_id"    />
+        <result property="userName"    column="user_name"    />
+        <result property="actions"    column="actions"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <resultMap type="com.frog.agriculture.iotDomain.AlertLog" id="AlertLogResult">
+        <result property="alertLogId"    column="alert_log_id"    />
+        <result property="alertName"    column="alert_name"    />
+        <result property="alertLevel"    column="alert_level"    />
+        <result property="status"    column="status"    />
+        <result property="deviceId"    column="device_id"    />
+        <result property="deviceName"    column="device_name"    />
+        <result property="productId"    column="product_id"    />
+        <result property="detail"    column="detail"    />
+        <result property="serialNumber"    column="serial_number"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectUnitVo">
+        select id, land_id, type, element_id from agriculture_unit
+    </sql>
+
+    <select id="selectUnitList" parameterType="Unit" resultMap="UnitResult">
+        <include refid="selectUnitVo"/>
+        <where>  
+            <if test="landId != null "> and land_id = #{landId}</if>
+            <if test="type != null "> and type = #{type}</if>
+            <if test="elementId != null "> and element_id = #{elementId}</if>
+        </where>
+    </select>
+
+    <select id="selectDeviceList" parameterType="Long" resultMap="DeviceResult">
+        select * from iot_device where device_id in (select element_id from agriculture_unit where type=1 and land_id=#{landId})
+    </select>
+
+    <select id="selectCameraList" parameterType="Long" resultMap="DeviceResult">
+        select * from iot_device where device_id in (select element_id from agriculture_unit where type=2 and land_id=#{landId})
+    </select>
+
+    <select id="selectBatchList" parameterType="Long" resultType="java.util.HashMap">
+        select c.batch_id as batchId,c.batch_name as batchName,c.germplasm_name as germplasmName,c.crop_area as cropArea,count(case when status=3 then 1 else null end) as finish,count(1) as total,concat(round(if(count(1) =0,0,count(case when status=3 then 1 else null end)/count(1)*100),2),'%')as percent
+        from (select a.batch_id,a.batch_name,a.crop_area,b.germplasm_name
+              from (select *
+                    from agriculture_crop_batch
+                    where batch_id  in  (select element_id from agriculture_unit where type=3 and land_id=#{landId})
+                   ) a
+                       left join agriculture_germplasm b on a.germplasm_id = b.germplasm_id
+             )c
+                 left join agriculture_batch_task d on c.batch_id = d.batch_id
+        group by c.batch_id
+    </select>
+
+    <select id="selectSceneList" parameterType="Long" resultMap="SceneResult">
+        select * from iot_scene where scene_id in  (select element_id from agriculture_unit where type=4 and land_id=#{landId})
+    </select>
+
+    <select id="selectAlertLogList" parameterType="Long" resultMap="AlertLogResult">
+        select * from iot_alert_log a inner join
+                      (select b.serial_number,b.device_name from (select * from agriculture_unit where type=1 and land_id = #{landId})a left join iot_device b on a.element_id = b.device_id ) b on a.serial_number = b.serial_number
+    </select>
+        
+    <insert id="insertUnit" parameterType="Unit" useGeneratedKeys="true" keyProperty="id">
+        insert into agriculture_unit
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="landId != null">land_id,</if>
+            <if test="type != null">type,</if>
+            <if test="elementId != null">element_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="landId != null">#{landId},</if>
+            <if test="type != null">#{type},</if>
+            <if test="elementId != null">#{elementId},</if>
+         </trim>
+    </insert>
+
+    <delete id="deleteUnitByLandId" parameterType="Long">
+        delete from agriculture_unit where land_id = #{landId}
+    </delete>
+
+</mapper>
