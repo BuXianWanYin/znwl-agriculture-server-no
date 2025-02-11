@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,6 +10,7 @@
         <module name="frog-common" />
         <module name="frog-system" />
         <module name="frog-admin" />
+        <module name="frog-fishingground" />
         <module name="frog-bot" />
         <module name="frog-quartz" />
         <module name="frog-agriculture" />
@@ -19,14 +21,16 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="frog-admin" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
-      <module name="frog-agriculture" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
-      <module name="frog-bot" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
-      <module name="frog-common" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
-      <module name="frog-framework" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
-      <module name="frog-generator" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
-      <module name="frog-quartz" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
-      <module name="frog-system" options="-bootclasspath D:/Java/jdk-17/lib/rt.jar;D:/Java/jdk-17/lib/jce.jar" />
+      <module name="frog" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-admin" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-agriculture" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-bot" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-common" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-fishingground" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-framework" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-generator" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-quartz" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
+      <module name="frog-system" options="-bootclasspath $PROJECT_DIR$/../../Java1.8221/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8221/jre/lib/jce.jar" />
     </option>
   </component>
 </project>
