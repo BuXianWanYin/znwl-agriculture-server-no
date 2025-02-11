@@ -1,0 +1,11 @@
+  datasource:
+    username: root
+    password: 11223344
+    url: jdbc:mysql://127.0.0.1:3306/frog_agriculture?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initial-size: 5                                       # 初始化大小
+    min-idle: 10                                          # 最小连接数
+    max-active: 20                                        # 最大连接数
+    max-wait: 60000                                       # 获取连接时的最大等待时间
+    min-evictable-idle-time-millis: 300000                # 一个连接在池中最小生存的时间，单位是毫秒
+    time-between-eviction-runs-millis: 60000              # 多久才进行一次检测需要关闭的空闲连接，单位
