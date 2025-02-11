@@ -40,7 +40,7 @@ public class IaPasture implements Serializable {
     @ApiModelProperty(value = "大棚面积", example = "1234")
     @NotBlank(message = "大棚面积为空")
     private String area;
-    //最大养殖数
+
     @ApiModelProperty(value = "最大分区数量", example = "123123", required = true)
     @NotNull(message = "最大分区数量为空")
     private Integer bigBreedingQuantity;

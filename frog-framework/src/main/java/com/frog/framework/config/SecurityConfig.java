@@ -118,6 +118,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .antMatchers("/ws/**").permitAll()
                 .antMatchers("/wav/**").permitAll()
                 .antMatchers("/ai/**").permitAll()
+                .antMatchers("/fishPasture/**").permitAll()
                 .antMatchers("/cosy/**").permitAll()
                 .antMatchers("/swagger-ui.html").anonymous()
                 .antMatchers("/swagger-resources/**").anonymous()
