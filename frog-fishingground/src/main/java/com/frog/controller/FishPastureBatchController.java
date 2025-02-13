@@ -26,7 +26,7 @@ import javax.validation.constraints.NotBlank;
 @Anonymous
 @RequestMapping("/fishPasture")
 @Validated
-public class FishPastureController extends BaseController {
+public class FishPastureBatchController extends BaseController {
 
     @Autowired
     private FishPastureService fishPastureService;
@@ -76,7 +76,7 @@ public class FishPastureController extends BaseController {
 
     @ApiOperation("查询所有鱼棚,只查询鱼棚名称和id，用来做下拉框，名称可模糊查询")
     @GetMapping(value = "/list")
-    public ResultVO pastureList(@ApiParam(required = false, name = "name", value = "鱼棚名称") @RequestParam String name) {
+    public ResultVO pastureList(@ApiParam(required = false, name = "name", value = "鱼棚名称") String name) {
         return fishPastureService.pastureList(name);
     }
 }
