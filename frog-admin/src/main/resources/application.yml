@@ -6,8 +6,8 @@ bot:
   aiDoc: generate
   stream: true
   aiTimeoutMsec: 60000
-  asrUrl: ws://127.0.0.1:10095
-  ttsUrl: http://10.0.28.24:50000/inference_
+  asrUrl: ws://10.0.28.47:10095
+  ttsUrl: http://127.0.0.1:50000/inference_
   ttsMode: sft
   spkId: 中文女
   promptText: 希望你以后能够做的比我还好呦。
@@ -24,7 +24,7 @@ ruoyi:
   # 实例演示开关
   demoEnabled: true
   # 文件路径，以uploadPath结尾 示例（ Windows配置 D:/uploadPath，Linux配置 /uploadPath, Mac /Users/xxx）
-  profile: D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
+  profile: C:\Users\Awwsy\Desktop\123\znwl-agriculture-server-no\uploadPath
   #  profile: F:/ny/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
 
   #  profile: C:/Users/tanmin/Desktop/区块链技术应用/若依农业/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
@@ -67,7 +67,7 @@ spring:
     username: root
     password: 123456
     #    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.cj.jdbc.Driver
     initial-size: 5                                       # 初始化大小
     min-idle: 10                                          # 最小连接数
@@ -81,7 +81,7 @@ spring:
       # 主库数据源
       master:
         #        url: jdbc:mysql://localhost:3306/frog_agriculture?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-        url: jdbc:mysql://localhost:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
       username: root
       password: 123456
       # 从库数据源
@@ -189,7 +189,7 @@ spring:
   web:
     resources:
       #音频文件路径
-      static-locations: file:///D:/qkl-zhny/znwl-agriculture-server-no/wav/
+      static-locations: file:///C:\Users\Awwsy\Desktop\123\znwl-agriculture-server-no\wav/
 
 # token配置
 token:
