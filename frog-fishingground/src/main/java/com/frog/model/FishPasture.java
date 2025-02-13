@@ -1,4 +1,4 @@
-package com.frog.fishingground.model;
+package com.frog.model;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.frog.IaAgriculture.domain.Device;
