@@ -5,11 +5,11 @@ package com.frog.controller;/*
 
 import com.frog.IaAgriculture.domain.SensorValue;
 import com.frog.IaAgriculture.dto.BaseDTO;
-import com.frog.IaAgriculture.dto.IaPastureSensorValuePageDTO;
 import com.frog.IaAgriculture.model.IaPasture;
 import com.frog.IaAgriculture.vo.ResultVO;
 import com.frog.common.annotation.Anonymous;
 import com.frog.common.core.controller.BaseController;
+import com.frog.dto.FishPastureSensorValuePageDTO;
 import com.frog.model.FishPasture;
 import com.frog.service.FishPastureService;
 import io.swagger.annotations.Api;
@@ -30,8 +30,6 @@ public class FishPastureController extends BaseController {
 
     @Autowired
     private FishPastureService fishPastureService;
-
-
 
     @ApiOperation("添加鱼棚")
     @PostMapping(value = "/create")
@@ -59,7 +57,7 @@ public class FishPastureController extends BaseController {
 
     @ApiOperation("鱼棚状态信息")
     @PostMapping(value = "/fishPastureSensorValuePage")
-    public ResultVO<SensorValue> fishPastureSensorValuePage(@Validated @RequestBody IaPastureSensorValuePageDTO dto) {
+    public ResultVO<SensorValue> fishPastureSensorValuePage(@Validated @RequestBody FishPastureSensorValuePageDTO dto) {
         return this.fishPastureService.fishPastureSensorValuePage(dto);
     }
     @ApiOperation("全部状态信息")

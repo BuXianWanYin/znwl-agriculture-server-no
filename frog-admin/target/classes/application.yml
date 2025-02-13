@@ -7,7 +7,7 @@ bot:
   stream: true
   aiTimeoutMsec: 60000
   asrUrl: ws://127.0.0.1:10095
-  ttsUrl: http://10.0.28.24:50000/inference_
+  ttsUrl: http://10.0.28.45:50000/inference_
   ttsMode: sft
   spkId: 中文女
   promptText: 希望你以后能够做的比我还好呦。
