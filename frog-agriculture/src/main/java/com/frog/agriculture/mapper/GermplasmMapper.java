@@ -9,6 +9,7 @@ import com.frog.agriculture.domain.Germplasm;
  * @author nealtsiao
  * @date 2023-05-13
  */
+
 public interface GermplasmMapper 
 {
     /**
