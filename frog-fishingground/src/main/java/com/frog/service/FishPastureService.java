@@ -21,6 +21,7 @@ import com.frog.IaAgriculture.mapper.SensorValueMapper;
 import com.frog.IaAgriculture.model.entity.IaPartition;
 import com.frog.IaAgriculture.vo.CommonContant;
 import com.frog.IaAgriculture.vo.ResultVO;
+import com.frog.dto.FishPastureSensorValuePageDTO;
 import com.frog.mapper.FishPastureMapper;
 import com.frog.model.FishPasture;
 import org.apache.commons.lang3.StringUtils;
@@ -201,7 +202,7 @@ public class FishPastureService extends ServiceImpl<FishPastureMapper, FishPastu
         return ResultVO.succeed(p); // 返回结果
     }
 
-    public ResultVO fishPastureSensorValuePage(IaPastureSensorValuePageDTO dto) { // 分页获取鱼棚传感器值方法
+    public ResultVO fishPastureSensorValuePage(FishPastureSensorValuePageDTO dto) { // 分页获取鱼棚传感器值方法
         LambdaQueryWrapper<SensorValue> qw = new LambdaQueryWrapper<>(); // 创建查询包装器
         qw.eq(SensorValue::getPastureId, dto.getPastureId()); // 设置鱼棚 ID 条件
 

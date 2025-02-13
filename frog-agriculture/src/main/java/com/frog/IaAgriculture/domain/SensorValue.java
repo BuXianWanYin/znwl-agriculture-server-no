@@ -82,7 +82,6 @@ public class SensorValue {
         private BigDecimal pressure;
 
         private LocalDateTime dateTime;
-
-
+        
 
 }
