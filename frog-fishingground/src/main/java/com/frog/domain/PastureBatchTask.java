@@ -1,4 +1,4 @@
-package com.frog.agriculture.domain;
+package com.frog.domain;
 
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -13,7 +13,7 @@ import  lombok.Data;
  * @date 2023-05-30
  */
 @Data
-public class BatchTask extends BaseEntity
+public class PastureBatchTask extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
