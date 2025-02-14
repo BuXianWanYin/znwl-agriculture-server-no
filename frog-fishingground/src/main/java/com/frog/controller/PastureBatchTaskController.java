@@ -29,33 +29,33 @@ import com.frog.common.core.page.TableDataInfo;
  * @date 2023-05-24
  */
 @RestController
-@RequestMapping("/fishPasture/batchTask")
+@RequestMapping("/fishPasture/pastureBatchTask")
 public class PastureBatchTaskController extends BaseController
 {
     @Autowired
-    private IPastureBatchTaskService batchTaskService;
+    private IPastureBatchTaskService pastureBatchTaskService;
 
     /**
      * 查询批次任务列表
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:list')")
+    @PreAuthorize("@ss.hasPermi('fishPasture:batchTask:list')")
     @GetMapping("/list")
     public TableDataInfo list(PastureBatchTask batchTask)
     {
         startPage();
-        List<PastureBatchTask> list = batchTaskService.selectBatchTaskList(batchTask);
+        List<PastureBatchTask> list = pastureBatchTaskService.selectPastureBatchTaskList(batchTask);
         return getDataTable(list);
     }
 
     /**
      * 导出批次任务列表
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:export')")
+    @PreAuthorize("@ss.hasPermi('fishPasture:batchTask:export')")
     @Log(title = "批次任务", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, PastureBatchTask batchTask)
     {
-        List<PastureBatchTask> list = batchTaskService.selectBatchTaskList(batchTask);
+        List<PastureBatchTask> list = pastureBatchTaskService.selectPastureBatchTaskList(batchTask);
         ExcelUtil<PastureBatchTask> util = new ExcelUtil<PastureBatchTask>(PastureBatchTask.class);
         util.exportExcel(response, list, "批次任务数据");
     }
@@ -63,44 +63,44 @@ public class PastureBatchTaskController extends BaseController
     /**
      * 获取批次任务详细信息
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:query')")
+    @PreAuthorize("@ss.hasPermi('fishPasture:batchTask:query')")
     @GetMapping(value = "/{taskId}")
     public AjaxResult getInfo(@PathVariable("taskId") Long taskId)
     {
-        return AjaxResult.success(batchTaskService.selectBatchTaskByTaskId(taskId));
+        return AjaxResult.success(pastureBatchTaskService.selectPastureBatchTaskByTaskId(taskId));
     }
 
     /**
      * 新增批次任务
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:add')")
+    @PreAuthorize("@ss.hasPermi('fishPasture:batchTask:add')")
     @Log(title = "批次任务", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody PastureBatchTask batchTask)
     {
-        return toAjax(batchTaskService.insertBatchTask(batchTask));
+        return toAjax(pastureBatchTaskService.insertPastureBatchTask(batchTask));
     }
 
     /**
      * 修改批次任务
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:edit')")
+    @PreAuthorize("@ss.hasPermi('fishPasture:batchTask:edit')")
     @Log(title = "批次任务", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody PastureBatchTask batchTask)
     {
-        return toAjax(batchTaskService.updateBatchTask(batchTask));
+        return toAjax(pastureBatchTaskService.updatePastureBatchTask(batchTask));
     }
 
     /**
      * 删除批次任务
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:remove')")
+    @PreAuthorize("@ss.hasPermi('fishPasture:batchTask:remove')")
     @Log(title = "批次任务", businessType = BusinessType.DELETE)
     @DeleteMapping("/{taskIds}")
     public AjaxResult remove(@PathVariable Long[] taskIds)
     {
-        return toAjax(batchTaskService.deleteBatchTaskByTaskIds(taskIds));
+        return toAjax(pastureBatchTaskService.deletePastureBatchTaskByTaskIds(taskIds));
     }
 
     /** 手机端接口 */
@@ -111,7 +111,7 @@ public class PastureBatchTaskController extends BaseController
     public TableDataInfo mobileList(PastureBatchTask batchTask)
     {
         startPage();
-        List<PastureBatchTask> list = batchTaskService.selectBatchTaskListToMobile(batchTask);
+        List<PastureBatchTask> list = pastureBatchTaskService.selectPastureBatchTaskListToMobile(batchTask);
         return getDataTable(list);
     }
 }

@@ -9,12 +9,12 @@ import com.frog.agriculture.domain.CropBatch;
 import com.frog.agriculture.mapper.CropBatchMapper;
 import com.frog.common.utils.DateUtils;
 import com.frog.common.utils.SecurityUtils;
-import com.frog.domain.PastureBatchTask;
-import com.frog.mapper.PastureBatchTaskMapper;
-import com.frog.service.IPastureBatchTaskService;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.frog.domain.PastureBatchTask;
+import com.frog.mapper.PastureBatchTaskMapper;
+import com.frog.service.IPastureBatchTaskService;
 import vip.blockchain.agriculture.model.bo.PlatformOffHarvestInputBO;
 import vip.blockchain.agriculture.service.PlatformService;
 
@@ -30,7 +30,7 @@ import javax.annotation.Resource;
 public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
 {
     @Autowired
-    private PastureBatchTaskMapper batchTaskMapper;
+    private PastureBatchTaskMapper pastureBatchTaskMapper;
 
     @Autowired
     private CropBatchMapper cropBatchMapper;
@@ -45,9 +45,9 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
      * @return 批次任务
      */
     @Override
-    public PastureBatchTask selectBatchTaskByTaskId(Long taskId)
+    public PastureBatchTask selectPastureBatchTaskByTaskId(Long taskId)
     {
-        return batchTaskMapper.selectBatchTaskByTaskId(taskId);
+        return pastureBatchTaskMapper.selectPastureBatchTaskByTaskId(taskId);
     }
 
     /**
@@ -57,13 +57,13 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
      * @return 批次任务
      */
     @Override
-    public List<PastureBatchTask> selectBatchTaskList(PastureBatchTask batchTask)
+    public List<PastureBatchTask> selectPastureBatchTaskList(PastureBatchTask batchTask)
     {
         Long userId = SecurityUtils.getUserId();
         if(!SecurityUtils.isAdmin(userId)){
             batchTask.getParams().put("batchHead", userId);
         }
-        return batchTaskMapper.selectBatchTaskList(batchTask);
+        return pastureBatchTaskMapper.selectPastureBatchTaskList(batchTask);
     }
 
 
@@ -74,11 +74,11 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
      * @return 结果
      */
     @Override
-    public int insertBatchTask(PastureBatchTask batchTask)
+    public int insertPastureBatchTask(PastureBatchTask batchTask)
     {
         batchTask.setCreateBy(SecurityUtils.getUserId().toString());
         batchTask.setCreateTime(DateUtils.getNowDate());
-        return batchTaskMapper.insertBatchTask(batchTask);
+        return pastureBatchTaskMapper.insertPastureBatchTask(batchTask);
     }
 
     /**
@@ -88,15 +88,15 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
      * @return 结果
      */
     @Override
-    public int updateBatchTask(PastureBatchTask batchTask) {
+    public int updatePastureBatchTask(PastureBatchTask batchTask) {
         // 设置更新者为当前用户的ID
         batchTask.setUpdateBy(SecurityUtils.getUserId().toString());
         // 设置更新时间为当前时间
         batchTask.setUpdateTime(DateUtils.getNowDate());
         // 调用数据访问层更新批次任务，并返回受影响的行数
-        int i = batchTaskMapper.updateBatchTask(batchTask);
+        int i = pastureBatchTaskMapper.updatePastureBatchTask(batchTask);
         // 每次更新检查一下任务是否都已经完成
-        HashMap<String, Long> hm = batchTaskMapper.selectFinishTask(batchTask.getBatchId());
+        HashMap<String, Long> hm = pastureBatchTaskMapper.selectPastureFinishTask(batchTask.getBatchId());
         // 根据批次ID查询对应的CropBatch对象
         CropBatch cropBatch = cropBatchMapper.selectCropBatchByBatchId(batchTask.getBatchId());
         // 检查完成的任务数量，如果为0表示任务已完成
@@ -146,9 +146,9 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
      * @return 结果
      */
     @Override
-    public int deleteBatchTaskByTaskIds(Long[] taskIds)
+    public int deletePastureBatchTaskByTaskIds(Long[] taskIds)
     {
-        return batchTaskMapper.deleteBatchTaskByTaskIds(taskIds);
+        return pastureBatchTaskMapper.deletePastureBatchTaskByTaskIds(taskIds);
     }
 
     /**
@@ -158,9 +158,9 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
      * @return 结果
      */
     @Override
-    public int deleteBatchTaskByTaskId(Long taskId)
+    public int deletePastureBatchTaskByTaskId(Long taskId)
     {
-        return batchTaskMapper.deleteBatchTaskByTaskId(taskId);
+        return pastureBatchTaskMapper.deletePastureBatchTaskByTaskId(taskId);
     }
 
     /**
@@ -169,8 +169,8 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
      * @return
      */
     @Override
-    public List<PastureBatchTask> selectBatchTaskListToMobile(PastureBatchTask batchTask) {
+    public List<PastureBatchTask> selectPastureBatchTaskListToMobile(PastureBatchTask batchTask) {
         batchTask.setBatchHead(SecurityUtils.isAdmin(SecurityUtils.getUserId())?null:SecurityUtils.getUserId());
-        return batchTaskMapper.selectBatchTaskListToMobile(batchTask);
+        return pastureBatchTaskMapper.selectPastureBatchTaskListToMobile(batchTask);
     }
 }

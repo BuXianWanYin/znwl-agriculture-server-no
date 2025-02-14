@@ -17,7 +17,7 @@ public interface IPastureBatchTaskService
      * @param taskId 批次任务主键
      * @return 批次任务
      */
-    public PastureBatchTask selectBatchTaskByTaskId(Long taskId);
+    public PastureBatchTask selectPastureBatchTaskByTaskId(Long taskId);
 
     /**
      * 查询批次任务列表
@@ -25,7 +25,7 @@ public interface IPastureBatchTaskService
      * @param batchTask 批次任务
      * @return 批次任务集合
      */
-    public List<PastureBatchTask> selectBatchTaskList(PastureBatchTask batchTask);
+    public List<PastureBatchTask> selectPastureBatchTaskList(PastureBatchTask batchTask);
 
     /**
      * 新增批次任务
@@ -33,7 +33,7 @@ public interface IPastureBatchTaskService
      * @param batchTask 批次任务
      * @return 结果
      */
-    public int insertBatchTask(PastureBatchTask batchTask);
+    public int insertPastureBatchTask(PastureBatchTask batchTask);
 
     /**
      * 修改批次任务
@@ -41,7 +41,7 @@ public interface IPastureBatchTaskService
      * @param batchTask 批次任务
      * @return 结果
      */
-    public int updateBatchTask(PastureBatchTask batchTask);
+    public int updatePastureBatchTask(PastureBatchTask batchTask);
 
     /**
      * 批量删除批次任务
@@ -49,7 +49,7 @@ public interface IPastureBatchTaskService
      * @param taskIds 需要删除的批次任务主键集合
      * @return 结果
      */
-    public int deleteBatchTaskByTaskIds(Long[] taskIds);
+    public int deletePastureBatchTaskByTaskIds(Long[] taskIds);
 
     /**
      * 删除批次任务信息
@@ -57,12 +57,12 @@ public interface IPastureBatchTaskService
      * @param taskId 批次任务主键
      * @return 结果
      */
-    public int deleteBatchTaskByTaskId(Long taskId);
+    public int deletePastureBatchTaskByTaskId(Long taskId);
 
     /**
      * 给手机端的任务列表
      * @param batchTask
      * @return
      */
-    public List<PastureBatchTask> selectBatchTaskListToMobile(PastureBatchTask batchTask);
+    public List<PastureBatchTask> selectPastureBatchTaskListToMobile(PastureBatchTask batchTask);
 }

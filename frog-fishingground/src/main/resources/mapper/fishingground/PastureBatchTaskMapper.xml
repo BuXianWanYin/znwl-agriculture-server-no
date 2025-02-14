@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.frog.mapper.BatchTaskMapper">
+<mapper namespace="com.frog.mapper.PastureBatchTaskMapper">
 
-    <resultMap type="BatchTask" id="BatchTaskResult">
+    <resultMap type="PastureBatchTask" id="PastureBatchTaskResult">
         <result property="taskId"    column="task_id"    />
         <result property="batchId"    column="batch_id"    />
         <result property="taskName"    column="task_name"    />
@@ -32,11 +32,11 @@
         <result property="taskHeadName"  column="task_head_name"/>
     </resultMap>
 
-    <sql id="selectBatchTaskVo">
+    <sql id="selectPastureBatchTaskVo">
         select task_id, batch_id, task_name, plan_start, plan_finish, actual_start, actual_finish, task_detail, task_images, task_videos, remark, status, order_num, create_by, create_time, update_by, update_time, del_flag from agriculture_batch_task
     </sql>
 
-    <select id="selectBatchTaskList" parameterType="BatchTask" resultMap="BatchTaskResult">
+    <select id="selectPastureBatchTaskList" parameterType="PastureBatchTask" resultMap="PastureBatchTaskResult">
         SELECT t.* ,b.batch_name FROM agriculture_batch_task t LEFT JOIN agriculture_crop_batch b on t.batch_id = b.batch_id
         <where>
             <if test="params.batchHead != null"> and b.batch_head = ${params.batchHead} </if>
@@ -55,7 +55,7 @@
         </where>
     </select>
 
-    <select id="selectBatchTaskByTaskId" parameterType="Long" resultMap="BatchTaskResult">
+    <select id="selectPastureBatchTaskByTaskId" parameterType="Long" resultMap="PastureBatchTaskResult">
         SELECT
             r.*,
             u.user_name,
@@ -69,11 +69,11 @@
         where r.task_id = #{taskId} and r.del_flag=0
     </select>
 
-    <select id="selectFinishTask"  resultType="java.util.HashMap">
+    <select id="selectPastureFinishTask"  resultType="java.util.HashMap">
         SELECT COUNT(task_id)AS 'num' FROM agriculture_batch_task WHERE batch_id= #{batchId} AND `status` IN(0,1,2) AND del_flag =0
     </select>
 
-    <insert id="insertBatchTask" parameterType="BatchTask" useGeneratedKeys="true" keyProperty="taskId">
+    <insert id="insertPastureBatchTask" parameterType="PastureBatchTask" useGeneratedKeys="true" keyProperty="taskId">
         insert into agriculture_batch_task
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="batchId != null">batch_id,</if>
@@ -117,7 +117,7 @@
         </trim>
     </insert>
 
-    <update id="updateBatchTask" parameterType="BatchTask">
+    <update id="updatePastureBatchTask" parameterType="PastureBatchTask">
         update agriculture_batch_task
         <trim prefix="SET" suffixOverrides=",">
             <if test="taskHead != null">task_head = #{taskHead},</if>
@@ -142,11 +142,11 @@
         where task_id = #{taskId}
     </update>
 
-    <update id="deleteBatchTaskByTaskId" parameterType="Long">
+    <update id="deletePastureBatchTaskByTaskId" parameterType="Long">
         update agriculture_batch_task set del_flag = 2 where task_id = #{taskId}
     </update>
 
-    <update id="deleteBatchTaskByTaskIds" parameterType="String">
+    <update id="deletePastureBatchTaskByTaskIds" parameterType="String">
         update agriculture_batch_task set del_flag = 2  where task_id in
         <foreach item="taskId" collection="array" open="(" separator="," close=")">
             #{taskId}
@@ -154,7 +154,7 @@
     </update>
 
     <!--给手机端任务列表-->
-    <select id="selectBatchTaskListToMobile" parameterType="BatchTask" resultMap="BatchTaskResult">
+    <select id="selectPastureBatchTaskListToMobile" parameterType="PastureBatchTask" resultMap="PastureBatchTaskResult">
         SELECT t.* ,b.batch_name FROM agriculture_batch_task t LEFT JOIN agriculture_crop_batch b on t.batch_id = b.batch_id
         <where>
             <if test="batchId != null "> and t.batch_id = #{batchId}</if>
