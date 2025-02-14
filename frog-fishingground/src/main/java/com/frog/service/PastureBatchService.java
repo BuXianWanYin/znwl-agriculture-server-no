@@ -2,7 +2,7 @@ package com.frog.service;
 
 import java.util.List;
 
-import com.frog.agriculture.domain.CropBatch;
+import com.frog.domain.PastureBatch;
 
 /**
  * 鱼物批次Service接口
@@ -17,31 +17,31 @@ public interface PastureBatchService {
      * @param batchId 鱼物批次主键
      * @return 鱼物批次
      */
-    public CropBatch selectCropBatchByBatchId(Long batchId);
+    public PastureBatch selectPastureBatchByBatchId(Long batchId);
 
     /**
      * 查询鱼物批次列表
      *
-     * @param cropBatch 鱼物批次
+     * @param PastureBatch 鱼物批次
      * @return 鱼物批次集合
      */
-    public List<CropBatch> selectCropBatchList(CropBatch cropBatch);
+    public List<PastureBatch> selectPastureBatchList(PastureBatch PastureBatch);
 
     /**
      * 新增鱼物批次
      *
-     * @param cropBatch 鱼物批次
+     * @param PastureBatch 鱼物批次
      * @return 结果
      */
-    public int insertCropBatch(CropBatch cropBatch);
+    public int insertPastureBatch(PastureBatch PastureBatch);
 
     /**
      * 修改鱼物批次
      *
-     * @param cropBatch 鱼物批次
+     * @param PastureBatch 鱼物批次
      * @return 结果
      */
-    public int updateCropBatch(CropBatch cropBatch);
+    public int updatePastureBatch(PastureBatch PastureBatch);
 
     /**
      * 批量删除鱼物批次
@@ -49,7 +49,7 @@ public interface PastureBatchService {
      * @param batchIds 需要删除的鱼物批次主键集合
      * @return 结果
      */
-    public int deleteCropBatchByBatchIds(Long[] batchIds);
+    public int deletePastureBatchByBatchIds(Long[] batchIds);
 
     /**
      * 删除鱼物批次信息
@@ -57,13 +57,13 @@ public interface PastureBatchService {
      * @param batchId 鱼物批次主键
      * @return 结果
      */
-    public int deleteCropBatchByBatchId(Long batchId);
+    public int deletePastureBatchByBatchId(Long batchId);
 
     /**
      * 给手机端批次列表查询数据
      *
-     * @param cropBatch
+     * @param PastureBatch
      * @return
      */
-    public List<CropBatch> selectCropBatchListToMobile(CropBatch cropBatch);
+    public List<PastureBatch> selectPastureBatchListToMobile(PastureBatch PastureBatch);
 }

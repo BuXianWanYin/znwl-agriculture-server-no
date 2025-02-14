@@ -4,6 +4,7 @@ package com.frog.controller;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
+import com.frog.domain.PastureBatch;
 import com.frog.service.PastureBatchService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ import com.frog.common.annotation.Log;
 import com.frog.common.core.controller.BaseController;
 import com.frog.common.core.domain.AjaxResult;
 import com.frog.common.enums.BusinessType;
-import com.frog.agriculture.domain.CropBatch;
 import com.frog.common.utils.poi.ExcelUtil;
 import com.frog.common.core.page.TableDataInfo;
 
@@ -41,9 +41,9 @@ public class PastureBatchController  extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('agriculture:batch:list')")
     @GetMapping("/list")
-    public TableDataInfo list(CropBatch cropBatch) {
+    public TableDataInfo list(PastureBatch pastureBatch) {
         startPage();
-        List<CropBatch> list = pastureBatchService.selectCropBatchList(cropBatch);
+        List<PastureBatch> list = pastureBatchService.selectPastureBatchList(pastureBatch);
         return getDataTable(list);
     }
 
@@ -54,9 +54,9 @@ public class PastureBatchController  extends BaseController {
     @PreAuthorize("@ss.hasPermi('agriculture:batch:export')")
     @Log(title = "鱼物批次", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
-    public void export(HttpServletResponse response, CropBatch cropBatch) {
-        List<CropBatch> list = pastureBatchService.selectCropBatchList(cropBatch);
-        ExcelUtil<CropBatch> util = new ExcelUtil<CropBatch>(CropBatch.class);
+    public void export(HttpServletResponse response, PastureBatch pastureBatch) {
+        List<PastureBatch> list = pastureBatchService.selectPastureBatchList(pastureBatch);
+        ExcelUtil<PastureBatch> util = new ExcelUtil<PastureBatch>(PastureBatch.class);
         util.exportExcel(response, list, "鱼物批次数据");
     }
 
@@ -66,7 +66,7 @@ public class PastureBatchController  extends BaseController {
     @PreAuthorize("@ss.hasPermi('agriculture:batch:query')")
     @GetMapping(value = "/{batchId}")
     public AjaxResult getInfo(@PathVariable("batchId") Long batchId) {
-        return AjaxResult.success(pastureBatchService.selectCropBatchByBatchId(batchId));
+        return AjaxResult.success(pastureBatchService.selectPastureBatchByBatchId(batchId));
     }
 
     /**
@@ -75,8 +75,8 @@ public class PastureBatchController  extends BaseController {
     @PreAuthorize("@ss.hasPermi('agriculture:batch:add')")
     @Log(title = "鱼物批次", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody CropBatch cropBatch) {
-        return toAjax(pastureBatchService.insertCropBatch(cropBatch));
+    public AjaxResult add(@RequestBody PastureBatch pastureBatch) {
+        return toAjax(pastureBatchService.insertPastureBatch(pastureBatch));
     }
 
     /**
@@ -85,8 +85,8 @@ public class PastureBatchController  extends BaseController {
     @PreAuthorize("@ss.hasPermi('agriculture:batch:edit')")
     @Log(title = "鱼物批次", businessType = BusinessType.UPDATE)
     @PutMapping
-    public AjaxResult edit(@RequestBody CropBatch cropBatch) {
-        return toAjax(pastureBatchService.updateCropBatch(cropBatch));
+    public AjaxResult edit(@RequestBody PastureBatch pastureBatch) {
+        return toAjax(pastureBatchService.updatePastureBatch(pastureBatch));
     }
 
     /**
@@ -96,7 +96,7 @@ public class PastureBatchController  extends BaseController {
     @Log(title = "鱼物批次", businessType = BusinessType.DELETE)
     @DeleteMapping("/{batchIds}")
     public AjaxResult remove(@PathVariable Long[] batchIds) {
-        return toAjax(pastureBatchService.deleteCropBatchByBatchIds(batchIds));
+        return toAjax(pastureBatchService.deletePastureBatchByBatchIds(batchIds));
     }
     /** ----- 手机端接口----- **/
 
@@ -104,9 +104,9 @@ public class PastureBatchController  extends BaseController {
      * 手机端鱼物批次列表
      */
     @GetMapping("/mobilelist")
-    public TableDataInfo mobileList(CropBatch cropBatch) {
+    public TableDataInfo mobileList(PastureBatch pastureBatch) {
         startPage();
-        List<CropBatch> list = pastureBatchService.selectCropBatchListToMobile(cropBatch);
+        List<PastureBatch> list = pastureBatchService.selectPastureBatchListToMobile(pastureBatch);
         return getDataTable(list);
     }
 }

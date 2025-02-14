@@ -10,7 +10,6 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
-import com.frog.IaAgriculture.mapper.IaPastureMapper;
 import com.frog.IaAgriculture.model.IaPasture;
 import com.frog.IaAgriculture.vo.CommonContant;
 import com.frog.IaAgriculture.vo.ResultVO;
@@ -22,13 +21,16 @@ import com.frog.agriculture.mapper.TaskLogMapper;
 import com.frog.agriculture.service.IGermplasmService;
 import com.frog.common.utils.DateUtils;
 import com.frog.common.utils.SecurityUtils;
+import com.frog.domain.PastureBatch;
+import com.frog.mapper.FishPastureMapper;
 import com.frog.mapper.PastureBatchMapper;
+import com.frog.model.FishPasture;
+import com.frog.service.IspeciesService;
 import com.frog.service.PastureBatchService;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.frog.agriculture.mapper.StandardJobMapper;
-import com.frog.agriculture.domain.CropBatch;
 import org.springframework.transaction.annotation.Transactional;
 import vip.blockchain.agriculture.model.bo.PlatformAddPartitionsInputBO;
 import vip.blockchain.agriculture.service.PlatformService;
@@ -54,10 +56,10 @@ public class PastureBatchServiceImpl implements PastureBatchService {
     private TaskLogMapper taskLogMapper;
 
     @Autowired
-    private IGermplasmService germplasmService;
+    private IspeciesService speciesService;
 
     @Resource
-    IaPastureMapper iaPastureMapper;
+    FishPastureMapper fishPastureMapper;
 
     @Resource
     PlatformService platformService;
@@ -69,38 +71,38 @@ public class PastureBatchServiceImpl implements PastureBatchService {
      * @return 鱼物批次
      */
     @Override
-    public CropBatch selectCropBatchByBatchId(Long batchId) {
-        return pastureBatchMapper.selectCropBatchByBatchId(batchId);
+    public PastureBatch selectPastureBatchByBatchId(Long batchId) {
+        return pastureBatchMapper.selectPastureBatchByBatchId(batchId);
     }
 
     /**
      * 查询鱼物批次列表
      *
-     * @param cropBatch 鱼物批次
+     * @param PastureBatch 鱼物批次
      * @return 鱼物批次
      */
     @Override
-    public List<CropBatch> selectCropBatchList(CropBatch cropBatch) {
+    public List<PastureBatch> selectPastureBatchList(PastureBatch PastureBatch) {
         Long userId = SecurityUtils.getUserId();
         if (!SecurityUtils.isAdmin(userId)) {
-            cropBatch.setBatchHead(SecurityUtils.getUserId());
+            PastureBatch.setBatchHead(SecurityUtils.getUserId());
         }
-        return pastureBatchMapper.selectCropBatchList(cropBatch);
+        return pastureBatchMapper.selectPastureBatchList(PastureBatch);
     }
 
     /**
      * 新增鱼物批次
      *
-     * @param cropBatch 鱼物批次
+     * @param PastureBatch 鱼物批次
      * @return 结果
      */
     @Override
     @Transactional
-    public int insertCropBatch(CropBatch cropBatch) {
+    public int insertPastureBatch(PastureBatch PastureBatch) {
 
 
         // 根据土地ID查询相应的IaPasture对象
-        IaPasture iaPasture = iaPastureMapper.selectById(cropBatch.getLandId().toString());
+        FishPasture iaPasture = fishPastureMapper.selectById(PastureBatch.getLandId().toString());
         // 获取对应的合约地址
         String psContractAddr = iaPasture.getContractAddr();
         // 如果IaPasture对象为空或者合约地址为空，返回0表示失败
@@ -111,22 +113,22 @@ public class PastureBatchServiceImpl implements PastureBatchService {
         String snowflakeId = BaseUtil.getSnowflakeId();
         long batchId = Long.parseLong(snowflakeId);  // 将String转为long类型
         // 设置鱼物批次的ID
-        cropBatch.setBatchId(batchId);
+        PastureBatch.setBatchId(batchId);
         // 设置创建时间为当前时间
-        cropBatch.setCreateTime(DateUtils.getNowDate());
+        PastureBatch.setCreateTime(DateUtils.getNowDate());
         // 设置创建者为当前用户的ID
-        cropBatch.setCreateBy(SecurityUtils.getUserId().toString());
+        PastureBatch.setCreateBy(SecurityUtils.getUserId().toString());
 
         // 上链操作
         Date now = new Date();  // 获取当前时间
         PlatformAddPartitionsInputBO partitionsInputBO = new PlatformAddPartitionsInputBO();
         // 设置上链所需参数
-        partitionsInputBO.set_id(new BigInteger(String.valueOf(cropBatch.getBatchId())));
-        partitionsInputBO.set_partitionsName(cropBatch.getBatchName());
-        partitionsInputBO.set_notes(cropBatch.getRemark() == null ? " " : cropBatch.getRemark());
-        partitionsInputBO.set_plantingName(germplasmService.selectGermplasmByGermplasmId(cropBatch.getGermplasmId()).getCropName());
+        partitionsInputBO.set_id(new BigInteger(String.valueOf(PastureBatch.getBatchId())));
+        partitionsInputBO.set_partitionsName(PastureBatch.getBatchName());
+        partitionsInputBO.set_notes(PastureBatch.getRemark() == null ? " " : PastureBatch.getRemark());
+        partitionsInputBO.set_plantingName(speciesService.selectSpeciesBySpeciesId(PastureBatch.getSpeciesId()).getFishName());
         partitionsInputBO.set_plantingDate(DateUtil.format(now, "yyyy-MM-dd HH:mm:ss"));
-        partitionsInputBO.set_plantingVarieties(cropBatch.getVariety() == null ? "种类为空" : cropBatch.getVariety());
+        partitionsInputBO.set_plantingVarieties(PastureBatch.getVariety() == null ? "种类为空" : PastureBatch.getVariety());
         partitionsInputBO.set_ofGreenhouse(psContractAddr);  // 设置温室的合约地址
 
         try {
@@ -138,7 +140,7 @@ public class PastureBatchServiceImpl implements PastureBatchService {
                 JSONArray jsonArray = JSONUtil.parseArray(contractAddressArray);
                 String contractAddress = jsonArray.getStr(0);  // 获取第一个合约地址
                 // 设置鱼物批次的合约地址
-                cropBatch.setContractAddress(contractAddress);
+                PastureBatch.setContractAddress(contractAddress);
             } else {
                 throw new RuntimeException();  // 如果上链失败，抛出异常
             }
@@ -147,26 +149,26 @@ public class PastureBatchServiceImpl implements PastureBatchService {
         }
 
         // 结束上链操作，插入鱼物批次到数据库
-        int i = pastureBatchMapper.insertCropBatch(cropBatch);
+        int i = pastureBatchMapper.insertPastureBatch(PastureBatch);
         // 创建查询条件，查询标准作业列表
         StandardJob queryPar = new StandardJob();
-        queryPar.setGermplasmId(cropBatch.getGermplasmId());
+        queryPar.setGermplasmId(PastureBatch.getSpeciesId());
         // 查询标准作业列表
         List<StandardJob> sjList = standardJobMapper.selectStandardJobList(queryPar);
         // 遍历标准作业列表，生成批次任务
         for (StandardJob sj : sjList) {
             BatchTask bt = new BatchTask();
             // 设置批次任务的相关信息
-            bt.setBatchId(cropBatch.getBatchId());
-            bt.setTaskHead(cropBatch.getBatchHead());
+            bt.setBatchId(PastureBatch.getBatchId());
+            bt.setTaskHead(PastureBatch.getBatchHead());
             bt.setTaskName(sj.getJobName());
 
             // 计算周期单位，如果单位为"0"，则周期为1，否则为7
             int mult = sj.getCycleUnit().equals("0") ? 1 : 7;
             try {
                 // 设置计划开始时间和计划完成时间
-                bt.setPlanStart(DateUtils.plusDay((int) (sj.getJobStart() * mult), cropBatch.getStartTime()));
-                bt.setPlanFinish(DateUtils.plusDay((int) (sj.getJobFinish() * mult), cropBatch.getStartTime()));
+                bt.setPlanStart(DateUtils.plusDay((int) (sj.getJobStart() * mult), PastureBatch.getStartTime()));
+                bt.setPlanFinish(DateUtils.plusDay((int) (sj.getJobFinish() * mult), PastureBatch.getStartTime()));
             } catch (ParseException e) {
                 throw new RuntimeException(e);  // 捕获解析异常并抛出
             }
@@ -190,14 +192,14 @@ public class PastureBatchServiceImpl implements PastureBatchService {
     /**
      * 修改鱼物批次
      *
-     * @param cropBatch 鱼物批次
+     * @param PastureBatch 鱼物批次
      * @return 结果
      */
     @Override
-    public int updateCropBatch(CropBatch cropBatch) {
-        cropBatch.setUpdateTime(DateUtils.getNowDate());
-        cropBatch.setUpdateBy(SecurityUtils.getUserId().toString());
-        return pastureBatchMapper.updateCropBatch(cropBatch);
+    public int updatePastureBatch(PastureBatch PastureBatch) {
+        PastureBatch.setUpdateTime(DateUtils.getNowDate());
+        PastureBatch.setUpdateBy(SecurityUtils.getUserId().toString());
+        return pastureBatchMapper.updatePastureBatch(PastureBatch);
     }
 
     /**
@@ -207,8 +209,8 @@ public class PastureBatchServiceImpl implements PastureBatchService {
      * @return 结果
      */
     @Override
-    public int deleteCropBatchByBatchIds(Long[] batchIds) {
-        return pastureBatchMapper.deleteCropBatchByBatchIds(batchIds);
+    public int deletePastureBatchByBatchIds(Long[] batchIds) {
+        return pastureBatchMapper.deletePastureBatchByBatchIds(batchIds);
     }
 
     /**
@@ -218,23 +220,23 @@ public class PastureBatchServiceImpl implements PastureBatchService {
      * @return 结果
      */
     @Override
-    public int deleteCropBatchByBatchId(Long batchId) {
-        return pastureBatchMapper.deleteCropBatchByBatchId(batchId);
+    public int deletePastureBatchByBatchId(Long batchId) {
+        return pastureBatchMapper.deletePastureBatchByBatchId(batchId);
     }
 
     /**
      * 给手机端批次列表查询数据
      *
-     * @param cropBatch
+     * @param PastureBatch
      * @return
      */
     @Override
-    public List<CropBatch> selectCropBatchListToMobile(CropBatch cropBatch) {
+    public List<PastureBatch> selectPastureBatchListToMobile(PastureBatch PastureBatch) {
         //非管理员只能看批次负责人为自己的批次
         if (!SecurityUtils.isAdmin(SecurityUtils.getUserId())) {
-            cropBatch.setBatchHead(SecurityUtils.getUserId());
+            PastureBatch.setBatchHead(SecurityUtils.getUserId());
         }
-        return pastureBatchMapper.selectCropBatchListToMobile(cropBatch);
+        return pastureBatchMapper.selectPastureBatchListToMobile(PastureBatch);
     }
 }
 
