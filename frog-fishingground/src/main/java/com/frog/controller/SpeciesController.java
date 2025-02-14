@@ -28,7 +28,7 @@ public class SpeciesController  extends BaseController {
     /**
      * 查询鱼种列表
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:germplasm:list')")
+ //   @PreAuthorize("@ss.hasPermi('agriculture:germplasm:list')")
     @GetMapping("/list")
     public TableDataInfo list(Species species)
     {
@@ -65,7 +65,7 @@ public class SpeciesController  extends BaseController {
      */
    // @PreAuthorize("@ss.hasPermi('agriculture:germplasm:add')")
     @Log(title = "鱼种", businessType = BusinessType.INSERT)
-    @PostMapping("/add")
+    @PostMapping
     public AjaxResult add(@RequestBody Species species)
     {
         return toAjax(ispeciesService.insertSpecies(species));
@@ -74,7 +74,7 @@ public class SpeciesController  extends BaseController {
     /**
      * 修改鱼种
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:germplasm:edit')")
+  //  @PreAuthorize("@ss.hasPermi('agriculture:germplasm:edit')")
     @Log(title = "鱼种", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody Species species)
@@ -85,7 +85,7 @@ public class SpeciesController  extends BaseController {
     /**
      * 删除鱼种
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:germplasm:remove')")
+   // @PreAuthorize("@ss.hasPermi('agriculture:germplasm:remove')")
     @Log(title = "鱼种", businessType = BusinessType.DELETE)
     @DeleteMapping("/{speciesIds}")
     public AjaxResult remove(@PathVariable Long[] speciesIds)

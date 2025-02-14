@@ -3,17 +3,19 @@ package com.frog.mapper;
 import java.util.List;
 import com.frog.agriculture.domain.Germplasm;
 import com.frog.domain.Species;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * 鱼种Mapper接口
  *
  */
+
 public interface SpeciesMapper
 {
     /**
-     * 鱼种鱼种
+     * 鱼种
      *
-     * @param speciesId 鱼种主键
+     * @param speciesId 鱼种id
      * @return 鱼种
      */
     public Species selectSpeciesBySpeciesId(Long speciesId);
@@ -24,6 +26,7 @@ public interface SpeciesMapper
      * @param species 鱼种
      * @return 鱼种集合
      */
+
     public List<Species> selectSpeciesList(Species species);
 
     /**
