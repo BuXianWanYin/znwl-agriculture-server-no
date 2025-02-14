@@ -11,7 +11,7 @@ import com.frog.common.annotation.Anonymous;
 import com.frog.common.core.controller.BaseController;
 import com.frog.dto.FishPastureSensorValuePageDTO;
 import com.frog.model.FishPasture;
-import com.frog.service.FishPastureService;
+import com.frog.service.impl.FishPastureService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
