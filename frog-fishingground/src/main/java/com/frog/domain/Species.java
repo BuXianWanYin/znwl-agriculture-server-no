@@ -14,32 +14,17 @@ public class Species extends BaseEntity {
     /** 鱼种ID */
     private Long speciesId;
 
-    /** 作物名称 */
+    /** 鱼种名称 */
     @Excel(name = "鱼名称")
     private String fishName;
 
-    /** 作物英文名称 */
+    /** 鱼种英文名称 */
     @Excel(name = "鱼种英文名称")
     private String fishEnName;
 
-    /** 鱼种名称 */
-    @Excel(name = "鱼种名称")
-    private String speciesName;
-
-    /** 鱼种英文名称 */
-    @Excel(name = "鱼种英文名称")
-    private String speciesEnName;
-
-    /** 鱼种图片 */
-    @Excel(name = "鱼种图片")
-    private String speciesImg;
-
-    /** 宣传语 */
-    @Excel(name = "宣传语")
-    private String speciesDes;
-
-    /** 状态 */
-    private String status;
+    /** 鱼种类名称 */
+    @Excel(name = "鱼种类名称")
+    private String fishSpeciesName;
 
     public Long getSpeciesId() {
         return speciesId;
@@ -65,36 +50,36 @@ public class Species extends BaseEntity {
         this.fishEnName = fishEnName;
     }
 
-    public String getSpeciesName() {
-        return speciesName;
+    public String getFishSpeciesName() {
+        return fishSpeciesName;
     }
 
-    public void setSpeciesName(String speciesName) {
-        this.speciesName = speciesName;
+    public void setFishSpeciesName(String fishSpeciesName) {
+        this.fishSpeciesName = fishSpeciesName;
     }
 
-    public String getSpeciesEnName() {
-        return speciesEnName;
+    public String getFishSpeciesEnName() {
+        return fishSpeciesEnName;
     }
 
-    public void setSpeciesEnName(String speciesEnName) {
-        this.speciesEnName = speciesEnName;
+    public void setFishSpeciesEnName(String fishSpeciesEnName) {
+        this.fishSpeciesEnName = fishSpeciesEnName;
     }
 
-    public String getSpeciesImg() {
-        return speciesImg;
+    public String getFishSpeciesImg() {
+        return fishSpeciesImg;
     }
 
-    public void setSpeciesImg(String speciesImg) {
-        this.speciesImg = speciesImg;
+    public void setFishSpeciesImg(String fishSpeciesImg) {
+        this.fishSpeciesImg = fishSpeciesImg;
     }
 
-    public String getSpeciesDes() {
-        return speciesDes;
+    public String getFishSpeciesDes() {
+        return fishSpeciesDes;
     }
 
-    public void setSpeciesDes(String speciesDes) {
-        this.speciesDes = speciesDes;
+    public void setFishSpeciesDes(String fishSpeciesDes) {
+        this.fishSpeciesDes = fishSpeciesDes;
     }
 
     public String getStatus() {
@@ -121,6 +106,21 @@ public class Species extends BaseEntity {
         this.delFlag = delFlag;
     }
 
+    /** 鱼种类英文名称 */
+    @Excel(name = "鱼种英文名称")
+    private String fishSpeciesEnName;
+
+    /** 鱼种图片 */
+    @Excel(name = "鱼种图片")
+    private String fishSpeciesImg;
+
+    /** 宣传语 */
+    @Excel(name = "宣传语")
+    private String fishSpeciesDes;
+
+    /** 状态 */
+    private String status;
+
     /** 排序 */
     private Long orderNum;
 
@@ -135,10 +135,10 @@ public class Species extends BaseEntity {
                 .append("speciesId", getSpeciesId())
                 .append("fishName", getFishName())
                 .append("fishEnName", getFishEnName())
-                .append("speciesName", getSpeciesName())
-                .append("speciesEnName", getSpeciesEnName())
-                .append("speciesImg", getSpeciesImg())
-                .append("speciesDes", getSpeciesDes())
+                .append("fishspeciesName", getFishSpeciesName())
+                .append("fishspeciesEnName", getFishSpeciesEnName())
+                .append("fishspeciesImg", getFishSpeciesImg())
+                .append("fishspeciesDes", getFishSpeciesDes())
                 .append("remark", getRemark())
                 .append("status", getStatus())
                 .append("orderNum", getOrderNum())
