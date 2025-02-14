@@ -30,11 +30,20 @@
     <select id="selectSpeciesList" parameterType="Species" resultMap="SpeciesResult">
         <include refid="selectSpeciesVo"/>
         <where>
-            <if test="fishName != null and fishName != ''"> AND fish_name LIKE CONCAT('%', #{fishName}, '%')</if>
-            <if test="status != null and status != ''"> AND status = #{status}</if>
-            AND del_flag = '0'
+            <if test="fishName != null  and fishName != ''"> and fish_name like CONCAT('%', #{fishName}, '%')</if>
+            <if test="fishSpeciesName != null  and fishSpeciesName != ''"> and fish_species_name like concat('%', #{fishSpeciesName}, '%')</if>
+            and del_flag = 0
         </where>
     </select>
+
+<!--    <select id="selectSpeciesList" parameterType="Species" resultMap="SpeciesResult">-->
+<!--        <include refid="selectSpeciesVo"/>-->
+<!--        <where>-->
+<!--            <if test="fishName != null and fishName != ''"> AND fish_name LIKE CONCAT('%', #{fishName}, '%')</if>-->
+<!--            <if test="status != null and status != ''"> AND status = #{status}</if>-->
+<!--            AND del_flag = '0'-->
+<!--        </where>-->
+<!--    </select>-->
 
     <select id="selectSpeciesBySpeciesId" parameterType="Long" resultMap="SpeciesResult">
         <include refid="selectSpeciesVo"/>

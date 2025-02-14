@@ -38,6 +38,10 @@ public class WebSocketServer {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             Session sessionClient = container.connectToServer(webSocketClient, URI.create(BotConfig.getAsrUrl()));
             webSocketClient.open(sessionClient); // 这里记得调用 open 方法
+
+
+
+
          //   log.info("Connected to client WebSocket");
         } catch (DeploymentException | IOException e) {
             e.printStackTrace();
