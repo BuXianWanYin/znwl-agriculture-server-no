@@ -1,47 +1,44 @@
-package com.frog.service;
+package com.frog.service;/*
+ * @author 不羡晚吟
+ * @version 1.0
+ */
+
+import com.frog.domain.FishBatchTask;
 
 import java.util.List;
-import com.frog.domain.PastureBatchTask;
 
-/**
- * 批次任务Service接口
- *
- * @author xuweidong
- * @date 2023-05-24
- */
-public interface IPastureBatchTaskService
-{
+public interface FishBatchTaskService {
     /**
      * 查询批次任务
      *
      * @param taskId 批次任务主键
      * @return 批次任务
      */
-    public PastureBatchTask selectBatchTaskByTaskId(Long taskId);
+    public FishBatchTask selectBatchTaskByTaskId(Long taskId);
 
     /**
      * 查询批次任务列表
      *
-     * @param batchTask 批次任务
+     * @param fishBatchTask 批次任务
      * @return 批次任务集合
      */
-    public List<PastureBatchTask> selectBatchTaskList(PastureBatchTask batchTask);
+    public List<FishBatchTask> selectBatchTaskList(FishBatchTask fishBatchTask);
 
     /**
      * 新增批次任务
      *
-     * @param batchTask 批次任务
+     * @param fishBatchTask 批次任务
      * @return 结果
      */
-    public int insertBatchTask(PastureBatchTask batchTask);
+    public int insertBatchTask(FishBatchTask fishBatchTask);
 
     /**
      * 修改批次任务
      *
-     * @param batchTask 批次任务
+     * @param fishBatchTask 批次任务
      * @return 结果
      */
-    public int updateBatchTask(PastureBatchTask batchTask);
+    public int updateBatchTask(FishBatchTask fishBatchTask);
 
     /**
      * 批量删除批次任务
@@ -61,8 +58,9 @@ public interface IPastureBatchTaskService
 
     /**
      * 给手机端的任务列表
-     * @param batchTask
+     *
+     * @param fishBatchTask
      * @return
      */
-    public List<PastureBatchTask> selectBatchTaskListToMobile(PastureBatchTask batchTask);
+    public List<FishBatchTask> selectBatchTaskListToMobile(FishBatchTask fishBatchTask);
 }

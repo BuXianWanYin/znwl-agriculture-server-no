@@ -3,8 +3,8 @@ package com.frog.controller;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
-import com.frog.domain.PastureBatchTask;
-import com.frog.service.IPastureBatchTaskService;
+import com.frog.domain.FishBatchTask;
+import com.frog.service.FishBatchTaskService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,83 +24,80 @@ import com.frog.common.core.page.TableDataInfo;
 
 /**
  * 批次任务Controller
- *
- * @author xuweidong
- * @date 2023-05-24
  */
 @RestController
-@RequestMapping("/fishPasture/batchTask")
-public class PastureBatchTaskController extends BaseController
+@RequestMapping("/fishPasture/fishbatchTask")
+public class FishBatchTaskController extends BaseController
 {
     @Autowired
-    private IPastureBatchTaskService batchTaskService;
+    private FishBatchTaskService fishBatchTaskService;
 
     /**
      * 查询批次任务列表
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:list')")
+   // @PreAuthorize("@ss.hasPermi('agriculture:batchTask:list')")
     @GetMapping("/list")
-    public TableDataInfo list(PastureBatchTask batchTask)
+    public TableDataInfo list(FishBatchTask fishBatchTask)
     {
         startPage();
-        List<PastureBatchTask> list = batchTaskService.selectBatchTaskList(batchTask);
+        List<FishBatchTask> list = fishBatchTaskService.selectBatchTaskList(fishBatchTask);
         return getDataTable(list);
     }
 
     /**
      * 导出批次任务列表
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:export')")
+    @PreAuthorize("@ss.hasPermi('agriculture:batchTask:export')")
     @Log(title = "批次任务", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
-    public void export(HttpServletResponse response, PastureBatchTask batchTask)
+    public void export(HttpServletResponse response, FishBatchTask fishBatchTask)
     {
-        List<PastureBatchTask> list = batchTaskService.selectBatchTaskList(batchTask);
-        ExcelUtil<PastureBatchTask> util = new ExcelUtil<PastureBatchTask>(PastureBatchTask.class);
+        List<FishBatchTask> list = fishBatchTaskService.selectBatchTaskList(fishBatchTask);
+        ExcelUtil<FishBatchTask> util = new ExcelUtil<FishBatchTask>(FishBatchTask.class);
         util.exportExcel(response, list, "批次任务数据");
     }
 
     /**
      * 获取批次任务详细信息
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:query')")
+   // @PreAuthorize("@ss.hasPermi('agriculture:batchTask:query')")
     @GetMapping(value = "/{taskId}")
     public AjaxResult getInfo(@PathVariable("taskId") Long taskId)
     {
-        return AjaxResult.success(batchTaskService.selectBatchTaskByTaskId(taskId));
+        return AjaxResult.success(fishBatchTaskService.selectBatchTaskByTaskId(taskId));
     }
 
     /**
      * 新增批次任务
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:add')")
+    @PreAuthorize("@ss.hasPermi('agriculture:batchTask:add')")
     @Log(title = "批次任务", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody PastureBatchTask batchTask)
+    public AjaxResult add(@RequestBody FishBatchTask fishBatchTask)
     {
-        return toAjax(batchTaskService.insertBatchTask(batchTask));
+        return toAjax(fishBatchTaskService.insertBatchTask(fishBatchTask));
     }
 
     /**
      * 修改批次任务
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:edit')")
+    @PreAuthorize("@ss.hasPermi('agriculture:batchTask:edit')")
     @Log(title = "批次任务", businessType = BusinessType.UPDATE)
     @PutMapping
-    public AjaxResult edit(@RequestBody PastureBatchTask batchTask)
+    public AjaxResult edit(@RequestBody FishBatchTask fishBatchTask)
     {
-        return toAjax(batchTaskService.updateBatchTask(batchTask));
+        return toAjax(fishBatchTaskService.updateBatchTask(fishBatchTask));
     }
 
     /**
      * 删除批次任务
      */
-    @PreAuthorize("@ss.hasPermi('fishingground:batchTask:remove')")
+    @PreAuthorize("@ss.hasPermi('agriculture:batchTask:remove')")
     @Log(title = "批次任务", businessType = BusinessType.DELETE)
     @DeleteMapping("/{taskIds}")
     public AjaxResult remove(@PathVariable Long[] taskIds)
     {
-        return toAjax(batchTaskService.deleteBatchTaskByTaskIds(taskIds));
+        return toAjax(fishBatchTaskService.deleteBatchTaskByTaskIds(taskIds));
     }
 
     /** 手机端接口 */
@@ -108,10 +105,10 @@ public class PastureBatchTaskController extends BaseController
      * 查询批次任务列表
      */
     @GetMapping("/mobilelist")
-    public TableDataInfo mobileList(PastureBatchTask batchTask)
+    public TableDataInfo mobileList(FishBatchTask fishBatchTask)
     {
         startPage();
-        List<PastureBatchTask> list = batchTaskService.selectBatchTaskListToMobile(batchTask);
+        List<FishBatchTask> list = fishBatchTaskService.selectBatchTaskListToMobile(fishBatchTask);
         return getDataTable(list);
     }
 }

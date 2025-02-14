@@ -7,13 +7,13 @@ import com.frog.common.core.domain.BaseEntity;
 import  lombok.Data;
 
 /**
- * 批次任务对象 agriculture_batch_task
+ * 批次任务对象 fish_batch_task
  *
  * @author nealtsiao
  * @date 2023-05-30
  */
 @Data
-public class PastureBatchTask extends BaseEntity
+public class FishBatchTask extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 

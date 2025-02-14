@@ -1,17 +1,17 @@
-package com.frog.service.impl;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+package com.frog.service.impl;/*
+ * @author 不羡晚吟
+ * @version 1.0
+ */
 
 import com.frog.IaAgriculture.vo.CommonContant;
 import com.frog.agriculture.domain.CropBatch;
-import com.frog.agriculture.mapper.CropBatchMapper;
 import com.frog.common.utils.DateUtils;
 import com.frog.common.utils.SecurityUtils;
-import com.frog.domain.PastureBatchTask;
-import com.frog.mapper.PastureBatchTaskMapper;
-import com.frog.service.IPastureBatchTaskService;
+import com.frog.domain.FishBatchTask;
+import com.frog.domain.PastureBatch;
+import com.frog.mapper.FishBatchTaskMapper;
+import com.frog.mapper.PastureBatchMapper;
+import com.frog.service.FishBatchTaskService;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,21 +19,21 @@ import vip.blockchain.agriculture.model.bo.PlatformOffHarvestInputBO;
 import vip.blockchain.agriculture.service.PlatformService;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
-/**
- * 批次任务Service业务层处理
- *
- * @author xuweidong
- * @date 2023-05-24
- */
 @Service
-public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
-{
-    @Autowired
-    private PastureBatchTaskMapper batchTaskMapper;
+public class FishBatchTaskServiceImpl implements FishBatchTaskService {
 
+    //鱼批次任务
     @Autowired
-    private CropBatchMapper cropBatchMapper;
+    private FishBatchTaskMapper fishBatchTaskMapper;
+
+
+    //鱼物批次
+    @Autowired
+    private PastureBatchMapper pastureBatchMapper;
 
     @Resource
     PlatformService platformService;
@@ -45,70 +45,70 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
      * @return 批次任务
      */
     @Override
-    public PastureBatchTask selectBatchTaskByTaskId(Long taskId)
+    public FishBatchTask selectBatchTaskByTaskId(Long taskId)
     {
-        return batchTaskMapper.selectBatchTaskByTaskId(taskId);
+        return fishBatchTaskMapper.selectBatchTaskByTaskId(taskId);
     }
 
     /**
      * 查询批次任务列表
      *
-     * @param batchTask 批次任务
+     * @param fishBatchTask 批次任务
      * @return 批次任务
      */
     @Override
-    public List<PastureBatchTask> selectBatchTaskList(PastureBatchTask batchTask)
+    public List<FishBatchTask> selectBatchTaskList(FishBatchTask fishBatchTask)
     {
         Long userId = SecurityUtils.getUserId();
         if(!SecurityUtils.isAdmin(userId)){
-            batchTask.getParams().put("batchHead", userId);
+            fishBatchTask.getParams().put("batchHead", userId);
         }
-        return batchTaskMapper.selectBatchTaskList(batchTask);
+        return fishBatchTaskMapper.selectBatchTaskList(fishBatchTask);
     }
 
 
     /**
      * 新增批次任务
      *
-     * @param batchTask 批次任务
+     * @param fishBatchTask 批次任务
      * @return 结果
      */
     @Override
-    public int insertBatchTask(PastureBatchTask batchTask)
+    public int insertBatchTask(FishBatchTask fishBatchTask)
     {
-        batchTask.setCreateBy(SecurityUtils.getUserId().toString());
-        batchTask.setCreateTime(DateUtils.getNowDate());
-        return batchTaskMapper.insertBatchTask(batchTask);
+        fishBatchTask.setCreateBy(SecurityUtils.getUserId().toString());
+        fishBatchTask.setCreateTime(DateUtils.getNowDate());
+        return fishBatchTaskMapper.insertBatchTask(fishBatchTask);
     }
 
     /**
      * 修改批次任务
      *
-     * @param batchTask 批次任务
+     * @param fishBatchTask 批次任务
      * @return 结果
      */
     @Override
-    public int updateBatchTask(PastureBatchTask batchTask) {
+    public int updateBatchTask(FishBatchTask fishBatchTask) {
         // 设置更新者为当前用户的ID
-        batchTask.setUpdateBy(SecurityUtils.getUserId().toString());
+        fishBatchTask.setUpdateBy(SecurityUtils.getUserId().toString());
         // 设置更新时间为当前时间
-        batchTask.setUpdateTime(DateUtils.getNowDate());
+        fishBatchTask.setUpdateTime(DateUtils.getNowDate());
         // 调用数据访问层更新批次任务，并返回受影响的行数
-        int i = batchTaskMapper.updateBatchTask(batchTask);
+        int i = fishBatchTaskMapper.updateBatchTask(fishBatchTask);
         // 每次更新检查一下任务是否都已经完成
-        HashMap<String, Long> hm = batchTaskMapper.selectFinishTask(batchTask.getBatchId());
+        HashMap<String, Long> hm = fishBatchTaskMapper.selectFinishTask(fishBatchTask.getBatchId());
         // 根据批次ID查询对应的CropBatch对象
-        CropBatch cropBatch = cropBatchMapper.selectCropBatchByBatchId(batchTask.getBatchId());
+        PastureBatch pastureBatch = pastureBatchMapper.selectPastureBatchByBatchId(fishBatchTask.getBatchId());
         // 检查完成的任务数量，如果为0表示任务已完成
         if (hm.get("num") == 0) {
             // 更新CropBatch状态为"1"，表示已完成
-            cropBatch.setStatus("1");
+            pastureBatch.setStatus("1");
             // 更新数据库中的CropBatch状态
-            cropBatchMapper.updateCropBatch(cropBatch);
+            pastureBatchMapper.updatePastureBatch(pastureBatch);
             // 创建一个合约地址列表
             ArrayList<String> listContract = new ArrayList<>();
             // 再次查询CropBatch数据以获取合约地址
-            CropBatch data = cropBatchMapper.selectCropBatchByBatchId(batchTask.getBatchId());
+            PastureBatch data = pastureBatchMapper.selectPastureBatchByBatchId(fishBatchTask.getBatchId());
             // 将合约地址添加到列表中
             listContract.add(data.getContractAddress());
             // for (IaPartition ivLivestock : ivLivestocks) {
@@ -131,9 +131,9 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
             }
         } else {
             // 如果任务未完成，则将CropBatch状态设为"0"
-            cropBatch.setStatus("0");
+            pastureBatch.setStatus("0");
             // 更新数据库中的CropBatch状态
-            cropBatchMapper.updateCropBatch(cropBatch);
+            pastureBatchMapper.updatePastureBatch(pastureBatch);
         }
         // 返回更新操作影响的行数
         return i;
@@ -148,7 +148,7 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
     @Override
     public int deleteBatchTaskByTaskIds(Long[] taskIds)
     {
-        return batchTaskMapper.deleteBatchTaskByTaskIds(taskIds);
+        return fishBatchTaskMapper.deleteBatchTaskByTaskIds(taskIds);
     }
 
     /**
@@ -160,17 +160,18 @@ public class PastureBatchTaskServiceImpl implements IPastureBatchTaskService
     @Override
     public int deleteBatchTaskByTaskId(Long taskId)
     {
-        return batchTaskMapper.deleteBatchTaskByTaskId(taskId);
+        return fishBatchTaskMapper.deleteBatchTaskByTaskId(taskId);
     }
 
     /**
      * 给手机端的任务列表
-     * @param batchTask
+     *
+     * @param fishBatchTask
      * @return
      */
     @Override
-    public List<PastureBatchTask> selectBatchTaskListToMobile(PastureBatchTask batchTask) {
-        batchTask.setBatchHead(SecurityUtils.isAdmin(SecurityUtils.getUserId())?null:SecurityUtils.getUserId());
-        return batchTaskMapper.selectBatchTaskListToMobile(batchTask);
+    public List<FishBatchTask> selectBatchTaskListToMobile(FishBatchTask fishBatchTask) {
+        fishBatchTask.setBatchHead(SecurityUtils.isAdmin(SecurityUtils.getUserId())?null:SecurityUtils.getUserId());
+        return fishBatchTaskMapper.selectBatchTaskListToMobile(fishBatchTask);
     }
 }
