@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.mapper.CostBaitMapper">
+
+    <resultMap type="CostBait" id="CostBaitResult">
+        <result property="costId" column="cost_id"/>
+        <result property="taskId" column="task_id"/>
+        <result property="baitId" column="bait_id"/>
+        <result property="baitCount" column="bait_count"/>
+        <result property="measureUnit" column="measure_unit"/>
+        <result property="workingStart" column="working_start"/>
+        <result property="workingFinish" column="working_finish"/>
+        <result property="remark" column="remark"/>
+        <result property="status" column="status"/>
+        <result property="orderNum" column="order_num"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="delFlag" column="del_flag"/>
+    </resultMap>
+
+    <sql id="selectCostBaitVo">
+        select cost_id,
+               task_id,
+               bait_id,
+               bait_count,
+               measure_unit,
+               working_start,
+               working_finish,
+               remark,
+               status,
+               order_num,
+               create_by,
+               create_time,
+               update_by,
+               update_time,
+               del_flag
+        from fish_cost_bait
+    </sql>
+
+    <select id="selectCostBaitList" parameterType="CostBait" resultMap="CostBaitResult">
+        <include refid="selectCostBaitVo"/>
+        <where>
+            <if test="taskId != null ">and task_id = #{taskId}</if>
+            <if test="baitId != null ">and bait_id = #{baitId}</if>
+            <if test="baitCount != null ">and bait_count = #{baitCount}</if>
+            <if test="measureUnit != null  and measureUnit != ''">and measure_unit = #{measureUnit}</if>
+            <if test="workingStart != null ">and working_start = #{workingStart}</if>
+            <if test="workingFinish != null ">and working_finish = #{workingFinish}</if>
+            <if test="status != null  and status != ''">and status = #{status}</if>
+            <if test="orderNum != null ">and order_num = #{orderNum}</if>
+            and del_flag = 0
+        </where>
+        order by cost_id desc
+    </select>
+
+    <select id="selectCostBaitByCostId" parameterType="Long" resultMap="CostBaitResult">
+        <include refid="selectCostBaitVo"/>
+        where cost_id = #{costId} and del_flag=0
+    </select>
+
+    <insert id="insertCostBait" parameterType="CostBait" useGeneratedKeys="true" keyProperty="costId">
+        insert into fish_cost_bait
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="taskId != null">task_id,</if>
+            <if test="baitId != null">bait_id,</if>
+            <if test="baitCount != null">bait_count,</if>
+            <if test="measureUnit != null and measureUnit != ''">measure_unit,</if>
+            <if test="workingStart != null">working_start,</if>
+            <if test="workingFinish != null">working_finish,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="orderNum != null">order_num,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="delFlag != null and delFlag != ''">del_flag,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="taskId != null">#{taskId},</if>
+            <if test="baitId != null">#{baitId},</if>
+            <if test="baitCount != null">#{baitCount},</if>
+            <if test="measureUnit != null and measureUnit != ''">#{measureUnit},</if>
+            <if test="workingStart != null">#{workingStart},</if>
+            <if test="workingFinish != null">#{workingFinish},</if>
+            <if test="remark != null and remark != ''">#{remark},</if>
+            <if test="status != null and status != ''">#{status},</if>
+            <if test="orderNum != null">#{orderNum},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="delFlag != null and delFlag != ''">#{delFlag},</if>
+        </trim>
+    </insert>
+
+    <update id="updateCostBait" parameterType="CostBait">
+        update fish_cost_bait
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="taskId != null">task_id = #{taskId},</if>
+            <if test="baitId != null">bait_id = #{baitId},</if>
+            <if test="baitCount != null">bait_count = #{baitCount},</if>
+            <if test="measureUnit != null and measureUnit != ''">measure_unit = #{measureUnit},</if>
+            <if test="workingStart != null">working_start = #{workingStart},</if>
+            <if test="workingFinish != null">working_finish = #{workingFinish},</if>
+            <if test="remark != null and remark != ''">remark = #{remark},</if>
+            <if test="status != null and status != ''">status = #{status},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null and delFlag != ''">del_flag = #{delFlag},</if>
+        </trim>
+        where cost_id = #{costId}
+    </update>
+
+    <update id="deleteCostBaitByCostId" parameterType="Long">
+        update fish_cost_bait
+        set del_flag = 2
+        where cost_id = #{costId}
+    </update>
+
+    <update id="deleteCostBaitByCostIds" parameterType="String">
+        update fish_cost_bait set del_flag = 2 where cost_id in
+        <foreach item="costId" collection="array" open="(" separator="," close=")">
+            #{costId}
+        </foreach>
+    </update>
+
+    <!-- 按照农资类别汇总用量   -->
+    <select id="selectBaitGroupByBaitName" resultType="java.util.Map" parameterType="Long">
+        select b.material_name as materialName, sum(a.material_count) as num
+        select b.bait_name as baitName, sum(a.bait_count) as num
+        from fish_cost_bait a
+                 left join fish_bait_info b on a.bait_id = b.bait_id
+        where a.task_id = #{taskId}
+          and a.del_flag = 0
+        group by b.bait_name
+    </select>
+</mapper>
