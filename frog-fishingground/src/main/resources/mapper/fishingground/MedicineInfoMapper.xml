@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.mapper.MedicineInfoMapper">
+
+    <resultMap type="MedicineInfo" id="MedicineInfoResult">
+        <result property="medicineId"    column="medicine_id"    />
+        <result property="medicineCode"    column="medicine_code"    />
+        <result property="medicineName"    column="medicine_name"    />
+        <result property="medicineTypeId"    column="medicine_type_id"    />
+        <result property="measureUnit"    column="measure_unit"    />
+        <result property="remark"    column="remark"    />
+        <result property="status"    column="status"    />
+        <result property="orderNum"    column="order_num"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="delFlag"    column="del_flag"    />
+    </resultMap>
+
+    <sql id="selectMedicineInfoVo">
+        select medicine_id, medicine_code, medicine_name, medicine_type_id, measure_unit, remark, status, order_num, create_by, create_time, update_by, update_time, del_flag from fish_medicine_info
+    </sql>
+
+    <select id="selectMedicineInfoList" parameterType="MedicineInfo" resultMap="MedicineInfoResult">
+        <include refid="selectMedicineInfoVo"/>
+        <where>
+            <if test="medicineCode != null  and medicineCode != ''"> and medicine_code = #{medicineCode}</if>
+            <if test="medicineName != null  and medicineName != ''"> and medicine_name like concat('%', #{medicineName}, '%')</if>
+            <if test="medicineTypeId != null "> and medicine_type_id = #{medicineTypeId}</if>
+and del_flag = 0
+        </where>
+    </select>
+
+    <select id="selectMedicineInfoByMedicineId" parameterType="Long" resultMap="MedicineInfoResult">
+        <include refid="selectMedicineInfoVo"/>
+        where medicine_id = #{medicineId} and del_flag=0
+    </select>
+
+    <insert id="insertMedicineInfo" parameterType="MedicineInfo" useGeneratedKeys="true" keyProperty="medicineId">
+        insert into fish_medicine_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="medicineCode != null and medicineCode != ''">medicine_code,</if>
+            <if test="medicineName != null and medicineName != ''">medicine_name,</if>
+            <if test="medicineTypeId != null">medicine_type_id,</if>
+            <if test="measureUnit != null and measureUnit != ''">measure_unit,</if>
+            <if test="remark != null">remark,</if>
+            <if test="status != null">status,</if>
+            <if test="orderNum != null">order_num,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="delFlag != null and delFlag != ''">del_flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="medicineCode != null and medicineCode != ''">#{medicineCode},</if>
+            <if test="medicineName != null and medicineName != ''">#{medicineName},</if>
+            <if test="medicineTypeId != null">#{medicineTypeId},</if>
+            <if test="measureUnit != null and measureUnit != ''">#{measureUnit},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="status != null">#{status},</if>
+            <if test="orderNum != null">#{orderNum},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="delFlag != null and delFlag != ''">#{delFlag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMedicineInfo" parameterType="MedicineInfo">
+        update fish_medicine_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="medicineCode != null and medicineCode != ''">medicine_code = #{medicineCode},</if>
+            <if test="medicineName != null and medicineName != ''">medicine_name = #{medicineName},</if>
+            <if test="medicineTypeId != null">medicine_type_id = #{medicineTypeId},</if>
+            <if test="measureUnit != null and measureUnit != ''">measure_unit = #{measureUnit},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null and delFlag != ''">del_flag = #{delFlag},</if>
+        </trim>
+        where medicine_id = #{medicineId}
+    </update>
+
+    <update id="deleteMedicineInfoByMedicineId" parameterType="Long">
+        update fish_medicine_info set del_flag = 2 where medicine_id = #{medicineId}
+    </update>
+
+    <update id="deleteMedicineInfoByMedicineIds" parameterType="String">
+        update fish_medicine_info set del_flag = 2  where medicine_id in
+        <foreach item="medicineId" collection="array" open="(" separator="," close=")">
+            #{medicineId}
+        </foreach>
+    </update>
+</mapper>
