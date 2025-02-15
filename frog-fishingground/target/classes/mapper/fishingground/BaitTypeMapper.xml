@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.mapper.BaitTypeMapper">
+    
+    <resultMap type="BaitType" id="baitTypeResult">
+        <result property="baitTypeId"    column="bait_type_id"    />
+        <result property="baitTypeName"    column="bait_type_name"    />
+        <result property="remark"    column="remark"    />
+        <result property="status"    column="status"    />
+        <result property="orderNum"    column="order_num"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="delFlag"    column="del_flag"    />
+    </resultMap>
+
+    <sql id="selectBaitTypeVo">
+        select bait_type_id, bait_type_name, remark, status, order_num, create_by, create_time, update_by, update_time, del_flag from fish_bait_type
+    </sql>
+
+    <select id="selectBaitTypeList" parameterType="BaitType" resultMap="baitTypeResult">
+        <include refid="selectBaitTypeVo"/>
+        <where>  
+            <if test="baitTypeName != null  and baitTypeName != ''"> and bait_type_name like concat('%', #{baitTypeName}, '%')</if>
+            and del_flag = 0
+        </where>
+            order by order_num
+    </select>
+    
+    <select id="selectBaitTypeByBaitTypeId" parameterType="Long" resultMap="baitTypeResult">
+        <include refid="selectBaitTypeVo"/>
+        where bait_type_id = #{baitTypeId} and del_flag=0
+    </select>
+        
+    <insert id="insertBaitType" parameterType="BaitType" useGeneratedKeys="true" keyProperty="baitTypeId">
+        insert into fish_bait_type
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="baitTypeName != null and baitTypeName != ''">bait_type_name,</if>
+            <if test="remark != null">remark,</if>
+            <if test="status != null">status,</if>
+            <if test="orderNum != null">order_num,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="delFlag != null">del_flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="baitTypeName != null and baitTypeName != ''">#{baitTypeName},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="status != null">#{status},</if>
+            <if test="orderNum != null">#{orderNum},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBaitType" parameterType="BaitType">
+        update fish_bait_type
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="baitTypeName != null and baitTypeName != ''">bait_type_name = #{baitTypeName},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+        </trim>
+        where bait_type_id = #{baitTypeId}
+    </update>
+
+    <update id="deleteBaitTypeByBaitTypeId" parameterType="Long">
+        update fish_bait_type set del_flag = 2 where bait_type_id = #{baitTypeId}
+    </update>
+
+    <update id="deleteBaitTypeByBaitTypeIds" parameterType="String">
+        update fish_bait_type set del_flag = 2  where bait_type_id in
+        <foreach item="baitTypeId" collection="array" open="(" separator="," close=")">
+            #{baitTypeId}
+        </foreach>
+    </update>
+</mapper>
