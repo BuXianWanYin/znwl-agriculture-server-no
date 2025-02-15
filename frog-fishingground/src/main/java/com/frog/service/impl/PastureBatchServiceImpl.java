@@ -21,7 +21,9 @@ import com.frog.agriculture.mapper.TaskLogMapper;
 import com.frog.agriculture.service.IGermplasmService;
 import com.frog.common.utils.DateUtils;
 import com.frog.common.utils.SecurityUtils;
+import com.frog.domain.FishBatchTask;
 import com.frog.domain.PastureBatch;
+import com.frog.mapper.FishBatchTaskMapper;
 import com.frog.mapper.FishPastureMapper;
 import com.frog.mapper.PastureBatchMapper;
 import com.frog.model.FishPasture;
@@ -51,7 +53,7 @@ public class PastureBatchServiceImpl implements PastureBatchService {
     @Autowired
     private StandardJobMapper standardJobMapper;
     @Autowired
-    private BatchTaskMapper batchTaskMapper;
+    private FishBatchTaskMapper batchTaskMapper;
     @Autowired
     private TaskLogMapper taskLogMapper;
 
@@ -157,7 +159,7 @@ public class PastureBatchServiceImpl implements PastureBatchService {
         List<StandardJob> sjList = standardJobMapper.selectStandardJobList(queryPar);
         // 遍历标准作业列表，生成批次任务
         for (StandardJob sj : sjList) {
-            BatchTask bt = new BatchTask();
+            FishBatchTask bt = new FishBatchTask();
             // 设置批次任务的相关信息
             bt.setBatchId(PastureBatch.getBatchId());
             bt.setTaskHead(PastureBatch.getBatchHead());
