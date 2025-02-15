@@ -23,7 +23,7 @@ import com.frog.common.utils.poi.ExcelUtil;
 import com.frog.common.core.page.TableDataInfo;
 
 /**
- * 批次任务Controller
+ * 鱼的批次任务Controller
  */
 @RestController
 @RequestMapping("/fishPasture/fishbatchTask")

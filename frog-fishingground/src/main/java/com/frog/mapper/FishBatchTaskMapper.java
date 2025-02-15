@@ -11,10 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * 批次任务Mapper接口
- *
- * @author qgj
- * @date 2025-02-14
+ * 鱼的批次任务Mapper接口
  */
 public interface FishBatchTaskMapper {
     /**

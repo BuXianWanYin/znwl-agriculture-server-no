@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+//鱼
+
 @Service
 public class FishBatchTaskServiceImpl implements FishBatchTaskService {
 
@@ -59,10 +61,10 @@ public class FishBatchTaskServiceImpl implements FishBatchTaskService {
     @Override
     public List<FishBatchTask> selectBatchTaskList(FishBatchTask fishBatchTask)
     {
-        Long userId = SecurityUtils.getUserId();
-        if(!SecurityUtils.isAdmin(userId)){
-            fishBatchTask.getParams().put("batchHead", userId);
-        }
+//        Long userId = SecurityUtils.getUserId();
+//        if(!SecurityUtils.isAdmin(userId)){
+//            fishBatchTask.getParams().put("batchHead", userId);
+//        }
         return fishBatchTaskMapper.selectBatchTaskList(fishBatchTask);
     }
 

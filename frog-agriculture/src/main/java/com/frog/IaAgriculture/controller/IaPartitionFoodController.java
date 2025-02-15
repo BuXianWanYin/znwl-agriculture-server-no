@@ -16,7 +16,7 @@ import com.frog.IaAgriculture.vo.ResultVO;
 import javax.validation.constraints.NotBlank;
 
 
-@Api(tags = "加工管理抽屉管理")
+@Api(tags = "采摘管理")
 @RestController
 @RequestMapping("/iaPartitionFood")
 @Validated
