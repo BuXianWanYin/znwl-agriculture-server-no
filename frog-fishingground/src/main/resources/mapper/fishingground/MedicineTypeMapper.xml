@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.mapper.MedicineTypeMapper">
+
+    <resultMap type="MedicineType" id="medicineTypeResult">
+        <result property="medicineTypeId"    column="medicine_type_id"    />
+        <result property="medicineTypeName"    column="medicine_type_name"    />
+        <result property="remark"    column="remark"    />
+        <result property="status"    column="status"    />
+        <result property="orderNum"    column="order_num"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="delFlag"    column="del_flag"    />
+    </resultMap>
+
+    <sql id="selectMedicineTypeVo">
+        select medicine_type_id, medicine_type_name, remark, status, order_num, create_by, create_time, update_by, update_time, del_flag from fish_medicine_type
+    </sql>
+
+    <select id="selectMedicineTypeList" parameterType="MedicineType" resultMap="medicineTypeResult">
+        <include refid="selectMedicineTypeVo"/>
+        <where>
+            <if test="medicineTypeName != null  and medicineTypeName != ''"> and medicine_type_name like concat('%', #{medicineTypeName}, '%')</if>
+            and del_flag = 0
+        </where>
+            order by order_num
+    </select>
+
+    <select id="selectMedicineTypeByMedicineTypeId" parameterType="Long" resultMap="medicineTypeResult">
+        <include refid="selectMedicineTypeVo"/>
+        where medicine_type_id = #{medicineTypeId} and del_flag=0
+    </select>
+
+    <insert id="insertMedicineType" parameterType="MedicineType" useGeneratedKeys="true" keyProperty="medicineTypeId">
+        insert into fish_medicine_type
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="medicineTypeName != null and medicineTypeName != ''">medicine_type_name,</if>
+            <if test="remark != null">remark,</if>
+            <if test="status != null">status,</if>
+            <if test="orderNum != null">order_num,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="delFlag != null">del_flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="medicineTypeName != null and medicineTypeName != ''">#{medicineTypeName},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="status != null">#{status},</if>
+            <if test="orderNum != null">#{orderNum},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMedicineType" parameterType="MedicineType">
+        update fish_medicine_type
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="medicineTypeName != null and medicineTypeName != ''">medicine_type_name = #{medicineTypeName},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+        </trim>
+        where medicine_type_id = #{medicineTypeId}
+    </update>
+
+    <update id="deleteMedicineTypeByMedicineTypeId" parameterType="Long">
+        update fish_medicine_type set del_flag = 2 where medicine_type_id = #{medicineTypeId}
+    </update>
+
+    <update id="deleteMedicineTypeByMedicineTypeIds" parameterType="String">
+        update fish_medicine_type set del_flag = 2  where medicine_type_id in
+        <foreach item="medicineTypeId" collection="array" open="(" separator="," close=")">
+            #{medicineTypeId}
+        </foreach>
+    </update>
+</mapper>
