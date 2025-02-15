@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.mapper.BaitInfoMapper">
+    
+    <resultMap type="BaitInfo" id="BaitInfoResult">
+        <result property="baitId"    column="bait_id"    />
+        <result property="baitCode"    column="bait_code"    />
+        <result property="baitName"    column="bait_name"    />
+        <result property="baitTypeId"    column="bait_type_id"    />
+        <result property="measureUnit"    column="measure_unit"    />
+        <result property="remark"    column="remark"    />
+        <result property="status"    column="status"    />
+        <result property="orderNum"    column="order_num"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="delFlag"    column="del_flag"    />
+    </resultMap>
+
+    <sql id="selectBaitInfoVo">
+        select bait_id, bait_code, bait_name, bait_type_id, measure_unit, remark, status, order_num, create_by, create_time, update_by, update_time, del_flag from fish_bait_info
+    </sql>
+
+    <select id="selectBaitInfoList" parameterType="BaitInfo" resultMap="BaitInfoResult">
+        <include refid="selectBaitInfoVo"/>
+        <where>  
+            <if test="baitCode != null  and baitCode != ''"> and bait_code = #{baitCode}</if>
+            <if test="baitName != null  and baitName != ''"> and bait_name like concat('%', #{baitName}, '%')</if>
+            <if test="baitTypeId != null "> and bait_type_id = #{baitTypeId}</if>
+and del_flag = 0
+        </where>
+    </select>
+    
+    <select id="selectBaitInfoByBaitId" parameterType="Long" resultMap="BaitInfoResult">
+        <include refid="selectBaitInfoVo"/>
+        where bait_id = #{baitId} and del_flag=0
+    </select>
+        
+    <insert id="insertBaitInfo" parameterType="BaitInfo" useGeneratedKeys="true" keyProperty="baitId">
+        insert into fish_bait_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="baitCode != null and baitCode != ''">bait_code,</if>
+            <if test="baitName != null and baitName != ''">bait_name,</if>
+            <if test="baitTypeId != null">bait_type_id,</if>
+            <if test="measureUnit != null and measureUnit != ''">measure_unit,</if>
+            <if test="remark != null">remark,</if>
+            <if test="status != null">status,</if>
+            <if test="orderNum != null">order_num,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="delFlag != null and delFlag != ''">del_flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="baitCode != null and baitCode != ''">#{baitCode},</if>
+            <if test="baitName != null and baitName != ''">#{baitName},</if>
+            <if test="baitTypeId != null">#{baitTypeId},</if>
+            <if test="measureUnit != null and measureUnit != ''">#{measureUnit},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="status != null">#{status},</if>
+            <if test="orderNum != null">#{orderNum},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="delFlag != null and delFlag != ''">#{delFlag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBaitInfo" parameterType="BaitInfo">
+        update fish_bait_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="baitCode != null and baitCode != ''">bait_code = #{baitCode},</if>
+            <if test="baitName != null and baitName != ''">bait_name = #{baitName},</if>
+            <if test="baitTypeId != null">bait_type_id = #{baitTypeId},</if>
+            <if test="measureUnit != null and measureUnit != ''">measure_unit = #{measureUnit},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null and delFlag != ''">del_flag = #{delFlag},</if>
+        </trim>
+        where bait_id = #{baitId}
+    </update>
+
+    <update id="deleteBaitInfoByBaitId" parameterType="Long">
+        update fish_bait_info set del_flag = 2 where bait_id = #{baitId}
+    </update>
+
+    <update id="deleteBaitInfoByBaitIds" parameterType="String">
+        update fish_bait_info set del_flag = 2  where bait_id in
+        <foreach item="baitId" collection="array" open="(" separator="," close=")">
+            #{baitId}
+        </foreach>
+    </update>
+</mapper>
