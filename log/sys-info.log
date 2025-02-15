@@ -16048,3 +16048,591 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 
 16:05:25.023 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
 16:05:25.038 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+16:06:23.089 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 42856 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+16:06:23.093 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+16:06:23.121 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+16:06:28.204 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+16:06:28.205 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:06:28.205 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+16:06:28.459 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:06:34.641 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+16:06:36.977 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+16:06:36.990 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:06:36.991 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+16:06:36.998 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739606796979'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+16:06:36.999 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+16:06:36.999 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+16:06:37.001 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@602c59d7
+16:06:37.376 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+16:06:37.376 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+16:06:37.377 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+16:06:37.390 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+16:06:38.700 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+16:06:38.702 [nioEventLoopGroup-5-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 1872237501
+16:06:38.823 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+16:06:38.825 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+16:06:38.830 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+16:06:38.859 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+16:06:38.859 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+16:06:38.865 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+16:06:38.875 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+16:06:38.876 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+16:06:38.902 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+16:06:39.603 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+16:06:39.614 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+16:06:39.614 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+16:06:39.614 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+16:06:39.635 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+16:06:39.635 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+16:06:39.640 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 565
+16:06:39.756 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:06:48.619 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+16:06:48.979 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:06:49.123 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.130 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.145 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.161 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.176 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.191 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.207 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.219 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 26.648 seconds (JVM running for 28.868)
+16:06:49.222 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.237 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.253 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.267 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.282 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.298 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.313 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.329 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.345 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.361 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.377 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.393 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.409 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.424 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.441 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.456 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.472 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.489 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.504 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.520 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.534 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.551 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.567 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.581 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.598 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.613 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.627 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.644 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.659 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.674 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.690 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.704 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.719 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.734 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.751 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.764 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:06:49.766 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.781 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.797 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.812 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.828 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.844 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.859 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.875 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.891 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.906 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.922 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.938 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.953 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.967 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.983 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:49.999 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.015 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.032 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.046 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.061 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.077 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.094 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.108 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.124 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.139 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.155 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.171 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.174 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1739606796979 started.
+16:06:50.188 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.203 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.219 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.233 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.250 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.265 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.281 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.296 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.311 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.327 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.342 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.357 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.372 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.389 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.405 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.420 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.436 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.451 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.467 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.482 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.497 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.512 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.527 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.543 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.558 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.574 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.589 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.605 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.621 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.636 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.651 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.667 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.743 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:50.900 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:51.088 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:51.727 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:51.836 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.851 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.868 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.883 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.899 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.915 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.919 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:51.931 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.935 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:51.947 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.952 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:51.963 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.967 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:51.974 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0424317621283建立连接
+16:06:51.979 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.983 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:51.996 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:51.999 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.010 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.013 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.027 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.029 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.045 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.045 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.058 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.061 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.074 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.091 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.091 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.106 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.106 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.122 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.122 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.138 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.139 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.154 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.154 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.170 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0507076680031建立连接
+16:06:52.170 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.185 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.201 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.216 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.247 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.261 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.278 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.294 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.309 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.325 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.340 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.357 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.373 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.389 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.403 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.419 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.436 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.467 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.473 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.488 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.496 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.512 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.518 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.527 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.534 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.543 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.549 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.559 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.565 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.581 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.590 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.611 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.620 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.626 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.636 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.640 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.657 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.666 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.673 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.682 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.698 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.702 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.714 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:52.718 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.734 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.750 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.764 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.781 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.812 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.827 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.858 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.887 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.903 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.917 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.933 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.949 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.965 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:52.985 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.010 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.025 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.041 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.057 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.071 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.087 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.117 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.132 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.149 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.165 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.179 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.195 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.226 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.241 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.262 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.280 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.298 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.317 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0601865033271建立连接
+16:06:53.387 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：0495079268785建立连接
+16:06:59.758 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:07:09.759 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:07:19.758 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:07:29.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:07:39.758 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:07:42.085 [lettuce-nioEventLoop-4-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+16:07:42.121 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+16:07:42.131 [lettuce-nioEventLoop-4-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+16:07:49.756 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:07:59.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:08:09.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:08:19.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:08:29.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:08:39.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:08:48.044 [lettuce-nioEventLoop-4-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+16:08:48.117 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+16:08:48.121 [lettuce-nioEventLoop-4-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+16:08:49.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:08:59.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:09:09.758 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:09:19.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:09:29.756 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:09:39.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:09:49.756 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:09:54.046 [lettuce-nioEventLoop-4-3] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+16:09:54.118 [lettuce-eventExecutorLoop-1-15] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+16:09:54.120 [lettuce-nioEventLoop-4-4] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+16:09:59.757 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:10:09.758 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:10:19.758 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:10:29.759 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:10:39.759 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+16:10:43.630 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739606796979 paused.
+16:10:44.553 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.554 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.554 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.555 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.555 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.555 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.556 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.556 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.556 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.557 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.557 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.558 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.559 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.559 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.560 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.561 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.562 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.562 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.563 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.563 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.564 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.565 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.565 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.565 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.566 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.566 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.567 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.567 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.567 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.568 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.568 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.568 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.568 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.568 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.570 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.570 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.570 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.571 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.571 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.571 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.572 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.572 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.572 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.573 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.573 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.573 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.574 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.574 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.574 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.575 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.575 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.575 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.576 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.576 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.576 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.576 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.577 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.577 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.577 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.578 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.578 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.578 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.579 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.579 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.579 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.579 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.579 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.580 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.580 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.580 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.580 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.581 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.581 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.581 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.582 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.582 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.582 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.582 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.583 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.583 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.583 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.584 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.584 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.584 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.584 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.585 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.585 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.585 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.586 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.586 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.586 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.587 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.587 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.587 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.587 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.588 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.588 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.588 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.588 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.589 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.589 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.589 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.589 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.590 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.590 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.591 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.591 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.591 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.592 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.592 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.592 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.592 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.593 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.593 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.593 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.594 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.594 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.594 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.594 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.595 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.595 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.595 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.595 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.596 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.596 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.596 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.596 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.597 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.597 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.598 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.598 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.599 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.599 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.599 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.600 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.600 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.600 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.601 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.601 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.601 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.602 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.602 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.602 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.602 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.603 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.603 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.603 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.603 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.603 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.604 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.604 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.605 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.605 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.605 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.605 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.606 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.606 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.606 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.607 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.607 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.607 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.607 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.607 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.607 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.608 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.609 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.609 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.609 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.609 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.610 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.610 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.610 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.611 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.611 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.611 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.611 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.612 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.612 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.612 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.612 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.613 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.613 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.613 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.613 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.613 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.614 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.614 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.614 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.614 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.615 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.615 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.615 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.616 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.616 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.616 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.617 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.617 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.617 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.617 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.618 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.618 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.618 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.618 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.620 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.620 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.620 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.620 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.620 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.621 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.621 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.621 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.622 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.622 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0507076680031
+16:10:44.622 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.622 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0424317621283
+16:10:44.623 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.623 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.623 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0495079268785
+16:10:44.623 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.623 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:0601865033271
+16:10:44.753 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739606796979 shutting down.
+16:10:44.754 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739606796979 paused.
+16:10:44.754 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739606796979 shutdown complete.
+16:10:44.755 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+16:10:44.760 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+16:10:44.767 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
