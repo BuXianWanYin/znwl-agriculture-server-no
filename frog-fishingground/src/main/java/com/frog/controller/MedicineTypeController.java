@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * 饵料类别Controller
+ * 药品类别Controller
  *
  * @author aj
  * @date 2025-02-15
@@ -29,7 +29,7 @@ public class MedicineTypeController extends BaseController
     private MedicineTypeService medicineTypeService;
 
     /**
-     * 查询饵料类别列表
+     * 查询药品类别列表
      */
     @PreAuthorize("@ss.hasPermi('agriculture:MedicineType:list')")
     @GetMapping("/list")
@@ -41,20 +41,20 @@ public class MedicineTypeController extends BaseController
     }
 
     /**
-     * 导出饵料类别列表
+     * 导出药品类别列表
      */
     @PreAuthorize("@ss.hasPermi('agriculture:MedicineType:export')")
-    @Log(title = "饵料类别", businessType = BusinessType.EXPORT)
+    @Log(title = "药品类别", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, MedicineType MedicineType)
     {
         List<MedicineType> list = medicineTypeService.selectMedicineTypeList(MedicineType);
         ExcelUtil<MedicineType> util = new ExcelUtil<MedicineType>(MedicineType.class);
-        util.exportExcel(response, list, "饵料类别数据");
+        util.exportExcel(response, list, "药品类别数据");
     }
 
     /**
-     * 获取饵料类别详细信息
+     * 获取药品类别详细信息
      */
     @PreAuthorize("@ss.hasPermi('agriculture:MedicineType:query')")
     @GetMapping(value = "/{MedicineTypeId}")
@@ -64,10 +64,10 @@ public class MedicineTypeController extends BaseController
     }
 
     /**
-     * 新增饵料类别
+     * 新增药品类别
      */
     @PreAuthorize("@ss.hasPermi('agriculture:MedicineType:add')")
-    @Log(title = "饵料类别", businessType = BusinessType.INSERT)
+    @Log(title = "药品类别", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody MedicineType MedicineType)
     {
@@ -75,10 +75,10 @@ public class MedicineTypeController extends BaseController
     }
 
     /**
-     * 修改饵料类别
+     * 修改药品类别
      */
     @PreAuthorize("@ss.hasPermi('agriculture:MedicineType:edit')")
-    @Log(title = "饵料类别", businessType = BusinessType.UPDATE)
+    @Log(title = "药品类别", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody MedicineType MedicineType)
     {
@@ -86,10 +86,10 @@ public class MedicineTypeController extends BaseController
     }
 
     /**
-     * 删除饵料类别
+     * 删除药品类别
      */
     @PreAuthorize("@ss.hasPermi('agriculture:MedicineType:remove')")
-    @Log(title = "饵料类别", businessType = BusinessType.DELETE)
+    @Log(title = "药品类别", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{MedicineTypeIds}")
     public AjaxResult remove(@PathVariable Long[] MedicineTypeIds)
     {

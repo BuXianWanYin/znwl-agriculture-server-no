@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 饵料类别Service业务层处理
+ * 药品类别Service业务层处理
  *
  * @author aj
  * @date 2025-02-15
@@ -23,10 +23,10 @@ public class MedicineTypeServiceImpl implements MedicineTypeService
     private MedicineTypeMapper medicineTypeMapper;
 
     /**
-     * 查询饵料类别
+     * 查询药品类别
      *
-     * @param MedicineTypeId 饵料类别主键
-     * @return 饵料类别
+     * @param MedicineTypeId 药品类别主键
+     * @return 药品类别
      */
     @Override
     public MedicineType selectMedicineTypeByMedicineTypeId(Long MedicineTypeId)
@@ -35,10 +35,10 @@ public class MedicineTypeServiceImpl implements MedicineTypeService
     }
 
     /**
-     * 查询饵料类别列表
+     * 查询药品类别列表
      *
-     * @param MedicineType 饵料类别
-     * @return 饵料类别
+     * @param MedicineType 药品类别
+     * @return 药品类别
      */
     @Override
     public List<MedicineType> selectMedicineTypeList(MedicineType MedicineType)
@@ -47,9 +47,9 @@ public class MedicineTypeServiceImpl implements MedicineTypeService
     }
 
     /**
-     * 新增饵料类别
+     * 新增药品类别
      *
-     * @param MedicineType 饵料类别
+     * @param MedicineType 药品类别
      * @return 结果
      */
     @Override
@@ -61,9 +61,9 @@ public class MedicineTypeServiceImpl implements MedicineTypeService
     }
 
     /**
-     * 修改饵料类别
+     * 修改药品类别
      *
-     * @param MedicineType 饵料类别
+     * @param MedicineType 药品类别
      * @return 结果
      */
     @Override
@@ -75,9 +75,9 @@ public class MedicineTypeServiceImpl implements MedicineTypeService
     }
 
     /**
-     * 批量删除饵料类别
+     * 批量删除药品类别
      *
-     * @param MedicineTypeIds 需要删除的饵料类别主键
+     * @param MedicineTypeIds 需要删除的药品类别主键
      * @return 结果
      */
     @Override
@@ -87,9 +87,9 @@ public class MedicineTypeServiceImpl implements MedicineTypeService
     }
 
     /**
-     * 删除饵料类别信息
+     * 删除药品类别信息
      *
-     * @param MedicineTypeId 饵料类别主键
+     * @param MedicineTypeId 药品类别主键
      * @return 结果
      */
     @Override

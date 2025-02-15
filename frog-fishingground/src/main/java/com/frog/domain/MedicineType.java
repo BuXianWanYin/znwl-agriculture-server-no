@@ -22,7 +22,7 @@ public class MedicineType extends BaseEntity {
     /**
      * 药品类别名称
      */
-    @Excel(name = "饵料类别名称")
+    @Excel(name = "药品类别名称")
     private String medicineTypeName;
 
     /**

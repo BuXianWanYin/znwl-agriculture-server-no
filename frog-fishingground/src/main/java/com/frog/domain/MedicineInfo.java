@@ -19,15 +19,15 @@ public class MedicineInfo extends BaseEntity
     private Long medicineId;
 
     /** 药品编码 */
-    @Excel(name = "饵料编码")
+    @Excel(name = "药品编码")
     private String medicineCode;
 
     /** 药品名称 */
-    @Excel(name = "饵料名称")
+    @Excel(name = "药品名称")
     private String medicineName;
 
     /** 药品类别 */
-    @Excel(name = "饵料类别")
+    @Excel(name = "药品类别")
     private Long medicineTypeId;
 
     /** 药品单位 */

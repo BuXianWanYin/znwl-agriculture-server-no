@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 饵料信息Service业务层处理
+ * 药品信息Service业务层处理
  *
  * @author aj
  * @date 2025-02-15
@@ -23,10 +23,10 @@ public class MedicineInfoServiceImpl implements MedicineInfoService
     private MedicineInfoMapper medicineInfoMapper;
 
     /**
-     * 查询饵料信息
+     * 查询药品信息
      *
-     * @param MedicineId 饵料信息主键
-     * @return 饵料信息
+     * @param MedicineId 药品信息主键
+     * @return 药品信息
      */
     @Override
     public MedicineInfo selectMedicineInfoByMedicineId(Long MedicineId)
@@ -35,10 +35,10 @@ public class MedicineInfoServiceImpl implements MedicineInfoService
     }
 
     /**
-     * 查询饵料信息列表
+     * 查询药品信息列表
      *
-     * @param MedicineInfo 饵料信息
-     * @return 饵料信息
+     * @param MedicineInfo 药品信息
+     * @return 药品信息
      */
     @Override
     public List<MedicineInfo> selectMedicineInfoList(MedicineInfo MedicineInfo)
@@ -47,9 +47,9 @@ public class MedicineInfoServiceImpl implements MedicineInfoService
     }
 
     /**
-     * 新增饵料信息
+     * 新增药品信息
      *
-     * @param MedicineInfo 饵料信息
+     * @param MedicineInfo 药品信息
      * @return 结果
      */
     @Override
@@ -61,9 +61,9 @@ public class MedicineInfoServiceImpl implements MedicineInfoService
     }
 
     /**
-     * 修改饵料信息
+     * 修改药品信息
      *
-     * @param MedicineInfo 饵料信息
+     * @param MedicineInfo 药品信息
      * @return 结果
      */
     @Override
@@ -75,9 +75,9 @@ public class MedicineInfoServiceImpl implements MedicineInfoService
     }
 
     /**
-     * 批量删除饵料信息
+     * 批量删除药品信息
      *
-     * @param MedicineIds 需要删除的饵料信息主键
+     * @param MedicineIds 需要删除的药品信息主键
      * @return 结果
      */
     @Override
@@ -87,9 +87,9 @@ public class MedicineInfoServiceImpl implements MedicineInfoService
     }
 
     /**
-     * 删除饵料信息信息
+     * 删除药品信息信息
      *
-     * @param MedicineId 饵料信息主键
+     * @param MedicineId 药品信息主键
      * @return 结果
      */
     @Override
