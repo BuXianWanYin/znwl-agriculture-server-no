@@ -7,6 +7,8 @@ import com.frog.domain.FishBatchTask;
 
 import java.util.List;
 
+
+
 public interface FishBatchTaskService {
     /**
      * 查询批次任务

@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@ApiModel(value = "分区食品")
+@ApiModel(value = "采摘信息")
 @Data
 public class IaPartitionFood implements Serializable {
 

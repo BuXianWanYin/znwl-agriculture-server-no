@@ -35,7 +35,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @ Description   :
+ * @ Description   : 分区服务类
  * @ Author        :  morton
  * @ CreateDate    :  2024/10/13 17:17
  * @ Version       :  1.0
@@ -44,14 +44,19 @@ import java.util.List;
 public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartition> {
 
     @Resource
-    PlatformService platformService;
+    PlatformService platformService;  //上链
 
     @Resource
-    IaPastureMapper iaPastureMapper;
+    IaPastureMapper iaPastureMapper; //大棚mapper
 
     @Resource
     Client client;
 
+    /**
+     * 添加分区
+     * @param iaPartition 分区对象
+     * @return ResultVO 返回操作结果
+     */
     @Transactional(rollbackFor = Exception.class)
     public ResultVO addPartition(IaPartition iaPartition) {
         IaPasture iaPasture = iaPastureMapper.selectById(iaPartition.getPastureId());
@@ -88,9 +93,13 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
         iaPartition.setPlantDate(now);
         baseMapper.insert(iaPartition);
         return ResultVO.succeed("添加成功");
-
     }
 
+    /**
+     * 删除分区
+     * @param id 分区ID
+     * @return ResultVO 返回操作结果
+     */
     @Transactional(rollbackFor = Exception.class)
     public ResultVO deletePartition(String id) {
         IaPartition iaPartition = baseMapper.selectById(id);
@@ -100,10 +109,10 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
         IaPasture iaPasture = iaPastureMapper.selectById(iaPartition.getPastureId());
         String psContractAddr = iaPasture.getContractAddr();
         if (iaPasture == null || StrUtil.isBlank(psContractAddr)) {
-            return ResultVO.failed("牧场不存在");
+            return ResultVO.failed("大棚不存在");
         }
         CryptoKeyPair cryptoKeyPair = client.getCryptoSuite().getCryptoKeyPair();
-        GreenhouseService greenhouseService = new GreenhouseService(client,cryptoKeyPair,psContractAddr);
+        GreenhouseService greenhouseService = new GreenhouseService(client, cryptoKeyPair, psContractAddr);
         GreenhouseRemovePartitionsInputBO p = new GreenhouseRemovePartitionsInputBO();
         p.set_partitions(iaPartition.getContractAddr());
         try {
@@ -118,6 +127,11 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
         return null;
     }
 
+    /**
+     * 更新分区信息
+     * @param iaPartition 分区对象
+     * @return ResultVO 返回操作结果
+     */
     @Transactional(rollbackFor = Exception.class)
     public ResultVO updatePartition(IaPartition iaPartition) {
         if (StrUtil.isBlank(iaPartition.getId())) {
@@ -127,7 +141,7 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
         CryptoKeyPair cryptoKeyPair = client.getCryptoSuite().getCryptoKeyPair();
         // 分区地址
         String cattleContract = iaPartitionFromDB.getContractAddr();
-        PartitionsService partitionsService = new PartitionsService(client,cryptoKeyPair,cattleContract);
+        PartitionsService partitionsService = new PartitionsService(client, cryptoKeyPair, cattleContract);
         PartitionsModifyPartitionsInfoInputBO cmc = new PartitionsModifyPartitionsInfoInputBO();
         cmc.set_partitionsName(iaPartition.getPartitionName());
         cmc.set_plantingDate(DateUtil.format(iaPartition.getPlantDate(), "yyyy-MM-dd HH:mm:ss"));
@@ -136,7 +150,7 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
         cmc.set_notes(StrUtil.isBlank(iaPartition.getRemark()) ? " " : iaPartition.getRemark());
 
         IaPasture ivPasture = iaPastureMapper.selectById(iaPartition.getPastureId());
-        // 牧场地址
+        // 大棚地址
         String psContractAddr = ivPasture.getContractAddr();
         PartitionsModifyOfGreenhouseInputBO pmog = new PartitionsModifyOfGreenhouseInputBO();
         pmog.set_newOfGreenhouse(psContractAddr);
@@ -155,12 +169,25 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
         return ResultVO.succeed();
     }
 
+    /**
+     * 分页获取分区列表
+     * @param pastureName 牧场名称
+     * @param id 分区ID
+     * @param page 页码
+     * @param pageSize 每页大小
+     * @return ResultVO 返回操作结果
+     */
     public ResultVO partitionList(String pastureName, String id, Integer page, Integer pageSize) {
         Page<IvLivestockDTO> pageNum = new Page<>(page, pageSize);
         Page<IvLivestockDTO> resultPage = baseMapper.selectPartitionWithPagination(pageNum, pastureName, id);
         return ResultVO.succeed(resultPage);
     }
 
+    /**
+     * 收获分区
+     * @param ids 分区ID列表
+     * @return ResultVO 返回操作结果
+     */
     @Transactional(rollbackFor = Exception.class)
     public ResultVO harvestPartition(List<String> ids) {
         LambdaUpdateWrapper<IaPartition> updateWrapper = new LambdaUpdateWrapper<>();
@@ -176,14 +203,14 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
 
     /**
      * 上链操作
-     * @param ivLivestocks
+     * @param ivLivestocks 分区列表
      */
-    public void harvestToChain(List<IaPartition> ivLivestocks){
+    public void harvestToChain(List<IaPartition> ivLivestocks) {
         ArrayList<String> listContract = new ArrayList<>();
         for (IaPartition ivLivestock : ivLivestocks) {
             listContract.add(ivLivestock.getContractAddr());
         }
-        //上链
+        // 上链
         PlatformOffHarvestInputBO pohi = new PlatformOffHarvestInputBO();
         pohi.set_partitionsss(listContract);
         try {
@@ -196,11 +223,15 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
         }
     }
 
+    /**
+     * 收获整个大棚
+     * @param pastureId 大棚ID
+     * @return ResultVO 返回操作结果
+     */
     @Transactional(rollbackFor = Exception.class)
     public ResultVO harvestPasture(String pastureId) {
         List<IaPartition> ivLivestocks = baseMapper.selectList(new LambdaQueryWrapper<IaPartition>()
                 .eq(IaPartition::getPastureId, pastureId).eq(IaPartition::getStatus, CommonContant.LIVESTOCK_STATE_IN_FENCE));
-
 
         LambdaUpdateWrapper<IaPartition> updateWrapper = new LambdaUpdateWrapper<>();
         updateWrapper.eq(IaPartition::getPastureId, pastureId).eq(IaPartition::getStatus, CommonContant.LIVESTOCK_STATE_IN_FENCE)
@@ -212,55 +243,76 @@ public class IaPartitionService extends ServiceImpl<IaPartitionMapper, IaPartiti
         return ResultVO.succeed();
     }
 
+    /**
+     * 完成处理流程
+     * @param id 分区ID
+     * @return ResultVO 返回操作结果
+     */
     @Transactional(rollbackFor = Exception.class)
     public ResultVO finishProcess(String id) {
-            IaPartition ivLivestock = baseMapper.selectById(id);
-            if (ivLivestock == null) {
-                return ResultVO.failed(ErrorCodeEnum.DATA_NOT_EXIST);
-            }
-            if (ivLivestock.getStatus() != CommonContant.LIVESTOCK_STATE_OUT_FENCE) {
-                return ResultVO.failed(ErrorCodeEnum.PARTITION_NOT_HARVEST);
-            }
-
-            if (ivLivestock.getProcessState() != CommonContant.LIVESTOCK_STATE_KILLING) {
-                return ResultVO.failed(ErrorCodeEnum.LIVESTOCK_NOT_PROCESSING);
-            }
-
-            LambdaUpdateWrapper<IaPartition> updateWrapper = new LambdaUpdateWrapper<>();
-            updateWrapper.eq(IaPartition::getId, id)
-                    .set(IaPartition::getProcessState, CommonContant.LIVESTOCK_STATE_KILLED).set(IaPartition::getProcessDate, new Date());
-            baseMapper.update(null, updateWrapper);
-
-            // 上链
-            CryptoKeyPair cryptoKeyPair = client.getCryptoSuite().getCryptoKeyPair();
-            // 牛地址
-            String cattleContract = ivLivestock.getContractAddr();
-            PartitionsService partitionsService = new PartitionsService(client,cryptoKeyPair,cattleContract);
-            try {
-                TransactionResponse complete = partitionsService.completeProcessing();
-                if (!complete.getReceiptMessages().equals(CommonContant.SUCCESS_MESSAGE)) {
-                    throw new RuntimeException();
-                }
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-            return ResultVO.succeed();
+        IaPartition ivLivestock = baseMapper.selectById(id);
+        if (ivLivestock == null) {
+            return ResultVO.failed(ErrorCodeEnum.DATA_NOT_EXIST);
+        }
+        if (ivLivestock.getStatus() != CommonContant.LIVESTOCK_STATE_OUT_FENCE) {
+            return ResultVO.failed(ErrorCodeEnum.PARTITION_NOT_HARVEST);
         }
 
+        if (ivLivestock.getProcessState() != CommonContant.LIVESTOCK_STATE_KILLING) {
+            return ResultVO.failed(ErrorCodeEnum.LIVESTOCK_NOT_PROCESSING);
+        }
+
+        LambdaUpdateWrapper<IaPartition> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.eq(IaPartition::getId, id)
+                .set(IaPartition::getProcessState, CommonContant.LIVESTOCK_STATE_KILLED).set(IaPartition::getProcessDate, new Date());
+        baseMapper.update(null, updateWrapper);
+
+        // 上链
+        CryptoKeyPair cryptoKeyPair = client.getCryptoSuite().getCryptoKeyPair();
+        // 牛地址
+        String cattleContract = ivLivestock.getContractAddr();
+        PartitionsService partitionsService = new PartitionsService(client, cryptoKeyPair, cattleContract);
+        try {
+            TransactionResponse complete = partitionsService.completeProcessing();
+            if (!complete.getReceiptMessages().equals(CommonContant.SUCCESS_MESSAGE)) {
+                throw new RuntimeException();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return ResultVO.succeed();
+    }
+
+    /**
+     * 获取收获列表
+     * @param pastureName 牧场名称
+     * @param id 分区ID
+     * @param page 页码
+     * @param pageSize 每页大小
+     * @return ResultVO 返回操作结果
+     */
     public ResultVO harvestList(String pastureName, String id, Integer page, Integer pageSize) {
         Page<IvLivestockOutDTO> pageNum = new Page<>(page, pageSize);
         Page<IvLivestockOutDTO> resultPage = baseMapper.selectLivestockOut(pageNum, pastureName, id);
         return ResultVO.succeed(resultPage);
     }
 
-    public ResultVO getList(){
+    /**
+     * 获取所有分区信息
+     * @return ResultVO 返回分区列表
+     */
+    public ResultVO getList() {
         List<IaPartition> iaPartitions = this.baseMapper.selectList(new LambdaQueryWrapper<IaPartition>().eq(IaPartition::getStatus, 0).eq(IaPartition::getProcessState, 0));
         return ResultVO.succeed(iaPartitions);
     }
 
+    /**
+     * 处理出栏的牧场
+     * @param ids 牧场ID列表
+     * @return ResultVO 返回操作结果
+     */
     @Transactional(rollbackFor = Exception.class)
     public ResultVO outPastures(List<String> ids) {
-
         List<IaPartition> ivLivestocks = baseMapper
                 .selectList(new LambdaQueryWrapper<IaPartition>().in(IaPartition::getPastureId, ids)
                         .eq(IaPartition::getStatus, CommonContant.LIVESTOCK_STATE_IN_FENCE));

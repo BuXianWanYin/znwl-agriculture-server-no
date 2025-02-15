@@ -7,10 +7,7 @@ import com.frog.common.core.domain.BaseEntity;
 import  lombok.Data;
 
 /**
- * 批次任务对象 fish_batch_task
- *
- * @author nealtsiao
- * @date 2023-05-30
+ * 鱼的批次任务对象 fish_batch_task
  */
 @Data
 public class FishBatchTask extends BaseEntity
