@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * 农资用量Service业务层处理
+ * 药品用量Service业务层处理
  *
  * @author xuweidong
  * @date 2023-05-24
@@ -24,10 +24,10 @@ public class CostMedicineServiceImpl implements ICostMedicineService
     private CostMedicineMapper costMedicineMapper;
 
     /**
-     * 查询农资用量
+     * 查询药品用量
      *
-     * @param costId 农资用量主键
-     * @return 农资用量
+     * @param costId 药品用量主键
+     * @return 药品用量
      */
     @Override
     public CostMedicine selectCostMedicineByCostId(Long costId)
@@ -36,10 +36,10 @@ public class CostMedicineServiceImpl implements ICostMedicineService
     }
 
     /**
-     * 查询农资用量列表
+     * 查询药品用量列表
      *
-     * @param costMedicine 农资用量
-     * @return 农资用量
+     * @param costMedicine 药品用量
+     * @return 药品用量
      */
     @Override
     public List<CostMedicine> selectCostMedicineList(CostMedicine costMedicine)
@@ -48,9 +48,9 @@ public class CostMedicineServiceImpl implements ICostMedicineService
     }
 
     /**
-     * 新增农资用量
+     * 新增药品用量
      *
-     * @param costMedicine 农资用量
+     * @param costMedicine 药品用量
      * @return 结果
      */
     @Override
@@ -62,9 +62,9 @@ public class CostMedicineServiceImpl implements ICostMedicineService
     }
 
     /**
-     * 修改农资用量
+     * 修改药品用量
      *
-     * @param costMedicine 农资用量
+     * @param costMedicine 药品用量
      * @return 结果
      */
     @Override
@@ -76,9 +76,9 @@ public class CostMedicineServiceImpl implements ICostMedicineService
     }
 
     /**
-     * 批量删除农资用量
+     * 批量删除药品用量
      *
-     * @param costIds 需要删除的农资用量主键
+     * @param costIds 需要删除的药品用量主键
      * @return 结果
      */
     @Override
@@ -88,9 +88,9 @@ public class CostMedicineServiceImpl implements ICostMedicineService
     }
 
     /**
-     * 删除农资用量信息
+     * 删除药品用量信息
      *
-     * @param costId 农资用量主键
+     * @param costId 药品用量主键
      * @return 结果
      */
     @Override
@@ -100,7 +100,7 @@ public class CostMedicineServiceImpl implements ICostMedicineService
     }
 
     /**
-     * 手机端任务详情使用，按照农资分组统计用量
+     * 手机端任务详情使用，按照药品分组统计用量
      * @param costMedicine
      * @return
      */

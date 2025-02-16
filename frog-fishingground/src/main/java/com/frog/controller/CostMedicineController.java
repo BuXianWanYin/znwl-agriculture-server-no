@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * 农资用量Controller
+ * 药品用量Controller
  *
  * @author xuweidong
  * @date 2023-05-24
@@ -29,7 +29,7 @@ public class CostMedicineController extends BaseController
     private ICostMedicineService costMedicineService;
 
     /**
-     * 查询农资用量列表
+     * 查询药品用量列表
      */
     @PreAuthorize("@ss.hasPermi('agriculture:costMedicine:list')")
     @GetMapping("/list")
@@ -41,20 +41,20 @@ public class CostMedicineController extends BaseController
     }
 
     /**
-     * 导出农资用量列表
+     * 导出药品用量列表
      */
     @PreAuthorize("@ss.hasPermi('agriculture:costMedicine:export')")
-    @Log(title = "农资用量", businessType = BusinessType.EXPORT)
+    @Log(title = "药品用量", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, CostMedicine costMedicine)
     {
         List<CostMedicine> list = costMedicineService.selectCostMedicineList(costMedicine);
         ExcelUtil<CostMedicine> util = new ExcelUtil<CostMedicine>(CostMedicine.class);
-        util.exportExcel(response, list, "农资用量数据");
+        util.exportExcel(response, list, "药品用量数据");
     }
 
     /**
-     * 获取农资用量详细信息
+     * 获取药品用量详细信息
      */
     @PreAuthorize("@ss.hasPermi('agriculture:costMedicine:query')")
     @GetMapping(value = "/{costId}")
@@ -64,10 +64,10 @@ public class CostMedicineController extends BaseController
     }
 
     /**
-     * 新增农资用量
+     * 新增药品用量
      */
     @PreAuthorize("@ss.hasPermi('agriculture:costMedicine:add')")
-    @Log(title = "农资用量", businessType = BusinessType.INSERT)
+    @Log(title = "药品用量", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody CostMedicine costMedicine)
     {
@@ -75,10 +75,10 @@ public class CostMedicineController extends BaseController
     }
 
     /**
-     * 修改农资用量
+     * 修改药品用量
      */
     @PreAuthorize("@ss.hasPermi('agriculture:costMedicine:edit')")
-    @Log(title = "农资用量", businessType = BusinessType.UPDATE)
+    @Log(title = "药品用量", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody CostMedicine costMedicine)
     {
@@ -86,10 +86,10 @@ public class CostMedicineController extends BaseController
     }
 
     /**
-     * 删除农资用量
+     * 删除药品用量
      */
     @PreAuthorize("@ss.hasPermi('agriculture:costMedicine:remove')")
-    @Log(title = "农资用量", businessType = BusinessType.DELETE)
+    @Log(title = "药品用量", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{costIds}")
     public AjaxResult remove(@PathVariable Long[] costIds)
     {
@@ -99,7 +99,7 @@ public class CostMedicineController extends BaseController
     /** 手机端接口 **/
 
     /**
-     * 手机端任务详情界面，按照农资名称分组统计用量
+     * 手机端任务详情界面，按照药品名称分组统计用量
      * @param taskId
      * @return
      */

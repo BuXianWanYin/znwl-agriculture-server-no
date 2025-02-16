@@ -9,7 +9,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import java.util.Date;
 
 /**
- * 农资用量对象 agriculture_cost_medicine
+ * 药品用量对象 agriculture_cost_medicine
  *
  * @author xuweidong
  * @date 2023-05-24
@@ -25,8 +25,8 @@ public class CostMedicine extends BaseEntity
     @Excel(name = "任务ID")
     private Long taskId;
 
-    /** 农资ID */
-    @Excel(name = "农资ID")
+    /** 药品ID */
+    @Excel(name = "药品ID")
     private Long medicineId;
 
     /** 使用数量 */
