@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.mapper.FishDataStatisticsMapper">
+    <select id="selectBaseInfo" resultType="java.util.HashMap">
+        SELECT
+            areaCount,
+            speciesCount,
+            diCount,
+            employeeCount,
+            batchCount,
+            pengCount
+        FROM
+            ( SELECT base_area AS 'areaCount' FROM agriculture_baseinfo WHERE del_flag = 0 ) base
+                JOIN ( SELECT COUNT(*) AS 'speciesCount' FROM fish_species WHERE del_flag = 0 ) species
+                JOIN ( SELECT COUNT(*) AS 'diCount' FROM agriculture_land WHERE land_type = 0 AND del_flag = 0 ) di
+                JOIN ( SELECT COUNT(*) AS 'employeeCount' FROM agriculture_employee WHERE del_flag = 0 ) employee
+                JOIN ( SELECT COUNT(*) AS 'batchCount' FROM fish_pasture_batch WHERE del_flag = 0 ) batch
+                JOIN ( SELECT COUNT(*) AS 'pengCount' FROM fish_pasture) peng;
+    </select>
+<!--    <select id="selectDeviceInfo" resultType="java.util.HashMap">-->
+<!--        SELECT b.product_name AS 'productName',a.product_id AS 'productId',a.deviceCount-->
+<!--        FROM ( SELECT product_id, COUNT( device_id ) AS 'deviceCount' FROM iot_device WHERE del_flag = 0 GROUP BY product_id LIMIT 0,3) a LEFT JOIN iot_product b ON a.product_id = b.product_id-->
+
+<!--        UNION ALL-->
+
+<!--        SELECT '其他' AS 'productName',0 AS 'productId',COUNT(deviceCount) AS 'deviceCount'-->
+<!--        FROM( SELECT product_id, COUNT( device_id ) AS 'deviceCount' FROM iot_device WHERE del_flag = 0 GROUP BY product_id LIMIT 3,2) a LEFT JOIN iot_product b ON a.product_id = b.product_id-->
+
+<!--        UNION ALL-->
+
+<!--        SELECT '合计' AS 'productName',0 AS 'productId',COUNT(device_id) AS 'deviceCount'-->
+<!--        FROM iot_device WHERE del_flag = 0-->
+<!--    </select>-->
+<!--    <select id="selectDeviceJobInfo" resultType="java.util.HashMap">-->
+<!--        SELECT-->
+<!--            (-->
+<!--                SELECT COUNT(CASE WHEN `status`=0 THEN 1 ELSE NULL END)-->
+<!--                FROM iot_device_job-->
+<!--            ) AS 'startJobCount',-->
+<!--                (-->
+<!--                    SELECT COUNT(CASE WHEN `status`=1 THEN 1 ELSE NULL END)-->
+<!--                    FROM iot_device_job-->
+<!--                    ) AS 'stopJobCount',-->
+<!--                (-->
+<!--                    SELECT COUNT(CASE WHEN `status`=0 THEN 1 ELSE NULL END)-->
+<!--                    FROM iot_device_job_log-->
+<!--                    ) AS 'sExcuteCount',-->
+<!--                (-->
+<!--                    SELECT COUNT(CASE WHEN `status`=1 THEN 1 ELSE NULL END)-->
+<!--                    FROM iot_device_job_log-->
+<!--                    ) AS 'eExcuteCount';-->
+<!--    </select>-->
+<!--    <select id="selectRecordGroupByMonth" resultType="java.util.HashMap">-->
+<!--        select-->
+<!--            all_months.sMonth as date,-->
+<!--            ifnull(count(atr.record_id), 0) as num,-->
+<!--						all_months.month-->
+<!--        from (-->
+<!--            select date_format(curdate(), '%Y-01') as month,'1月' as sMonth-->
+<!--            union all select date_format(curdate(), '%Y-02'),'2月'-->
+<!--            union all select date_format(curdate(), '%Y-03'),'3月'-->
+<!--            union all select date_format(curdate(), '%Y-04'),'4月'-->
+<!--            union all select date_format(curdate(), '%Y-05'),'5月'-->
+<!--            union all select date_format(curdate(), '%Y-06'),'6月'-->
+<!--            union all select date_format(curdate(), '%Y-07'),'7月'-->
+<!--            union all select date_format(curdate(), '%Y-08'),'8月'-->
+<!--            union all select date_format(curdate(), '%Y-09'),'9月'-->
+<!--            union all select date_format(curdate(), '%Y-10'),'10月'-->
+<!--            union all select date_format(curdate(), '%Y-11'),'11月'-->
+<!--            union all select date_format(curdate(), '%Y-12'),'12月'-->
+<!--            ) as all_months-->
+<!--            left join (-->
+<!--            select-->
+<!--            date_format(query_date, '%Y-%m') as month,-->
+<!--            record_id-->
+<!--            from-->
+<!--            agriculture_trace_record-->
+<!--            where-->
+<!--            year(query_date) = year(curdate())-->
+<!--            ) as atr-->
+<!--        on all_months.month = atr.month-->
+<!--        group by all_months.sMonth,all_months.month-->
+<!--        order by all_months.month-->
+<!--    </select>-->
+<!--    <select id="selectTaskInfo" resultType="java.util.HashMap">-->
+<!--        select a.`status`,count(a.task_id) as 'num',b.dict_label as name from agriculture_batch_task a left join sys_dict_data b on a.`status` = b.dict_value-->
+<!--        where b.dict_type='agriculture_batch_task_status'-->
+<!--        group by a.status,b.dict_label-->
+<!--    </select>-->
+<!--    <select id="selectAreaInfo" resultType="java.util.HashMap">-->
+<!--        SELECT a.crop_area AS 'value',b.crop_name AS 'name' FROM agriculture_crop_batch a LEFT JOIN agriculture_germplasm b on a.germplasm_id = b.germplasm_id-->
+<!--    </select>-->
+<!--    <select id="selectRecordGroupByCity" resultType="java.util.HashMap">-->
+<!--        SELECT query_city AS 'queryCity',COUNT(record_id) AS 'num'-->
+<!--        FROM agriculture_trace_record-->
+<!--        GROUP BY query_city-->
+<!--    </select>-->
+<!--    <select id="selectRecordStatistics" resultType="java.util.HashMap">-->
+<!--        SELECT * FROM-->
+<!--                (SELECT  COUNT(record_id) AS 'sm' FROM agriculture_trace_record ) a-->
+<!--                    JOIN-->
+<!--            (SELECT COUNT(sellpro_id) AS 'cp' FROM agriculture_trace_sellpro WHERE del_flag =0) b-->
+<!--                    JOIN-->
+<!--            (SELECT COUNT(version_id) AS 'bb' FROM agriculture_trace_version WHERE del_flag =0) c-->
+<!--                    JOIN-->
+<!--            (SELECT COUNT(shop_id) AS 'xsdp' FROM agriculture_trace_shop WHERE del_flag =0 AND shop_type =1) d-->
+<!--                    JOIN-->
+<!--            (SELECT  COUNT(shop_id) AS 'xxdp' FROM agriculture_trace_shop WHERE del_flag =0 AND shop_type =2) e-->
+<!--                    JOIN-->
+<!--            (SELECT  COUNT(staff_id) AS 'ry' FROM agriculture_trace_staff WHERE del_flag =0) f-->
+<!--    </select>-->
+<!--    <select id="selectRecordGroupBySellpro" resultType="java.util.HashMap">-->
+<!--        select-->
+<!--            a.num,-->
+<!--            if(b.sellpro_name is null, '其他', b.sellpro_name) as sellproName-->
+<!--        from-->
+<!--            (-->
+<!--                select-->
+<!--                    sellpro_id,-->
+<!--                    count(record_id) as num-->
+<!--                from-->
+<!--                    agriculture_trace_record-->
+<!--                group by-->
+<!--                    sellpro_id-->
+<!--            ) a-->
+<!--                left join-->
+<!--            agriculture_trace_sellpro b on a.sellpro_id = b.sellpro_id;-->
+<!--    </select>-->
+<!--    <select id="selectRecord" parameterType="com.frog.agriculture.domain.TraceRecord" resultType="java.util.HashMap">-->
+<!--        SELECT query_city as 'queryCity',any_value(city_code) as 'cityCode',any_value(query_coordinate) as 'queryCoordinate',COUNT(*) as 'queryCount'-->
+<!--        FROM agriculture_trace_record-->
+<!--        <where>-->
+<!--            <if test="sellproId != null  and sellproId != ''"> and sellpro_id = #{sellproId}</if>-->
+<!--            <if test="queryCity != null  and queryCity != ''"> and query_city = #{queryCity}</if>-->
+<!--            <if test="params.beginQueryDate != null and params.beginQueryDate != '' and params.endQueryDate != null and params.endQueryDate != ''"> and query_date between #{params.beginQueryDate} and #{params.endQueryDate}</if>-->
+<!--        </where>-->
+<!--        GROUP BY query_city-->
+<!--    </select>-->
+<!--    <select id="selectTraceInfo"  resultType="java.util.HashMap">-->
+<!--        select-->
+<!--                (select count(1) from agriculture_trace_sellpro where del_flag = '0') as traceSellproCount,-->
+<!--                (select count(1) from agriculture_trace_code) as traceCodeCount,-->
+<!--                (select count(1) as num-->
+<!--                 from-->
+<!--                     (select b.trace_code,count(1) as tracetime-->
+<!--                      from  agriculture_trace_record b left join agriculture_trace_code a-->
+<!--                                                                 on a.trace_code = b.trace_code-->
+<!--                      group by b.trace_code-->
+<!--                      having tracetime>1) c) as allTraceAlertCount,-->
+<!--                (select count(1) from agriculture_trace_record) as allTraceRecordCount,-->
+<!--                (select count(1) from agriculture_trace_record where date_format(query_date,'%Y-%m-%d') = date_format(current_date,'%Y-%m-%d')) as todayTraceRecordCount,-->
+<!--                (select count(1) as num-->
+<!--                 from-->
+<!--                     (select b.trace_code,count(1) as tracetime-->
+<!--                      from  (select * from agriculture_trace_record where date_format(query_date,'%Y-%m-%d') = date_format(current_date,'%Y-%m-%d')) b left join agriculture_trace_code a-->
+<!--                                                                                                                                                                 on a.trace_code = b.trace_code-->
+<!--                      group by b.trace_code-->
+<!--                      having tracetime>1) c) as todayTraceAlertCount-->
+<!--    </select>-->
+
+<!--    <select id="selectToadyTaskCountByTaskHead" parameterType="Long" resultType="java.util.HashMap">-->
+<!--        select count(1) as todayTaskCount from agriculture_batch_task a left join-->
+<!--        agriculture_crop_batch b on a.batch_id = b.batch_id-->
+<!--        <where>-->
+<!--            <if test="batchHead != null and batchHead != ''"> and b.batch_head =#{batchHead}</if>-->
+<!--            and date(a.plan_start) = curdate() and a.del_flag=0 and a.status = 0-->
+<!--        </where>-->
+<!--    </select>-->
+</mapper>

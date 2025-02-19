@@ -35,19 +35,11 @@ public class DataStatisticsServiceImpl implements IDataStatisticsService {
     private CropBatchMapper cropBatchMapper;
     @Autowired
     private BatchTaskMapper batchTaskMapper;
-//    @Autowired
-//    private DeviceLogMapper deviceLogMapper;
     @Autowired
     private TraceStaffMapper traceStaffMapper;
     @Autowired
     private TraceShopMapper traceShopMapper;
-//    @Autowired
-//    private ProductMapper productMapper;
-//    @Autowired
-//    private DeviceMapper deviceMapper;
-//    @Autowired
-//    private ThingsModelMapper thingsModelMapper;
-    @Autowired
+
     private EmployeeMapper employeeMapper;
     //工作台
     public List<HashMap> selectBaseInfo(){

@@ -65,8 +65,7 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
         if (cropBatch.getStatus().equals( "0")) {
             return ResultVO.failed("未成熟");
         }
-//        iaPartition.setProcessState(1);
-//        this.iaPartitionMapper.updateById(iaPartition);
+
         FishPartitionFood insertBean = new FishPartitionFood();
         insertBean.setFishPartitionId(cropBatch.getLandId().toString());
         BeanUtils.copyProperties(iaPartitionFood, insertBean);

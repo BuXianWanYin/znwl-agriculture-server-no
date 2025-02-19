@@ -20,71 +20,81 @@ import java.util.List;
 @RequestMapping("/agriculture/statistics")
 public class DataStatisticsController extends BaseController {
 
-    @Autowired
-    private IDataStatisticsService dataStatisticsService;
-    @Autowired
-    private ITraceRecordService traceRecordService;
+    @Autowired // 自动装配数据统计服务接口实现类对象
+    private IDataStatisticsService dataStatisticsService; // 定义数据统计服务接口
+    @Autowired // 自动装配追溯记录服务接口实现类对象
+    private ITraceRecordService traceRecordService; // 定义追溯记录服务接口
 
     @GetMapping("/selectBaseInfo")
-    public TableDataInfo selectBaseInfo(){
-        List<HashMap> list = dataStatisticsService.selectBaseInfo();
-        return getDataTable(list);
+    public TableDataInfo selectBaseInfo(){ // 获取基础信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectBaseInfo(); // 调用数据统计服务获取基础信息列表
+        return getDataTable(list); // 调用父类方法包装返回数据并返回
     }
+
     @GetMapping("/selectDeviceInfo")
-    public TableDataInfo selectDeviceInfo(){
-        List<HashMap> list = dataStatisticsService.selectDeviceInfo();
-        return getDataTable(list);
+    public TableDataInfo selectDeviceInfo(){ // 获取设备信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectDeviceInfo(); // 调用数据统计服务获取设备信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectDeviceJobInfo")
-    public TableDataInfo selectDeviceJobInfo(){
-        List<HashMap> list = dataStatisticsService.selectDeviceJobInfo();
-        return getDataTable(list);
+    public TableDataInfo selectDeviceJobInfo(){ // 获取设备任务信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectDeviceJobInfo(); // 调用数据统计服务获取设备任务信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectRecordGroupByMonth")
-    public TableDataInfo selectRecordGroupByMonth(){
-        List<HashMap> list = dataStatisticsService.selectRecordGroupByMonth();
-        return getDataTable(list);
+    public TableDataInfo selectRecordGroupByMonth(){ // 按月分组获取记录信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectRecordGroupByMonth(); // 调用数据统计服务获取按月分组的记录信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectTaskInfo")
-    public TableDataInfo selectTaskInfo(){
-        List<HashMap> list = dataStatisticsService.selectTaskInfo();
-        return getDataTable(list);
+    public TableDataInfo selectTaskInfo(){ // 获取任务信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectTaskInfo(); // 调用数据统计服务获取任务信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectAreaInfo")
-    public TableDataInfo selectAreaInfo(){
-        List<HashMap> list = dataStatisticsService.selectAreaInfo();
-        return getDataTable(list);
+    public TableDataInfo selectAreaInfo(){ // 定义获取区域信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectAreaInfo(); // 调用数据统计服务获取区域信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectRecordGroupByCity")
-    public TableDataInfo selectRecordGroupByCity(){
-        List<HashMap> list = dataStatisticsService.selectRecordGroupByCity();
-        return getDataTable(list);
+    public TableDataInfo selectRecordGroupByCity(){ // 按城市分组获取记录信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectRecordGroupByCity(); // 调用数据统计服务获取按城市分组的记录信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectRecordStatistics")
-    public TableDataInfo selectRecordStatistics(){
-        List<HashMap> list = dataStatisticsService.selectRecordStatistics();
-        return getDataTable(list);
+    public TableDataInfo selectRecordStatistics(){ // 获取记录统计信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectRecordStatistics(); // 调用数据统计服务获取记录统计信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectRecordGroupBySellpro")
-    public TableDataInfo selectRecordGroupBySellpro(){
-        List<HashMap> list = dataStatisticsService.selectRecordGroupBySellpro();
-        return getDataTable(list);
+    public TableDataInfo selectRecordGroupBySellpro(){ // 按销售产品分组获取记录信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectRecordGroupBySellpro(); // 调用数据统计服务获取按销售产品分组的记录信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectRecord")
-    public TableDataInfo selectRecord(TraceRecord traceRecord)
-    {
-        startPage();
-        List<HashMap> list = dataStatisticsService.selectRecord(traceRecord);
-        return getDataTable(list);
+    public TableDataInfo selectRecord(TraceRecord traceRecord) { // 获取记录信息的方法，参数为追溯记录实体，返回表格数据对象
+        startPage(); // 初始化分页参数
+        List<HashMap> list = dataStatisticsService.selectRecord(traceRecord); // 调用数据统计服务获取记录信息列表，使用传入的追溯记录对象作为查询条件
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectTraceInfo")
-    public TableDataInfo selectTraceInfo(){
-        List<HashMap> list = dataStatisticsService.selectTraceInfo();
-        return getDataTable(list);
+    public TableDataInfo selectTraceInfo(){ // 获取追溯信息的方法，返回表格数据对象
+        List<HashMap> list = dataStatisticsService.selectTraceInfo(); // 调用数据统计服务获取追溯信息列表
+        return getDataTable(list); // 包装分页数据并返回
     }
+
     @GetMapping("/selectToadyTaskCountByTaskHead")
-    public AjaxResult selectToadyTaskCountByTaskHead(){
-        HashMap data = dataStatisticsService.selectToadyTaskCountByTaskHead();
-        return AjaxResult.success(data);
+    public AjaxResult selectToadyTaskCountByTaskHead(){ // 获取今日任务统计信息的方法，返回Ajax结果对象
+        HashMap data = dataStatisticsService.selectToadyTaskCountByTaskHead(); // 调用数据统计服务获取今日任务统计数据
+        return AjaxResult.success(data); // 使用成功状态返回Ajax结果
     }
 }

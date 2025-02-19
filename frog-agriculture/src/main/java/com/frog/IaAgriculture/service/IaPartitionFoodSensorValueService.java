@@ -320,25 +320,6 @@ public class IaPartitionFoodSensorValueService extends ServiceImpl<IaPartitionSe
             return ResultVO.failed("分区已被删除");
         }
 
-//        IaPartitionFood iaPartitionFood = this.iaPartitionFoodMapper.selectById(dto.getIaPartitionFoodId());
-//        if (Objects.isNull(iaPartitionFood)) {
-//            return ResultVO.failed("溯源信息不存在");
-//        }
-//        String Id = iaPartitionFood.getIaPartitionId();
-//        CropBatch cropBatch = cropBatchMapper.selectCropBatchByBatchId(Long.valueOf(Id));
-//        return ResultVO.failed("分区已被删除");
-
-//        IaPartitionFood ivLivestockSlaughter = this.iaPartitionFoodMapper.selectById(dto.getIaPartitionFoodId());
-//        if (Objects.isNull(ivLivestockSlaughter)) {
-//            return ResultVO.failed("食品溯源信息不存在");
-//        }
-//        String iaPartitionId = ivLivestockSlaughter.getIaPartitionId();
-//        CropBatch cropBatch = cropBatchMapper.selectCropBatchByBatchId(Long.valueOf(iaPartitionId));
-//        if (Objects.isNull(cropBatch)) {
-//            return ResultVO.failed("分区已被删除");
-//        }
-//
-
         LambdaQueryWrapper<IaPartitionSensorValue> wq = new LambdaQueryWrapper<IaPartitionSensorValue>();
         wq.eq(IaPartitionSensorValue::getIaPartitionId, livestockId);
 

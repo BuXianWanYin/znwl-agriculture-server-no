@@ -17,7 +17,7 @@
                 JOIN ( SELECT COUNT(*) AS 'diCount' FROM agriculture_land WHERE land_type = 0 AND del_flag = 0 ) di
                 JOIN ( SELECT COUNT(*) AS 'employeeCount' FROM agriculture_employee WHERE del_flag = 0 ) employee
                 JOIN ( SELECT COUNT(*) AS 'batchCount' FROM agriculture_crop_batch WHERE del_flag = 0 ) batch
-                JOIN ( SELECT COUNT(*) AS 'pengCount' FROM agriculture_land WHERE land_type = 1 AND del_flag = 0 ) peng;
+                JOIN ( SELECT COUNT(*) AS 'pengCount' FROM ia_pasture) peng;
     </select>
     <select id="selectDeviceInfo" resultType="java.util.HashMap">
         SELECT b.product_name AS 'productName',a.product_id AS 'productId',a.deviceCount
