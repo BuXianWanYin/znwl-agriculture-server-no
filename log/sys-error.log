@@ -12016,3 +12016,5 @@ Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already 
 	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
 	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
 	... 31 common frames omitted
+10:19:56.728 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.agriculture.mapper.DataStatisticsMapper.selectBaseInfo] is ignored, because it exists, maybe from xml file
+10:43:18.725 [http-nio-8081-exec-8] ERROR c.f.c.CosyController - [cosyVoicePath,206] - Error while extracting response for type [class [B] and content type [application/octet-stream]; nested exception is org.apache.http.ConnectionClosedException: Premature end of chunk coded message body: closing chunk expected
