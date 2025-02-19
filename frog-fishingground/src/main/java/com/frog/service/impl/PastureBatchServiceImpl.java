@@ -1,10 +1,14 @@
 package com.frog.service.impl;
 
 
+import java.io.IOException;
 import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
@@ -29,7 +33,10 @@ import com.frog.mapper.PastureBatchMapper;
 import com.frog.model.FishPasture;
 import com.frog.service.IspeciesService;
 import com.frog.service.PastureBatchService;
+import org.fisco.bcos.sdk.abi.ABICodecException;
+import org.fisco.bcos.sdk.transaction.model.dto.CallResponse;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
+import org.fisco.bcos.sdk.transaction.model.exception.TransactionBaseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.frog.agriculture.mapper.StandardJobMapper;
@@ -37,6 +44,8 @@ import org.springframework.transaction.annotation.Transactional;
 import vip.blockchain.agriculture.model.bo.PlatformAddPartitionsInputBO;
 import vip.blockchain.agriculture.service.PlatformService;
 import vip.blockchain.agriculture.utils.BaseUtil;
+import vip.blockchain.fishsheService.FishTraceabFrameService;
+import vip.blockchain.model.po.Hbase.FishshedInputBo;
 
 import javax.annotation.Resource;
 
@@ -57,6 +66,8 @@ public class PastureBatchServiceImpl implements PastureBatchService {
     @Autowired
     private TaskLogMapper taskLogMapper;
 
+    @Autowired
+    private FishTraceabFrameService fishTraceabFrameService;
     @Autowired
     private IspeciesService speciesService;
 
@@ -111,9 +122,13 @@ public class PastureBatchServiceImpl implements PastureBatchService {
         if (iaPasture == null || StrUtil.isBlank(psContractAddr)) {
             return 0;
         }
+        int remainingDigits = 12;
+        long min = (long) Math.pow(10, remainingDigits - 1);
+        long max = (long) Math.pow(10, remainingDigits) - 1;
+        Random random = new Random();
+        long randomPart = min + (long) (random.nextDouble() * (max - min + 1));
         // 生成一个新的唯一ID作为批次ID
-        String snowflakeId = BaseUtil.getSnowflakeId();
-        long batchId = Long.parseLong(snowflakeId);  // 将String转为long类型
+        long batchId = Long.parseLong("1889" + randomPart);
         // 设置鱼物批次的ID
         PastureBatch.setBatchId(batchId);
         // 设置创建时间为当前时间
@@ -123,26 +138,27 @@ public class PastureBatchServiceImpl implements PastureBatchService {
 
         // 上链操作
         Date now = new Date();  // 获取当前时间
-        PlatformAddPartitionsInputBO partitionsInputBO = new PlatformAddPartitionsInputBO();
-        // 设置上链所需参数
-        partitionsInputBO.set_id(new BigInteger(String.valueOf(PastureBatch.getBatchId())));
-        partitionsInputBO.set_partitionsName(PastureBatch.getBatchName());
-        partitionsInputBO.set_notes(PastureBatch.getRemark() == null ? " " : PastureBatch.getRemark());
-        partitionsInputBO.set_plantingName(speciesService.selectSpeciesBySpeciesId(PastureBatch.getSpeciesId()).getFishName());
-        partitionsInputBO.set_plantingDate(DateUtil.format(now, "yyyy-MM-dd HH:mm:ss"));
-        partitionsInputBO.set_plantingVarieties(PastureBatch.getVariety() == null ? "种类为空" : PastureBatch.getVariety());
-        partitionsInputBO.set_ofGreenhouse(psContractAddr);  // 设置温室的合约地址
+
+        FishshedInputBo fishshedInputBo = new FishshedInputBo();
+        SecureRandom secureRandom = new SecureRandom();
+        fishshedInputBo.setTraceabId(PastureBatch.getBatchId());
+        fishshedInputBo.setFishVarieties(String.valueOf(PastureBatch.getSpeciesId()));
+        fishshedInputBo.setPondName(PastureBatch.getBatchName());
+        fishshedInputBo.setReleaseDate(String.valueOf(PastureBatch.getStartTime()));
+        fishshedInputBo.setCropArea(String.valueOf(PastureBatch.getCropArea()));
+        fishshedInputBo.setNotes(PastureBatch.getCreateBy());
+        fishshedInputBo.setBreedingBatchName(PastureBatch.getBatchName());
+        fishshedInputBo.setOfFishFarm(psContractAddr);
 
         try {
             // 调用平台服务进行上链
-            TransactionResponse transactionResponse = platformService.addPartitions(partitionsInputBO);
-            // 检查上链结果，如果成功则获取合约地址
+            TransactionResponse transactionResponse = fishTraceabFrameService.createBatch(fishshedInputBo.getFieldValuesAsList());
             if (transactionResponse.getReceiptMessages().equals(CommonContant.SUCCESS_MESSAGE)) {
-                String contractAddressArray = transactionResponse.getValues();
-                JSONArray jsonArray = JSONUtil.parseArray(contractAddressArray);
-                String contractAddress = jsonArray.getStr(0);  // 获取第一个合约地址
+                ArrayList<Object> objects = new ArrayList<>();
+                objects.add(fishshedInputBo.getTraceabId());
+                String contractAddress = fishTraceabFrameService.getTraceAddress(objects).getValues();
                 // 设置鱼物批次的合约地址
-                PastureBatch.setContractAddress(contractAddress);
+                PastureBatch.setContractAddress(contractAddress.substring(2, contractAddress.length() - 2));
             } else {
                 throw new RuntimeException();  // 如果上链失败，抛出异常
             }
@@ -191,6 +207,24 @@ public class PastureBatchServiceImpl implements PastureBatchService {
         return i;
     }
 
+//    public boolean createBatch(PastureBatch pastureBatch) throws ABICodecException, TransactionBaseException, IOException {
+//        FishshedInputBo fishshedInputBo = new FishshedInputBo();
+//        fishshedInputBo.setTraceabId(pastureBatch.getLandId());
+//        fishshedInputBo.setFishVarieties(String.valueOf(pastureBatch.getSpeciesId()));
+//        fishshedInputBo.setPondName(pastureBatch.getBatchName());
+//        fishshedInputBo.setReleaseDate(String.valueOf(pastureBatch.getStartTime()));
+//        fishshedInputBo.setCropArea(String.valueOf(pastureBatch.getCropArea()));
+//        fishshedInputBo.setNotes("test");
+//        fishshedInputBo.setBreedingBatchName(pastureBatch.getBatchName());
+//        fishshedInputBo.setOfFishFarm(String.valueOf(pastureBatch.getSpeciesId()));
+//        try {
+//            TransactionResponse batch = fishTraceabFrameService.createBatch(fishshedInputBo.getFieldValuesAsList());
+//        }catch (RuntimeException ex){
+//            throw new RuntimeException("区块链出错!");
+//        }
+//
+//        return true;
+//    }
     /**
      * 修改鱼物批次
      *

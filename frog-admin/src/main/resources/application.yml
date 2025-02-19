@@ -1,13 +1,13 @@
-# bot配置
+# bot配置  qwen2.5:14b
 bot:
   name: bot
-  aiModel: qwen2.5:14b
+  aiModel: deepseek-r1:8b
   aiUrl: http://10.0.28.45:11434/api
-  aiDoc: generate
+  aiDoc: chat
   stream: true
   aiTimeoutMsec: 60000
   asrUrl: ws://10.0.28.47:10095
-  ttsUrl: http://10.0.28.45:50000/inference_
+  ttsUrl: http://10.0.19.31:50000/inference_
   ttsMode: sft
   spkId: 中文女
   promptText: 希望你以后能够做的比我还好呦。
@@ -24,7 +24,8 @@ ruoyi:
   # 实例演示开关
   demoEnabled: true
   # 文件路径，以uploadPath结尾 示例（ Windows配置 D:/uploadPath，Linux配置 /uploadPath, Mac /Users/xxx）
-  profile: E:\idea\project\Java\znwl-agriculture-server-no\uploadPath
+  # D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
+  profile: D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
   #  profile: F:/ny/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
 
   #  profile: C:/Users/tanmin/Desktop/区块链技术应用/若依农业/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
@@ -188,8 +189,8 @@ spring:
       request-timeout: 1000000
   web:
     resources:
-      #音频文件路径
-      static-locations: file:///E:/idea/project/Java/znwl-agriculture-server-no/wav/
+      #音频文件路径  D:\qkl-zhny\znwl-agriculture-server-no\wav
+      static-locations: file:///D:/qkl-zhny/znwl-agriculture-server-no/wav/
 
 # token配置
 token:
@@ -301,6 +302,7 @@ system:
   contract:
     # 合约地址 0x26d66588b50783b57684982bad1cb50296d1d717
     insurePlatformAddress: "0x26d66588b50783b57684982bad1cb50296d1d717"
+    insureFishTraceabAddress: "0xc2e7acaade0bb38c8e3d679c067a58266c77a535"
 
 
 #mqtt配置
