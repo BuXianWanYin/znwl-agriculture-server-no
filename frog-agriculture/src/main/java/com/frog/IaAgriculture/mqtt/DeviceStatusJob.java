@@ -35,7 +35,7 @@ public class DeviceStatusJob {
 
                 //每次执行十条
                 long size = 10L;
-                Long count = deviceMapper.selectCount(null);
+                    Long count = deviceMapper.selectCount(null);
                 for (long i = 0L; i < count; i += size) {
 
                     LambdaQueryWrapper<Device> queryWrapper = new LambdaQueryWrapper<>();

@@ -1,5 +1,10 @@
 package com.frog.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.frog.config.BotConfig;
 import com.frog.utils.AIModelApiUtils;
 import com.frog.utils.AIModelApiUtils;
@@ -28,10 +33,11 @@ import java.util.concurrent.CompletableFuture;
 @RequestMapping("/ai")
 public class AIController {
 
-     private static final Log log = LogFactory.getLog(AIController.class);
+    private static final Log log = LogFactory.getLog(AIController.class);
 
     /**
      * 生成补全
+     *
      * @param prompt
      * @return
      */
@@ -40,31 +46,73 @@ public class AIController {
         return AIModelApiUtils.generate(prompt);
     }
 
-     /**
-      * 生成补全
-      * @param prompt
-      * @return
-      */
-     @PostMapping(value = "/generateStream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-     public SseEmitter generateStream(String prompt) {
-         SseEmitter emitter = new SseEmitter();
-         new Thread(() -> {
-             try {
-                 CloseableHttpResponse response = AIModelApiUtils.generateStream(prompt);
-                 InputStream contentInputStream = response.getEntity().getContent();
-                 BufferedReader reader = new BufferedReader(new InputStreamReader(contentInputStream));
-                 String line;
-                 while ((line = reader.readLine()) != null) {
-                     log.info("ai流式输出" + line);
-                     emitter.send(line); // 直接发送读取的行
-                 }
+    /**
+     * 生成补全
+     *
+     * @param prompt
+     * @return
+     */
+    @PostMapping(value = "/generateStream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public SseEmitter generateStream(String prompt) {
+        SseEmitter emitter = new SseEmitter();
+        new Thread(() -> {
+            try {
+                CloseableHttpResponse response = AIModelApiUtils.generateStream(prompt);
+                InputStream contentInputStream = response.getEntity().getContent();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(contentInputStream));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    log.info("ai流式输出" + line);
+                    emitter.send(line); // 直接发送读取的行
+                }
 
-                 emitter.complete(); // Complete the SSE connection
-             } catch (Exception e) {
-                 log.error("Error in SSE: ", e); // Log the error
-                 emitter.completeWithError(e); // Handle errors
-             }
-         }).start();
-         return emitter;
-     }
+                emitter.complete(); // Complete the SSE connection
+            } catch (Exception e) {
+                log.error("Error in SSE: ", e); // Log the error
+                emitter.completeWithError(e); // Handle errors
+            }
+        }).start();
+        return emitter;
+    }
+
+    /**
+     * 聊天生成
+     *
+     * @param prompt
+     * @return
+     */
+    @PostMapping(value = "/chatStream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public SseEmitter chatStream(String prompt) {
+        SseEmitter emitter = new SseEmitter();
+        new Thread(() -> {
+            try {
+                CloseableHttpResponse response = AIModelApiUtils.chatStream(prompt);
+                InputStream contentInputStream = response.getEntity().getContent();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(contentInputStream));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    log.info("ai流式输出" + line);
+                    JSONObject jsonObj = JSON.parseObject(line);
+
+                    String content = jsonObj.getJSONObject("message").getString("content");
+
+                    // 构建新的 JSON 结构
+                    JSONObject newJson = new JSONObject();
+                    newJson.put("model", jsonObj.getString("model"));
+                    newJson.put("created_at", jsonObj.getString("created_at"));
+                    newJson.put("response", content);
+                    newJson.put("done", jsonObj.getBoolean("done"));
+
+                    // 发送新格式的数据
+                    emitter.send(newJson.toJSONString());
+                }
+
+                emitter.complete(); // Complete the SSE connection
+            } catch (Exception e) {
+                log.error("Error in SSE: ", e); // Log the error
+                emitter.completeWithError(e); // Handle errors
+            }
+        }).start();
+        return emitter;
+    }
 }

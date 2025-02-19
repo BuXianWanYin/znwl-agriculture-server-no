@@ -3,7 +3,7 @@ bot:
   name: bot
   aiModel: deepseek-r1:8b
   aiUrl: http://10.0.28.45:11434/api
-  aiDoc: generate
+  aiDoc: chat
   stream: true
   aiTimeoutMsec: 60000
   asrUrl: ws://10.0.28.47:10095
@@ -302,6 +302,7 @@ system:
   contract:
     # 合约地址 0x26d66588b50783b57684982bad1cb50296d1d717
     insurePlatformAddress: "0x26d66588b50783b57684982bad1cb50296d1d717"
+    insureFishTraceabAddress: "0xc2e7acaade0bb38c8e3d679c067a58266c77a535"
 
 
 #mqtt配置
