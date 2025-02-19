@@ -112,6 +112,28 @@
         where batch_id = #{batchId}
     </update>
 
+    <update id="updatePastureBatch" parameterType="PastureBatch">
+        update fish_pasture_batch
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="batchName != null and batchName != ''">batch_name = #{batchName},</if>
+            <if test="speciesId != null">fish_species_id = #{speciesId},</if>
+            <if test="landId != null">land_id = #{landId},</if>
+            <if test="cropArea != null">fish_pasture_area = #{cropArea},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="batchHead != null">batch_head = #{batchHead},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="contractAddress != null">contract_addr = #{contractAddress},</if>
+        </trim>
+        where batch_id = #{batchId}
+    </update>
+
     <update id="deletePastureBatchByBatchId" parameterType="Long">
         update fish_pasture_batch set del_flag = 2 where batch_id = #{batchId}
     </update>

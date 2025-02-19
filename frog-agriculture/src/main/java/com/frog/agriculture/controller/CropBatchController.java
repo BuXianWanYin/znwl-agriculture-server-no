@@ -97,10 +97,10 @@ public class CropBatchController extends BaseController
      */
     @PreAuthorize("@ss.hasPermi('agriculture:batch:remove')")
     @Log(title = "作物批次", businessType = BusinessType.DELETE)
-	@DeleteMapping("/{batchIds}")
-    public AjaxResult remove(@PathVariable Long[] batchIds)
+	@DeleteMapping("/{batchId}")
+    public AjaxResult remove(@PathVariable Long batchId)
     {
-        return toAjax(cropBatchService.deleteCropBatchByBatchIds(batchIds));
+        return toAjax(cropBatchService.deleteCropBatchByBatchId(batchId));
     }
     /** ----- 手机端接口----- **/
 

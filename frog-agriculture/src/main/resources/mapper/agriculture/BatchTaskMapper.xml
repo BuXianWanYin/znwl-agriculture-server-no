@@ -142,6 +142,31 @@
         where task_id = #{taskId}
     </update>
 
+    <update id="updateBatchTaskWhereBatchId" parameterType="BatchTask">
+        update agriculture_batch_task
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="taskHead != null">task_head = #{taskHead},</if>
+            <if test="taskHeadName != null">task_head_name = #{taskHeadName},</if>
+            <if test="taskName != null and taskName != ''">task_name = #{taskName},</if>
+            <if test="planStart != null">plan_start = #{planStart},</if>
+            <if test="planFinish != null">plan_finish = #{planFinish},</if>
+            <if test="actualStart != null">actual_start = #{actualStart},</if>
+            <if test="actualFinish != null">actual_finish = #{actualFinish},</if>
+            <if test="taskDetail != null and taskDetail != ''">task_detail = #{taskDetail},</if>
+            <if test="taskImages != null">task_images = #{taskImages},</if>
+            <if test="taskVideos != null">task_videos = #{taskVideos},</if>
+            <if test="remark != null and remark != ''">remark = #{remark},</if>
+            <if test="status != null and status != ''">status = #{status},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null and delFlag != ''">del_flag = #{delFlag},</if>
+        </trim>
+        where batch_id = #{batchId}
+    </update>
+
     <update id="deleteBatchTaskByTaskId" parameterType="Long">
         update agriculture_batch_task set del_flag = 2 where task_id = #{taskId}
     </update>

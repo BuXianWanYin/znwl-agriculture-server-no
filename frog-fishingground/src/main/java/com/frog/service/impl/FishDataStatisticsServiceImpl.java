@@ -36,9 +36,9 @@ public class FishDataStatisticsServiceImpl implements FishDataStatisticsService 
 //    public List<HashMap> selectRecordGroupByMonth(){
 //        return  dataStatisticsMapper.selectRecordGroupByMonth();
 //    }
-//    public List<HashMap> selectTaskInfo(){
-//        return  dataStatisticsMapper.selectTaskInfo();
-//    }
+    public List<HashMap> selectTaskInfo(){
+        return  fishDataStatisticsMapper.selectTaskInfo();
+    }
 //    public List<HashMap> selectAreaInfo(){
 //        return  dataStatisticsMapper.selectAreaInfo();
 //    }

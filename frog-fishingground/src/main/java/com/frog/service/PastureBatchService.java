@@ -57,7 +57,7 @@ public interface PastureBatchService {
      * @param batchId 鱼物批次主键
      * @return 结果
      */
-    public int deletePastureBatchByBatchId(Long batchId);
+    public int deletePastureBatchByBatchIds(Long batchId);
 
     /**
      * 给手机端批次列表查询数据

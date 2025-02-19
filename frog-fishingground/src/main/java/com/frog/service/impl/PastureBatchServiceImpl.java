@@ -62,7 +62,7 @@ public class PastureBatchServiceImpl implements PastureBatchService {
     @Autowired
     private StandardJobMapper standardJobMapper;
     @Autowired
-    private FishBatchTaskMapper batchTaskMapper;
+    private FishBatchTaskMapper fishBatchTaskMapper;
     @Autowired
     private TaskLogMapper taskLogMapper;
 
@@ -191,7 +191,7 @@ public class PastureBatchServiceImpl implements PastureBatchService {
                 throw new RuntimeException(e);  // 捕获解析异常并抛出
             }
             // 插入批次任务到数据库
-            batchTaskMapper.insertBatchTask(bt);
+            fishBatchTaskMapper.insertBatchTask(bt);
             // 创建任务日志
             TaskLog tl = new TaskLog();
             tl.setTaskId(bt.getTaskId());
@@ -256,7 +256,12 @@ public class PastureBatchServiceImpl implements PastureBatchService {
      * @return 结果
      */
     @Override
-    public int deletePastureBatchByBatchId(Long batchId) {
+    @Transactional
+    public int deletePastureBatchByBatchIds(Long batchId) {
+        FishBatchTask fishBatchTask = new FishBatchTask();
+        fishBatchTask.setBatchId(batchId);
+        fishBatchTask.setDelFlag("2");//设置成删除
+        fishBatchTaskMapper.updateBatchTaskWhereBatchId(fishBatchTask);
         return pastureBatchMapper.deletePastureBatchByBatchId(batchId);
     }
 

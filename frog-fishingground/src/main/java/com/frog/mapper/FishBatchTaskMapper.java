@@ -48,6 +48,16 @@ public interface FishBatchTaskMapper {
      */
     public int updateBatchTask(FishBatchTask fishBatchTask);
 
+
+    /**
+     * 修改批次任务
+     *
+     * @param fishBatchTask 批次任务
+     * @return 结果
+     */
+    public int updateBatchTaskWhereBatchId(FishBatchTask fishBatchTask);
+
+
     /**
      * 删除批次任务
      *

@@ -48,6 +48,16 @@ public interface BatchTaskMapper
     public int updateBatchTask(BatchTask batchTask);
 
     /**
+     * 修改批次任务
+     *
+     * @param batchTask 批次任务
+     * @return 结果
+     */
+    public int updateBatchTaskWhereBatchId(BatchTask batchTask);
+
+
+
+    /**
      * 删除批次任务
      * 
      * @param taskId 批次任务主键

@@ -14,7 +14,7 @@ public interface FishDataStatisticsService {
 //        public List<HashMap> selectDeviceInfo();
 //        public List<HashMap> selectDeviceJobInfo();
 //        public List<HashMap> selectRecordGroupByMonth();
-//        public List<HashMap> selectTaskInfo();
+        public List<HashMap> selectTaskInfo();
 //        public List<HashMap> selectAreaInfo();
 //        public List<HashMap> selectRecordGroupByCity();
 //        public List<HashMap> selectRecordStatistics();

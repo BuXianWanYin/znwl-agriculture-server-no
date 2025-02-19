@@ -39,7 +39,7 @@ import static java.lang.Math.abs;
  */
 @RestController
 @RequestMapping("/fishPasture/batch")
-public class PastureBatchController  extends BaseController {
+public class PastureBatchController extends BaseController {
 
     @Autowired
     private PastureBatchService pastureBatchService;
@@ -104,11 +104,11 @@ public class PastureBatchController  extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('agriculture:batch:remove')")
     @Log(title = "鱼物批次", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{batchIds}")
-    public AjaxResult remove(@PathVariable Long[] batchIds) {
-        return toAjax(pastureBatchService.deletePastureBatchByBatchIds(batchIds));
+    @DeleteMapping("/{batchId}")
+    public AjaxResult remove(@PathVariable Long batchId) {
+
+        return toAjax(pastureBatchService.deletePastureBatchByBatchIds(batchId));
     }
-    /** ----- 手机端接口----- **/
 
     /**
      * 手机端鱼物批次列表

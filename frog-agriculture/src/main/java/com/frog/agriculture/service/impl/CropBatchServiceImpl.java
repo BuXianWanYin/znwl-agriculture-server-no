@@ -222,8 +222,13 @@ public class CropBatchServiceImpl implements ICropBatchService
      * @return 结果
      */
     @Override
+    @Transactional
     public int deleteCropBatchByBatchId(Long batchId)
     {
+        BatchTask batchTask = new BatchTask();
+        batchTask.setBatchId(batchId);
+        batchTask.setDelFlag("2");
+        batchTaskMapper.updateBatchTaskWhereBatchId(batchTask);
         return cropBatchMapper.deleteCropBatchByBatchId(batchId);
     }
 

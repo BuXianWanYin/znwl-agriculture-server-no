@@ -84,11 +84,11 @@
 <!--        group by all_months.sMonth,all_months.month-->
 <!--        order by all_months.month-->
 <!--    </select>-->
-<!--    <select id="selectTaskInfo" resultType="java.util.HashMap">-->
-<!--        select a.`status`,count(a.task_id) as 'num',b.dict_label as name from agriculture_batch_task a left join sys_dict_data b on a.`status` = b.dict_value-->
-<!--        where b.dict_type='agriculture_batch_task_status'-->
-<!--        group by a.status,b.dict_label-->
-<!--    </select>-->
+    <select id="selectTaskInfo" resultType="java.util.HashMap">
+        select a.`status`,count(a.task_id) as 'num',b.dict_label as name from fish_batch_task a left join sys_dict_data b on a.`status` = b.dict_value
+        where b.dict_type='fish_batch_task_status' and del_flag = 0
+        group by a.status,b.dict_label
+    </select>
 <!--    <select id="selectAreaInfo" resultType="java.util.HashMap">-->
 <!--        SELECT a.crop_area AS 'value',b.crop_name AS 'name' FROM agriculture_crop_batch a LEFT JOIN agriculture_germplasm b on a.germplasm_id = b.germplasm_id-->
 <!--    </select>-->

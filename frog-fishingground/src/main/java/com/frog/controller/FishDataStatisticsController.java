@@ -50,11 +50,11 @@ public class FishDataStatisticsController extends BaseController {
 //        return getDataTable(list); // 包装分页数据并返回
 //    }
 //
-//    @GetMapping("/selectTaskInfo")
-//    public TableDataInfo selectTaskInfo(){ // 获取任务信息的方法，返回表格数据对象
-//        List<HashMap> list = dataStatisticsService.selectTaskInfo(); // 调用数据统计服务获取任务信息列表
-//        return getDataTable(list); // 包装分页数据并返回
-//    }
+    @GetMapping("/selectFishTaskInfo")
+    public TableDataInfo selectTaskInfo(){ // 获取任务信息的方法，返回表格数据对象
+        List<HashMap> list = fishDataStatisticsService.selectTaskInfo(); // 调用数据统计服务获取任务信息列表
+        return getDataTable(list); // 包装分页数据并返回
+    }
 //
 //    @GetMapping("/selectAreaInfo")
 //    public TableDataInfo selectAreaInfo(){ // 定义获取区域信息的方法，返回表格数据对象

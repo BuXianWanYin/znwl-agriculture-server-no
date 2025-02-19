@@ -86,7 +86,7 @@
     </select>
     <select id="selectTaskInfo" resultType="java.util.HashMap">
         select a.`status`,count(a.task_id) as 'num',b.dict_label as name from agriculture_batch_task a left join sys_dict_data b on a.`status` = b.dict_value
-        where b.dict_type='agriculture_batch_task_status'
+        where b.dict_type='agriculture_batch_task_status' and del_flag =0
         group by a.status,b.dict_label
     </select>
     <select id="selectAreaInfo" resultType="java.util.HashMap">
