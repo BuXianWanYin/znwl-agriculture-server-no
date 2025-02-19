@@ -174,7 +174,7 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
         if (StringUtils.isNoneBlank(baseDTO.getKeyword())) {
             wrapper.like("name", baseDTO.getKeyword());
         }
-        wrapper.eq("ia_partition_id", baseDTO.getPartitionId());
+        wrapper.eq("fish_partition_id", baseDTO.getPartitionId());
 
         Page<FishPartitionFood> page = new Page<>(baseDTO.getCurrentPage(), baseDTO.getPageSize());
         Page<FishPartitionFood> p = this.baseMapper.selectPage(page, wrapper);
@@ -189,6 +189,4 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
         });
         return ResultVO.succeed(p);
     }
-
-
 }

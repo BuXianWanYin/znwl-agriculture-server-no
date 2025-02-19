@@ -125,13 +125,10 @@ public class IaPartitionFoodService extends ServiceImpl<IaPartitionFoodMapper, I
         }
         String iaPartitionId = feeding.getIaPartitionId();
         IaPartition iaPartition = this.iaPartitionMapper.selectById(iaPartitionId);
-
         super.updateById(iaPartitionFood);
 
         try {
-
             PartitionsService partitionsService = new PartitionsService(client, client.getCryptoSuite().getCryptoKeyPair(), iaPartition.getContractAddr());
-
             PartitionsModifyFoodInputBO input = new PartitionsModifyFoodInputBO();
             input.set_foodName(iaPartitionFood.getName());
             input.set_id(iaPartitionFood.getId());

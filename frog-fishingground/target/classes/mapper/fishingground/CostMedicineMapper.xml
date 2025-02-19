@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectCostMedicineVo">
-        select cost_id, task_id, medicine_id, medicine_count, measure_unit, working_start, working_finish, remark, status, order_num, create_by, create_time, update_by, update_time, del_flag from agriculture_cost_medicine
+        select cost_id, task_id, medicine_id, medicine_count, measure_unit, working_start, working_finish, remark, status, order_num, create_by, create_time, update_by, update_time, del_flag from fish_cost_medicine
     </sql>
 
     <select id="selectCostMedicineList" parameterType="CostMedicine" resultMap="CostMedicineResult">
@@ -48,7 +48,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <insert id="insertCostMedicine" parameterType="CostMedicine" useGeneratedKeys="true" keyProperty="costId">
-        insert into agriculture_cost_medicine
+        insert into fish_cost_medicine
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="taskId != null">task_id,</if>
             <if test="medicineId != null">medicine_id,</if>
@@ -84,7 +84,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </insert>
 
     <update id="updateCostMedicine" parameterType="CostMedicine">
-        update agriculture_cost_medicine
+        update fish_cost_medicine
         <trim prefix="SET" suffixOverrides=",">
             <if test="taskId != null">task_id = #{taskId},</if>
             <if test="medicineId != null">medicine_id = #{medicineId},</if>
@@ -105,20 +105,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </update>
 
     <update id="deleteCostMedicineByCostId" parameterType="Long">
-        update agriculture_cost_medicine set del_flag = 2 where cost_id = #{costId}
+        update fish_cost_medicine set del_flag = 2 where cost_id = #{costId}
     </update>
 
     <update id="deleteCostMedicineByCostIds" parameterType="String">
-        update agriculture_cost_medicine set del_flag = 2  where cost_id in
+        update fish_cost_medicine set del_flag = 2  where cost_id in
         <foreach item="costId" collection="array" open="(" separator="," close=")">
             #{costId}
         </foreach>
     </update>
 
-    <!-- 按照农资类别汇总用量   -->
+    <!-- 按照用药类别汇总用量   -->
     <select id="selectMedicineGroupByMedicineName" resultType="java.util.Map" parameterType="Long">
-        select b.medicine_name as medicineName, sum(a.medicine_count) as num from agriculture_cost_medicine a
-        left join agriculture_medicine_info b on a.medicine_id = b.medicine_id
+        select b.medicine_name as medicineName, sum(a.medicine_count) as num from fish_cost_medicine a
+        left join fish_medicine_info b on a.medicine_id = b.medicine_id
         where a.task_id = #{taskId} and a.del_flag = 0
         group by b.medicine_name
     </select>
