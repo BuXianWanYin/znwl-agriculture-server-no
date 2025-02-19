@@ -26,7 +26,7 @@ public class FishDataStatisticsController extends BaseController {
     @Autowired // 自动装配追溯记录服务接口实现类对象
     private ITraceRecordService traceRecordService; // 定义追溯记录服务接口
 
-    @GetMapping("/selectBaseInfo")
+    @GetMapping("/selectFishBaseInfo")
     public TableDataInfo selectBaseInfo(){ // 获取基础信息的方法，返回表格数据对象
         List<HashMap> list = fishDataStatisticsService.selectBaseInfo(); // 调用数据统计服务获取基础信息列表
         return getDataTable(list); // 调用父类方法包装返回数据并返回
