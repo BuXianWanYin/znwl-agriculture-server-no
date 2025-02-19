@@ -16463,3 +16463,4 @@ Caused by: cn.hutool.core.exceptions.UtilException: Scheduler has been started, 
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
 	... 23 common frames omitted
+15:00:31.229 [http-nio-8081-exec-1] ERROR c.f.c.CosyController - [cosyVoicePath,206] - Error while extracting response for type [class [B] and content type [application/octet-stream]; nested exception is org.apache.http.ConnectionClosedException: Premature end of chunk coded message body: closing chunk expected

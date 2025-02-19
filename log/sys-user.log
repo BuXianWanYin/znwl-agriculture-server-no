@@ -25,3 +25,4 @@
 12:06:01.610 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
 12:06:41.309 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
 12:07:48.753 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+14:48:13.689 [schedule-pool-2] INFO  sys-user - [run,55] - [10.0.28.45]内网IP[admin][Success][登录成功]
