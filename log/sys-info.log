@@ -9098,3 +9098,16 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 15:12:34.789 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
 15:12:44.789 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
 15:12:54.789 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+15:13:01.043 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:4914588374393
+15:13:04.789 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+15:13:07.298 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739945801716 paused.
+15:13:08.318 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:4899493386417
+15:13:08.319 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3642247280993
+15:13:08.320 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3033236134110
+15:13:08.320 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:4770999428607
+15:13:08.369 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739945801716 shutting down.
+15:13:08.369 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739945801716 paused.
+15:13:08.370 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739945801716 shutdown complete.
+15:13:08.371 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+15:13:08.376 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+15:13:08.380 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
