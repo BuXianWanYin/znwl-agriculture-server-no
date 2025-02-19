@@ -1,9 +1,9 @@
 # bot配置
 bot:
   name: bot
-  aiModel: qwen2.5:14b
+  aiModel: deepseek-r1:8b
   aiUrl: http://10.0.28.45:11434/api
-  aiDoc: generate
+  aiDoc: chat
   stream: true
   aiTimeoutMsec: 60000
   asrUrl: ws://10.0.28.47:10095
