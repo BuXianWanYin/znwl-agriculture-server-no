@@ -7106,3 +7106,756 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 10:47:14.507 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
 10:47:24.506 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
 10:47:34.507 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:03:29.972 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13244 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:03:29.975 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:03:29.994 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+12:03:35.920 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+12:03:35.921 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+12:03:35.921 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+12:03:36.223 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+12:03:42.943 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+12:03:45.524 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+12:03:45.540 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+12:03:45.540 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+12:03:45.550 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739937825526'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+12:03:45.550 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+12:03:45.550 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+12:03:45.552 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@31389de6
+12:03:45.975 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+12:03:45.975 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+12:03:45.976 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+12:03:45.990 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+12:03:47.358 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+12:03:47.360 [nioEventLoopGroup-5-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 772969826
+12:03:47.526 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+12:03:47.528 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+12:03:47.538 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+12:03:47.552 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+12:03:47.553 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+12:03:47.559 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+12:03:47.573 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+12:03:47.575 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+12:03:47.608 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+12:03:48.576 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:03:48.590 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+12:03:48.591 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:03:48.591 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+12:03:48.620 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+12:03:48.621 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+12:03:48.626 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 983
+12:03:48.775 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:03:58.782 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:03:58.957 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+12:03:59.603 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 30.202 seconds (JVM running for 32.628)
+12:04:00.567 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937825526 started.
+12:04:04.097 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:04:04.265 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.265 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.290 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.321 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.351 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.382 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.411 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.442 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.475 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.506 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.537 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.567 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.597 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.628 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.658 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.689 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.718 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.749 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.780 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.810 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.825 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.857 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.872 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.888 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.903 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.934 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.951 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.982 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:04.997 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.015 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.044 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.060 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.075 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.105 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.121 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.136 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.152 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.167 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.182 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.213 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.229 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.245 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.261 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.292 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.322 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.352 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.382 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.397 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.412 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.429 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.445 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.460 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.475 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.491 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.507 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.523 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.555 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.571 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.586 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.601 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.617 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.647 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.664 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.694 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.709 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.726 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.756 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.772 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.787 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.802 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.816 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.833 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.848 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.863 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.894 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.924 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.956 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:05.985 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.000 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.015 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.031 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.047 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.063 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.078 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.109 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.125 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.157 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.188 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.218 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.248 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.264 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.295 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.311 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.342 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.389 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.404 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.420 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:06.452 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3513665293865建立连接
+12:04:08.777 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:18.777 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:28.777 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:30.538 [Thread-61] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937825526 paused.
+12:04:31.560 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.561 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.562 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.562 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.562 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.563 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.563 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.563 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.564 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.564 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.564 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.565 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.565 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.565 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.565 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.566 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.567 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.567 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.567 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.567 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.568 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.568 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.568 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.569 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.569 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.569 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.569 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.570 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.570 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.570 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.571 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.571 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.571 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.572 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.572 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.572 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.572 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.573 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.573 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.573 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.574 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.574 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.574 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.575 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.575 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.575 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.576 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.576 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.576 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.577 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.577 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.577 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.578 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.578 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.578 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.579 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.579 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.579 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.580 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.580 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.580 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.580 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.581 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.581 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.581 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.582 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.582 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.582 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.583 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.583 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.583 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.583 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.584 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.584 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.584 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.584 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.585 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.585 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.585 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.586 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.586 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.586 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.586 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.587 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.587 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.587 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.588 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.588 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.588 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.588 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.589 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.589 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.589 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.590 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.590 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.590 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.591 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.591 [Thread-61] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3513665293865
+12:04:31.626 [Thread-61] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937825526 shutting down.
+12:04:31.626 [Thread-61] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937825526 paused.
+12:04:31.627 [Thread-61] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937825526 shutdown complete.
+12:04:31.627 [Thread-61] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:04:31.632 [Thread-61] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+12:04:31.638 [Thread-61] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+12:04:32.169 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13244 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:04:32.170 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:04:36.294 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+12:04:36.294 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+12:04:36.295 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+12:04:36.400 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+12:04:38.020 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-2} inited
+12:04:38.625 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+12:04:38.627 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+12:04:38.627 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+12:04:38.628 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739937878626'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+12:04:38.628 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+12:04:38.628 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+12:04:38.628 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@12c324ef
+12:04:38.776 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:38.926 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+12:04:38.926 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+12:04:38.926 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+12:04:38.950 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+12:04:38.959 [nioEventLoopGroup-9-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 1603518653
+12:04:38.959 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+12:04:38.961 [nioEventLoopGroup-9-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":1,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+12:04:38.961 [nioEventLoopGroup-9-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+12:04:38.962 [nioEventLoopGroup-9-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+12:04:38.990 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+12:04:38.990 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+12:04:38.990 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+12:04:38.990 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+12:04:38.991 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+12:04:39.038 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+12:04:39.071 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:04:39.072 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+12:04:39.072 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:04:39.072 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+12:04:39.087 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+12:04:39.088 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+12:04:39.093 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 984
+12:04:39.158 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:39.638 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937878626 shutting down.
+12:04:39.639 [restartedMain] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937878626 paused.
+12:04:39.639 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937878626 shutdown complete.
+12:04:39.639 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:04:39.641 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-2} closing ...
+12:04:39.642 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-2} closed
+12:04:39.756 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+12:04:42.764 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13244 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:04:42.764 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:04:46.194 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+12:04:46.195 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+12:04:46.195 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+12:04:46.288 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+12:04:47.874 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-3} inited
+12:04:48.475 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+12:04:48.476 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+12:04:48.476 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+12:04:48.477 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739937888476'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+12:04:48.477 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+12:04:48.477 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+12:04:48.477 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@658929c4
+12:04:48.788 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:48.807 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+12:04:48.807 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+12:04:48.807 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+12:04:48.822 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+12:04:48.831 [nioEventLoopGroup-13-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 1511097892
+12:04:48.831 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+12:04:48.833 [nioEventLoopGroup-13-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":2,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+12:04:48.833 [nioEventLoopGroup-13-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+12:04:48.834 [nioEventLoopGroup-13-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+12:04:48.866 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+12:04:48.866 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+12:04:48.866 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+12:04:48.867 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+12:04:48.867 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+12:04:48.919 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+12:04:48.968 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:04:48.968 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+12:04:48.968 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:04:48.969 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+12:04:48.991 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+12:04:48.991 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+12:04:48.997 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 985
+12:04:49.091 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:49.163 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:49.708 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937888476 shutting down.
+12:04:49.708 [restartedMain] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937888476 paused.
+12:04:49.709 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937888476 shutdown complete.
+12:04:49.710 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:04:49.712 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-3} closing ...
+12:04:49.714 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-3} closed
+12:04:49.918 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+12:04:58.785 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:59.092 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:59.158 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:04:59.739 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13244 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:04:59.740 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:05:05.552 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13244 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:05:05.552 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:05:08.776 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:09.092 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:09.159 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:09.337 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+12:05:09.337 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+12:05:09.337 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+12:05:09.431 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+12:05:11.258 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-4} inited
+12:05:12.080 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+12:05:12.082 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+12:05:12.082 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+12:05:12.083 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739937912081'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+12:05:12.083 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+12:05:12.083 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+12:05:12.083 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@10c2aac7
+12:05:12.445 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+12:05:12.445 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+12:05:12.446 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+12:05:12.459 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+12:05:12.470 [nioEventLoopGroup-17-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 1015756378
+12:05:12.470 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+12:05:12.471 [nioEventLoopGroup-17-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":3,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+12:05:12.471 [nioEventLoopGroup-17-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+12:05:12.487 [nioEventLoopGroup-17-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+12:05:12.508 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+12:05:12.508 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+12:05:12.508 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+12:05:12.509 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+12:05:12.509 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+12:05:12.530 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+12:05:12.580 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:05:12.580 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+12:05:12.581 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:05:12.581 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+12:05:12.608 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+12:05:12.608 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+12:05:12.614 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 986
+12:05:12.713 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:13.245 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937912081 shutting down.
+12:05:13.245 [restartedMain] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937912081 paused.
+12:05:13.245 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937912081 shutdown complete.
+12:05:13.246 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:05:13.248 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-4} closing ...
+12:05:13.251 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-4} closed
+12:05:13.455 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+12:05:18.775 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:19.092 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:19.158 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:22.717 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:25.479 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13244 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:05:25.480 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:05:28.775 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:29.093 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:29.158 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:29.541 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+12:05:29.541 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+12:05:29.541 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+12:05:29.654 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+12:05:31.345 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-5} inited
+12:05:31.951 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+12:05:31.952 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+12:05:31.953 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+12:05:31.953 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739937931952'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+12:05:31.953 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+12:05:31.953 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+12:05:31.953 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@4dbd7f0a
+12:05:32.280 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+12:05:32.281 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+12:05:32.281 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+12:05:32.295 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+12:05:32.304 [nioEventLoopGroup-21-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 466566659
+12:05:32.304 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+12:05:32.305 [nioEventLoopGroup-21-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":4,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+12:05:32.306 [nioEventLoopGroup-21-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+12:05:32.307 [nioEventLoopGroup-21-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+12:05:32.343 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+12:05:32.343 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+12:05:32.343 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+12:05:32.343 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+12:05:32.344 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+12:05:32.394 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+12:05:32.421 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:05:32.421 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+12:05:32.422 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:05:32.422 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+12:05:32.437 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+12:05:32.437 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+12:05:32.441 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 987
+12:05:32.509 [pool-42-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:32.715 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:32.960 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937931952 shutting down.
+12:05:32.960 [restartedMain] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937931952 paused.
+12:05:32.960 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937931952 shutdown complete.
+12:05:32.961 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:05:32.963 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-5} closing ...
+12:05:32.964 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-5} closed
+12:05:33.168 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+12:05:38.781 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:39.093 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:39.160 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:42.521 [pool-42-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:42.720 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:48.787 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:49.099 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:49.162 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:52.512 [pool-42-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:52.714 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:54.120 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13244 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:05:54.120 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:05:58.225 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+12:05:58.226 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+12:05:58.226 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+12:05:58.341 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+12:05:58.780 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:59.093 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:59.159 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:05:59.938 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-6} inited
+12:06:00.584 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+12:06:00.585 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+12:06:00.586 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+12:06:00.586 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739937960585'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+12:06:00.586 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+12:06:00.586 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+12:06:00.586 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@48cd8032
+12:06:00.939 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+12:06:00.939 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+12:06:00.939 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+12:06:00.954 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+12:06:00.964 [nioEventLoopGroup-25-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 1347815900
+12:06:00.964 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+12:06:00.967 [nioEventLoopGroup-25-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":5,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+12:06:00.967 [nioEventLoopGroup-25-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+12:06:00.968 [nioEventLoopGroup-25-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+12:06:00.999 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+12:06:00.999 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+12:06:00.999 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+12:06:00.999 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+12:06:00.999 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+12:06:01.004 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+12:06:01.036 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:06:01.036 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+12:06:01.036 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:06:01.036 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+12:06:01.051 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+12:06:01.051 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+12:06:01.055 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 988
+12:06:01.130 [pool-50-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:01.609 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937960585 shutting down.
+12:06:01.609 [restartedMain] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937960585 paused.
+12:06:01.609 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739937960585 shutdown complete.
+12:06:01.610 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:06:01.612 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-6} closing ...
+12:06:01.613 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-6} closed
+12:06:01.816 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+12:06:02.512 [pool-42-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:02.713 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:08.778 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:09.092 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:09.159 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:11.132 [pool-50-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:12.517 [pool-42-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:12.720 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:18.780 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:19.092 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:19.158 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:21.130 [pool-50-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:22.515 [pool-42-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:22.717 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:28.775 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:29.094 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:29.158 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:31.130 [pool-50-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:32.510 [pool-42-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:32.713 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:33.885 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13244 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:06:33.885 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:06:37.940 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+12:06:37.940 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+12:06:37.940 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+12:06:38.043 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+12:06:38.776 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:39.104 [pool-26-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:39.167 [pool-18-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:39.580 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-7} inited
+12:06:40.144 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+12:06:40.146 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+12:06:40.146 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+12:06:40.146 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739938000144'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+12:06:40.146 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+12:06:40.146 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+12:06:40.146 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@21df80cc
+12:06:40.482 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+12:06:40.482 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+12:06:40.482 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+12:06:40.499 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+12:06:40.509 [nioEventLoopGroup-29-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 784787217
+12:06:40.509 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+12:06:40.511 [nioEventLoopGroup-29-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":6,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+12:06:40.511 [nioEventLoopGroup-29-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+12:06:40.512 [nioEventLoopGroup-29-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+12:06:40.541 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+12:06:40.541 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+12:06:40.541 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+12:06:40.542 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+12:06:40.542 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+12:06:40.594 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+12:06:40.667 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:06:40.668 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+12:06:40.668 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:06:40.668 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+12:06:40.689 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+12:06:40.690 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+12:06:40.695 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 989
+12:06:40.780 [pool-58-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:41.132 [pool-50-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:41.308 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739938000144 shutting down.
+12:06:41.308 [restartedMain] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739938000144 paused.
+12:06:41.308 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739938000144 shutdown complete.
+12:06:41.309 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:06:41.311 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-7} closing ...
+12:06:41.312 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-7} closed
+12:06:41.516 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+12:06:42.511 [pool-42-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:42.724 [pool-34-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:06:52.236 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 16052 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+12:06:52.240 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+12:06:52.274 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+12:06:58.175 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+12:06:58.176 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+12:06:58.176 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+12:06:58.482 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+12:07:05.163 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+12:07:07.735 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+12:07:07.749 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+12:07:07.750 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+12:07:07.759 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1739938027737'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+12:07:07.759 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+12:07:07.759 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+12:07:07.762 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2e2a4a48
+12:07:08.171 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='10.0.28.177', port=20200}]
+12:07:08.172 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+12:07:08.173 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+12:07:08.188 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+12:07:09.495 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 10.0.28.177:20200
+12:07:09.498 [nioEventLoopGroup-5-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 10.0.28.177, port: 20200, ctx: 1615107277
+12:07:09.635 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+12:07:09.637 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+12:07:09.644 [nioEventLoopGroup-5-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 10.0.28.177:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+12:07:09.662 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 10.0.28.177:20200, 
+12:07:09.663 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+12:07:09.667 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+12:07:09.681 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+12:07:09.683 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+12:07:09.710 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+12:07:10.439 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:07:10.452 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+12:07:10.452 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+12:07:10.452 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+12:07:10.480 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+12:07:10.480 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+12:07:10.485 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,50] - Chain connect successful. Current block number 990
+12:07:10.609 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:07:20.259 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+12:07:20.620 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:07:20.940 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 29.511 seconds (JVM running for 32.119)
+12:07:21.894 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1739938027737 started.
+12:07:23.251 [http-nio-8081-exec-3] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:07:24.184 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.184 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3033236134110建立连接
+12:07:24.184 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.196 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.226 [http-nio-8081-exec-10] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.242 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.273 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.289 [http-nio-8081-exec-8] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.318 [http-nio-8081-exec-7] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.334 [http-nio-8081-exec-2] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.352 [http-nio-8081-exec-1] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.381 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:24.396 [http-nio-8081-exec-6] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:25.030 [http-nio-8081-exec-5] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:25.059 [http-nio-8081-exec-9] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:26.152 [http-nio-8081-exec-3] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3642247280993建立连接
+12:07:27.042 [http-nio-8081-exec-4] INFO  c.f.w.WebSocketServer - [onOpen,33] - 客户端：3789659779021建立连接
+12:07:30.610 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:07:40.610 [pool-8-thread-1] INFO  o.f.b.s.e.EventSubscribeImp - [resendWaitingFilters,173] - Resend waiting filters, size: 0
+12:07:47.235 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739938027737 paused.
+12:07:48.183 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.184 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.185 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3033236134110
+12:07:48.185 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.185 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.186 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.187 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.187 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.187 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3642247280993
+12:07:48.188 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.189 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.189 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.189 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.191 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.191 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.192 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.194 [SpringApplicationShutdownHook] INFO  c.f.w.WebSocketServer - [onClose,67] - 连接断开:3789659779021
+12:07:48.752 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1739938027737 shutting down.
+12:07:48.752 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1739938027737 paused.
+12:07:48.753 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1739938027737 shutdown complete.
+12:07:48.753 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:07:48.760 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+12:07:48.766 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed

@@ -1,0 +1,766 @@
+10:28:42.238 [http-nio-8081-exec-39] ERROR c.f.c.CosyController - [cosyVoicePath,206] - I/O error on POST request for "http://10.0.28.45:50000/inference_sft": Connect to 10.0.28.45:50000 [/10.0.28.45] failed: Connection timed out: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to 10.0.28.45:50000 [/10.0.28.45] failed: Connection timed out: connect
+11:09:15.133 [Thread-1098] ERROR c.f.u.AIModelApiUtils - [generateStream,57] - org.apache.http.conn.HttpHostConnectException: Connect to 10.0.28.45:11434 [/10.0.28.45] failed: Connection timed out: connect
+11:09:15.134 [Thread-1098] ERROR c.f.c.AIController - [lambda$generateStream$0,64] - Error in SSE: 
+java.lang.NullPointerException: null
+	at com.frog.controller.AIController.lambda$generateStream$0(AIController.java:54)
+	at java.lang.Thread.run(Thread.java:748)
+11:09:15.145 [http-nio-8081-exec-62] ERROR c.f.f.w.e.GlobalExceptionHandler - [handleRuntimeException,69] - 请求地址'/ai/generateStream',发生未知异常.
+java.lang.NullPointerException: null
+	at com.frog.controller.AIController.lambda$generateStream$0(AIController.java:54)
+	at java.lang.Thread.run(Thread.java:748)
+11:09:36.219 [http-nio-8081-exec-61] ERROR c.f.c.CosyController - [cosyVoicePath,206] - I/O error on POST request for "http://10.0.28.45:50000/inference_sft": Connect to 10.0.28.45:50000 [/10.0.28.45] failed: Connection timed out: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to 10.0.28.45:50000 [/10.0.28.45] failed: Connection timed out: connect
+11:12:01.109 [http-nio-8081-exec-63] ERROR c.f.c.CosyController - [cosyVoicePath,206] - I/O error on POST request for "http://10.0.28.45:50000/inference_sft": Connect to 10.0.28.45:50000 [/10.0.28.45] failed: Connection timed out: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to 10.0.28.45:50000 [/10.0.28.45] failed: Connection timed out: connect
+14:35:38.633 [nioEventLoopGroup-5-1] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:WRITER_IDLE connect10.0.28.177:20200 long time Inactive, disconnect
+14:35:38.677 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:38.678 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:39.293 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:39.800 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:40.315 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:40.825 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:41.330 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:41.848 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor285.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:42.359 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor285.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:42.879 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor285.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:43.395 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor285.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:43.908 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor285.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+14:35:44.424 [Druid-ConnectionPool-Create-1682949337] ERROR c.a.d.p.DruidDataSource - [run,2840] - create connection SQLException, url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:156)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:150)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1659)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2838)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor285.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
+	... 9 common frames omitted
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 12 common frames omitted
+18:04:21.984 [nioEventLoopGroup-5-2] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:READER_IDLE connect10.0.28.177:20200 long time Inactive, disconnect
+18:04:26.110 [pool-2-thread-1] ERROR o.f.b.s.c.ResponseCallback - [onTimeout,39] - Processing message timeout:{}
+18:04:26.116 [pool-7-thread-1] ERROR o.f.b.s.c.JsonRpcService - [parseResponseIntoJsonRpcResponse,218] - parseResponseIntoJsonRpcResponse failed, method: getGroupList, group: null, seq: null, retErrorMessage: Processing message timeout, retErrorCode: 102
+18:04:35.783 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: No route to host: no further information: /10.0.28.177:20200
+, cause: No route to host: no further information: /10.0.28.177:20200
+18:04:35.785 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: No route to host: no further information: /10.0.28.177:20200
+"}]
+18:04:55.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: No route to host: no further information: /10.0.28.177:20200
+, cause: No route to host: no further information: /10.0.28.177:20200
+18:04:55.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: No route to host: no further information: /10.0.28.177:20200
+"}]
+18:05:15.758 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: No route to host: no further information: /10.0.28.177:20200
+, cause: No route to host: no further information: /10.0.28.177:20200
+18:05:15.759 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: No route to host: no further information: /10.0.28.177:20200
+"}]
+18:05:45.793 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:05:45.793 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:06:05.770 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:06:05.770 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:06:25.780 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:06:25.780 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:06:45.771 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:06:45.771 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:07:05.768 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:07:05.768 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:07:25.776 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:07:25.777 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:07:45.767 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:07:45.767 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:08:05.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:08:05.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:08:25.779 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:08:25.779 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:08:45.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:08:45.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:09:05.774 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:09:05.774 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:09:25.773 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:09:25.774 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:09:45.766 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:09:45.767 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:10:05.778 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:10:05.778 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:10:25.778 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:10:25.778 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:10:45.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:10:45.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:11:05.773 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:11:05.773 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:11:25.771 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:11:25.771 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:11:45.777 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:11:45.777 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:12:05.778 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:12:05.778 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:12:25.764 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:12:25.764 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:12:45.771 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:12:45.771 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:13:05.767 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:13:05.768 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:13:25.776 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:13:25.776 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:13:45.775 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:13:45.775 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:14:05.769 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:14:05.769 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:14:25.773 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:14:25.773 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:14:45.777 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:14:45.777 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:15:05.761 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:15:05.761 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:15:25.765 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:15:25.765 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:15:45.769 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:15:45.769 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:16:05.777 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:16:05.777 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:16:25.768 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:16:25.768 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:16:45.770 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:16:45.770 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:17:05.771 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:17:05.771 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:17:25.778 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:17:25.780 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:17:45.774 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:17:45.774 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:18:05.774 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:18:05.774 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:18:25.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:18:25.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:18:45.767 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:18:45.767 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:19:05.781 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:19:05.781 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:19:25.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:19:25.772 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
+18:19:45.762 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [checkConnectionResult,376] - connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+, cause: connection timed out: /10.0.28.177:20200
+18:19:45.762 [pool-4-thread-1] ERROR o.f.b.s.n.ConnectionManager - [reconnect,206] -  reconnect to 10.0.28.177:20200, error: [{"code":2, "msg":"connect to 10.0.28.177:20200 failed! Please make sure the nodes have been started, and the network between the SDK and the nodes are connected normally.reason: connection timed out: /10.0.28.177:20200
+"}]
