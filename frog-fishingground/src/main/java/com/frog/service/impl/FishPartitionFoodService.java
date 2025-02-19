@@ -65,8 +65,7 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
         if (cropBatch.getStatus().equals( "0")) {
             return ResultVO.failed("未成熟");
         }
-//        iaPartition.setProcessState(1);
-//        this.iaPartitionMapper.updateById(iaPartition);
+
         FishPartitionFood insertBean = new FishPartitionFood();
         insertBean.setFishPartitionId(cropBatch.getLandId().toString());
         BeanUtils.copyProperties(iaPartitionFood, insertBean);
@@ -174,7 +173,7 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
         if (StringUtils.isNoneBlank(baseDTO.getKeyword())) {
             wrapper.like("name", baseDTO.getKeyword());
         }
-        wrapper.eq("fish_partition_id", baseDTO.getPartitionId());
+        wrapper.eq("ia_partition_id", baseDTO.getPartitionId());
 
         Page<FishPartitionFood> page = new Page<>(baseDTO.getCurrentPage(), baseDTO.getPageSize());
         Page<FishPartitionFood> p = this.baseMapper.selectPage(page, wrapper);
@@ -189,4 +188,6 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
         });
         return ResultVO.succeed(p);
     }
+
+
 }
