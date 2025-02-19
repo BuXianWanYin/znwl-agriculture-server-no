@@ -4,10 +4,11 @@ package com.frog.service;/*
  */
 
 import com.frog.agriculture.domain.TraceRecord;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
-
+@Service
 public interface FishDataStatisticsService {
         public List<HashMap> selectBaseInfo();
 //        public List<HashMap> selectDeviceInfo();
