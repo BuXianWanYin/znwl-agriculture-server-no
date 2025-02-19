@@ -1,11 +1,17 @@
 package com.frog.controller;
 
 
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 import javax.servlet.http.HttpServletResponse;
 
+import com.frog.common.utils.StringUtils;
 import com.frog.domain.PastureBatch;
+import com.frog.service.FishShedPartitionblockService;
 import com.frog.service.PastureBatchService;
+import org.fisco.bcos.sdk.abi.ABICodecException;
+import org.fisco.bcos.sdk.transaction.model.exception.TransactionBaseException;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +29,8 @@ import com.frog.common.enums.BusinessType;
 import com.frog.common.utils.poi.ExcelUtil;
 import com.frog.common.core.page.TableDataInfo;
 
+import static java.lang.Math.abs;
+
 /**
  * 鱼物批次Controller
  *
@@ -36,6 +44,7 @@ public class PastureBatchController  extends BaseController {
     @Autowired
     private PastureBatchService pastureBatchService;
 
+//    @Autowired
     /**
      * 查询鱼物批次列表
      */
@@ -75,7 +84,8 @@ public class PastureBatchController  extends BaseController {
     @PreAuthorize("@ss.hasPermi('agriculture:batch:add')")
     @Log(title = "鱼物批次", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody PastureBatch pastureBatch) {
+    public AjaxResult add(@RequestBody PastureBatch pastureBatch) throws ABICodecException, TransactionBaseException, IOException,RuntimeException {
+
         return toAjax(pastureBatchService.insertPastureBatch(pastureBatch));
     }
 

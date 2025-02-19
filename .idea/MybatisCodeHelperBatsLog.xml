@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MybatisCodeHelperBatsLogSettingState">
+    <option name="removeDuplicateSql" value="false" />
+  </component>
+</project>

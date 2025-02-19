@@ -14,8 +14,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import vip.blockchain.agriculture.service.PlatformService;
+import vip.blockchain.animals.ContractInfo;
+import vip.blockchain.fishsheService.FishTraceabFrameService;
 
 import java.math.BigInteger;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -31,6 +34,8 @@ public class SdkBeanConfig {
     private SystemConfig config;
     @Value("${system.contract.insurePlatformAddress}")
     private String PlatformAddress;
+    @Value("${system.contract.insureFishTraceabAddress}")
+    private String fishTraceabAddress;
     @Bean
     public Client client() throws Exception {
         String certPaths = this.config.getCertPath();
@@ -72,15 +77,30 @@ public class SdkBeanConfig {
         configProperty.setNetwork(networkConfig);
     }
 
+
+
     public void configCryptoMaterial(ConfigProperty configProperty,String certPath) {
         Map<String, Object> cryptoMaterials = new HashMap<>();
         cryptoMaterials.put("certPath", certPath);
         configProperty.setCryptoMaterial(cryptoMaterials);
     }
+    @Bean(name = "fishTraceabContractInfo")
+    public ContractInfo contractInfo(){
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL abiUrl = classLoader.getResource("abi");
+        if (abiUrl != null) {
+            return new ContractInfo(fishTraceabAddress,abiUrl.getPath()+"/","","FishTraceabFrame.abi");
+        }
+        return null;
+    }
     @Bean
     public PlatformService platformService(Client client) {
         return new PlatformService(PlatformAddress, client, client.getCryptoSuite().getCryptoKeyPair());
     }
+    @Bean
+    public FishTraceabFrameService fishTraceabFrameService(Client client, ContractInfo fishTraceabContractInfo){
 
+        return new FishTraceabFrameService(fishTraceabContractInfo, client, client.getCryptoSuite().getCryptoKeyPair());
+    }
 
 }

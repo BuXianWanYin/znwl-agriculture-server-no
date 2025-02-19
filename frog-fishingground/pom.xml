@@ -126,6 +126,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>vip.blockchain.fishshed</groupId>
+            <artifactId>fisco-fishshed</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.frog</groupId>
             <artifactId>frog-agriculture</artifactId>
         </dependency>
