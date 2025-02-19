@@ -21,6 +21,7 @@ import java.util.List;
  */
 @Mapper
 public interface IaPartitionMapper extends BaseMapper<IaPartition> {
+
     @Select({
             "<script>",
             "SELECT l.id, l.contract_addr, l.variety, l.partition_name, l.plant_name, l.plant_date, p.name, l.remark",
