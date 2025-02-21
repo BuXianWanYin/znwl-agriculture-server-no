@@ -9,6 +9,11 @@
     <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.huaweicloud.com/repository/maven/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
       <option name="url" value="http://mirrors.cloud.tencent.com/nexus/repository/maven-public/" />
     </remote-repository>
     <remote-repository>
@@ -25,6 +30,11 @@
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://maven.aliyun.com/repository/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="public" />
+      <option name="name" value="aliyun nexus" />
+      <option name="url" value="https://repo.huaweicloud.com/repository/maven/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="public" />

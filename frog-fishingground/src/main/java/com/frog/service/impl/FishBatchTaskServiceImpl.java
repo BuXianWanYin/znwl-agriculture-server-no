@@ -12,6 +12,9 @@ import com.frog.domain.PastureBatch;
 import com.frog.mapper.FishBatchTaskMapper;
 import com.frog.mapper.PastureBatchMapper;
 import com.frog.service.FishBatchTaskService;
+import com.frog.service.FishPondTraceabData;
+import org.fisco.bcos.sdk.client.Client;
+import org.fisco.bcos.sdk.model.TransactionReceipt;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +42,10 @@ public class FishBatchTaskServiceImpl implements FishBatchTaskService {
 
     @Resource
     PlatformService platformService;
+
+    @Autowired
+    private Client client;
+    private FishPondTraceabData fishPondTraceabData;
 
     /**
      * 查询批次任务
@@ -107,24 +114,12 @@ public class FishBatchTaskServiceImpl implements FishBatchTaskService {
             pastureBatch.setStatus("1");
             // 更新数据库中的CropBatch状态
             pastureBatchMapper.updatePastureBatch(pastureBatch);
-            // 创建一个合约地址列表
-            ArrayList<String> listContract = new ArrayList<>();
-            // 再次查询CropBatch数据以获取合约地址
-            PastureBatch data = pastureBatchMapper.selectPastureBatchByBatchId(fishBatchTask.getBatchId());
-            // 将合约地址添加到列表中
-            listContract.add(data.getContractAddress());
-            // for (IaPartition ivLivestock : ivLivestocks) {
-            //     listContract.add(ivLivestock.getContractAddr());
-            // }
-            // 准备上链操作
-            PlatformOffHarvestInputBO pohi = new PlatformOffHarvestInputBO();
-            // 设置合约地址列表
-            pohi.set_partitionsss(listContract);
             try {
                 // 调用平台服务执行上链操作
-                TransactionResponse ot = platformService.offHarvest(pohi);
+                this.fishPondTraceabData = FishPondTraceabData.load(pastureBatch.getContractAddress(), client, client.getCryptoSuite().getCryptoKeyPair());
                 // 检查上链结果，如果不成功则抛出异常
-                if (!ot.getReceiptMessages().equals(CommonContant.SUCCESS_MESSAGE)) {
+                TransactionReceipt transactionReceipt = fishPondTraceabData.modifyIsCaught(true);
+                if (!transactionReceipt.isStatusOK()) {
                     throw new RuntimeException();
                 }
             } catch (Exception e) {
