@@ -57,6 +57,7 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
     private BarcodeConfig barcodeConfig;
     @Autowired
     private PastureBatchMapper pastureBatchMapper;   //CropBatchMapper cropBatchMapper;
+
     private FishPondTraceabData fishPondTraceabData;
 
     @Transactional(rollbackFor = Exception.class)

@@ -1,4 +1,4 @@
-package com.frog.IaAgriculture.service;
+package com.frog.web.controller;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.json.JSON;
@@ -7,10 +7,19 @@ import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.frog.IaAgriculture.model.*;
 import com.frog.agriculture.domain.CropBatch;
 import com.frog.agriculture.mapper.CropBatchMapper;
+import com.frog.domain.PastureBatch;
+import com.frog.mapper.FishPartitionFoodMapper;
+import com.frog.mapper.FishPastureMapper;
+import com.frog.mapper.PastureBatchMapper;
+import com.frog.model.FishPartitionFood;
+import com.frog.model.FishPasture;
+import com.frog.service.FishPondTraceabData;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.ibatis.annotations.Select;
+import org.fisco.bcos.sdk.abi.datatypes.Type;
+import org.fisco.bcos.sdk.abi.datatypes.generated.tuples.generated.Tuple11;
 import org.fisco.bcos.sdk.abi.wrapper.ABIObject;
 import org.fisco.bcos.sdk.client.Client;
 import org.fisco.bcos.sdk.transaction.model.dto.CallResponse;
@@ -26,10 +35,6 @@ import com.frog.IaAgriculture.dto.TraceabilityDTO;
 import com.frog.IaAgriculture.domain.Device;
 import com.frog.IaAgriculture.exception.ServerException;
 import com.frog.IaAgriculture.mapper.*;
-import com.frog.IaAgriculture.model.IaFeeding;
-import com.frog.IaAgriculture.model.IaPartitionFood;
-import com.frog.IaAgriculture.model.IaPartitionSensorValue;
-import com.frog.IaAgriculture.model.IaPasture;
 import vip.blockchain.agriculture.model.bo.PartitionsAddCollectorValueInputBO;
 import vip.blockchain.agriculture.model.bo.PartitionsGetCollectorValueInputBO;
 import vip.blockchain.agriculture.model.bo.PartitionsGetFertilizerInputBO;
@@ -73,6 +78,15 @@ public class IaPartitionFoodSensorValueService extends ServiceImpl<IaPartitionSe
 
     @Autowired //  CropBatchMapper 对象
     private CropBatchMapper cropBatchMapper; // 用于操作作物批次数据
+
+    @Autowired
+    private FishPartitionFoodMapper fishPartitionFoodMapper;
+
+    @Autowired
+    private PastureBatchMapper pastureBatchMapper;
+
+    @Autowired
+    private FishPastureMapper fishPastureMapper;
 
     public ResultVO get() { // 回溯源信息包装对象
         return this.getTraceability("1845300162239533056"); // 通过溯源码调用 getTraceability 方法获取信息并返回
@@ -160,76 +174,17 @@ public class IaPartitionFoodSensorValueService extends ServiceImpl<IaPartitionSe
      * @return 返回查询到的溯源信息结果对象
      */
     public ResultVO<TraceabilityDTO> getTraceability(String iaPartitionFoodId) { // 传入溯源id
-        TraceabilityDTO result = new TraceabilityDTO(); // 创建溯源数据传输对象
         IaPartitionFood ivLivestockSlaughter = this.iaPartitionFoodMapper.selectById(iaPartitionFoodId); // 根据溯源码查询食品溯源记录
-        if (Objects.isNull(ivLivestockSlaughter)) { // 如果记录不存在
+        FishPartitionFood fishPartitionFood = fishPartitionFoodMapper.selectById(iaPartitionFoodId);
+        if (Objects.isNull(ivLivestockSlaughter) && Objects.isNull(fishPartitionFood)) { // 如果记录不存在
             return ResultVO.failed("食品溯源信息不存在"); // 返回错误结果
         }
-        String iaPartitionId = ivLivestockSlaughter.getIaPartitionId(); // 获取对应分区ID
-        CropBatch cropBatch = cropBatchMapper.selectCropBatchByBatchId(Long.valueOf(iaPartitionId)); // 根据分区ID查询作物批次信息
-        if (Objects.isNull(cropBatch)) { // 如果批次信息不存在
-            return ResultVO.failed("分区已被删除"); // 返回错误结果
+        // 返回成功溯源信息结果
+        if (!Objects.isNull(ivLivestockSlaughter)) {
+            return iaPartitionFoodAction(ivLivestockSlaughter, iaPartitionFoodId);
+        } else {
+            return fishPartitionFoodAction(fishPartitionFood, iaPartitionFoodId);
         }
-        IaPasture iaPasture = this.iaPastureMapper.selectById(cropBatch.getLandId()); // 查询对应大棚信息
-        if (Objects.isNull(iaPasture)) { // 如果大棚信息不存在
-            return ResultVO.failed("大棚已被删除"); // 返回错误结果
-        }
-        result.setContractAddr(iaPasture.getContractAddr()); // 将大棚合约地址设置到返回对象中
-        String contractAddrIaPasture = iaPasture.getContractAddr(); // 获取大棚合约地址
-        GreenhouseService pastureService = new GreenhouseService(client, client.getCryptoSuite().getCryptoKeyPair(), contractAddrIaPasture); // 创建大棚服务对象，用于获取链上大棚信息
-        try { // 尝试调用大棚链上信息接口
-            // 1.大棚信息： 获取大棚基本信息
-            /*
-             * @dev 获取大棚信息
-             * @return _greenhouseName 大棚名称
-             * @return _greenhouseArea 大棚面积
-             * @return _maxPartitionQuantity 最大分区数量
-             * @return _greenhousePosition 大棚位置
-             * @return _notes 备注
-             */
-            CallResponse info = pastureService.getGreenhouse(); // 调用大棚服务获取大棚信息
-            result.setIvPastureInfo(info.getReturnABIObject()); // 将链上返回的大棚信息设置到数据对象中
-        } catch (Exception e) { // 捕获异常
-            e.printStackTrace(); // 输出详细异常信息
-            return ResultVO.failed("获取链大棚信息失败"); // 返回错误结果
-        }
-        String contractAddrIaPartition = cropBatch.getContractAddress(); // 获取分区合约地址
-        // 创建分区服务对象，用于链上交互
-        PartitionsService cattleService = new PartitionsService(client, client.getCryptoSuite().getCryptoKeyPair(), contractAddrIaPartition);
-
-        try { // 尝试获取链上分区信息
-            // 2.分区的信息： 获取分区详细信息方法说明
-            /*
-             * @dev 获取分区信息
-             * @return _id 分区id
-             * @return _plantingVarieties 种植种类
-             * @return _partitionsName 分区名称
-             * @return _plantingName 种植名称
-             * @return _offHarvest 是否收获
-             * @return _plantingDate 种植日期
-             * @return _ofGreenhouse 所属大棚
-             * @return _harvestTimestamp 收获时间
-             * @return _notes 备注
-             * @return _process 备注
-             */
-            CallResponse info = cattleService.getPartitions(); // 调用分区服务获取详细分区信息
-            result.setIaPartitionInfo(info.getReturnABIObject()); // 将分区信息设置到数据对象中
-        } catch (Exception e) { // 捕获异常
-            e.printStackTrace(); // 输出异常信息
-            return ResultVO.failed("获取链分区信息失败"); // 返回错误结果
-        }
-        try { // 尝试获取链上商品信息
-            // 3.商品信息
-            PartitionsGetFoodInputBO input = new PartitionsGetFoodInputBO(); // 创建商品信息查询的输入对象
-            input.set_id(iaPartitionFoodId); // 设置溯源码到输入对象
-            CallResponse goods = cattleService.getFood(input); // 调用链上接口获取商品信息
-            result.setIaPartitionFoodSensorValueInfo(JSONUtil.parse(goods.getReturnABIObject())); // 将返回的商品信息解析并设置到数据对象中
-        } catch (Exception e) { // 捕获异常
-            e.printStackTrace(); // 输出异常堆栈
-            return ResultVO.failed("获取链商品信息失败"); // 返回错误结果
-        }
-        result.setMap(iaPartitionFoodMapper.calculateDailyAverages(iaPasture.getId())); // 设置每日平均数据信息映射
-        return ResultVO.succeed(result); // 返回成功的溯源信息结果
     }
 
     // 获取施肥信息页面数据
@@ -341,5 +296,118 @@ public class IaPartitionFoodSensorValueService extends ServiceImpl<IaPartitionSe
         }
 
         return ResultVO.succeed(ivLivestockSensorValuePage); // 返回传感器数据分页结果
+    }
+
+    private ResultVO<TraceabilityDTO> iaPartitionFoodAction(IaPartitionFood ivLivestockSlaughter, String iaPartitionFoodId) {
+        TraceabilityDTO result = new TraceabilityDTO(); // 创建溯源数据传输对象
+        String iaPartitionId = ivLivestockSlaughter.getIaPartitionId(); // 获取对应分区ID
+        CropBatch cropBatch = cropBatchMapper.selectCropBatchByBatchId(Long.valueOf(iaPartitionId)); // 根据分区ID查询作物批次信息
+        if (Objects.isNull(cropBatch)) { // 如果批次信息不存在
+            return ResultVO.failed("分区已被删除"); // 返回错误结果
+        }
+        IaPasture iaPasture = this.iaPastureMapper.selectById(cropBatch.getLandId()); // 查询对应大棚信息
+        if (Objects.isNull(iaPasture)) { // 如果大棚信息不存在
+            return ResultVO.failed("大棚已被删除"); // 返回错误结果
+        }
+        result.setContractAddr(iaPasture.getContractAddr());
+        String contractAddr = iaPasture.getContractAddr(); // 获取大棚合约地址
+        //  获取大棚信息
+        PartitionsServiceAction(contractAddr, result);
+        String contractAddrIaPartition = cropBatch.getContractAddress(); // 获取分区合约地址
+        // 创建分区服务对象，用于链上交互
+        PartitionsService cattleService = new PartitionsService(client, client.getCryptoSuite().getCryptoKeyPair(), contractAddrIaPartition);
+
+        try { // 尝试获取链上分区信息
+            // 2.分区的信息： 获取分区详细信息方法说明
+            /*
+             * @dev 获取分区信息
+             * @return _id 分区id
+             * @return _plantingVarieties 种植种类
+             * @return _partitionsName 分区名称
+             * @return _plantingName 种植名称
+             * @return _offHarvest 是否收获
+             * @return _plantingDate 种植日期
+             * @return _ofGreenhouse 所属大棚
+             * @return _harvestTimestamp 收获时间
+             * @return _notes 备注
+             * @return _process 备注
+             */
+            CallResponse info = cattleService.getPartitions(); // 调用分区服务获取详细分区信息
+            result.setIaPartitionInfo(info.getReturnABIObject()); // 将分区信息设置到数据对象中
+        } catch (Exception e) { // 捕获异常
+            e.printStackTrace(); // 输出异常信息
+            return ResultVO.failed("获取链分区信息失败"); // 返回错误结果
+        }
+        try { // 尝试获取链上商品信息
+            // 3.商品信息
+            PartitionsGetFoodInputBO input = new PartitionsGetFoodInputBO(); // 创建商品信息查询的输入对象
+            input.set_id(iaPartitionFoodId); // 设置溯源码到输入对象
+            CallResponse goods = cattleService.getFood(input); // 调用链上接口获取商品信息
+            result.setIaPartitionFoodSensorValueInfo(JSONUtil.parse(goods.getReturnABIObject())); // 将返回的商品信息解析并设置到数据对象中
+        } catch (Exception e) { // 捕获异常
+            e.printStackTrace(); // 输出异常堆栈
+            return ResultVO.failed("获取链商品信息失败"); // 返回错误结果
+        }
+        result.setMap(iaPartitionFoodMapper.calculateDailyAverages(iaPasture.getId())); // 设置每日平均数据信息映射
+        result.setType(0);
+        return ResultVO.succeed(result);
+    }
+
+    private ResultVO<TraceabilityDTO> fishPartitionFoodAction(FishPartitionFood fishPartitionFood, String iaPartitionFoodId) {
+        TraceabilityDTO result = new TraceabilityDTO(); // 创建溯源数据传输对象
+        String fishPartitionId = fishPartitionFood.getFishPartitionId();
+        PastureBatch pastureBatch = pastureBatchMapper.selectPastureBatchByBatchId(Long.valueOf(fishPartitionId));
+        if (Objects.isNull(pastureBatch)) { // 如果批次信息不存在
+            return ResultVO.failed("分区已被删除"); // 返回错误结果
+        }
+        FishPasture fishPasture = this.fishPastureMapper.selectById(pastureBatch.getLandId());
+        if (Objects.isNull(fishPasture)) { // 如果大棚信息不存在
+            return ResultVO.failed("鱼棚已被删除"); // 返回错误结果
+        }
+        result.setContractAddr(fishPasture.getContractAddr());
+        //  获取鱼棚信息
+        String contractAddr = fishPasture.getContractAddr(); // 获取大棚合约地址
+        PartitionsServiceAction(contractAddr, result);
+        String address = pastureBatch.getContractAddress(); // 获取大棚合约地址
+        FishPondTraceabData load = FishPondTraceabData.load(address, client, client.getCryptoSuite().getCryptoKeyPair());// 创建大棚服务对象，用于获取链上大棚信息
+        try {
+            Tuple11<BigInteger, String, String, String, Boolean, String, String, BigInteger, String, Boolean, BigInteger> data = load.getPond();
+            result.setIaPartitionInfo(data.toString()); // 将分区信息设置到数据对象中
+        } catch (Exception e) { // 捕获异常
+            e.printStackTrace(); // 输出异常信息
+            return ResultVO.failed("获取链分区信息失败"); // 返回错误结果
+        }
+        try {
+            // 尝试获取链上商品信息
+            Type fishProduct = load.getFishProductCall(iaPartitionFoodId);// 调用链上接口获取商品信息
+            result.setIaPartitionFoodSensorValueInfo(JSONUtil.parse(fishProduct)); // 将返回的商品信息解析并设置到数据对象中
+        } catch (Exception e) { // 捕获异常
+            e.printStackTrace(); // 输出异常堆栈
+            return ResultVO.failed("获取链商品信息失败"); // 返回错误结果
+        }
+        result.setMap(fishPartitionFoodMapper.calculateDailyAverages(fishPasture.getId())); // 设置每日平均数据信息映射
+        result.setType(1);
+        return ResultVO.succeed(result);
+    }
+
+    private void PartitionsServiceAction(String contractAddr, TraceabilityDTO result) {
+        // 将大棚合约地址设置到返回对象中
+        GreenhouseService pastureService = new GreenhouseService(client, client.getCryptoSuite().getCryptoKeyPair(), contractAddr); // 创建大棚服务对象，用于获取链上大棚信息
+        try {
+            // 尝试调用大棚链上信息接口
+            // 1.大棚信息： 获取大棚基本信息
+            /*
+             * @dev 获取大棚信息
+             * @return _greenhouseName 大棚名称
+             * @return _greenhouseArea 大棚面积
+             * @return _maxPartitionQuantity 最大分区数量
+             * @return _greenhousePosition 大棚位置
+             * @return _notes 备注
+             */
+            CallResponse info = pastureService.getGreenhouse(); // 调用大棚服务获取大棚信息
+            result.setIvPastureInfo(info.getReturnABIObject()); // 将链上返回的大棚信息设置到数据对象中
+        } catch (Exception e) { // 捕获异常
+            e.printStackTrace(); // 输出详细异常信息
+        }
     }
 }

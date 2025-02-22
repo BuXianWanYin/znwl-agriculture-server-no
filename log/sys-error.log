@@ -506,7 +506,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field iaPartitionFoodSensorValueService in com.frog.IaAgriculture.controller.IaPartitionFoodSensorValueController required a bean of type 'com.frog.IaAgriculture.service.IaPartitionFoodSensorValueService' that could not be found.
+Field iaPartitionFoodSensorValueService in com.frog.web.controller.IaPartitionFoodSensorValueController required a bean of type 'com.frog.web.controller.IaPartitionFoodSensorValueService' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -514,7 +514,7 @@ The injection point has the following annotations:
 
 Action:
 
-Consider defining a bean of type 'com.frog.IaAgriculture.service.IaPartitionFoodSensorValueService' in your configuration.
+Consider defining a bean of type 'com.frog.web.controller.IaPartitionFoodSensorValueService' in your configuration.
 
 10:23:38.570 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
 10:23:40.000 [hutool-cron-1] ERROR c.h.c.l.TaskListenerManager - [notifyTaskFailed,86] - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
@@ -5934,7 +5934,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field iaPartitionFoodSensorValueService in com.frog.IaAgriculture.controller.IaPartitionFoodSensorValueController required a bean of type 'com.frog.IaAgriculture.service.IaPartitionFoodSensorValueService' that could not be found.
+Field iaPartitionFoodSensorValueService in com.frog.web.controller.IaPartitionFoodSensorValueController required a bean of type 'com.frog.web.controller.IaPartitionFoodSensorValueService' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -5942,7 +5942,7 @@ The injection point has the following annotations:
 
 Action:
 
-Consider defining a bean of type 'com.frog.IaAgriculture.service.IaPartitionFoodSensorValueService' in your configuration.
+Consider defining a bean of type 'com.frog.web.controller.IaPartitionFoodSensorValueService' in your configuration.
 
 10:32:30.013 [hutool-cron-0] ERROR c.h.c.l.TaskListenerManager - [notifyTaskFailed,86] - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
 ### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Feb 20 10:32:14 CST 2025
