@@ -22,9 +22,12 @@ import com.frog.mapper.FishPartitionMapper;
 import com.frog.mapper.PastureBatchMapper;
 import com.frog.model.FishPartitionFood;
 import com.frog.model.entity.FishPartition;
+import com.frog.service.FishPondTraceabData;
 import org.apache.commons.lang3.StringUtils;
 import org.fisco.bcos.sdk.client.Client;
+import org.fisco.bcos.sdk.model.TransactionReceipt;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
+import org.fisco.bcos.sdk.transaction.model.exception.ContractException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +40,8 @@ import vip.blockchain.agriculture.utils.BarcodeUtil;
 import vip.blockchain.agriculture.utils.BaseUtil;
 
 import java.math.BigInteger;
+import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Objects;
 
@@ -53,16 +58,17 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
     @Autowired
     private PastureBatchMapper pastureBatchMapper;   //CropBatchMapper cropBatchMapper;
 
+    private FishPondTraceabData fishPondTraceabData;
 
     @Transactional(rollbackFor = Exception.class)
     public ResultVO create(FishPartitionFood iaPartitionFood) {
 
-        PastureBatch cropBatch= pastureBatchMapper.selectPastureBatchByBatchId(Long.valueOf(iaPartitionFood.getFishPartitionId()));
+        PastureBatch cropBatch = pastureBatchMapper.selectPastureBatchByBatchId(Long.valueOf(iaPartitionFood.getFishPartitionId()));
         FishPartition iaPartition = this.fishPartitionMapper.selectById(iaPartitionFood.getFishPartitionId());
         if (Objects.isNull(cropBatch)) {
             return ResultVO.failed("分区不存在");
         }
-        if (cropBatch.getStatus().equals( "0")) {
+        if (cropBatch.getStatus().equals("0")) {
             return ResultVO.failed("未成熟");
         }
 
@@ -71,25 +77,39 @@ public class FishPartitionFoodService extends ServiceImpl<FishPartitionFoodMappe
         BeanUtils.copyProperties(iaPartitionFood, insertBean);
         insertBean.setId(BaseUtil.getSnowflakeId());
         super.save(insertBean);
-        PartitionsService partitionsService = new PartitionsService(client, client.getCryptoSuite().getCryptoKeyPair(), cropBatch.getContractAddress());
-        PartitionsAddFoodInputBO input = new PartitionsAddFoodInputBO();
-        input.set_foodName(insertBean.getName());
-        input.set_id(insertBean.getId());
-        input.set_notes(insertBean.getDescription());
-        input.set_weight(insertBean.getWeight().toEngineeringString());
-        input.set_quality(BigInteger.valueOf(insertBean.getStatus()));
+//        PartitionsService partitionsService = new PartitionsService(client, client.getCryptoSuite().getCryptoKeyPair(), cropBatch.getContractAddress());
+//        PartitionsAddFoodInputBO input = new PartitionsAddFoodInputBO();
+//        input.set_foodName(insertBean.getName());
+//        input.set_id(insertBean.getId());
+//        input.set_notes(insertBean.getDescription());
+//        input.set_weight(insertBean.getWeight().toEngineeringString());
+//        input.set_quality(BigInteger.valueOf(insertBean.getStatus()));
+//
+//        try {
+//            TransactionResponse transactionResponse = partitionsService.addFood(input);
+//            if (Objects.equals(transactionResponse.getReceiptMessages(), CommonContant.SUCCESS_MESSAGE)) {
+//
+//            } else {
+//                throw new ServerException(transactionResponse.getReceiptMessages());
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR);
+//        }
 
         try {
-            TransactionResponse transactionResponse = partitionsService.addFood(input);
-            if (Objects.equals(transactionResponse.getReceiptMessages(), CommonContant.SUCCESS_MESSAGE)) {
+            this.fishPondTraceabData = FishPondTraceabData.load(cropBatch.getContractAddress(), client, client.getCryptoSuite().getCryptoKeyPair());
+            TransactionReceipt transactionReceipt = fishPondTraceabData.addFishProduct(insertBean.getId(), insertBean.getName(), BigInteger.valueOf(insertBean.getStatus()), insertBean.getWeight().toEngineeringString(), insertBean.getDescription());
+            if (transactionReceipt.isStatusOK()) {
 
             } else {
-                throw new ServerException(transactionResponse.getReceiptMessages());
+                throw new ServerException(transactionReceipt.getMessage());
             }
         } catch (Exception e) {
             e.printStackTrace();
             throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR);
         }
+
         return ResultVO.succeed(insertBean);
     }
 

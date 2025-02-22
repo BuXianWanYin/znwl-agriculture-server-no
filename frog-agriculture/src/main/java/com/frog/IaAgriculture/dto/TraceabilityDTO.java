@@ -29,4 +29,7 @@ public class TraceabilityDTO implements Serializable {
 
     @ApiModelProperty(value = "大棚合约地址")
     private Object contractAddr;
+
+    @ApiModelProperty(value = "鱼菜类型")
+    private Integer type;
 }

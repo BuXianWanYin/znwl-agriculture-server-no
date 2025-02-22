@@ -1,7 +1,6 @@
 package com.frog.service.impl;
 
 
-import java.io.IOException;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.text.ParseException;
@@ -14,15 +13,12 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
-import com.frog.IaAgriculture.model.IaPasture;
+import com.frog.IaAgriculture.dto.ErrorCodeEnum;
+import com.frog.IaAgriculture.exception.ServerException;
 import com.frog.IaAgriculture.vo.CommonContant;
-import com.frog.IaAgriculture.vo.ResultVO;
-import com.frog.agriculture.domain.BatchTask;
 import com.frog.agriculture.domain.StandardJob;
 import com.frog.agriculture.domain.TaskLog;
-import com.frog.agriculture.mapper.BatchTaskMapper;
 import com.frog.agriculture.mapper.TaskLogMapper;
-import com.frog.agriculture.service.IGermplasmService;
 import com.frog.common.utils.DateUtils;
 import com.frog.common.utils.SecurityUtils;
 import com.frog.domain.FishBatchTask;
@@ -31,19 +27,20 @@ import com.frog.mapper.FishBatchTaskMapper;
 import com.frog.mapper.FishPastureMapper;
 import com.frog.mapper.PastureBatchMapper;
 import com.frog.model.FishPasture;
+import com.frog.service.FishPondTraceabData;
 import com.frog.service.IspeciesService;
 import com.frog.service.PastureBatchService;
-import org.fisco.bcos.sdk.abi.ABICodecException;
-import org.fisco.bcos.sdk.transaction.model.dto.CallResponse;
+import org.apache.commons.lang3.StringUtils;
+import org.fisco.bcos.sdk.client.Client;
+import org.fisco.bcos.sdk.model.TransactionReceipt;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
-import org.fisco.bcos.sdk.transaction.model.exception.TransactionBaseException;
+import org.fisco.bcos.sdk.transaction.model.exception.ContractException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.frog.agriculture.mapper.StandardJobMapper;
 import org.springframework.transaction.annotation.Transactional;
 import vip.blockchain.agriculture.model.bo.PlatformAddPartitionsInputBO;
 import vip.blockchain.agriculture.service.PlatformService;
-import vip.blockchain.agriculture.utils.BaseUtil;
 import vip.blockchain.fishsheService.FishTraceabFrameService;
 import vip.blockchain.model.po.Hbase.FishshedInputBo;
 
@@ -70,6 +67,9 @@ public class PastureBatchServiceImpl implements PastureBatchService {
     private FishTraceabFrameService fishTraceabFrameService;
     @Autowired
     private IspeciesService speciesService;
+    @Autowired
+    Client client;
+    private FishPondTraceabData fishPondTraceabData;
 
     @Resource
     FishPastureMapper fishPastureMapper;
@@ -166,6 +166,35 @@ public class PastureBatchServiceImpl implements PastureBatchService {
             throw new RuntimeException(e);  // 捕获异常并抛出
         }
 
+        // 上链操作
+//        Date now = new Date();  // 获取当前时间
+//        PlatformAddPartitionsInputBO partitionsInputBO = new PlatformAddPartitionsInputBO();
+//        // 设置上链所需参数
+//        partitionsInputBO.set_id(new BigInteger(String.valueOf(PastureBatch.getBatchId())));
+//        partitionsInputBO.set_partitionsName(PastureBatch.getBatchName());
+//        partitionsInputBO.set_notes(PastureBatch.getRemark() == null ? " " : PastureBatch.getRemark());
+//        partitionsInputBO.set_plantingName(speciesService.selectSpeciesBySpeciesId(PastureBatch.getSpeciesId()).getFishName());
+//        partitionsInputBO.set_plantingDate(DateUtil.format(now, "yyyy-MM-dd HH:mm:ss"));
+//        partitionsInputBO.set_plantingVarieties(PastureBatch.getVariety() == null ? "种类为空" : PastureBatch.getVariety());
+//        partitionsInputBO.set_ofGreenhouse(psContractAddr);  // 设置温室的合约地址
+//
+//        try {
+//            // 调用平台服务进行上链
+//            TransactionResponse transactionResponse = platformService.addPartitions(partitionsInputBO);
+//            // 检查上链结果，如果成功则获取合约地址
+//            if (transactionResponse.getReceiptMessages().equals(CommonContant.SUCCESS_MESSAGE)) {
+//                String contractAddressArray = transactionResponse.getValues();
+//                JSONArray jsonArray = JSONUtil.parseArray(contractAddressArray);
+//                String contractAddress = jsonArray.getStr(0);  // 获取第一个合约地址
+//                // 设置作物批次的合约地址
+//                PastureBatch.setContractAddress(contractAddress);
+//            } else {
+//                throw new RuntimeException();  // 如果上链失败，抛出异常
+//            }
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);  // 捕获异常并抛出
+//        }
+
         // 结束上链操作，插入鱼物批次到数据库
         int i = pastureBatchMapper.insertPastureBatch(PastureBatch);
         // 创建查询条件，查询标准作业列表
@@ -173,6 +202,13 @@ public class PastureBatchServiceImpl implements PastureBatchService {
         queryPar.setGermplasmId(PastureBatch.getSpeciesId());
         // 查询标准作业列表
         List<StandardJob> sjList = standardJobMapper.selectStandardJobList(queryPar);
+
+        try {
+            this.fishPondTraceabData = FishPondTraceabData.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
+        } catch (ContractException e) {
+            e.printStackTrace();
+        }
+
         // 遍历标准作业列表，生成批次任务
         for (StandardJob sj : sjList) {
             FishBatchTask bt = new FishBatchTask();
@@ -225,6 +261,7 @@ public class PastureBatchServiceImpl implements PastureBatchService {
 //
 //        return true;
 //    }
+
     /**
      * 修改鱼物批次
      *
@@ -235,6 +272,23 @@ public class PastureBatchServiceImpl implements PastureBatchService {
     public int updatePastureBatch(PastureBatch PastureBatch) {
         PastureBatch.setUpdateTime(DateUtils.getNowDate());
         PastureBatch.setUpdateBy(SecurityUtils.getUserId().toString());
+//        try {
+//            this.fishPondTraceabData = FishPondTraceabData.load(PastureBatch.getContractAddress(),client, client.getCryptoSuite().getCryptoKeyPair());
+//            TransactionReceipt transactionReceipt = this.fishPondTraceabData.modifyPondInfo(PastureBatch.getBatchName(), String.valueOf(PastureBatch.getSpeciesId()), PastureBatch.getBatchName(), String.valueOf(PastureBatch.getStartTime()), PastureBatch.getCreateBy());
+//            if (transactionReceipt.isStatusOK()) {
+//                // 如果响应成功
+//                String values = this.fishPondTraceabData.getContractAddress();
+//                if (StringUtils.isBlank(values)) { // 如果合同地址为空
+//                    throw new ServerException("合约地址不存在"); // 抛出服务器异常
+//                }
+//                PastureBatch.setContractAddress(values); // 设置合同地址
+//            } else {
+//                throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
+//            }
+//        } catch (Exception e) { // 捕获异常
+//            e.printStackTrace(); // 打印异常
+//            throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
+//        }
         return pastureBatchMapper.updatePastureBatch(PastureBatch);
     }
 

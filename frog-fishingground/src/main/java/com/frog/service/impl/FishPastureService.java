@@ -23,6 +23,8 @@ import com.frog.IaAgriculture.vo.ResultVO;
 import com.frog.dto.FishPastureSensorValuePageDTO;
 import com.frog.mapper.FishPastureMapper;
 import com.frog.model.FishPasture;
+import com.frog.service.FishPondTraceabData;
+import com.frog.service.FishTraceabFrame;
 import org.apache.commons.lang3.StringUtils;
 import org.fisco.bcos.sdk.client.Client;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
@@ -53,6 +55,8 @@ public class FishPastureService extends ServiceImpl<FishPastureMapper, FishPastu
     private SensorValueMapper sensorValueMapper;
     @Autowired // 自动装配分区映射器
     private IaPartitionMapper iaPartitionMapper;
+    private FishTraceabFrame fishTraceabFrame;
+    private FishPondTraceabData fishPondTraceabData;
 
     @Transactional(rollbackFor = Exception.class) // 开启事务，出现异常时回滚
     public ResultVO create(FishPasture fishPasture) { // 创建鱼棚方法
@@ -105,6 +109,26 @@ public class FishPastureService extends ServiceImpl<FishPastureMapper, FishPastu
             e.printStackTrace(); // 打印异常
             throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
         }
+//        try {
+//            this.fishTraceabFrame = FishTraceabFrame.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
+//            TransactionReceipt transactionReceipt = fishTraceabFrame.createBatch(BigInteger.valueOf(Long.parseLong(insertBean.getId())),
+//                    insertBean.getName(), "", "", "", "", insertBean.getDescription(), insertBean.getArea()
+//            );
+//            if (transactionReceipt.isStatusOK()) {
+//                // 如果响应成功
+//                String values = this.fishTraceabFrame.getContractAddress();
+//                if (StringUtils.isBlank(values)) { // 如果合同地址为空
+//                    throw new ServerException("合约地址不存在"); // 抛出服务器异常
+//                }
+//                insertBean.setContractAddr(values); // 设置合同地址
+//            } else {
+//                throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
+//            }
+//            super.updateById(insertBean); // 更新鱼棚信息
+//        } catch (Exception e) { // 捕获异常
+//            e.printStackTrace(); // 打印异常
+//            throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
+//        }
         return ResultVO.succeed(insertBean); // 返回成功结果
     }
 
@@ -194,7 +218,7 @@ public class FishPastureService extends ServiceImpl<FishPastureMapper, FishPastu
                 bean.setPhValue(String.valueOf(lastDateOne.getTemperature())); // 设置ph
                 bean.setDissolvedOxygen(String.valueOf(lastDateOne.getHumidity())); // 设置含氧量
                 bean.setNitriteNitrogen(String.valueOf(lastDateOne.getAirquality())); // 设置亚硝酸盐
-            //    bean.setPressure(lastDateOne.getPressure()); // 设置压力
+                //    bean.setPressure(lastDateOne.getPressure()); // 设置压力
             }
         });
 
@@ -241,6 +265,7 @@ public class FishPastureService extends ServiceImpl<FishPastureMapper, FishPastu
         // 返回结果
         return ResultVO.succeed(sensorValuePage); // 返回结果
     }
+
     //**
     public ResultVO pastureList(String name) { // 获取鱼棚列表方法
         LambdaQueryWrapper<FishPasture> fishPasturesWrapper = new LambdaQueryWrapper<FishPasture>().select(FishPasture::getName, FishPasture::getId); // 创建查询包装器
