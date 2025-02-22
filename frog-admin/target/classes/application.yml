@@ -6,7 +6,7 @@ bot:
   aiDoc: chat
   stream: true
   aiTimeoutMsec: 60000
-  asrUrl: ws://10.0.28.47:10095
+  asrUrl: ws://10.0.19.14:10095
   ttsUrl: http://10.0.19.31:50000/inference_
   ttsMode: sft
   spkId: 中文女
@@ -68,7 +68,7 @@ spring:
     username: root
     password: 123456
     #    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://10.0.19.14:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.cj.jdbc.Driver
     initial-size: 5                                       # 初始化大小
     min-idle: 10                                          # 最小连接数
@@ -82,7 +82,7 @@ spring:
       # 主库数据源
       master:
         #        url: jdbc:mysql://localhost:3306/frog_agriculture?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-        url: jdbc:mysql://10.0.28.47:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://10.0.19.14:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
       username: root
       password: 123456
       # 从库数据源
