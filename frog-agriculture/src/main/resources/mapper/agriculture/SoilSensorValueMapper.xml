@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.agriculture.mapper.SoilSensorValueMapper">
+    
+    <resultMap type="SoilSensorValue" id="SoilSensorValueResult">
+        <result property="id"    column="id"    />
+        <result property="deviceId"    column="device_id"    />
+        <result property="pastureId"    column="pasture_id"    />
+        <result property="batchId"    column="batch_id"    />
+        <result property="temperature"    column="temperature"    />
+        <result property="humidity"    column="humidity"    />
+        <result property="lightLux"    column="light_lux"    />
+        <result property="soilMoisture"    column="soil_moisture"    />
+        <result property="soilTemperature"    column="soil_temperature"    />
+        <result property="soilPh"    column="soil_ph"    />
+        <result property="soilConductivity"    column="soil_conductivity"    />
+        <result property="direction"    column="direction"    />
+        <result property="speed"    column="speed"    />
+        <result property="time"    column="time"    />
+        <result property="date"    column="date"    />
+    </resultMap>
+
+    <sql id="selectSoilSensorValueVo">
+        select id, device_id, pasture_id, batch_id, temperature, humidity, light_lux, soil_moisture, soil_temperature, soil_ph, soil_conductivity, direction, speed, time, date from soil_sensor_value
+    </sql>
+
+    <select id="selectSoilSensorValueList" parameterType="SoilSensorValue" resultMap="SoilSensorValueResult">
+        <include refid="selectSoilSensorValueVo"/>
+        <where>  
+            <if test="deviceId != null  and deviceId != ''"> and device_id = #{deviceId}</if>
+            <if test="pastureId != null  and pastureId != ''"> and pasture_id = #{pastureId}</if>
+            <if test="batchId != null  and batchId != ''"> and batch_id = #{batchId}</if>
+            <if test="temperature != null  and temperature != ''"> and temperature = #{temperature}</if>
+            <if test="humidity != null  and humidity != ''"> and humidity = #{humidity}</if>
+            <if test="lightLux != null  and lightLux != ''"> and light_lux = #{lightLux}</if>
+            <if test="soilMoisture != null  and soilMoisture != ''"> and soil_moisture = #{soilMoisture}</if>
+            <if test="soilTemperature != null  and soilTemperature != ''"> and soil_temperature = #{soilTemperature}</if>
+            <if test="soilPh != null  and soilPh != ''"> and soil_ph = #{soilPh}</if>
+            <if test="soilConductivity != null  and soilConductivity != ''"> and soil_conductivity = #{soilConductivity}</if>
+            <if test="direction != null  and direction != ''"> and direction = #{direction}</if>
+            <if test="speed != null  and speed != ''"> and speed = #{speed}</if>
+            <if test="time != null  and time != ''"> and time = #{time}</if>
+            <if test="date != null  and date != ''"> and date = #{date}</if>
+and del_flag = 0
+        </where>
+    </select>
+    
+    <select id="selectSoilSensorValueById" parameterType="String" resultMap="SoilSensorValueResult">
+        <include refid="selectSoilSensorValueVo"/>
+        where id = #{id} and del_flag=0
+    </select>
+        
+    <insert id="insertSoilSensorValue" parameterType="SoilSensorValue">
+        insert into soil_sensor_value
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="deviceId != null">device_id,</if>
+            <if test="pastureId != null">pasture_id,</if>
+            <if test="batchId != null">batch_id,</if>
+            <if test="temperature != null">temperature,</if>
+            <if test="humidity != null">humidity,</if>
+            <if test="lightLux != null">light_lux,</if>
+            <if test="soilMoisture != null">soil_moisture,</if>
+            <if test="soilTemperature != null">soil_temperature,</if>
+            <if test="soilPh != null">soil_ph,</if>
+            <if test="soilConductivity != null">soil_conductivity,</if>
+            <if test="direction != null">direction,</if>
+            <if test="speed != null">speed,</if>
+            <if test="time != null and time != ''">time,</if>
+            <if test="date != null and date != ''">date,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="deviceId != null">#{deviceId},</if>
+            <if test="pastureId != null">#{pastureId},</if>
+            <if test="batchId != null">#{batchId},</if>
+            <if test="temperature != null">#{temperature},</if>
+            <if test="humidity != null">#{humidity},</if>
+            <if test="lightLux != null">#{lightLux},</if>
+            <if test="soilMoisture != null">#{soilMoisture},</if>
+            <if test="soilTemperature != null">#{soilTemperature},</if>
+            <if test="soilPh != null">#{soilPh},</if>
+            <if test="soilConductivity != null">#{soilConductivity},</if>
+            <if test="direction != null">#{direction},</if>
+            <if test="speed != null">#{speed},</if>
+            <if test="time != null and time != ''">#{time},</if>
+            <if test="date != null and date != ''">#{date},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSoilSensorValue" parameterType="SoilSensorValue">
+        update soil_sensor_value
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="deviceId != null">device_id = #{deviceId},</if>
+            <if test="pastureId != null">pasture_id = #{pastureId},</if>
+            <if test="batchId != null">batch_id = #{batchId},</if>
+            <if test="temperature != null">temperature = #{temperature},</if>
+            <if test="humidity != null">humidity = #{humidity},</if>
+            <if test="lightLux != null">light_lux = #{lightLux},</if>
+            <if test="soilMoisture != null">soil_moisture = #{soilMoisture},</if>
+            <if test="soilTemperature != null">soil_temperature = #{soilTemperature},</if>
+            <if test="soilPh != null">soil_ph = #{soilPh},</if>
+            <if test="soilConductivity != null">soil_conductivity = #{soilConductivity},</if>
+            <if test="direction != null">direction = #{direction},</if>
+            <if test="speed != null">speed = #{speed},</if>
+            <if test="time != null and time != ''">time = #{time},</if>
+            <if test="date != null and date != ''">date = #{date},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <update id="deleteSoilSensorValueById" parameterType="String">
+        update soil_sensor_value set del_flag = 2 where id = #{id}
+    </update>
+
+    <update id="deleteSoilSensorValueByIds" parameterType="String">
+        update soil_sensor_value set del_flag = 2  where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>
