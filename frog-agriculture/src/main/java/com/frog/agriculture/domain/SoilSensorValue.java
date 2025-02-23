@@ -74,7 +74,19 @@ public class SoilSensorValue extends BaseEntity
     @Excel(name = "日期")
     private String date;
 
-    public void setId(String id) 
+    /** 日期 */
+    @Excel(name = "删除标志")
+    private String del_flag;
+
+    public String getDel_flag() {
+        return del_flag;
+    }
+
+    public void setDel_flag(String del_flag) {
+        this.del_flag = del_flag;
+    }
+
+    public void setId(String id)
     {
         this.id = id;
     }
@@ -228,6 +240,7 @@ public class SoilSensorValue extends BaseEntity
             .append("speed", getSpeed())
             .append("time", getTime())
             .append("date", getDate())
+            .append("del_flag", getDel_flag())
             .toString();
     }
 }
