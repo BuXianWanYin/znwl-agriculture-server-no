@@ -32,11 +32,18 @@ public class Device {
     private String deviceId;
 
     /**
-     * 牧场id，空为没有绑定牧场
+     * 大棚id，空为没有绑定牧场
      */
-    @ApiModelProperty(value = "农场id", example = "123")
+    @ApiModelProperty(value = "大棚id", example = "123")
     @TableField(value = "pasture_id")  // 指定数据库列名
     private String pastureId;
+
+    /**
+     * 分区id，空为没有绑定牧场
+     */
+    @ApiModelProperty(value = "分区id", example = "123")
+    @TableField(value = "batch_id")  // 指定数据库列名
+    private String batchId;
 
     @ApiModelProperty(value = "区块地址", example = "123")
     @TableField(value = "address")  // 指定数据库列名
@@ -55,6 +62,27 @@ public class Device {
     @ApiModelProperty(value = "设备状态", example = "1/在线，0/不在线")
     @TableField(value = "status")  // 指定数据库列名
     private String status;
+
+    /**
+     * 传感器序号  通过序号调用SensorCommandMappingUtil的方法 查询对应指令
+     */
+    @ApiModelProperty(value = "传感器序号", example = "1" + "传感器对应序号\n" +
+                                                            "1 风向传感器\n" +
+                                                            "2 百叶箱\n" +
+                                                            "3 风速传感器\n" +
+                                                            "4 土壤温度水分变送器\n" +
+                                                            "5 土壤 pH 传感器\n" +
+                                                            "6 土壤水分电导率传感器\n" +
+                                                            "8 水质传感器")
+    @TableField(value = "sensorType")  // 指定数据库列名
+    private String sensorType;
+
+    /**
+     * 传感器指令
+     */
+    @ApiModelProperty(value = "传感器指令", example = "06 03 00 00 00 04 45 BE")
+    @TableField(value = "sensor_command")  // 指定数据库列名
+    private String sensorCommand;
 
     /**
      * 添加日期

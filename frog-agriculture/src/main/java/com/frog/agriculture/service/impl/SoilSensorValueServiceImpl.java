@@ -9,7 +9,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.PostConstruct;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.frog.IaAgriculture.domain.Device;
+import com.frog.IaAgriculture.mapper.DeviceMapper;
+import com.frog.agriculture.domain.FishWaterQuality;
+import com.frog.agriculture.mapper.FishWaterQualityMapper;
+import com.frog.common.annotation.Excel;
 import com.frog.common.utils.SerialPortUtil;
+import com.google.gson.Gson;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +26,11 @@ import org.springframework.stereotype.Service;
 import com.frog.agriculture.domain.SoilSensorValue;
 import com.frog.agriculture.mapper.SoilSensorValueMapper;
 import com.frog.agriculture.service.ISoilSensorValueService;
-
-
 /**
  * 菜的环境数据Service业务层处理
- * 同时整合传感器数据的采集、解析、入库，实现所有功能代码（无省略）
+ * 同时整合传感器数据的采集、解析、入库
  *
- * @author nealtsiao
+ * @author buxianwanyin
  * @date 2025-02-23
  */
 @Service
@@ -33,6 +38,12 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 
     @Autowired
     private SoilSensorValueMapper soilSensorValueMapper;
+
+    @Autowired
+    private FishWaterQualityMapper fishWaterQualityMapper; //水质传感器mapper
+
+    @Autowired
+    private DeviceMapper deviceMapper; // 设备Mapper
 
     // 串口工具，用于接收各种传感器数据
     private SerialPortUtil serialPortUtil;
@@ -45,89 +56,148 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
     // 存放各传感器的指令（十六进制字符串）
     private Map<String, String> sensorCommands = new HashMap<>();
 
+
+    //初始化指令
     @PostConstruct
     public void init() {
-        // 初始化串口工具
         serialPortUtil = new SerialPortUtil();
-
-        // 初始化各传感器对应的指令，指令中的空格会在转换为字节数组时去除
-        sensorCommands.put("1", "01 03 00 00 00 02 C4 0B"); // 风向传感器
-        sensorCommands.put("2", "02 03 01 F4 00 08 04 31"); // 百叶箱
-        sensorCommands.put("3", "03 03 00 00 00 01 85 E8"); // 风速传感器
-        sensorCommands.put("4", "04 03 00 00 00 04 44 5C"); // 土壤温度水分变送器
-        sensorCommands.put("5", "05 03 00 00 00 01 85 8E"); // 土壤 pH 传感器
-        sensorCommands.put("6", "06 03 00 00 00 04 45 BE"); // 土壤水分电导率传感器
-        sensorCommands.put("8", "08 03 00 05 00 03 15 53"); // 水质传感器
+        initializeSensorCommandsFromDB(); // 从数据库初始化指令
     }
+
+    /**
+     * 从数据库加载传感器指令
+     */
+    private void initializeSensorCommandsFromDB() {
+        // 查询所有有效的传感器设备（sensorType和sensor_command不为空）
+        QueryWrapper<Device> queryWrapper = new QueryWrapper<>();
+        queryWrapper.isNotNull("sensorType");
+        queryWrapper.isNotNull("sensor_command");
+        List<Device> devices = deviceMapper.selectList(queryWrapper);
+
+        // 构建传感器指令映射
+        for (Device device : devices) {
+            String sensorType = device.getSensorType().trim();
+            String command = device.getSensorCommand().trim();
+            if (!sensorType.isEmpty() && !command.isEmpty()) {
+                sensorCommands.put(sensorType, command);
+                log.info("加载传感器指令 - 类型：" + sensorType + "，指令：" + command);
+            }
+        }
+
+        // 验证基础指令是否存在
+        if (sensorCommands.isEmpty()) {
+            log.error("未从数据库加载到任何传感器指令！");
+        }
+    }
+
+//    @PostConstruct
+//    public void init() {
+//        // 初始化串口工具
+//        serialPortUtil = new SerialPortUtil();
+//
+//        // 初始化各传感器对应的指令，指令中的空格会在转换为字节数组时去除
+//        sensorCommands.put("1", "01 03 00 00 00 02 C4 0B"); // 风向传感器
+//        sensorCommands.put("2", "02 03 01 F4 00 08 04 31"); // 百叶箱
+//        sensorCommands.put("3", "03 03 00 00 00 01 85 E8"); // 风速传感器
+//        sensorCommands.put("4", "04 03 00 00 00 04 44 5C"); // 土壤温度水分变送器
+//        sensorCommands.put("5", "05 03 00 00 00 01 85 8E"); // 土壤 pH 传感器
+//        sensorCommands.put("6", "06 03 00 00 00 04 45 BE"); // 土壤水分电导率传感器
+//        sensorCommands.put("8", "08 03 00 05 00 03 15 53"); // 水质传感器
+//    }
 
     /**
      * 定时任务：每5秒采集一次所有传感器数据，解析数据后保存，并更新全局数据记录
      */
     @Scheduled(fixedRate = 5000)
     public void fetchAllSensorData() {
-        System.out.println("获取传感器数据 fetchAllSensorData");
-        // 每次采集前，清空或初始化一个 SoilSensorValue 对象
+        System.out.println("获取土壤传感器数据");
+        // 每次采集前，初始化一个 SoilSensorValue 对象
         SoilSensorValue sensorValue = new SoilSensorValue();
-
         for (Map.Entry<String, String> entry : sensorCommands.entrySet()) {
             String sensorId = entry.getKey();
-            byte[] command = hexStringToByteArray(entry.getValue());
-            // 通过串口发送指令
-            serialPortUtil.writeBytes(command);
-            // 接收响应数据，实际中可根据长度、校验等进行更完善判断
-            byte[] response = serialPortUtil.readBytes();
-            Map<String, Object> parsedData = new HashMap<>();
+            String hexCommand = entry.getValue();
+            // 跳过无效指令
+            if (hexCommand == null || hexCommand.trim().isEmpty()) {
+                log.warn("传感器" + sensorId + "指令为空，跳过采集");
+                continue;
+            }
+            try {
+                byte[] command = hexStringToByteArray(hexCommand);
+                // 通过串口发送指令
+                serialPortUtil.writeBytes(command);
+                byte[] response = serialPortUtil.readBytes();
+                Map<String, Object> parsedData = new HashMap<>();
 
-            if ("1".equals(sensorId)) {  // 解析风向传感器数据
-                parsedData = parseWindDirectionData(response);
-                globalSensorData.put("wind_direction", parsedData);
-                sensorValue.setDirection(parsedData.get("direction").toString());//设置风向信息
-            } else if ("2".equals(sensorId)) { // 解析百叶箱数据
-                parsedData = parseBaiyeBoxData(response);
-                globalSensorData.put("baiye_box", parsedData);
-                //环境温度
-                sensorValue.setTemperature( parsedData.get("temperature").toString());
-                //环境湿度
-                sensorValue.setHumidity( parsedData.get("humidity").toString());
-                //光照强度
-                sensorValue.setLightLux( parsedData.get("light").toString());
-            } else if ("3".equals(sensorId)) {// 解析风速传感器数据
-                parsedData = parseWindSpeedData(response);
-                globalSensorData.put("wind_speed", parsedData);
-                // 风速
-                sensorValue.setSpeed( parsedData.get("speed").toString());
-            } else if ("4".equals(sensorId)) { // 解析土壤温度水分数据
-                parsedData = parseSoilTemperatureMoistureData(response);
-                globalSensorData.put("soil_temperature_moisture", parsedData);
-                //土壤温度
-                sensorValue.setSoilTemperature( parsedData.get("soil_temperature").toString());
-            } else if ("5".equals(sensorId)) {// 解析土壤 pH 数据
-                parsedData = parseSoilPHData(response);
-                globalSensorData.put("soil_ph", parsedData);
-                sensorValue.setSoilPh(parsedData.get("soil_ph").toString());
-            } else if ("6".equals(sensorId)) {   // 解析土壤水分电导率数据
-                parsedData = parseSoilMoistureConductivityData(response);
-                globalSensorData.put("soil_moisture_conductivity", parsedData);
-                //电导率
-                sensorValue.setSoilConductivity( parsedData.get("conductivity").toString());
-                //土壤湿度
-                sensorValue.setSoilMoisture( parsedData.get("moisture").toString());
-            } else if ("8".equals(sensorId)) {
-//                // 解析水质传感器数据
-//                parsedData = parseWaterQualityData(response);
-//                globalSensorData.put("water_quality", parsedData);
-//                sensorValue.setWaterTemperature((Double) parsedData.get("temperature"));
-//                sensorValue.setWaterPh((Double) parsedData.get("ph_value"));
+                if ("1".equals(sensorId)) {  // 解析风向传感器数据
+                    parsedData = parseWindDirectionData(response);
+                    globalSensorData.put("wind_direction", parsedData);
+                    sensorValue.setDirection(parsedData.get("direction").toString());//设置风向信息
+                } else if ("2".equals(sensorId)) { // 解析百叶箱数据
+                    parsedData = parseBaiyeBoxData(response);
+                    globalSensorData.put("baiye_box", parsedData);
+                    //环境温度
+                    sensorValue.setTemperature(parsedData.get("temperature").toString());
+                    //环境湿度
+                    sensorValue.setHumidity(parsedData.get("humidity").toString());
+                    //光照强度
+                    sensorValue.setLightLux(parsedData.get("light").toString());
+                } else if ("3".equals(sensorId)) {// 解析风速传感器数据
+                    parsedData = parseWindSpeedData(response);
+                    globalSensorData.put("wind_speed", parsedData);
+                    // 风速
+                    sensorValue.setSpeed(parsedData.get("speed").toString());
+                } else if ("4".equals(sensorId)) { // 解析土壤温度水分数据
+                    parsedData = parseSoilTemperatureMoistureData(response);
+                    globalSensorData.put("soil_temperature_moisture", parsedData);
+                    //土壤温度
+                    sensorValue.setSoilTemperature(parsedData.get("soil_temperature").toString());
+                } else if ("5".equals(sensorId)) {// 解析土壤 pH 数据
+                    parsedData = parseSoilPHData(response);
+                    globalSensorData.put("soil_ph", parsedData);
+                    sensorValue.setSoilPh(parsedData.get("soil_ph").toString());
+                } else if ("6".equals(sensorId)) {   // 解析土壤水分电导率数据
+                    parsedData = parseSoilMoistureConductivityData(response);
+                    globalSensorData.put("soil_moisture_conductivity", parsedData);
+                    //电导率
+                    sensorValue.setSoilConductivity(parsedData.get("conductivity").toString());
+                    //土壤湿度
+                    sensorValue.setSoilMoisture(parsedData.get("moisture").toString());
+                } else if ("8".equals(sensorId)) {
+                    FishWaterQuality fishWaterQuality = new FishWaterQuality();
+                    // 解析水质传感器数据
+                    parsedData = parseWaterQualityData(response);
+                    System.out.println("解析水质传感器数据" + parsedData);
+                    fishWaterQuality.setWaterTemperature(parsedData.get("temperature").toString());//水温
+                    fishWaterQuality.setWaterPhValue(parsedData.get("ph_value").toString());//ph值
+                    fishWaterQuality.setFishPastureId(1L); // 大棚id 测试固定值
+                    fishWaterQuality.setFishPastureBatchId(2L);//分区id 测试固定值
+                    fishWaterQuality.setDeviceId(3L);//设备id  测试固定值
+                    fishWaterQuality.setWaterOxygenContent("30");//含氧量  测试固定值
+                    fishWaterQuality.setWaterNitriteContent("0.01g");//亚硝酸盐含量 测试固定值
+                    fishWaterQuality.setTime(currentTime());
+                    fishWaterQuality.setDate(currentDate());
+                    //添加水质数据
+                    fishWaterQualityMapper.insertFishWaterQuality(fishWaterQuality);
+                    globalSensorData.put("water_quality", parsedData);
+                }
+                //添加土壤信息
+                sensorValue.setPastureId("1"); //设置测试 固定ID
+                sensorValue.setBatchId("2");
+                sensorValue.setDeviceId("3");
+                sensorValue.setTime(currentTime());
+                sensorValue.setDate(currentDate());
+                //将封装了所有传感器数据的 sensorValue 对象插入数据库
+                this.insertSoilSensorValue(sensorValue);
+                // 将 globalSensorData 转换为 JSON 字符串
+                Gson gson = new Gson();
+                String jsonOutput = gson.toJson(globalSensorData);
+                System.out.println("传感器最新数据："+jsonOutput);
+//                log.info("所有传感器最新数据：" + globalSensorData);
+            }catch (Exception e) {
+                log.error("传感器" + sensorId + "数据采集异常：" + e.getMessage());
             }
         }
-        sensorValue.setPastureId("1");
-        sensorValue.setBatchId("2");
-        sensorValue.setDeviceId("3");
-        sensorValue.setTime(currentTime());
-        sensorValue.setDate(currentDate());
-        // 数据采集后，将封装了所有传感器数据的 sensorValue 对象插入数据库
-        this.insertSoilSensorValue(sensorValue);
-        log.info("所有传感器最新数据：" + globalSensorData);
+
     }
 
     /**

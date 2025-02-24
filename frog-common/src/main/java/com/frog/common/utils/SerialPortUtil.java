@@ -3,11 +3,15 @@ package com.frog.common.utils;/*
  * @version 1.0
  */
 import com.fazecast.jSerialComm.SerialPort;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.util.Arrays;
 
 public class SerialPortUtil {
     private SerialPort serialPort;
 
+    private static final Log log = LogFactory.getLog(SerialPortUtil.class);
     public SerialPortUtil() {
         // 配置串口：下面以 COM3 为例，波特率 9600
         serialPort = SerialPort.getCommPort("COM3");
@@ -17,7 +21,7 @@ public class SerialPortUtil {
         serialPort.setNumStopBits(SerialPort.ONE_STOP_BIT);
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 1000, 0);
         if (!serialPort.openPort()) {
-            throw new RuntimeException("打开串口失败");
+            log.error(new RuntimeException("打开串口失败"));
         }
     }
 

@@ -78,7 +78,7 @@ public class DeviceController {
     }
 
     @GetMapping(value = "/listAll")
-    @ApiOperation("所有设备，牧场添加修改下拉使用")
+    @ApiOperation("所有设备，大棚添加修改下拉使用")
     public ResultVO deviceList() {
         return ResultVO.succeed(deviceService.list(new LambdaQueryWrapper<Device>().select(Device::getId, Device::getDeviceName)));
     }
