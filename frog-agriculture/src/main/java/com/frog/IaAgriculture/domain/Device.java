@@ -64,6 +64,27 @@ public class Device {
     private String status;
 
     /**
+     * 传感器序号  通过序号调用SensorCommandMappingUtil的方法 查询对应指令
+     */
+    @ApiModelProperty(value = "传感器序号", example = "1" + "传感器对应序号\n" +
+                                                            "1 风向传感器\n" +
+                                                            "2 百叶箱\n" +
+                                                            "3 风速传感器\n" +
+                                                            "4 土壤温度水分变送器\n" +
+                                                            "5 土壤 pH 传感器\n" +
+                                                            "6 土壤水分电导率传感器\n" +
+                                                            "8 水质传感器")
+    @TableField(value = "sensorType")  // 指定数据库列名
+    private String sensorType;
+
+    /**
+     * 传感器指令
+     */
+    @ApiModelProperty(value = "传感器指令", example = "06 03 00 00 00 04 45 BE")
+    @TableField(value = "sensor_command")  // 指定数据库列名
+    private String sensorCommand;
+
+    /**
      * 添加日期
      */
     @ApiModelProperty(value = "添加日期", example = "2024-10-11 21:54:32")

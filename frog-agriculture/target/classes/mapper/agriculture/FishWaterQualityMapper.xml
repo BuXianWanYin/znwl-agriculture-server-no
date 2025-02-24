@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.agriculture.mapper.FishWaterQualityMapper">
+
+    <!-- 定义返回结果映射 -->
+    <resultMap id="FishWaterQualityResult" type="com.frog.agriculture.domain.FishWaterQuality">
+        <result property="id" column="id" />
+        <result property="deviceId" column="device_id" />
+        <result property="fishPastureId" column="fish_pasture_id" />
+        <result property="fishPastureBatchId" column="fish_pasture_batch_id" />
+        <result property="waterTemperature" column="water_temperature" />
+        <result property="waterPhValue" column="water_ph_value" />
+        <result property="waterOxygenContent" column="water_oxygen_content" />
+        <result property="waterNitriteContent" column="water_nitrite_content" />
+        <result property="time" column="time" />
+        <result property="date" column="date" />
+        <result property="delFlag" column="del_flag" />
+    </resultMap>
+
+    <!-- 查询公用SQL -->
+    <sql id="selectFishWaterQualityVo">
+        SELECT id, device_id, fish_pasture_id, fish_pasture_batch_id, water_temperature, water_ph_value, water_oxygen_content, water_nitrite_content, time, date, del_flag
+        FROM fish_water_quality
+    </sql>
+
+    <!-- 查询列表 -->
+    <select id="selectFishWaterQualityList" parameterType="com.frog.agriculture.domain.FishWaterQuality" resultMap="FishWaterQualityResult">
+        <include refid="selectFishWaterQualityVo"/>
+        <where>
+            <if test="deviceId != null"> AND device_id = #{deviceId}</if>
+            <if test="fishPastureId != null"> AND fish_pasture_id = #{fishPastureId}</if>
+            <if test="fishPastureBatchId != null"> AND fish_pasture_batch_id = #{fishPastureBatchId}</if>
+            <if test="waterTemperature != null and waterTemperature != ''"> AND water_temperature = #{waterTemperature}</if>
+            <if test="waterPhValue != null and waterPhValue != ''"> AND water_ph_value = #{waterPhValue}</if>
+            <if test="waterOxygenContent != null and waterOxygenContent != ''"> AND water_oxygen_content = #{waterOxygenContent}</if>
+            <if test="waterNitriteContent != null and waterNitriteContent != ''"> AND water_nitrite_content = #{waterNitriteContent}</if>
+            <if test="time != null and time != ''"> AND time = #{time}</if>
+            <if test="date != null and date != ''"> AND date = #{date}</if>
+            AND del_flag = 0
+        </where>
+    </select>
+
+    <!-- 根据ID查询 -->
+    <select id="selectFishWaterQualityById" parameterType="Long" resultMap="FishWaterQualityResult">
+        <include refid="selectFishWaterQualityVo"/>
+        WHERE id = #{id} AND del_flag = 0
+    </select>
+
+    <!-- 新增记录 -->
+    <insert id="insertFishWaterQuality" parameterType="com.frog.agriculture.domain.FishWaterQuality" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO fish_water_quality
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="deviceId != null">device_id,</if>
+            <if test="fishPastureId != null">fish_pasture_id,</if>
+            <if test="fishPastureBatchId != null">fish_pasture_batch_id,</if>
+            <if test="waterTemperature != null">water_temperature,</if>
+            <if test="waterPhValue != null">water_ph_value,</if>
+            <if test="waterOxygenContent != null">water_oxygen_content,</if>
+            <if test="waterNitriteContent != null">water_nitrite_content,</if>
+            <if test="time != null">time,</if>
+            <if test="date != null">date,</if>
+            <if test="delFlag != null and delFlag != ''">del_flag,</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="deviceId != null">#{deviceId},</if>
+            <if test="fishPastureId != null">#{fishPastureId},</if>
+            <if test="fishPastureBatchId != null">#{fishPastureBatchId},</if>
+            <if test="waterTemperature != null">#{waterTemperature},</if>
+            <if test="waterPhValue != null">#{waterPhValue},</if>
+            <if test="waterOxygenContent != null">#{waterOxygenContent},</if>
+            <if test="waterNitriteContent != null">#{waterNitriteContent},</if>
+            <if test="time != null">#{time},</if>
+            <if test="date != null">#{date},</if>
+            <if test="delFlag != null and delFlag != ''">#{delFlag},</if>
+        </trim>
+    </insert>
+
+    <!-- 更新记录 -->
+    <update id="updateFishWaterQuality" parameterType="com.frog.agriculture.domain.FishWaterQuality">
+        UPDATE fish_water_quality
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="deviceId != null">device_id = #{deviceId},</if>
+            <if test="fishPastureId != null">fish_pasture_id = #{fishPastureId},</if>
+            <if test="fishPastureBatchId != null">fish_pasture_batch_id = #{fishPastureBatchId},</if>
+            <if test="waterTemperature != null">water_temperature = #{waterTemperature},</if>
+            <if test="waterPhValue != null">water_ph_value = #{waterPhValue},</if>
+            <if test="waterOxygenContent != null">water_oxygen_content = #{waterOxygenContent},</if>
+            <if test="waterNitriteContent != null">water_nitrite_content = #{waterNitriteContent},</if>
+            <if test="time != null">time = #{time},</if>
+            <if test="date != null">date = #{date},</if>
+            <if test="delFlag != null and delFlag != ''">del_flag = #{delFlag},</if>
+        </trim>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 根据ID逻辑删除 -->
+    <update id="deleteFishWaterQualityById" parameterType="Long">
+        UPDATE fish_water_quality SET del_flag = 2 WHERE id = #{id}
+    </update>
+
+    <!-- 批量逻辑删除 -->
+    <update id="deleteFishWaterQualityByIds" parameterType="String">
+        UPDATE fish_water_quality SET del_flag = 2 WHERE id IN
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>
