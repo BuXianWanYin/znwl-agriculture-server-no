@@ -186,8 +186,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         }
         // 当且仅当本次全部采集没有异常时才入库
         if (valid) {
-            sensorValue.setPastureId("1"); // 设置测试固定ID
-            sensorValue.setBatchId("2");
+            sensorValue.setPastureId("1890965785636114432"); // 设置测试固定ID
+            sensorValue.setBatchId("115");
             sensorValue.setDeviceId("null");
             sensorValue.setTime(currentTime());
             sensorValue.setDate(currentDate());
@@ -207,8 +207,6 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         Gson gson = new Gson();
         String jsonOutput = gson.toJson(globalSensorData);
         System.out.println("传感器最新数据：" + jsonOutput);
-
-
     }
 
     /**

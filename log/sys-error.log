@@ -25508,3 +25508,385 @@ org.springframework.security.web.firewall.RequestRejectedException: The request 
 16:27:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
 16:27:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
 16:27:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:27:41.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:27:41.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:27:41.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:27:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:27:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:27:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:27:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:27:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:27:46.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:27:46.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:27:46.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:27:46.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:27:46.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:27:46.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:27:46.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:27:46.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:27:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:27:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:27:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:27:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:27:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:27:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:27:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:27:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:27:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:27:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:27:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:27:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:27:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:27:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:27:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:27:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:06.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:06.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:06.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:06.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:06.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:06.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:06.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:06.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:11.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:11.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:11.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:11.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:11.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:11.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:11.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:11.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:21.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:21.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:21.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:21.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:21.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:21.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:21.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:21.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:31.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:31.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:31.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:31.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:31.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:31.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:31.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:31.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:51.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:28:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:28:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:28:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:28:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:28:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:28:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:28:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:28:56.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:01.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:06.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:06.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:06.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:06.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:06.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:06.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:06.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:06.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:11.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:11.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:11.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:11.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:11.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:11.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:11.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:11.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:16.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:21.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:21.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:21.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:21.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:21.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:21.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:21.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:21.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:26.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:26.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:26.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:26.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:26.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:31.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:31.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:31.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:31.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:31.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:31.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:31.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:31.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:36.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:36.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:36.758 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:36.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:41.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:46.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:51.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:51.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:51.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:51.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:51.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:51.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:51.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:51.760 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:29:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:29:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:29:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:29:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:29:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:29:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:29:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:29:56.759 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:34:40.645 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+16:34:48.861 [restartedMain] ERROR c.f.c.u.SerialPortUtil - [<init>,24] - java.lang.RuntimeException: 打开串口失败
+16:34:49.152 [restartedMain] ERROR o.s.b.SpringApplication - [reportFailure,843] - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'soilSensorValueController': Unsatisfied dependency expressed through field 'soilSensorValueService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'soilSensorValueServiceImpl': Invocation of init method failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id AS landId,batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensorType IS NOT NULL AND sensor_command IS NOT NULL)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.frog.FrogApplication.main(FrogApplication.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'soilSensorValueServiceImpl': Invocation of init method failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id AS landId,batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensorType IS NOT NULL AND sensor_command IS NOT NULL)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 25 common frames omitted
+Caused by: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id AS landId,batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensorType IS NOT NULL AND sensor_command IS NOT NULL)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy120.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:149)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:90)
+	at com.sun.proxy.$Proxy135.selectList(Unknown Source)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.initializeSensorCommandsFromDB(SoilSensorValueServiceImpl.java:75)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.init(SoilSensorValueServiceImpl.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	... 37 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'pasture_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy150.query(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at com.sun.proxy.$Proxy149.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at sun.reflect.GeneratedMethodAccessor81.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 53 common frames omitted
+16:38:37.745 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+16:39:23.574 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:39:23.575 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:39:23.576 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:39:23.576 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:39:23.577 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:39:23.578 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:39:23.578 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:39:23.578 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:39:23.578 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:39:23.578 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:39:23.579 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:39:23.579 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:39:23.580 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:39:23.580 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:39:23.580 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:39:23.580 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:39:23.580 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:39:23.580 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:39:23.581 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:39:23.600 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:43:02.402 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+16:43:37.778 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:43:37.785 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:43:37.786 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:43:37.786 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:43:37.786 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:43:37.786 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:43:37.787 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:43:37.787 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:43:37.788 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器1数据采集异常：null
+16:43:37.788 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器2数据采集异常：null
+16:43:37.788 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器3数据采集异常：null
+16:43:37.788 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器4数据采集异常：null
+16:43:37.788 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器5数据采集异常：null
+16:43:37.788 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器6数据采集异常：null
+16:43:37.789 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,184] - 传感器8数据采集异常：null
+16:43:37.789 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 数据采集过程中发生异常，本次数据不做数据库插入。
