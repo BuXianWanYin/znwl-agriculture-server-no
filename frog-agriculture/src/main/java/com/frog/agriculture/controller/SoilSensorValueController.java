@@ -2,6 +2,8 @@ package com.frog.agriculture.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
+
+import com.frog.common.annotation.Anonymous;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,11 +24,12 @@ import com.frog.common.utils.poi.ExcelUtil;
 import com.frog.common.core.page.TableDataInfo;
 
 /**
- * 菜的环境数据Controller
+ * 土壤环境数据Controller
  * 
  * @author nealtsiao
  * @date 2025-02-23
  */
+
 @RestController
 @RequestMapping("/agriculture/value")
 public class SoilSensorValueController extends BaseController
@@ -35,9 +38,10 @@ public class SoilSensorValueController extends BaseController
     private ISoilSensorValueService soilSensorValueService;
 
     /**
-     * 查询菜的环境数据列表
+     * 查询土壤环境数据列表
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:value:list')")
+    @Anonymous
+//    @PreAuthorize("@ss.hasPermi('agriculture:value:list')")
     @GetMapping("/list")
     public TableDataInfo list(SoilSensorValue soilSensorValue)
     {
@@ -47,20 +51,20 @@ public class SoilSensorValueController extends BaseController
     }
 
     /**
-     * 导出菜的环境数据列表
+     * 导出土壤环境数据列表
      */
     @PreAuthorize("@ss.hasPermi('agriculture:value:export')")
-    @Log(title = "菜的环境数据", businessType = BusinessType.EXPORT)
+    @Log(title = "土壤环境数据", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, SoilSensorValue soilSensorValue)
     {
         List<SoilSensorValue> list = soilSensorValueService.selectSoilSensorValueList(soilSensorValue);
         ExcelUtil<SoilSensorValue> util = new ExcelUtil<SoilSensorValue>(SoilSensorValue.class);
-        util.exportExcel(response, list, "菜的环境数据数据");
+        util.exportExcel(response, list, "土壤环境数据");
     }
 
     /**
-     * 获取菜的环境数据详细信息
+     * 获取土壤环境数据详细信息
      */
     @PreAuthorize("@ss.hasPermi('agriculture:value:query')")
     @GetMapping(value = "/{id}")
@@ -70,10 +74,10 @@ public class SoilSensorValueController extends BaseController
     }
 
     /**
-     * 新增菜的环境数据
+     * 新增土壤环境数据
      */
     @PreAuthorize("@ss.hasPermi('agriculture:value:add')")
-    @Log(title = "菜的环境数据", businessType = BusinessType.INSERT)
+    @Log(title = "土壤环境数据", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody SoilSensorValue soilSensorValue)
     {
@@ -81,10 +85,10 @@ public class SoilSensorValueController extends BaseController
     }
 
     /**
-     * 修改菜的环境数据
+     * 修改土壤环境数据
      */
     @PreAuthorize("@ss.hasPermi('agriculture:value:edit')")
-    @Log(title = "菜的环境数据", businessType = BusinessType.UPDATE)
+    @Log(title = "土壤环境数据", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody SoilSensorValue soilSensorValue)
     {
@@ -92,10 +96,10 @@ public class SoilSensorValueController extends BaseController
     }
 
     /**
-     * 删除菜的环境数据
+     * 删除土壤环境数据
      */
     @PreAuthorize("@ss.hasPermi('agriculture:value:remove')")
-    @Log(title = "菜的环境数据", businessType = BusinessType.DELETE)
+    @Log(title = "土壤环境数据", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable String[] ids)
     {

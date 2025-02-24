@@ -110,9 +110,11 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
      */
     @Scheduled(fixedRate = 5000)
     public void fetchAllSensorData() {
-        System.out.println("获取土壤传感器数据");
-        // 每次采集前，初始化一个 SoilSensorValue 对象
+        // 每次采集前，初始化一个 SoilSensorValue  fishWaterQuality对象
         SoilSensorValue sensorValue = new SoilSensorValue();
+        FishWaterQuality fishWaterQuality = new FishWaterQuality();
+        // 定义标志位，若本次采集出现任一异常则不做数据库入库处理
+        boolean valid = true;
         for (Map.Entry<String, String> entry : sensorCommands.entrySet()) {
             String sensorId = entry.getKey();
             String hexCommand = entry.getValue();
@@ -163,10 +165,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                     //土壤湿度
                     sensorValue.setSoilMoisture(parsedData.get("moisture").toString());
                 } else if ("8".equals(sensorId)) {
-                    FishWaterQuality fishWaterQuality = new FishWaterQuality();
                     // 解析水质传感器数据
                     parsedData = parseWaterQualityData(response);
-                    System.out.println("解析水质传感器数据" + parsedData);
                     fishWaterQuality.setWaterTemperature(parsedData.get("temperature").toString());//水温
                     fishWaterQuality.setWaterPhValue(parsedData.get("ph_value").toString());//ph值
                     fishWaterQuality.setFishPastureId(1L); // 大棚id 测试固定值
@@ -176,27 +176,38 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                     fishWaterQuality.setWaterNitriteContent("0.01g");//亚硝酸盐含量 测试固定值
                     fishWaterQuality.setTime(currentTime());
                     fishWaterQuality.setDate(currentDate());
-                    //添加水质数据
                     fishWaterQualityMapper.insertFishWaterQuality(fishWaterQuality);
                     globalSensorData.put("water_quality", parsedData);
                 }
-                //添加土壤信息
-                sensorValue.setPastureId("1"); //设置测试 固定ID
-                sensorValue.setBatchId("2");
-                sensorValue.setDeviceId("3");
-                sensorValue.setTime(currentTime());
-                sensorValue.setDate(currentDate());
-                //将封装了所有传感器数据的 sensorValue 对象插入数据库
-                this.insertSoilSensorValue(sensorValue);
-                // 将 globalSensorData 转换为 JSON 字符串
-                Gson gson = new Gson();
-                String jsonOutput = gson.toJson(globalSensorData);
-                System.out.println("传感器最新数据："+jsonOutput);
-//                log.info("所有传感器最新数据：" + globalSensorData);
             }catch (Exception e) {
+                valid = false; // 标记出现异常，本次数据采集无效，跳过入库
                 log.error("传感器" + sensorId + "数据采集异常：" + e.getMessage());
             }
         }
+        // 当且仅当本次全部采集没有异常时才入库
+        if (valid) {
+            sensorValue.setPastureId("1"); // 设置测试固定ID
+            sensorValue.setBatchId("2");
+            sensorValue.setDeviceId("null");
+            sensorValue.setTime(currentTime());
+            sensorValue.setDate(currentDate());
+
+            // 插入土壤传感器数据
+            this.insertSoilSensorValue(sensorValue);
+
+            // 如果采集到水质数据，则入库
+            if (globalSensorData.containsKey("water_quality")) {
+                fishWaterQualityMapper.insertFishWaterQuality(fishWaterQuality);
+            }
+        } else {
+            log.error("数据采集过程中发生异常，本次数据不做数据库插入。");
+        }
+
+        // 将 globalSensorData 转换为 JSON 字符串输出日志
+        Gson gson = new Gson();
+        String jsonOutput = gson.toJson(globalSensorData);
+        System.out.println("传感器最新数据：" + jsonOutput);
+
 
     }
 
