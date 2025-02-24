@@ -2,12 +2,12 @@
 bot:
   name: bot
   aiModel: deepseek-r1:8b
-  aiUrl: http://10.0.28.45:11434/api
+  aiUrl: http://192.168.1.153:11434/api
   aiDoc: chat
   stream: true
   aiTimeoutMsec: 60000
-  asrUrl: ws://10.0.19.14:10095
-  ttsUrl: http://10.0.19.31:50000/inference_
+  asrUrl: ws://192.168.1.153:10095
+  ttsUrl: http://192.168.1.194:50000/inference_
   ttsMode: sft
   spkId: 中文女
   promptText: 希望你以后能够做的比我还好呦。

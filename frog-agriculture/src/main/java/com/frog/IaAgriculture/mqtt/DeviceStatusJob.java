@@ -63,7 +63,7 @@ public class DeviceStatusJob {
                     }
                 }
 
-                Console.log("检测设备状态成功");
+//                Console.log("检测设备状态成功");
             }
         });
 

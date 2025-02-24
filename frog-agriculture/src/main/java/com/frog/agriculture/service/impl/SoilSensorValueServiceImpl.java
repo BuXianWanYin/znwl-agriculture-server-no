@@ -9,6 +9,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.PostConstruct;
 
+import com.frog.agriculture.domain.FishWaterQuality;
+import com.frog.agriculture.mapper.FishWaterQualityMapper;
+import com.frog.common.annotation.Excel;
 import com.frog.common.utils.SerialPortUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -23,9 +26,9 @@ import com.frog.agriculture.service.ISoilSensorValueService;
 
 /**
  * 菜的环境数据Service业务层处理
- * 同时整合传感器数据的采集、解析、入库，实现所有功能代码（无省略）
+ * 同时整合传感器数据的采集、解析、入库
  *
- * @author nealtsiao
+ * @author buxianwanyin
  * @date 2025-02-23
  */
 @Service
@@ -33,6 +36,9 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 
     @Autowired
     private SoilSensorValueMapper soilSensorValueMapper;
+
+    @Autowired
+    private FishWaterQualityMapper fishWaterQualityMapper; //水质传感器mapper
 
     // 串口工具，用于接收各种传感器数据
     private SerialPortUtil serialPortUtil;
@@ -65,7 +71,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
      */
     @Scheduled(fixedRate = 5000)
     public void fetchAllSensorData() {
-        System.out.println("获取传感器数据 fetchAllSensorData");
+        System.out.println("获取土壤传感器数据");
         // 每次采集前，清空或初始化一个 SoilSensorValue 对象
         SoilSensorValue sensorValue = new SoilSensorValue();
 
@@ -74,7 +80,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             byte[] command = hexStringToByteArray(entry.getValue());
             // 通过串口发送指令
             serialPortUtil.writeBytes(command);
-            // 接收响应数据，实际中可根据长度、校验等进行更完善判断
+            // 接收响应数据
             byte[] response = serialPortUtil.readBytes();
             Map<String, Object> parsedData = new HashMap<>();
 
@@ -109,18 +115,33 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 parsedData = parseSoilMoistureConductivityData(response);
                 globalSensorData.put("soil_moisture_conductivity", parsedData);
                 //电导率
-                sensorValue.setSoilConductivity( parsedData.get("conductivity").toString());
+                sensorValue.setSoilConductivity(parsedData.get("conductivity").toString());
                 //土壤湿度
-                sensorValue.setSoilMoisture( parsedData.get("moisture").toString());
+                sensorValue.setSoilMoisture(parsedData.get("moisture").toString());
             } else if ("8".equals(sensorId)) {
-//                // 解析水质传感器数据
-//                parsedData = parseWaterQualityData(response);
-//                globalSensorData.put("water_quality", parsedData);
-//                sensorValue.setWaterTemperature((Double) parsedData.get("temperature"));
-//                sensorValue.setWaterPh((Double) parsedData.get("ph_value"));
+                FishWaterQuality fishWaterQuality = new FishWaterQuality();
+                // 解析水质传感器数据
+                parsedData = parseWaterQualityData(response);
+                System.out.println("解析水质传感器数据" + parsedData);
+                fishWaterQuality.setWaterTemperature(parsedData.get("temperature").toString());//水温
+                fishWaterQuality.setWaterPhValue(parsedData.get("ph_value").toString());//ph值
+                fishWaterQuality.setFishPastureId(1L); // 大棚id 测试固定值
+                fishWaterQuality.setFishPastureBatchId(2L);//分区id 测试固定值
+                fishWaterQuality.setDeviceId(3L);//设备id  测试固定值
+                fishWaterQuality.setWaterOxygenContent("30");//含氧量  测试固定值
+                fishWaterQuality.setWaterNitriteContent("0.01g");//亚硝酸盐含量 测试固定值
+                fishWaterQuality.setTime(currentTime());
+                fishWaterQuality.setDate(currentDate());
+
+                System.out.println("水质数据" + fishWaterQuality.toString());
+                //添加水质数据
+                fishWaterQualityMapper.insertFishWaterQuality(fishWaterQuality);
+                globalSensorData.put("water_quality", parsedData);
+
+                log.info("水质传感器最新数据：" + parsedData);
             }
         }
-        sensorValue.setPastureId("1");
+        sensorValue.setPastureId("1"); //设置测试 固定ID
         sensorValue.setBatchId("2");
         sensorValue.setDeviceId("3");
         sensorValue.setTime(currentTime());
