@@ -56,8 +56,6 @@ public class IaPartitionFoodService extends ServiceImpl<IaPartitionFoodMapper, I
         if (cropBatch.getStatus().equals( "0")) {
             return ResultVO.failed("未成熟");
         }
-//        iaPartition.setProcessState(1);
-//        this.iaPartitionMapper.updateById(iaPartition);
         IaPartitionFood insertBean = new IaPartitionFood();
         insertBean.setIaPartitionId(cropBatch.getLandId().toString());
         BeanUtils.copyProperties(iaPartitionFood, insertBean);
