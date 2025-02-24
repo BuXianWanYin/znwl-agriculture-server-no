@@ -37,7 +37,7 @@ public class FishWaterQualityController extends BaseController
     /**
      * 查询水质数据列表
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:quality:list')")
+   // @PreAuthorize("@ss.hasPermi('agriculture:quality:list')")
     @GetMapping("/list")
     public TableDataInfo list(FishWaterQuality fishWaterQuality)
     {
