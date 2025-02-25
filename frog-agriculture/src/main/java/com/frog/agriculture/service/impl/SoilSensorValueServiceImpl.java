@@ -281,19 +281,19 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 
                 fishWaterQuality.setDeviceId(null); // 固定设备ID为null 因为用不上
 
-                // 生成溶解氧值（范围：5.00~8.00 mg/L）
-                double oxygen = ThreadLocalRandom.current().nextDouble(5.0, 8.0);
+                // 生成溶解氧值（范围：6.20~6.50 mg/L）
+                double oxygen = ThreadLocalRandom.current().nextDouble(6.2, 6.5);
                 oxygen = Math.round(oxygen * 100.0) / 100.0; // 保留两位小数
                 fishWaterQuality.setWaterOxygenContent(String.format("%.2f", oxygen));
 
-                 // 生成氨氮含量（范围：0.001~0.019 mg/L，保证<0.02）
-                double ammonia = ThreadLocalRandom.current().nextDouble(0.001, 0.019);
+                // 生成氨氮含量（范围：0.01~0.015 mg/L，保证值较为稳定）
+                double ammonia = ThreadLocalRandom.current().nextDouble(0.01, 0.015);
                 ammonia = Math.round(ammonia * 1000.0) / 1000.0; // 保留三位小数
                 fishWaterQuality.setWaterAmmoniaNitrogenContent(String.format("%.3f", ammonia));
 
-                // 生成亚硝酸盐（范围：0.01~0.09 mg/L）
-                double nitrite = ThreadLocalRandom.current().nextDouble(0.01, 0.099);
-                nitrite = Math.floor(nitrite * 100) / 100.0; // 确保两位小数且不超限
+                // 生成亚硝酸盐含量（范围：0.03~0.05 mg/L）
+                double nitrite = ThreadLocalRandom.current().nextDouble(0.03, 0.05);
+                nitrite = Math.floor(nitrite * 100) / 100.0; // 保留两位小数，确保值较为平稳
                 fishWaterQuality.setWaterNitriteContent(String.format("%.2f", nitrite));
 
 
@@ -392,9 +392,9 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             // 查询水质设备绑定信息
             Device waterDeviceBinding = deviceMapper.selectWaterById("8");// 使用已缓存的设备信息
             // 输出调试日志
-            System.out.println("sensorBindings 获取的 Device对象: " + waterDeviceBinding);
-            System.out.println("鱼棚id: " + waterDeviceBinding.getFishPastureId());
-            System.out.println("鱼分区id: " + waterDeviceBinding.getFishPastureBatchId());
+//            System.out.println("sensorBindings 获取的 Device对象: " + waterDeviceBinding);
+//            System.out.println("鱼棚id: " + waterDeviceBinding.getFishPastureId());
+//            System.out.println("鱼分区id: " + waterDeviceBinding.getFishPastureBatchId());
 
             // 设置绑定信息到水质数据对象
             fishWaterQuality.setFishPastureId(Long.valueOf(waterDeviceBinding.getFishPastureId()));

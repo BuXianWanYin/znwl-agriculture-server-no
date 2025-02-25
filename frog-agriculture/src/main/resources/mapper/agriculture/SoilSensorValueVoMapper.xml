@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.IaAgriculture.mapper.SoilSensorValueVoMapper">
+
+    <resultMap id="SoilSensorValueVoResultMap" type="com.frog.IaAgriculture.vo.SoilSensorValueVo">
+        <result property="temperature" column="temperature"/>
+        <result property="humidity" column="humidity"/>
+        <result property="lightLux" column="light_lux"/>
+        <result property="soilMoisture" column="soil_moisture"/>
+        <result property="soilTemperature" column="soil_temperature"/>
+        <result property="soilPh" column="soil_ph"/>
+        <result property="soilConductivity" column="soil_conductivity"/>
+        <result property="direction" column="direction"/>
+        <result property="speed" column="speed"/>
+        <result property="time" column="time"/>
+        <result property="date" column="date"/>
+        <result property="pastureName" column="pastureName"/>
+        <result property="batchName" column="batch_name"/>
+    </resultMap>
+
+    <select id="selectSoilSensorValueList" resultMap="SoilSensorValueVoResultMap" parameterType="com.frog.IaAgriculture.vo.SoilSensorValueVo">
+        SELECT
+        ss.temperature,
+        ss.humidity,
+        ss.light_lux,
+        ss.soil_moisture,
+        ss.soil_temperature,
+        ss.soil_ph,
+        ss.soil_conductivity,
+        ss.direction,
+        ss.speed,
+        ss.time,
+        ss.date,
+        p.name AS pastureName,
+        b.batch_name
+        FROM soil_sensor_value ss
+        LEFT JOIN ia_pasture p ON ss.pasture_id = p.id
+        LEFT JOIN agriculture_crop_batch b ON ss.batch_id = b.batch_id
+        <where>
+            <if test="temperature != null">
+                AND ss.temperature = #{temperature}
+            </if>
+            <if test="humidity != null">
+                AND ss.humidity = #{humidity}
+            </if>
+        </where>
+    </select>
+
+</mapper>
