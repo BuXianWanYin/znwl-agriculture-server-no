@@ -15346,3 +15346,697 @@ Caused by: java.lang.ClassNotFoundException: com.frog.IaAgriculture.service.Devi
 12:58:09.162 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,148] - 传感器6数据采集异常：null
 12:58:09.162 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,148] - 传感器8数据采集异常：null
 12:58:09.163 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,154] - 数据采集过程中发生异常，本次数据不做数据库插入。
+13:21:27.850 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+13:21:36.062 [restartedMain] ERROR c.f.c.u.SerialPortUtil - [<init>,24] - java.lang.RuntimeException: 打开串口失败
+13:21:40.879 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:21:40.879 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:21:40.880 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:21:40.880 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:21:40.880 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:21:40.880 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:21:40.880 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:21:40.949 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:40.951 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:40.953 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:40.954 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:40.955 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:40.956 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:40.957 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:45.889 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:21:45.889 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:21:45.890 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:21:45.890 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:21:45.890 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:21:45.890 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:21:45.890 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:21:45.894 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:45.896 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:45.897 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:45.898 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:45.899 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:45.900 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:45.901 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:50.878 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:21:50.878 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:21:50.878 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:21:50.879 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:21:50.879 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:21:50.879 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:21:50.879 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:21:50.882 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:50.884 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:50.886 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:50.887 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:50.888 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:50.889 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:50.890 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:55.879 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:21:55.879 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:21:55.879 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:21:55.879 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:21:55.879 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:21:55.879 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:21:55.880 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:21:55.881 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:55.883 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:55.884 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:55.884 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:55.885 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:55.886 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:21:55.887 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:00.877 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:22:00.877 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:22:00.877 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:22:00.877 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:22:00.877 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:22:00.877 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:22:00.878 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:22:00.880 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:00.881 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:00.882 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:00.883 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:00.884 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:00.885 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:00.886 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:05.877 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:22:05.877 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:22:05.877 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:22:05.877 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:22:05.878 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:22:05.878 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:22:05.878 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:22:05.880 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:05.880 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:05.881 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:05.882 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:05.883 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:05.884 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:05.884 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:10.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:22:10.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:22:10.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:22:10.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:22:10.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:22:10.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:22:10.878 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:22:10.879 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:10.881 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:10.882 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:10.884 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:10.885 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:10.886 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:10.886 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:15.877 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:22:15.877 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:22:15.877 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:22:15.877 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:22:15.877 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:22:15.877 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:22:15.878 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:22:15.879 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:15.880 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:15.881 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:15.881 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:15.882 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:15.883 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:22:15.883 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,208] - 更新设备状态失败:
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,device_id,pasture_id,batch_id,fish_pasture_id,fish_pasture_batch_id,address,device_name,status,sensorType,sensor_command,date,update_time,remark  FROM device      WHERE  (sensor_type = ?) LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'sensor_type' in 'where clause'
+13:26:20.133 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+13:26:28.482 [restartedMain] ERROR c.f.c.u.SerialPortUtil - [<init>,24] - java.lang.RuntimeException: 打开串口失败
+13:26:33.241 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:26:33.241 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:26:33.241 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:26:33.241 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:26:33.241 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:26:33.241 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:26:33.242 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:26:38.248 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:26:38.248 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:26:38.249 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:26:38.249 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:26:38.249 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:26:38.249 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:26:38.249 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:26:43.241 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:26:43.241 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:26:43.241 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:26:43.241 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:26:43.242 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:26:43.242 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:26:43.242 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:26:48.239 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:26:48.239 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:26:48.239 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:26:48.239 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:26:48.239 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:26:48.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:26:48.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:26:53.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:26:53.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:26:53.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:26:53.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:26:53.242 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:26:53.242 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:26:53.242 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:26:58.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:26:58.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:26:58.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:26:58.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:26:58.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:26:58.240 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:26:58.240 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:03.240 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:03.240 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:03.240 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:03.240 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:03.240 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:03.241 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:03.241 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:08.241 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:08.241 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:08.241 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:08.241 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:08.241 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:08.242 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:08.242 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:13.239 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:13.239 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:13.239 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:13.239 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:13.240 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:13.240 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:13.240 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:18.240 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:18.240 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:18.241 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:18.241 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:18.241 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:18.241 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:18.241 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:23.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:23.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:23.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:23.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:23.239 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:23.240 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:23.240 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:28.241 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:28.241 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:28.241 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:28.241 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:28.241 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:28.241 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:28.241 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:33.239 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:33.239 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:33.239 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:33.239 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:33.240 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:33.240 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:33.240 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:38.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:38.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:38.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:38.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:38.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:38.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:38.240 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:43.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:43.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:43.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:43.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:43.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:43.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:43.241 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:48.240 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:48.240 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:48.240 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:48.241 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:48.241 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:48.241 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:48.241 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:53.239 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:53.239 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:53.239 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:53.239 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:53.239 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:53.240 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:53.240 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:27:58.239 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:27:58.239 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:27:58.239 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:27:58.239 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:27:58.240 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:27:58.240 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:27:58.240 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:28:03.239 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:28:03.239 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:28:03.239 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:28:03.239 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:28:03.239 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:28:03.239 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:28:03.239 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:28:21.843 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+13:29:17.922 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:29:24.939 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:29:31.953 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:29:38.972 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:29:45.985 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:29:53.001 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:30:24.387 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:30:24.388 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:30:24.388 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:30:24.388 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:30:24.400 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:30:24.401 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:30:24.401 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:30:24.401 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:30:24.401 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:30:24.401 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:30:24.401 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:30:24.409 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:30:24.410 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:30:24.410 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:30:24.410 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:30:24.410 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:30:24.410 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:30:24.410 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:30:24.434 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:30:24.434 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:30:24.435 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:30:24.435 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:30:24.435 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:30:24.435 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:30:24.435 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:30:24.454 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:30:24.454 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:30:24.454 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:30:24.454 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:30:24.454 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:30:24.454 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:30:24.454 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:30:24.461 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:30:24.462 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:30:24.462 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:30:24.462 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:30:24.462 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:30:24.462 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:30:24.462 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null
+13:30:24.471 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器1数据采集异常：null
+13:30:24.471 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器2数据采集异常：null
+13:30:24.471 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器3数据采集异常：null
+13:30:24.471 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器4数据采集异常：null
+13:30:24.471 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器5数据采集异常：null
+13:30:24.472 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器6数据采集异常：null
+13:30:24.472 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,158] - 传感器8数据采集异常：null

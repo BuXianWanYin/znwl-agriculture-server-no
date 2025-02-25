@@ -16,6 +16,7 @@ import com.frog.IaAgriculture.mapper.DeviceMapper;
 import com.frog.agriculture.domain.FishWaterQuality;
 import com.frog.agriculture.mapper.FishWaterQualityMapper;
 import com.frog.common.annotation.Excel;
+import com.frog.common.utils.DeviceStatusTracker;
 import com.frog.common.utils.SerialPortUtil;
 import com.google.gson.Gson;
 import org.apache.commons.logging.Log;
@@ -57,6 +58,9 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
     // 存放各传感器的指令（十六进制字符串）
     private Map<String, String> sensorCommands = new HashMap<>();
 
+
+    private DeviceStatusTracker statusTracker = new DeviceStatusTracker();//任务状态跟踪
+    private Map<String, Device> deviceCache = new ConcurrentHashMap<>();
 
     //初始化指令
     @PostConstruct
@@ -116,6 +120,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         // 初始化鱼水质数据对象（存储水质相关数据）
         FishWaterQuality fishWaterQuality = new FishWaterQuality();
 
+        Map<String, Boolean> currentRunStatus = new HashMap<>();
+
         // 定义数据采集标识，若采集过程中出现异常则该次数据不入库
         boolean valid = true; // 标识本次数据采集是否成功
 
@@ -142,12 +148,20 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 byte[] response = serialPortUtil.readBytes(); // 读取响应数据
                 // 处理传感器数据，调用switch逻辑解析数据
                 processSensorDataBySwitch(sensorType, response, sensorValue, fishWaterQuality);
+
+                currentRunStatus.put(sensorType, true);
+                statusTracker.recordSuccess(sensorType);
             } catch (Exception e) {
                 // 采集或解析过程中出现异常，标记采集无效，并记录异常信息
-                valid = false;
+                currentRunStatus.put(sensorType, false);
+                statusTracker.recordFailure(sensorType);
                 log.error("传感器" + sensorType + "数据采集异常：" + e.getMessage());
             }
+
+
         }
+        //批量更新设备状态
+        updateDeviceStatus(statusTracker.getCurrentStatus());
 
         // 若数据采集过程中有异常，不进行数据入库操作
         if (!valid) {
@@ -174,6 +188,42 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         String jsonOutput = gson.toJson(globalSensorData); // 转换globalSensorData为JSON字符串
         System.out.println("传感器最新数据：" + jsonOutput); // 输出日志
     }
+
+    private void updateDeviceStatus(Map<String, Boolean> statusMap) {
+        statusMap.forEach((sensorType, isOnline) -> {
+            try {
+                Device device = getCachedDevice(sensorType);
+                if (device == null) {
+                    log.warn("未找到传感器类型为" +sensorType + "的设备");
+                    return;
+                }
+
+                String newStatus = isOnline ? "1" : "0";
+                if (!newStatus.equals(device.getStatus())) {
+                    device.setStatus(newStatus);
+                    deviceMapper.updateById(device); // 假设使用MyBatis-Plus的update方法
+                    log.info("设备:" + device.getDeviceId() + " 状态更新为" + (isOnline ? "在线" : "离线"));
+                }
+            } catch (Exception e) {
+                log.error("更新设备状态失败:" + e.getMessage());
+            }
+        });
+    }
+
+    private Device getCachedDevice(String sensorType) {
+        return deviceCache.computeIfAbsent(sensorType, key ->
+                deviceMapper.selectOne(new QueryWrapper<Device>()
+                        .eq("sensorType", sensorType)
+                        .last("LIMIT 1"))
+        );
+    }
+
+    // 每10分钟清理缓存
+    @Scheduled(fixedRate = 600000)
+    public void cleanDeviceCache() {
+        deviceCache.clear();
+    }
+
 
     /**
      * 使用switch进行传感器数据解析，根据传感器ID选择不同解析逻辑

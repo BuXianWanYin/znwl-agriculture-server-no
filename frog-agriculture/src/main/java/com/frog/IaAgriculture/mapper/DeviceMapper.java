@@ -22,7 +22,15 @@ public interface DeviceMapper extends BaseMapper<Device> {
 
     // 根据设备序号查询水质设备绑定信息
     @Select("SELECT fish_pasture_id, fish_pasture_batch_id FROM device WHERE sensorType = #{sensorType}")
-    Device selectWaterById(String sensorId);
+    Device selectWaterById(String sensorType);
+
+
+    // 根据设备序号查询设备所有信息
+    @Select("SELECT * FROM device WHERE sensorType = #{sensorType}")
+    Device selectInfoById(String sensorType);
+
+
+
 //    @Update("UPDATE device SET device_name = #{device.deviceName} WHERE id = #{device.id}")
 //    int updateDevice(@Param("device") Device device);
 
