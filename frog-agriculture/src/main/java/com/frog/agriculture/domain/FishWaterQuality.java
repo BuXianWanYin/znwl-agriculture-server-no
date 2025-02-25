@@ -61,6 +61,36 @@ public class FishWaterQuality extends BaseEntity {
     @Excel(name = "亚硝酸盐含量")
     private String waterNitriteContent;
 
+
+
+    /**
+     * 养殖棚名字
+     */
+    @Excel(name = "养殖棚名字")
+    private String fishPastureName;
+
+    public String getFishPastureBatchName() {
+        return fishPastureBatchName;
+    }
+
+    public void setFishPastureBatchName(String fishPastureBatchName) {
+        this.fishPastureBatchName = fishPastureBatchName;
+    }
+
+    public String getFishPastureName() {
+        return fishPastureName;
+    }
+
+    public void setFishPastureName(String fishPastureName) {
+        this.fishPastureName = fishPastureName;
+    }
+
+    /**
+     * 鱼分区名字
+     */
+    @Excel(name = "鱼分区名字")
+    private String fishPastureBatchName;
+
     public String getWaterAmmoniaNitrogenContent() {
         return waterAmmoniaNitrogenContent;
     }

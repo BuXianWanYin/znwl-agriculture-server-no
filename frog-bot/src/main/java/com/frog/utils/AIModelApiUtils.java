@@ -77,7 +77,6 @@ public class AIModelApiUtils {
             messages.add(info);
             paramMap.put("messages", messages);
             Map options = new HashMap<String,Object>();
-            paramMap.put("options",options);
             options.put("temperature",0.2);
             options.put("top_p",0.7);
             options.put("repeat_penalty",1.2);

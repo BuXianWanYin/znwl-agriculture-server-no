@@ -72,7 +72,13 @@ public class SoilSensorValueController extends BaseController
     {
         return AjaxResult.success(soilSensorValueService.selectSoilSensorValueById(id));
     }
-
+    /**
+     * 获取大棚土壤环境数据详细信息
+     */
+    @GetMapping("/pasture/{pastureId}")
+    public List<SoilSensorValue> getSoilSensorValuesByPastureId(@PathVariable String pastureId) {
+        return soilSensorValueService.getSoilSensorValuesByPastureId(pastureId);
+    }
     /**
      * 新增土壤环境数据
      */

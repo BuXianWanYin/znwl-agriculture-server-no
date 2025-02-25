@@ -692,6 +692,11 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         return soilSensorValueMapper.selectSoilSensorValueById(id);
     }
 
+    @Override
+    public List<SoilSensorValue> getSoilSensorValuesByPastureId(String pastureId) {
+        return soilSensorValueMapper.findByPastureId(pastureId);
+    }
+
     /**
      * 查询菜的环境数据列表
      *

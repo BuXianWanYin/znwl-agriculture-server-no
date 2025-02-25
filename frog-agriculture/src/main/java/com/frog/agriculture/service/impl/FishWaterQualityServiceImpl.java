@@ -40,6 +40,7 @@ public class FishWaterQualityServiceImpl implements IFishWaterQualityService
     @Override
     public List<FishWaterQuality> selectFishWaterQualityList(FishWaterQuality fishWaterQuality)
     {
+
         return fishWaterQualityMapper.selectFishWaterQualityList(fishWaterQuality);
     }
 
