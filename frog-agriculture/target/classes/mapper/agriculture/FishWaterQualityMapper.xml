@@ -13,6 +13,7 @@
         <result property="waterTemperature" column="water_temperature" />
         <result property="waterPhValue" column="water_ph_value" />
         <result property="waterOxygenContent" column="water_oxygen_content" />
+        <result property="waterAmmoniaNitrogenContent" column="water_ammonia_nitrogen_content" />
         <result property="waterNitriteContent" column="water_nitrite_content" />
         <result property="time" column="time" />
         <result property="date" column="date" />
@@ -21,7 +22,19 @@
 
     <!-- 查询公用SQL -->
     <sql id="selectFishWaterQualityVo">
-        SELECT id, device_id, fish_pasture_id, fish_pasture_batch_id, water_temperature, water_ph_value, water_oxygen_content, water_nitrite_content, time, date, del_flag
+        SELECT
+            id,
+            device_id,
+            fish_pasture_id,
+            fish_pasture_batch_id,
+            water_temperature,
+            water_ph_value,
+            water_oxygen_content,
+            water_ammonia_nitrogen_content,
+            water_nitrite_content,
+            time,
+            date,
+            del_flag
         FROM fish_water_quality
     </sql>
 
@@ -35,6 +48,9 @@
             <if test="waterTemperature != null and waterTemperature != ''"> AND water_temperature = #{waterTemperature}</if>
             <if test="waterPhValue != null and waterPhValue != ''"> AND water_ph_value = #{waterPhValue}</if>
             <if test="waterOxygenContent != null and waterOxygenContent != ''"> AND water_oxygen_content = #{waterOxygenContent}</if>
+            <if test="waterAmmoniaNitrogenContent != null and waterAmmoniaNitrogenContent != ''">
+                AND water_ammonia_nitrogen_content = #{waterAmmoniaNitrogenContent}
+            </if>
             <if test="waterNitriteContent != null and waterNitriteContent != ''"> AND water_nitrite_content = #{waterNitriteContent}</if>
             <if test="time != null and time != ''"> AND time = #{time}</if>
             <if test="date != null and date != ''"> AND date = #{date}</if>
@@ -58,6 +74,7 @@
             <if test="waterTemperature != null">water_temperature,</if>
             <if test="waterPhValue != null">water_ph_value,</if>
             <if test="waterOxygenContent != null">water_oxygen_content,</if>
+            <if test="waterAmmoniaNitrogenContent != null">water_ammonia_nitrogen_content,</if>
             <if test="waterNitriteContent != null">water_nitrite_content,</if>
             <if test="time != null">time,</if>
             <if test="date != null">date,</if>
@@ -70,6 +87,7 @@
             <if test="waterTemperature != null">#{waterTemperature},</if>
             <if test="waterPhValue != null">#{waterPhValue},</if>
             <if test="waterOxygenContent != null">#{waterOxygenContent},</if>
+            <if test="waterAmmoniaNitrogenContent != null">#{waterAmmoniaNitrogenContent},</if>
             <if test="waterNitriteContent != null">#{waterNitriteContent},</if>
             <if test="time != null">#{time},</if>
             <if test="date != null">#{date},</if>
@@ -87,6 +105,7 @@
             <if test="waterTemperature != null">water_temperature = #{waterTemperature},</if>
             <if test="waterPhValue != null">water_ph_value = #{waterPhValue},</if>
             <if test="waterOxygenContent != null">water_oxygen_content = #{waterOxygenContent},</if>
+            <if test="waterAmmoniaNitrogenContent != null">water_ammonia_nitrogen_content = #{waterAmmoniaNitrogenContent},</if>
             <if test="waterNitriteContent != null">water_nitrite_content = #{waterNitriteContent},</if>
             <if test="time != null">time = #{time},</if>
             <if test="date != null">date = #{date},</if>
