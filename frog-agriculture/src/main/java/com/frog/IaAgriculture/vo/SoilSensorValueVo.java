@@ -34,10 +34,10 @@ public class SoilSensorValueVo implements Serializable {
     private Double speed;
 
     /** 时间 */
-    private Date time;
+    private String time;
 
     /** 日期 */
-    private Date date;
+    private String date;
 
     /** 大棚名称 */
     private String pastureName;
@@ -100,16 +100,16 @@ public class SoilSensorValueVo implements Serializable {
     public void setSpeed(Double speed) {
         this.speed = speed;
     }
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
     public String getPastureName() {
