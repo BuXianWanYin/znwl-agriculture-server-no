@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.frog.common.utils.StringUtils;
 import org.fisco.bcos.sdk.transaction.model.dto.TransactionResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,11 +39,20 @@ public class DeviceService extends ServiceImpl<DeviceMapper, Device> { // Device
     @Transactional(rollbackFor = Exception.class) // 开启事务管理，出现异常时回滚事务
     public ResultVO addDevice(Device device) { // 添加设备方法，接收Device对象作为参数
 
-        // 判断设备是否已存在：根据设备ID在数据库中是否存在对应记录
-        if (baseMapper.exists(new LambdaQueryWrapper<Device>().eq(Device::getDeviceId, device.getDeviceId()))) { // 使用LambdaQueryWrapper构造查询条件：设备ID相等
-            return ResultVO.failed(ErrorCodeEnum.DATA_ALREADY_EXIST); // 已存在相同设备，返回数据已存在的错误响应
+        // 存在性校验
+        if (baseMapper.exists(new LambdaQueryWrapper<Device>().eq(Device::getDeviceId, device.getDeviceId()))) {
+            return ResultVO.failed(ErrorCodeEnum.DATA_ALREADY_EXIST);
         }
 
+        // 新增设备类型判断逻辑
+        if (isFishPastureDevice(device)) { // 鱼棚设备
+            device.setPastureId(null);     // 清空大棚相关字段
+            device.setFishPastureBatchId(device.getBatchId());//设置批次为鱼的批次
+            device.setBatchId(null);//清空大棚批次字段
+        } else if (isVegetablePastureDevice(device)) { // 蔬菜大棚设备
+            device.setFishPastureId(null);       // 清空鱼棚相关字段
+            device.setFishPastureBatchId(null);
+        }
         PlatformAddCollectorInputBO pa = new PlatformAddCollectorInputBO(); // 新建平台添加采集器输入对象
         pa.set_collectorId(device.getDeviceId()); // 设置采集器ID为设备的deviceId
         try { // 开始尝试调用平台服务添加采集器
@@ -50,10 +60,6 @@ public class DeviceService extends ServiceImpl<DeviceMapper, Device> { // Device
             device.setId(BaseUtil.getSnowflakeId()); // 使用雪花算法生成一个唯一ID，并设置给设备对象
             device.setDate(new Date()); // 设置当前日期时间到设备对象
             device.setAddress(transactionResponse.getTransactionReceipt().getFrom()); // 从交易回执中获取发送方地址，并设置到设备对象
-            //添加其他从前端获取的数据 sensorType  sensor_command  大棚id 分区id
-
-
-
 
             baseMapper.insert(device); // 将设备对象插入数据库中
             // 检查交易回执信息是否与预期相同，不符合则抛出异常
@@ -65,6 +71,17 @@ public class DeviceService extends ServiceImpl<DeviceMapper, Device> { // Device
         }
 
         return ResultVO.succeed(); // 操作成功时返回成功响应
+    }
+
+
+    // 判断是否为鱼棚设备的私有方法
+    private boolean isFishPastureDevice(Device device) {
+        return StringUtils.isNotBlank(device.getFishPastureId());
+    }
+
+    // 判断是否为蔬菜大棚设备的私有方法
+    private boolean isVegetablePastureDevice(Device device) {
+        return StringUtils.isNotBlank(device.getPastureId());
     }
 
     @Transactional(rollbackFor = Exception.class) // 开启事务管理，出现异常时回滚事务

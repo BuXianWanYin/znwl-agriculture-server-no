@@ -32,18 +32,33 @@ public class Device {
     private String deviceId;
 
     /**
-     * 大棚id，空为没有绑定牧场
+     * 大棚id，空为没有绑定大棚
      */
     @ApiModelProperty(value = "大棚id", example = "123")
     @TableField(value = "pasture_id")  // 指定数据库列名
     private String pastureId;
 
     /**
-     * 分区id，空为没有绑定牧场
+     * 分区id，空为没有绑定分区
      */
-    @ApiModelProperty(value = "分区id", example = "123")
+    @ApiModelProperty(value = "大棚分区id", example = "123")
     @TableField(value = "batch_id")  // 指定数据库列名
     private String batchId;
+
+
+    /**
+     * 鱼棚id，空为没有绑定鱼棚
+     */
+    @ApiModelProperty(value = "鱼棚id", example = "123")
+    @TableField(value = "fish_pasture_id")  // 指定数据库列名
+    private String fishPastureId;
+
+    /**
+     * 鱼分区id，空为没有绑定鱼分区
+     */
+    @ApiModelProperty(value = "鱼分区id", example = "123")
+    @TableField(value = "fish_pasture_batch_id")  // 指定数据库列名
+    private String fishPastureBatchId;
 
     @ApiModelProperty(value = "区块地址", example = "123")
     @TableField(value = "address")  // 指定数据库列名
