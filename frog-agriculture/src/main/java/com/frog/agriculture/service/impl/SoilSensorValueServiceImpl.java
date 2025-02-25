@@ -155,6 +155,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 // 采集或解析过程中出现异常，标记采集无效，并记录异常信息
                 currentRunStatus.put(sensorType, false);
                 statusTracker.recordFailure(sensorType);
+                valid = false;
                 log.error("传感器" + sensorType + "数据采集异常：" + e.getMessage());
             }
 
@@ -295,6 +296,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 nitrite = Math.floor(nitrite * 100) / 100.0; // 确保两位小数且不超限
                 fishWaterQuality.setWaterNitriteContent(String.format("%.2f", nitrite));
 
+
                 fishWaterQuality.setTime(currentTime()); // 设置采集时间
                 fishWaterQuality.setDate(currentDate()); // 设置采集日期
                 break;
@@ -375,20 +377,24 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         // 设置统一绑定信息到土壤传感器数据对象中
         sensorValue.setPastureId(String.valueOf(unifiedBinding[0])); // 设置大棚ID
         sensorValue.setBatchId(String.valueOf(unifiedBinding[1])); // 设置分区ID
-        sensorValue.setDeviceId("null"); // 标识为汇总数据
+        sensorValue.setDeviceId(""); // 设置设备id
         sensorValue.setTime(currentTime()); // 设置采集时间
         sensorValue.setDate(currentDate()); // 设置采集日期
         // 将统一后的数据入库
         this.insertSoilSensorValue(sensorValue);
 
         // 单独处理水质传感器数据（ID为8）
-        if (globalSensorData.containsKey("water_quality") && sensorBindings.containsKey("8")) {
+//        System.out.println("单独处理水质传感器数据  globalSensorData.containsKey(\"water_quality\") " + globalSensorData.containsKey("water_quality"));
+//        System.out.println("单独处理水质传感器数据  sensorBindings.containsKey(\"8\") " + sensorBindings.containsKey("8"));
+//        System.out.println("单独处理水质传感器数据  deviceMapper.selectWaterById(\"8\") " + deviceMapper.selectWaterById("8"));
+//        System.out.println("sensorBindings" + sensorBindings);
+        if (globalSensorData.containsKey("water_quality") && deviceMapper.selectWaterById("8") != null) {
             // 查询水质设备绑定信息
-            Device waterDeviceBinding = deviceMapper.selectWaterById("8");
+            Device waterDeviceBinding = deviceMapper.selectWaterById("8");// 使用已缓存的设备信息
             // 输出调试日志
-//            System.out.println("sensorBindings 获取的 Device对象: " + waterDeviceBinding);
-//            System.out.println("鱼棚id: " + waterDeviceBinding.getFishPastureId());
-//            System.out.println("鱼分区id: " + waterDeviceBinding.getFishPastureBatchId());
+            System.out.println("sensorBindings 获取的 Device对象: " + waterDeviceBinding);
+            System.out.println("鱼棚id: " + waterDeviceBinding.getFishPastureId());
+            System.out.println("鱼分区id: " + waterDeviceBinding.getFishPastureBatchId());
 
             // 设置绑定信息到水质数据对象
             fishWaterQuality.setFishPastureId(Long.valueOf(waterDeviceBinding.getFishPastureId()));
@@ -396,6 +402,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             fishWaterQuality.setTime(currentTime()); // 设置采集时间
             fishWaterQuality.setDate(currentDate()); // 设置采集日期
             // 将水质数据入库
+           // System.out.println(" processUnifiedSoilSensorData将水质数据入库");
             fishWaterQualityMapper.insertFishWaterQuality(fishWaterQuality);
         }
     }
@@ -422,10 +429,11 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 individualFishWaterQuality.setWaterTemperature(fishWaterQuality.getWaterTemperature());//设置水温
                 individualFishWaterQuality.setWaterPhValue(fishWaterQuality.getWaterPhValue());//设置ph值
                 individualFishWaterQuality.setWaterOxygenContent(fishWaterQuality.getWaterOxygenContent());//设置含氧量
-                individualFishWaterQuality.setWaterNitriteContent(fishWaterQuality.getWaterNitriteContent());//设置亚硝酸盐含量
+                individualFishWaterQuality.setWaterNitriteContent(fishWaterQuality.getWaterNitriteContent());//设置亚硝酸 盐含量
                 individualFishWaterQuality.setTime(currentTime()); // 设置采集时间
                 individualFishWaterQuality.setDate(currentDate()); // 设置采集日期
                 // 入库水质数据
+              //  System.out.println("processIndividualSensorData将水质数据入库");
                 fishWaterQualityMapper.insertFishWaterQuality(individualFishWaterQuality);
             } else {
                 // 针对其它非水质传感器：构造独立的土壤/环境数据对象
