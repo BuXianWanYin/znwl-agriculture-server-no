@@ -50,9 +50,9 @@ public class FishWaterQuality extends BaseEntity {
     private String waterPhValue;
 
     /**
-     * 含氧量
+     * 溶解氧含量
      */
-    @Excel(name = "含氧量")
+    @Excel(name = "溶解氧含量")
     private String waterOxygenContent;
 
     /**
@@ -61,6 +61,19 @@ public class FishWaterQuality extends BaseEntity {
     @Excel(name = "亚硝酸盐含量")
     private String waterNitriteContent;
 
+    public String getWaterAmmoniaNitrogenContent() {
+        return waterAmmoniaNitrogenContent;
+    }
+
+    public void setWaterAmmoniaNitrogenContent(String waterAmmoniaNitrogenContent) {
+        this.waterAmmoniaNitrogenContent = waterAmmoniaNitrogenContent;
+    }
+
+    /**
+     * 氨氮含量
+     */
+    @Excel(name = "氨氮含量")
+    private String waterAmmoniaNitrogenContent;
     /**
      * 时间
      */
@@ -177,6 +190,7 @@ public class FishWaterQuality extends BaseEntity {
                 .append("waterPhValue", getWaterPhValue())
                 .append("waterOxygenContent", getWaterOxygenContent())
                 .append("waterNitriteContent", getWaterNitriteContent())
+                .append("waterAmmoniaNitrogenContent", getWaterAmmoniaNitrogenContent())
                 .append("time", getTime())
                 .append("date", getDate())
                 .append("delFlag", getDelFlag())

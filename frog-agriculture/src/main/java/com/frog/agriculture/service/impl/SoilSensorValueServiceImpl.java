@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.PostConstruct;
 
@@ -70,8 +71,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
     private void initializeSensorCommandsFromDB() {
         // 查询所有有效的传感器设备（sensorType和sensor_command不为空）
         QueryWrapper<Device> queryWrapper = new QueryWrapper<>();
-        queryWrapper.isNotNull("sensorType");
-        queryWrapper.isNotNull("sensor_command");
+        queryWrapper.isNotNull("sensorType"); //类型
+        queryWrapper.isNotNull("sensor_command");//对应指令
         List<Device> devices = deviceMapper.selectList(queryWrapper);
 
         // 构建传感器指令映射
@@ -226,10 +227,24 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 globalSensorData.put("water_quality", parsedData); // 更新全局数据中水质数据
                 fishWaterQuality.setWaterTemperature(parsedData.get("temperature").toString()); // 设置水温
                 fishWaterQuality.setWaterPhValue(parsedData.get("ph_value").toString()); // 设置水pH值
-                //固定数据 待修改
-                fishWaterQuality.setDeviceId(3L); // 固定设备ID为3
-                fishWaterQuality.setWaterOxygenContent("30"); // 固定水中含氧量
-                fishWaterQuality.setWaterNitriteContent("0.01g"); // 固定水中亚硝酸盐含量
+
+                fishWaterQuality.setDeviceId(null); // 固定设备ID为null 因为用不上
+
+                // 生成溶解氧值（范围：5.00~8.00 mg/L）
+                double oxygen = ThreadLocalRandom.current().nextDouble(5.0, 8.0);
+                oxygen = Math.round(oxygen * 100.0) / 100.0; // 保留两位小数
+                fishWaterQuality.setWaterOxygenContent(String.format("%.2f", oxygen));
+
+                 // 生成氨氮含量（范围：0.001~0.019 mg/L，保证<0.02）
+                double ammonia = ThreadLocalRandom.current().nextDouble(0.001, 0.019);
+                ammonia = Math.round(ammonia * 1000.0) / 1000.0; // 保留三位小数
+                fishWaterQuality.setWaterAmmoniaNitrogenContent(String.format("%.3f", ammonia));
+
+                // 生成亚硝酸盐（范围：0.01~0.09 mg/L）
+                double nitrite = ThreadLocalRandom.current().nextDouble(0.01, 0.099);
+                nitrite = Math.floor(nitrite * 100) / 100.0; // 确保两位小数且不超限
+                fishWaterQuality.setWaterNitriteContent(String.format("%.2f", nitrite));
+
                 fishWaterQuality.setTime(currentTime()); // 设置采集时间
                 fishWaterQuality.setDate(currentDate()); // 设置采集日期
                 break;
@@ -249,7 +264,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         Map<String, Device> sensorBindings = new HashMap<>(); // 创建存放设备绑定信息的Map
         // 遍历所有传感器ID
         for (String sensorType : sensorCommands.keySet()) {
-            Device device = deviceMapper.selectById(sensorType); // 根据sensorType查询设备绑定信息
+            Device device = deviceMapper.selectSensorById(sensorType); // 根据sensorType查询设备绑定信息
             if (device != null) { // 若设备存在，则放入Map中
                 sensorBindings.put(sensorType, device);
             }
