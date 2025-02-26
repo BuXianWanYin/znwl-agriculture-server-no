@@ -6,6 +6,7 @@ import com.frog.config.BotConfig;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,23 +18,24 @@ public class AIModelApiUtils {
 
     private final static String URL = BotConfig.getAiUrl() + "/" + BotConfig.getAiDoc();
 
-    private static Map paramMap = new HashMap<String,Object>();
+    private static Map paramMap = new HashMap<String, Object>();
 
     private static final Log log = LogFactory.getLog(AIModelApiUtils.class);
 
 
-    static{
+    static {
         paramMap.put("model", BotConfig.getAiModel());
-        paramMap.put("stream",BotConfig.isStream());
+        paramMap.put("stream", BotConfig.isStream());
     }
 
     /**
      * 生成补全
+     *
      * @return
      */
-    public static String generate(String prompt){
+    public static String generate(String prompt) {
         try {
-            paramMap.put("prompt",prompt);
+            paramMap.put("prompt", prompt);
             return HttpClientUtil.doPost4Json(URL, paramMap);
         } catch (IOException e) {
             log.error(e);
@@ -43,18 +45,19 @@ public class AIModelApiUtils {
 
     /**
      * 生成补全流式
+     *
      * @return
      */
-    public static CloseableHttpResponse generateStream(String prompt){
+    public static CloseableHttpResponse generateStream(String prompt) {
         try {
-            paramMap.put("prompt",prompt);
-            Map options = new HashMap<String,Object>();
-            paramMap.put("options",options);
-            options.put("temperature",0.2);
-            options.put("top_p",0.7);
-            options.put("repeat_penalty",1.2);
-            options.put("mirostat_tau",3.0);
-            paramMap.put("options",options);
+            paramMap.put("prompt", prompt);
+            Map options = new HashMap<String, Object>();
+            paramMap.put("options", options);
+            options.put("temperature", 0.2);
+            options.put("top_p", 0.7);
+            options.put("repeat_penalty", 1.2);
+            options.put("mirostat_tau", 3.0);
+            paramMap.put("options", options);
             return HttpClientUtil.doPost4JsonStream(URL, paramMap);
         } catch (IOException e) {
             log.error(e);
@@ -76,13 +79,29 @@ public class AIModelApiUtils {
             info.put("content", prompt);
             messages.add(info);
             paramMap.put("messages", messages);
-            Map options = new HashMap<String,Object>();
-            options.put("temperature",0.2);
-            options.put("top_p",0.7);
-            options.put("repeat_penalty",1.2);
-            options.put("mirostat_tau",3.0);
-            paramMap.put("options",options);
+            Map options = new HashMap<String, Object>();
+            options.put("temperature", 0.2);
+            options.put("top_p", 0.7);
+            options.put("repeat_penalty", 1.2);
+            options.put("mirostat_tau", 3.0);
+            paramMap.put("options", options);
             return HttpClientUtil.doPost4JsonStream(URL, paramMap);
+        } catch (IOException e) {
+            log.error(e);
+        }
+        return null;
+    }
+
+    /**
+     * 聊天流式
+     *
+     * @return
+     */
+    public static CloseableHttpResponse chatVLStream(String url, String prompt, MultipartFile file) {
+        try {
+            Map paramMap = new HashMap<String, Object>();
+            paramMap.put("prompt_text", prompt);
+            return HttpClientUtil.doPostStream(url, paramMap, file);
         } catch (IOException e) {
             log.error(e);
         }

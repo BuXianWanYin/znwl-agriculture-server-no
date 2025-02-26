@@ -14,6 +14,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import org.yaml.snakeyaml.emitter.Emitter;
 import reactor.core.publisher.Flux;
@@ -24,6 +25,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -105,6 +107,35 @@ public class AIController {
 
                     // 发送新格式的数据
                     emitter.send(newJson.toJSONString());
+                }
+
+                emitter.complete(); // Complete the SSE connection
+            } catch (Exception e) {
+                log.error("Error in SSE: ", e); // Log the error
+                emitter.completeWithError(e); // Handle errors
+            }
+        }).start();
+        return emitter;
+    }
+
+    /**
+     * 聊天生成
+     *
+     * @param prompt
+     * @return
+     */
+    @PostMapping(value = "/chatVLStream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public SseEmitter chatVLStream(String prompt, MultipartFile file) {
+        SseEmitter emitter = new SseEmitter();
+        new Thread(() -> {
+            try {
+                CloseableHttpResponse response = AIModelApiUtils.chatVLStream(BotConfig.getAiVLUrl(), prompt, file);
+                InputStream contentInputStream = response.getEntity().getContent();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(contentInputStream, StandardCharsets.UTF_8));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    log.info("ai流式输出" + line);
+                    emitter.send(line); // 直接发送读取的行
                 }
 
                 emitter.complete(); // Complete the SSE connection

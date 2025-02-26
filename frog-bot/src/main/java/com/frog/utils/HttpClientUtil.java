@@ -30,8 +30,10 @@ import org.springframework.data.repository.init.ResourceReader;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.net.URI;
@@ -47,24 +49,25 @@ import java.util.Map;
 public class HttpClientUtil {
 
     /**
-    /**
+     * /**
      * 发送GET方式请求
+     *
      * @param url
      * @param paramMap
      * @return
      */
-    public static String doGet(String url,Map<String,String> paramMap){
+    public static String doGet(String url, Map<String, String> paramMap) {
         // 创建Httpclient对象
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
         String result = "";
         CloseableHttpResponse response = null;
 
-        try{
+        try {
             URIBuilder builder = new URIBuilder(url);
-            if(paramMap != null){
+            if (paramMap != null) {
                 for (String key : paramMap.keySet()) {
-                    builder.addParameter(key,paramMap.get(key));
+                    builder.addParameter(key, paramMap.get(key));
                 }
             }
             URI uri = builder.build();
@@ -76,12 +79,12 @@ public class HttpClientUtil {
             response = httpClient.execute(httpGet);
 
             //判断响应状态
-            if(response.getStatusLine().getStatusCode() == 200){
-                result = EntityUtils.toString(response.getEntity(),"UTF-8");
+            if (response.getStatusLine().getStatusCode() == 200) {
+                result = EntityUtils.toString(response.getEntity(), "UTF-8");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 response.close();
                 httpClient.close();
@@ -95,6 +98,7 @@ public class HttpClientUtil {
 
     /**
      * 发送GET方式请求
+     *
      * @param url
      * @param payload
      * @param promptWav
@@ -118,7 +122,7 @@ public class HttpClientUtil {
                     byte[] fileContent = buffer.toByteArray();
                     String base64FileContent = Base64.getEncoder().encodeToString(fileContent);
                     uriBuilder.addParameter("prompt_wav", base64FileContent);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -140,8 +144,10 @@ public class HttpClientUtil {
         }
         return result;
     }
+
     /**
      * 发送POST方式请求
+     *
      * @param url
      * @param paramMap
      * @return
@@ -189,6 +195,7 @@ public class HttpClientUtil {
 
     /**
      * 发送POST方式请求
+     *
      * @param url
      * @param paramMap
      * @return
@@ -208,9 +215,9 @@ public class HttpClientUtil {
                 //构造json格式数据
                 JSONObject jsonObject = new JSONObject();
                 for (Map.Entry<String, String> param : paramMap.entrySet()) {
-                    jsonObject.put(param.getKey(),param.getValue());
+                    jsonObject.put(param.getKey(), param.getValue());
                 }
-                StringEntity entity = new StringEntity(jsonObject.toString(),"utf-8");
+                StringEntity entity = new StringEntity(jsonObject.toString(), "utf-8");
                 //设置请求编码
                 entity.setContentEncoding("utf-8");
                 //设置数据类型
@@ -239,6 +246,7 @@ public class HttpClientUtil {
 
     /**
      * 发送POST方式请求
+     *
      * @param url
      * @param paramMap
      * @return
@@ -256,9 +264,9 @@ public class HttpClientUtil {
                 //构造json格式数据
                 JSONObject jsonObject = new JSONObject();
                 for (Map.Entry<String, String> param : paramMap.entrySet()) {
-                    jsonObject.put(param.getKey(),param.getValue());
+                    jsonObject.put(param.getKey(), param.getValue());
                 }
-                StringEntity entity = new StringEntity(jsonObject.toString(),"utf-8");
+                StringEntity entity = new StringEntity(jsonObject.toString(), "utf-8");
                 //设置请求编码
                 entity.setContentEncoding("utf-8");
                 //设置数据类型
@@ -279,6 +287,49 @@ public class HttpClientUtil {
 
     /**
      * 发送POST方式请求
+     *
+     * @param url
+     * @return
+     * @throws IOException
+     */
+    public static CloseableHttpResponse doPostStream(String url, Map<String, String> paramMap, MultipartFile file) throws IOException {
+        // 创建Httpclient对象
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        try {
+            // 创建Http Post请求
+            HttpPost httpPost = new HttpPost(url);
+
+            // 构建multipart请求体
+            MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+
+            // 添加表单参数
+            for (Map.Entry<String, String> param : paramMap.entrySet()) {
+                builder.addTextBody(param.getKey(), param.getValue(),
+                        ContentType.create("text/plain", "UTF-8"));
+            }
+
+            if (!ObjectUtils.isEmpty(file)){
+                // 添加文件
+                builder.addBinaryBody("prompt_image", file.getInputStream(),
+                        ContentType.create("application/octet-stream"), "prompt_image");
+            }
+
+            HttpEntity multipart = builder.build();
+
+            httpPost.setEntity(multipart);
+            httpPost.setConfig(builderRequestConfig());
+
+            // 执行http请求
+            return httpClient.execute(httpPost);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    /**
+     * 发送POST方式请求
+     *
      * @param url
      * @param paramMap
      * @param promptWav
@@ -286,7 +337,7 @@ public class HttpClientUtil {
      * @return
      * @throws IOException
      */
-    public static byte[] doPostByte(String url, Map<String, String> paramMap, String promptWav,String mode) throws IOException {
+    public static byte[] doPostByte(String url, Map<String, String> paramMap, String promptWav, String mode) throws IOException {
         // 创建Httpclient对象
         CloseableHttpClient httpClient = HttpClients.createDefault();
         CloseableHttpResponse response = null;
@@ -346,13 +397,14 @@ public class HttpClientUtil {
 
     /**
      * 发送POST方式请求
+     *
      * @param url
      * @param paramMap
      * @param promptWav
      * @return
      * @throws IOException
      */
-    public static byte[] doPostBytes(String url, Map<String, String> paramMap, String promptWav,String mode) throws IOException {
+    public static byte[] doPostBytes(String url, Map<String, String> paramMap, String promptWav, String mode) throws IOException {
         // 创建Httpclient对象
         CloseableHttpClient httpClient = HttpClients.createDefault();
         CloseableHttpResponse response = null;
@@ -414,13 +466,14 @@ public class HttpClientUtil {
 
     /**
      * Post
+     *
      * @param url
      * @param paramMap
      * @param promptWav
      * @return
      * @throws IOException
      */
-    public static byte[] doPostRestTemplateByte(String url, Map<String, String> paramMap, String promptWav,String mode) throws IOException {
+    public static byte[] doPostRestTemplateByte(String url, Map<String, String> paramMap, String promptWav, String mode) throws IOException {
         // 创建配置化的RestTemplate
         RestTemplate restTemplate = new RestTemplateBuilder()
                 .rootUri(url)
