@@ -6,7 +6,7 @@ bot:
   aiDoc: chat
   stream: true
   aiTimeoutMsec: 60000
-  asrUrl: ws://192.168.1.153:10095
+  asrUrl: ws://192.168.1.128:10095
   ttsUrl: http://192.168.1.194:50000/inference_
   ttsMode: sft
   spkId: 中文女

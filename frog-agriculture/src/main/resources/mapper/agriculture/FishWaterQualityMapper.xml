@@ -23,38 +23,38 @@
     <!-- 查询公用SQL -->
     <sql id="selectFishWaterQualityVo">
         SELECT
-            id,
-            device_id,
-            fish_pasture_id,
-            fish_pasture_batch_id,
-            water_temperature,
-            water_ph_value,
-            water_oxygen_content,
-            water_ammonia_nitrogen_content,
-            water_nitrite_content,
-            time,
-            date,
-            del_flag
-        FROM fish_water_quality
+            fwq.water_ph_value,
+            fwq.water_temperature,
+            fwq.water_oxygen_content,
+            fwq.water_ammonia_nitrogen_content,
+            fwq.water_nitrite_content,
+            fwq.TIME,
+            fwq.DATE,
+            fp.NAME AS fishPastureName,
+            fpb.batch_name AS fishPastureBatchName
+        FROM
+            fish_water_quality fwq
+                LEFT JOIN fish_pasture fp ON fwq.fish_pasture_id = fp.id
+                LEFT JOIN fish_pasture_batch fpb ON fwq.fish_pasture_batch_id = fpb.batch_id
     </sql>
 
     <!-- 查询列表 -->
     <select id="selectFishWaterQualityList" parameterType="com.frog.agriculture.domain.FishWaterQuality" resultMap="FishWaterQualityResult">
         <include refid="selectFishWaterQualityVo"/>
         <where>
-            <if test="deviceId != null"> AND device_id = #{deviceId}</if>
-            <if test="fishPastureId != null"> AND fish_pasture_id = #{fishPastureId}</if>
-            <if test="fishPastureBatchId != null"> AND fish_pasture_batch_id = #{fishPastureBatchId}</if>
-            <if test="waterTemperature != null and waterTemperature != ''"> AND water_temperature = #{waterTemperature}</if>
-            <if test="waterPhValue != null and waterPhValue != ''"> AND water_ph_value = #{waterPhValue}</if>
-            <if test="waterOxygenContent != null and waterOxygenContent != ''"> AND water_oxygen_content = #{waterOxygenContent}</if>
+            <if test="deviceId != null"> AND fwq.device_id = #{deviceId}</if>
+            <if test="fishPastureId != null"> AND fwq.fish_pasture_id = #{fishPastureId}</if>
+            <if test="fishPastureBatchId != null"> AND fwq.fish_pasture_batch_id = #{fishPastureBatchId}</if>
+            <if test="waterTemperature != null and waterTemperature != ''"> AND fwq.water_temperature = #{waterTemperature}</if>
+            <if test="waterPhValue != null and waterPhValue != ''"> AND fwq.water_ph_value = #{waterPhValue}</if>
+            <if test="waterOxygenContent != null and waterOxygenContent != ''"> AND fwq.water_oxygen_content = #{waterOxygenContent}</if>
             <if test="waterAmmoniaNitrogenContent != null and waterAmmoniaNitrogenContent != ''">
-                AND water_ammonia_nitrogen_content = #{waterAmmoniaNitrogenContent}
+                AND fwq.water_ammonia_nitrogen_content = #{waterAmmoniaNitrogenContent}
             </if>
-            <if test="waterNitriteContent != null and waterNitriteContent != ''"> AND water_nitrite_content = #{waterNitriteContent}</if>
-            <if test="time != null and time != ''"> AND time = #{time}</if>
-            <if test="date != null and date != ''"> AND date = #{date}</if>
-            AND del_flag = 0
+            <if test="waterNitriteContent != null and waterNitriteContent != ''"> AND fwq.water_nitrite_content = #{waterNitriteContent}</if>
+            <if test="time != null and time != ''"> AND fwq.time = #{time}</if>
+            <if test="date != null and date != ''"> AND fwq.date = #{date}</if>
+            AND fwq.del_flag = 0
         </where>
     </select>
 
