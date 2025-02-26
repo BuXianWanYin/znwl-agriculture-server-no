@@ -204,5 +204,5 @@ public class SerialPortUtil {
                 log.error("读取输入出错", e);
             }
         }
-        }
+    }
 }
