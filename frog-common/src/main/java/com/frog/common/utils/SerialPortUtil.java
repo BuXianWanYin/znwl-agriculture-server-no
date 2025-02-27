@@ -14,7 +14,7 @@ public class SerialPortUtil {
 
     public SerialPortUtil() {
         // 配置串口：下面以 COM3 为例，波特率 9600
-        serialPort = SerialPort.getCommPort("COM3");
+        serialPort = SerialPort.getCommPort("COM4");
         serialPort.setBaudRate(9600);
         serialPort.setNumDataBits(8);
         serialPort.setParity(SerialPort.NO_PARITY);

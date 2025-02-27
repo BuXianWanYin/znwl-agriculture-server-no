@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frog.agriculture.mapper.SensorAlertMapper">
+    
+    <resultMap type="com.frog.agriculture.domain.SensorAlert" id="SensorAlertResult">
+        <id     property="id"           column="id"                />
+        <result property="alertType"    column="alert_type"        />
+        <result property="alertMessage" column="alert_message"     />
+        <result property="paramName"    column="param_name"        />
+        <result property="paramValue"   column="param_value"       />
+        <result property="thresholdMin" column="threshold_min"     />
+        <result property="thresholdMax" column="threshold_max"     />
+        <result property="pastureId"    column="pasture_id"        />
+        <result property="batchId"      column="batch_id"          />
+        <result property="deviceId"     column="device_id"         />
+        <result property="deviceName"   column="device_name"       />
+        <result property="sensorType"   column="sensor_type"       />
+        <result property="alertTime"    column="alert_time"        />
+        <result property="alertDate"    column="alert_date"        />
+        <result property="status"       column="status"            />
+        <result property="remark"       column="remark"            />
+    </resultMap>
+
+    <sql id="selectSensorAlertVo">
+        select id, alert_type, alert_message, param_name, param_value, threshold_min, threshold_max, 
+        pasture_id, batch_id, device_id, device_name, sensor_type, alert_time, alert_date, status, remark
+        from sensor_alert
+    </sql>
+
+    <select id="selectSensorAlertList" parameterType="com.frog.agriculture.domain.SensorAlert" resultMap="SensorAlertResult">
+        <include refid="selectSensorAlertVo"/>
+        <where>  
+            <if test="alertType != null  and alertType != ''"> and alert_type = #{alertType}</if>
+            <if test="paramName != null  and paramName != ''"> and param_name like concat('%', #{paramName}, '%')</if>
+            <if test="pastureId != null  and pastureId != ''"> and pasture_id = #{pastureId}</if>
+            <if test="batchId != null  and batchId != ''"> and batch_id = #{batchId}</if>
+            <if test="deviceId != null  and deviceId != ''"> and device_id = #{deviceId}</if>
+            <if test="sensorType != null  and sensorType != ''"> and sensor_type = #{sensorType}</if>
+            <if test="alertDate != null  and alertDate != ''"> and alert_date = #{alertDate}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+        </where>
+        order by id desc
+    </select>
+    
+    <select id="selectSensorAlertById" parameterType="Long" resultMap="SensorAlertResult">
+        <include refid="selectSensorAlertVo"/>
+        where id = #{id}
+    </select>
+    
+    <select id="selectAlertsByPastureId" parameterType="String" resultMap="SensorAlertResult">
+        <include refid="selectSensorAlertVo"/>
+        where pasture_id = #{pastureId}
+        order by id desc
+    </select>
+    
+    <select id="selectUnhandledAlerts" resultMap="SensorAlertResult">
+        <include refid="selectSensorAlertVo"/>
+        where status = '0'
+        order by id desc
+    </select>
+        
+    <insert id="insertSensorAlert" parameterType="com.frog.agriculture.domain.SensorAlert" useGeneratedKeys="true" keyProperty="id">
+        insert into sensor_alert
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="alertType != null">alert_type,</if>
+            <if test="alertMessage != null">alert_message,</if>
+            <if test="paramName != null">param_name,</if>
+            <if test="paramValue != null">param_value,</if>
+            <if test="thresholdMin != null">threshold_min,</if>
+            <if test="thresholdMax != null">threshold_max,</if>
+            <if test="pastureId != null">pasture_id,</if>
+            <if test="batchId != null">batch_id,</if>
+            <if test="deviceId != null">device_id,</if>
+            <if test="deviceName != null">device_name,</if>
+            <if test="sensorType != null">sensor_type,</if>
+            <if test="alertTime != null">alert_time,</if>
+            <if test="alertDate != null">alert_date,</if>
+            <if test="status != null">status,</if>
+            <if test="remark != null">remark,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="alertType != null">#{alertType},</if>
+            <if test="alertMessage != null">#{alertMessage},</if>
+            <if test="paramName != null">#{paramName},</if>
+            <if test="paramValue != null">#{paramValue},</if>
+            <if test="thresholdMin != null">#{thresholdMin},</if>
+            <if test="thresholdMax != null">#{thresholdMax},</if>
+            <if test="pastureId != null">#{pastureId},</if>
+            <if test="batchId != null">#{batchId},</if>
+            <if test="deviceId != null">#{deviceId},</if>
+            <if test="deviceName != null">#{deviceName},</if>
+            <if test="sensorType != null">#{sensorType},</if>
+            <if test="alertTime != null">#{alertTime},</if>
+            <if test="alertDate != null">#{alertDate},</if>
+            <if test="status != null">#{status},</if>
+            <if test="remark != null">#{remark},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSensorAlert" parameterType="com.frog.agriculture.domain.SensorAlert">
+        update sensor_alert
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="alertType != null">alert_type = #{alertType},</if>
+            <if test="alertMessage != null">alert_message = #{alertMessage},</if>
+            <if test="paramName != null">param_name = #{paramName},</if>
+            <if test="paramValue != null">param_value = #{paramValue},</if>
+            <if test="thresholdMin != null">threshold_min = #{thresholdMin},</if>
+            <if test="thresholdMax != null">threshold_max = #{thresholdMax},</if>
+            <if test="pastureId != null">pasture_id = #{pastureId},</if>
+            <if test="batchId != null">batch_id = #{batchId},</if>
+            <if test="deviceId != null">device_id = #{deviceId},</if>
+            <if test="deviceName != null">device_name = #{deviceName},</if>
+            <if test="sensorType != null">sensor_type = #{sensorType},</if>
+            <if test="alertTime != null">alert_time = #{alertTime},</if>
+            <if test="alertDate != null">alert_date = #{alertDate},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSensorAlertById" parameterType="Long">
+        delete from sensor_alert where id = #{id}
+    </delete>
+
+    <delete id="deleteSensorAlertByIds" parameterType="Long">
+        delete from sensor_alert where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
