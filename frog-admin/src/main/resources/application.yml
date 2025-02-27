@@ -4,7 +4,7 @@ bot:
   aiModel: deepseek-r1:8b
   aiUrl: http://192.168.1.153:11434/api
   aiDoc: chat
-  stream: true
+  stream: false
   aiTimeoutMsec: 60000
   asrUrl: ws://192.168.1.128:10095
   ttsUrl: http://192.168.1.194:50000/inference_
@@ -69,7 +69,7 @@ spring:
     username: root
     password: 123456
     #    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.1.128:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.1.156:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.cj.jdbc.Driver
     initial-size: 5                                       # 初始化大小
     min-idle: 10                                          # 最小连接数
@@ -83,7 +83,7 @@ spring:
       # 主库数据源
       master:
         #        url: jdbc:mysql://localhost:3306/frog_agriculture?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-        url: jdbc:mysql://192.168.1.128:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://192.168.1.156:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
       username: root
       password: 123456
       # 从库数据源

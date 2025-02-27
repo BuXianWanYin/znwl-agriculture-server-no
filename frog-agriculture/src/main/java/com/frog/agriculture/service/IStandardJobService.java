@@ -2,6 +2,7 @@ package com.frog.agriculture.service;
 
 import java.util.List;
 import com.frog.agriculture.domain.StandardJob;
+import com.frog.common.core.domain.model.AIStandardJobDTO;
 
 /**
  * 标准作业任务Service接口
@@ -58,4 +59,9 @@ public interface IStandardJobService
      * @return 结果
      */
     public int deleteStandardJobByJobId(Long jobId);
+
+    /**
+     * ai处理任务
+     */
+    int aiInsertStandardJob(AIStandardJobDTO aiStandardJobDTO);
 }
