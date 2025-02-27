@@ -4,7 +4,7 @@ bot:
   aiModel: deepseek-r1:8b
   aiUrl: http://192.168.1.153:11434/api
   aiDoc: chat
-  stream: true
+  stream: false
   aiTimeoutMsec: 60000
   asrUrl: ws://192.168.1.128:10095
   ttsUrl: http://192.168.1.194:50000/inference_
@@ -13,6 +13,7 @@ bot:
   promptText: 希望你以后能够做的比我还好呦。
   promptWav: static/cross_lingual_prompt.wav
   instructText: Theo \'Crimson\', is a fiery, passionate rebel leader. \ Fights with fervor for justice, but struggles with impulsiveness.
+  aiVLUrl: http://192.168.1.194:10095/chat
 # 项目相关配置
 ruoyi:
   # 名称
@@ -25,7 +26,7 @@ ruoyi:
   demoEnabled: true
   # 文件路径，以uploadPath结尾 示例（ Windows配置 D:/uploadPath，Linux配置 /uploadPath, Mac /Users/xxx）
   # D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
-  profile: D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
+  profile: E:\idea\project\Java\znwl-agriculture-server-no\uploadPath
   #  profile: F:/ny/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
 
   #  profile: C:/Users/tanmin/Desktop/区块链技术应用/若依农业/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
@@ -68,7 +69,7 @@ spring:
     username: root
     password: 123456
     #    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.1.128:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.1.156:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.cj.jdbc.Driver
     initial-size: 5                                       # 初始化大小
     min-idle: 10                                          # 最小连接数
@@ -82,7 +83,7 @@ spring:
       # 主库数据源
       master:
         #        url: jdbc:mysql://localhost:3306/frog_agriculture?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-        url: jdbc:mysql://192.168.1.128:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://192.168.1.156:3306/znwl_agriculture?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
       username: root
       password: 123456
       # 从库数据源

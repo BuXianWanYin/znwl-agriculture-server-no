@@ -40,6 +40,17 @@ public class BotConfig {
 
     private static String instructText;
 
+    /* VL模型 */
+    private static String aiVLUrl;
+
+    public static String getAiVLUrl() {
+        return aiVLUrl;
+    }
+
+    public void setAiVLUrl(String aiVLUrl) {
+        BotConfig.aiVLUrl = aiVLUrl;
+    }
+
     public void setAiModel(String aiModel) {
         BotConfig.aiModel = aiModel;
     }
