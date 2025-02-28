@@ -6064,3 +6064,498 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 23:17:50.150 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
 23:17:50.158 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
 23:17:59.179 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740755805306 paused.
+00:52:54.490 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 368 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+00:52:54.494 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+00:52:54.514 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+00:53:00.085 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+00:53:00.085 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+00:53:00.085 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+00:53:00.350 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+00:53:05.227 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+00:53:05.227 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+00:53:05.228 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+00:53:05.261 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+00:53:08.292 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+00:53:08.295 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 709935219
+00:53:08.544 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+00:53:08.546 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+00:53:08.554 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+00:53:08.584 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+00:53:08.584 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+00:53:08.589 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+00:53:08.601 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+00:53:08.603 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+00:53:08.779 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+00:53:09.487 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+00:53:09.498 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+00:53:09.498 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+00:53:09.498 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+00:53:09.522 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+00:53:09.522 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+00:53:09.529 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1459
+00:53:10.261 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+00:53:11.461 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+00:53:11.478 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+00:53:11.478 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+00:53:11.488 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740761591463'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+00:53:11.488 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+00:53:11.488 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+00:53:11.490 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2d5d3cc1
+00:53:12.499 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,107] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+00:53:12.499 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,107] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+00:53:12.499 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,107] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+00:53:12.500 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,107] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+00:53:12.500 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,107] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+00:53:12.500 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,107] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+00:53:12.500 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,107] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+00:53:12.501 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+00:53:16.663 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+00:53:17.279 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 23.351 seconds (JVM running for 25.581)
+00:53:18.256 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740761591463 started.
+00:53:40.477 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [saveAlert,968] - 生成预警信息: 土壤电导率接近下限：当前值104.0，警戒值110.0
+00:53:47.661 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740761591463 paused.
+01:04:33.966 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 18040 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+01:04:33.970 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+01:04:33.992 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+01:04:39.349 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+01:04:39.350 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+01:04:39.350 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+01:04:39.608 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+01:04:44.395 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+01:04:44.395 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+01:04:44.396 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+01:04:44.426 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+01:04:47.438 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+01:04:47.441 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1592834691
+01:04:47.696 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+01:04:47.698 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+01:04:47.705 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+01:04:47.726 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+01:04:47.726 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+01:04:47.732 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+01:04:47.744 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+01:04:47.745 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+01:04:47.904 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+01:04:48.549 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:04:48.560 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+01:04:48.560 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:04:48.561 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+01:04:48.640 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+01:04:48.640 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+01:04:48.649 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1459
+01:04:49.383 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+01:04:50.571 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+01:04:50.588 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+01:04:50.588 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+01:04:50.596 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740762290573'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+01:04:50.596 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+01:04:50.596 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+01:04:50.599 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@4bb620b
+01:04:51.744 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+01:04:51.745 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+01:04:51.745 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+01:04:51.745 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+01:04:51.745 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+01:04:51.745 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+01:04:51.745 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+01:04:51.747 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+01:04:56.108 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+01:04:56.710 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 23.261 seconds (JVM running for 25.468)
+01:04:57.686 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762290573 started.
+01:05:35.358 [schedule-pool-4] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,303] - 生成预警信息: 土壤电导率接近下限：当前值104.0，警戒值110.0
+01:05:43.125 [schedule-pool-6] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,233] - 自动处理预警: 土壤电导率 数据恢复正常
+01:05:45.127 [schedule-pool-6] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,241] - 已发送数据恢复继电器控制命令
+01:05:52.845 [schedule-pool-1] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,303] - 生成严重警告信息: 光照过低：当前值3.0，最小阈值80.0
+01:05:56.056 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+01:05:56.083 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+01:05:56.092 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+01:06:23.731 [schedule-pool-7] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,303] - 生成预警信息: 土壤电导率接近下限：当前值109.0，警戒值110.0
+01:06:31.460 [schedule-pool-10] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,233] - 自动处理预警: 土壤电导率 数据恢复正常
+01:06:33.461 [schedule-pool-10] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,241] - 已发送数据恢复继电器控制命令
+01:07:02.108 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+01:07:02.181 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+01:07:02.184 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+01:07:04.343 [schedule-pool-8] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,303] - 生成预警信息: 土壤电导率接近下限：当前值109.0，警戒值110.0
+01:07:12.067 [schedule-pool-6] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,233] - 自动处理预警: 土壤电导率 数据恢复正常
+01:07:14.068 [schedule-pool-6] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,241] - 已发送数据恢复继电器控制命令
+01:07:22.419 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762290573 paused.
+01:12:06.881 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 40052 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+01:12:06.884 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+01:12:06.908 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+01:12:12.321 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+01:12:12.322 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+01:12:12.322 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+01:12:12.594 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+01:12:17.583 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+01:12:17.583 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+01:12:17.584 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+01:12:17.616 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+01:12:20.628 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+01:12:20.630 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 454508341
+01:12:20.878 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+01:12:20.880 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+01:12:20.887 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+01:12:20.895 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+01:12:20.895 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+01:12:20.901 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+01:12:20.913 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+01:12:20.915 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+01:12:21.103 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+01:12:21.750 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:12:21.761 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+01:12:21.761 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:12:21.761 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+01:12:21.794 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+01:12:21.794 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+01:12:21.802 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1459
+01:12:22.543 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+01:12:23.858 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+01:12:23.875 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+01:12:23.875 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+01:12:23.884 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740762743860'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+01:12:23.885 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+01:12:23.885 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+01:12:23.887 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6ab6da35
+01:12:24.928 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+01:12:24.928 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+01:12:24.928 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+01:12:24.928 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+01:12:24.928 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+01:12:24.929 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+01:12:24.929 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+01:12:24.930 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+01:12:29.164 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+01:12:29.791 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 23.475 seconds (JVM running for 25.792)
+01:12:30.782 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762743860 started.
+01:12:39.618 [Thread-48] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762743860 paused.
+01:12:40.564 [Thread-48] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762743860 shutting down.
+01:12:40.564 [Thread-48] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762743860 paused.
+01:12:40.565 [Thread-48] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762743860 shutdown complete.
+01:12:40.565 [Thread-48] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+01:12:40.571 [Thread-48] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+01:12:40.578 [Thread-48] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+01:12:41.099 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 40052 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+01:12:41.099 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+01:12:44.837 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+01:12:44.837 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+01:12:44.837 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+01:12:44.929 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+01:12:46.417 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+01:12:46.418 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+01:12:46.418 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+01:12:46.430 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+01:12:46.445 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+01:12:46.445 [nioEventLoopGroup-8-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1760096157
+01:12:46.447 [nioEventLoopGroup-8-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":1,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+01:12:46.447 [nioEventLoopGroup-8-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+01:12:46.449 [nioEventLoopGroup-8-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+01:12:46.483 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+01:12:46.483 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+01:12:46.483 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+01:12:46.484 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+01:12:46.484 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+01:12:46.629 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+01:12:46.660 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:12:46.661 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+01:12:46.662 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:12:46.662 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+01:12:46.680 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+01:12:46.680 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+01:12:46.688 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1459
+01:12:47.063 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-2} inited
+01:12:47.653 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+01:12:47.655 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+01:12:47.656 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+01:12:47.656 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740762767654'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+01:12:47.656 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+01:12:47.656 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+01:12:47.656 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@242e05dd
+01:12:48.340 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+01:12:48.340 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+01:12:48.340 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+01:12:48.340 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+01:12:48.340 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+01:12:48.340 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+01:12:48.340 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+01:12:48.342 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+01:12:50.727 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+01:12:51.056 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 10.114 seconds (JVM running for 47.056)
+01:12:52.063 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762767654 started.
+01:12:53.670 [Thread-63] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762767654 paused.
+01:13:54.878 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 20716 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+01:13:54.881 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+01:13:54.905 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+01:14:00.460 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+01:14:00.461 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+01:14:00.461 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+01:14:00.727 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+01:14:05.706 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+01:14:05.707 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+01:14:05.708 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+01:14:05.739 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+01:14:08.839 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+01:14:08.842 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1139685856
+01:14:09.094 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+01:14:09.096 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+01:14:09.104 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+01:14:09.108 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+01:14:09.108 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+01:14:09.113 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+01:14:09.125 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+01:14:09.127 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+01:14:09.286 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+01:14:09.972 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:14:09.983 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+01:14:09.983 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:14:09.983 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+01:14:10.037 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+01:14:10.037 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+01:14:10.045 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1459
+01:14:10.779 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+01:14:11.923 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+01:14:11.938 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+01:14:11.938 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+01:14:11.947 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740762851924'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+01:14:11.947 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+01:14:11.948 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+01:14:11.950 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@1e71d2a1
+01:14:12.946 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+01:14:12.946 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+01:14:12.946 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+01:14:12.947 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+01:14:12.947 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+01:14:12.947 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+01:14:12.947 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+01:14:12.948 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+01:14:17.080 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+01:14:17.670 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 23.332 seconds (JVM running for 25.552)
+01:14:18.639 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762851924 started.
+01:14:25.408 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,307] - 生成严重警告信息: 光照过低：当前值3.0，最小阈值80.0
+01:14:39.733 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740762851924 paused.
+01:19:01.257 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 38936 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+01:19:01.261 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+01:19:01.282 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+01:19:06.831 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+01:19:06.831 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+01:19:06.832 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+01:19:07.093 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+01:19:11.856 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+01:19:11.857 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+01:19:11.858 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+01:19:11.888 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+01:19:14.933 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+01:19:14.936 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1518417034
+01:19:15.186 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+01:19:15.188 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+01:19:15.326 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+01:19:15.337 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+01:19:15.338 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+01:19:15.342 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+01:19:15.355 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+01:19:15.357 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+01:19:15.388 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+01:19:16.019 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:19:16.030 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+01:19:16.031 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:19:16.031 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+01:19:16.077 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+01:19:16.078 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+01:19:16.086 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1459
+01:19:16.790 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+01:19:17.937 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+01:19:17.953 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+01:19:17.953 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+01:19:17.963 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740763157938'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+01:19:17.963 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+01:19:17.963 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+01:19:17.966 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@13ef777b
+01:19:18.953 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+01:19:18.953 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+01:19:18.953 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+01:19:18.953 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+01:19:18.954 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+01:19:18.954 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+01:19:18.954 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+01:19:18.955 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+01:19:23.012 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+01:19:23.633 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 22.923 seconds (JVM running for 25.083)
+01:19:24.612 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740763157938 started.
+01:19:31.388 [schedule-pool-1] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成严重警告信息: 光照过低：当前值0.0，最小阈值80.0
+01:19:39.129 [schedule-pool-3] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成预警信息: 土壤电导率接近下限：当前值104.0，警戒值110.0
+01:19:46.896 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 土壤电导率 数据恢复正常
+01:19:48.897 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+01:19:54.415 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740763157938 paused.
+01:20:39.502 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 21868 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+01:20:39.506 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+01:20:39.529 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+01:20:44.907 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+01:20:44.908 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+01:20:44.908 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+01:20:45.172 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+01:20:50.001 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+01:20:50.002 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+01:20:50.003 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+01:20:50.033 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+01:20:53.035 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+01:20:53.037 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 365737030
+01:20:53.291 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+01:20:53.293 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+01:20:53.426 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+01:20:53.452 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+01:20:53.453 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+01:20:53.457 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+01:20:53.470 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+01:20:53.472 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+01:20:53.505 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+01:20:54.143 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:20:54.154 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+01:20:54.154 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+01:20:54.155 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+01:20:54.177 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+01:20:54.178 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+01:20:54.186 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1459
+01:20:54.894 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+01:20:56.066 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+01:20:56.083 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+01:20:56.083 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+01:20:56.092 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740763256068'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+01:20:56.092 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+01:20:56.092 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+01:20:56.094 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@1a1fe244
+01:20:57.051 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+01:20:57.051 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+01:20:57.051 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+01:20:57.051 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+01:20:57.052 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+01:20:57.052 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+01:20:57.052 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+01:20:57.053 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+01:21:01.165 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+01:21:01.786 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 22.804 seconds (JVM running for 24.956)
+01:21:02.749 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740763256068 started.
+01:21:09.646 [schedule-pool-2] INFO  c.f.c.u.AudioPlayer - [playAlarmSound,43] - 开始循环播放报警音频
+01:21:09.656 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成严重警告信息: 光照过低：当前值3.0，最小阈值80.0
+01:21:32.874 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 光照 数据恢复正常
+01:21:32.926 [schedule-pool-2] INFO  c.f.c.u.AudioPlayer - [stopAlarmSound,55] - 停止播放报警音频
+01:21:34.927 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+01:21:40.013 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740763256068 paused.

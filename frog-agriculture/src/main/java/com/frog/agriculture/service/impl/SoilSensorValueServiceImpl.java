@@ -1,19 +1,13 @@
 package com.frog.agriculture.service.impl;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import javax.annotation.PostConstruct;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.frog.IaAgriculture.domain.Device;
 import com.frog.IaAgriculture.mapper.DeviceMapper;
 import com.frog.agriculture.domain.FishWaterQuality;
 import com.frog.agriculture.mapper.FishWaterQualityMapper;
-import com.frog.common.utils.AudioPlayer;
 import com.frog.common.utils.DeviceStatusTracker;
 import com.frog.common.utils.SerialPortUtil;
 import com.google.gson.Gson;
@@ -25,8 +19,11 @@ import org.springframework.stereotype.Service;
 import com.frog.agriculture.domain.SoilSensorValue;
 import com.frog.agriculture.mapper.SoilSensorValueMapper;
 import com.frog.agriculture.service.ISoilSensorValueService;
-import com.frog.agriculture.domain.SensorAlert;
 import com.frog.agriculture.mapper.SensorAlertMapper;
+import com.frog.agriculture.utils.AlertProcessUtil;
+import com.frog.agriculture.utils.SensorDataParser;
+import com.frog.agriculture.utils.ThresholdConfigUtil;
+import com.frog.agriculture.utils.DeviceStatusUtil;
 
 /**
  * 土壤环境数据Service业务层处理类
@@ -79,75 +76,10 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
      */
     @PostConstruct
     public void init() {
-        // 初始化串口工具，配置与Python代码相同的参数
         serialPortUtil = new SerialPortUtil();
-
-        // 从数据库中加载传感器指令
-        initializeSensorCommandsFromDB();
-        // 初始化传感器阈值配置
-        initializeThresholdConfig();
-    }
-
-    /**
-     * 从数据库加载传感器指令
-     * 查询所有有效的传感器设备（sensorType和sensor_command不为空）
-     */
-    private void initializeSensorCommandsFromDB() {
-        QueryWrapper<Device> queryWrapper = new QueryWrapper<>();
-        queryWrapper.isNotNull("sensorType"); // 传感器类型不能为空
-        queryWrapper.isNotNull("sensor_command"); // 传感器指令不能为空
-        List<Device> devices = deviceMapper.selectList(queryWrapper);
-
-        // 遍历设备列表，建立传感器类型与指令的映射
-        for (Device device : devices) {
-            String sensorType = device.getSensorType().trim();
-            String command = device.getSensorCommand().trim();
-            if (!sensorType.isEmpty() && !command.isEmpty()) {
-                sensorCommands.put(sensorType, command);
-                log.info("加载传感器指令 - 类型：" + sensorType + "，指令：" + command);
-            }
-        }
-
-        // 如果没有加载到任何指令，记录错误日志
-        if (sensorCommands.isEmpty()) {
-            log.error("未从数据库加载到任何传感器指令！");
-        }
-    }
-
-    /**
-     * 初始化传感器阈值配置
-     * 可以从数据库加载或直接配置
-     */
-    private void initializeThresholdConfig() {
-        // 配置格式：[最小值, 最大值]，超出范围则触发预警
-        // 温度阈值（摄氏度）
-        thresholdConfig.put("temperature", new double[]{10.0, 35.0});
-        // 湿度阈值（百分比）
-        thresholdConfig.put("humidity", new double[]{30.0, 80.0});
-        // 光照阈值（lux）
-        thresholdConfig.put("light", new double[]{80, 10000.0});
-        // 风速阈值（m/s）
-        thresholdConfig.put("speed", new double[]{0.0, 10.0});
-        // 土壤温度阈值（摄氏度）
-        thresholdConfig.put("soil_temperature", new double[]{5.0, 30.0});
-        // 土壤pH阈值
-        thresholdConfig.put("soil_ph", new double[]{5.0, 7.5});
-        // 土壤电导率阈值（μS/cm）
-        thresholdConfig.put("conductivity", new double[]{100.0, 2000.0});
-        // 土壤水分阈值（百分比）
-        thresholdConfig.put("moisture", new double[]{20.0, 60.0});
-        // 水温阈值（摄氏度）
-        thresholdConfig.put("water_temperature", new double[]{15.0, 30.0});
-        // 水pH阈值
-        thresholdConfig.put("water_ph", new double[]{6.5, 8.5});
-        // 溶解氧阈值（mg/L）
-        thresholdConfig.put("oxygen", new double[]{5.0, 8.0});
-        // 氨氮阈值（mg/L）
-        thresholdConfig.put("ammonia", new double[]{0.0, 0.02});
-        // 亚硝酸盐阈值（mg/L）
-        thresholdConfig.put("nitrite", new double[]{0.0, 0.1});
-
-        log.info("传感器阈值配置初始化完成，共配置" + thresholdConfig.size() + "个参数阈值");
+        DeviceStatusUtil.initializeSensorCommands(deviceMapper, sensorCommands);
+        ThresholdConfigUtil.initializeThresholdConfig();
+        thresholdConfig = ThresholdConfigUtil.getThresholdConfig();
     }
 
     /**
@@ -184,7 +116,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 
                 try {
                     // 发送命令到传感器
-                    byte[] command = hexStringToByteArray(hexCommand);
+                    byte[] command = SensorDataParser.hexStringToByteArray(hexCommand);
                     serialPortUtil.writeBytes(command);
 
                     // 等待传感器响应
@@ -212,8 +144,11 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             }
         }
 
-        // 批量更新设备状态（在线/离线状态）
-        updateDeviceStatus(statusTracker.getCurrentStatus());
+        // 使用DeviceStatusUtil更新设备状态
+        DeviceStatusUtil.updateDeviceStatus(statusTracker.getCurrentStatus(), 
+                                          deviceMapper, 
+                                          deviceCache, 
+                                          statusTracker);
 
         // 若本次数据采集中出现问题，则不执行入库操作
         if (!valid) {
@@ -235,7 +170,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         }
 
         // 检查数据是否超过阈值，生成预警信息
-        checkThresholdsAndGenerateAlerts(sensorValue, fishWaterQuality, sensorBindings);
+        AlertProcessUtil.checkThresholdsAndGenerateAlerts(sensorValue, fishWaterQuality, 
+            sensorBindings, sensorAlertMapper, serialPortUtil);
 
         // 将全局传感器数据转换为JSON字符串，打印日志便于调试
         Gson gson = new Gson();
@@ -243,65 +179,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         System.out.println("传感器最新数据：" + jsonOutput);
     }
 
-    /**
-     * 根据传感器状态更新设备状态，并记录在线/离线状态到数据库中
-     * 只有当设备连续多次（默认3次）采集失败时才标记为离线
-     *
-     * @param statusMap 传感器状态映射，key为传感器ID，value为是否在线
-     */
-    private void updateDeviceStatus(Map<String, Boolean> statusMap) {
-        final int OFFLINE_THRESHOLD = 3; // 连续失败次数阈值，超过此值才标记为离线
 
-        statusMap.forEach((sensorType, isOnline) -> {
-            try {
-                // 从缓存或数据库中获取设备信息
-                Device device = getCachedDevice(sensorType);
-                if (device == null) {
-                    log.warn("未找到传感器类型为" + sensorType + "的设备");
-                    return;
-                }
-
-                String currentStatus = device.getStatus();
-                String newStatus = currentStatus; // 默认保持当前状态
-
-                if (isOnline) {
-                    // 如果数据采集成功，直接标记为在线
-                    newStatus = "1";
-                    statusTracker.resetFailureCount(sensorType); // 重置失败计数
-                } else {
-                    // 数据采集失败，增加失败计数
-                    int failureCount = statusTracker.getFailureCount(sensorType);
-                    if (failureCount >= OFFLINE_THRESHOLD) {
-                        // 只有连续失败次数达到阈值才标记为离线
-                        newStatus = "0";
-                    }
-                }
-
-                // 状态发生变化时才更新数据库
-                if (!newStatus.equals(currentStatus)) {
-                    device.setStatus(newStatus);
-                    deviceMapper.updateById(device);
-                    log.info("设备:" + device.getDeviceId() + " 状态更新为" + (newStatus.equals("1") ? "在线" : "离线"));
-                }
-            } catch (Exception e) {
-                log.error("更新设备状态失败:" + e.getMessage());
-            }
-        });
-    }
-
-    /**
-     * 根据传感器ID从缓存中获取设备信息，若不存在缓存则查询数据库并存入缓存中
-     *
-     * @param sensorType 传感器ID
-     * @return 对应的Device对象
-     */
-    private Device getCachedDevice(String sensorType) {
-        return deviceCache.computeIfAbsent(sensorType, key ->
-                deviceMapper.selectOne(new QueryWrapper<Device>()
-                        .eq("sensorType", sensorType)
-                        .last("LIMIT 1"))
-        );
-    }
 
     /**
      * 定时任务：每10分钟清理一次设备缓存，避免缓存数据过期
@@ -324,13 +202,13 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         Map<String, Object> parsedData = new HashMap<>();
         switch (sensorType) {
             case "1": // 风向传感器
-                parsedData = parseWindDirectionData(response);
+                parsedData = SensorDataParser.parseWindDirectionData(response);
                 globalSensorData.put("wind_direction", parsedData);
                 sensorValue.setDirection(parsedData.get("direction").toString());
                 break;
 
             case "2": // 百叶箱传感器
-                parsedData = parseBaiyeBoxData(response);
+                parsedData = SensorDataParser.parseBaiyeBoxData(response);
                 globalSensorData.put("baiye_box", parsedData);
                 sensorValue.setTemperature(parsedData.get("temperature").toString());
                 sensorValue.setHumidity(parsedData.get("humidity").toString());
@@ -338,22 +216,22 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 break;
 
             case "3": // 风速传感器
-                parsedData = parseWindSpeedData(response);
+                parsedData = SensorDataParser.parseWindSpeedData(response);
                 globalSensorData.put("wind_speed", parsedData);
                 sensorValue.setSpeed(parsedData.get("speed").toString());
                 break;
             case "4": // 土壤温度和水分传感器
-                parsedData = parseSoilTemperatureMoistureData(response);
+                parsedData = SensorDataParser.parseSoilTemperatureMoistureData(response);
                 globalSensorData.put("soil_temperature_moisture", parsedData);
                 sensorValue.setSoilTemperature(parsedData.get("soil_temperature").toString());
                 break;
             case "5": // 土壤pH传感器
-                parsedData = parseSoilPHData(response);
+                parsedData = SensorDataParser.parseSoilPHData(response);
                 globalSensorData.put("soil_ph", parsedData);
                 sensorValue.setSoilPh(parsedData.get("soil_ph").toString());
                 break;
             case "6": // 土壤水分电导率传感器
-                parsedData = parseSoilMoistureConductivityData(response);
+                parsedData = SensorDataParser.parseSoilMoistureConductivityData(response);
                 globalSensorData.put("soil_moisture_conductivity", parsedData);
                 sensorValue.setSoilConductivity(parsedData.get("conductivity").toString());
                 sensorValue.setSoilMoisture(parsedData.get("moisture").toString());
@@ -462,8 +340,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         sensorValue.setPastureId(String.valueOf(unifiedBinding[0]));
         sensorValue.setBatchId(String.valueOf(unifiedBinding[1]));
         sensorValue.setDeviceId(""); // 统一数据，无需设置设备ID
-        sensorValue.setTime(currentTime());
-        sensorValue.setDate(currentDate());
+        sensorValue.setTime(AlertProcessUtil.currentTime());
+        sensorValue.setDate(AlertProcessUtil.currentDate());
         // 入库非水质传感器数据
         this.insertSoilSensorValue(sensorValue);
 
@@ -473,8 +351,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             // 设置水质设备对应的鱼棚和分区信息
             fishWaterQuality.setFishPastureId(Long.valueOf(waterDeviceBinding.getFishPastureId()));
             fishWaterQuality.setFishPastureBatchId(Long.valueOf(waterDeviceBinding.getFishPastureBatchId()));
-            fishWaterQuality.setTime(currentTime());
-            fishWaterQuality.setDate(currentDate());
+            fishWaterQuality.setTime(AlertProcessUtil.currentTime());
+            fishWaterQuality.setDate(AlertProcessUtil.currentDate());
             // 入库水质数据
             fishWaterQualityMapper.insertFishWaterQuality(fishWaterQuality);
         }
@@ -504,8 +382,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 individualFishWaterQuality.setWaterPhValue(fishWaterQuality.getWaterPhValue());
                 individualFishWaterQuality.setWaterOxygenContent(fishWaterQuality.getWaterOxygenContent());
                 individualFishWaterQuality.setWaterNitriteContent(fishWaterQuality.getWaterNitriteContent());
-                individualFishWaterQuality.setTime(currentTime());
-                individualFishWaterQuality.setDate(currentDate());
+                individualFishWaterQuality.setTime(AlertProcessUtil.currentTime());
+                individualFishWaterQuality.setDate(AlertProcessUtil.currentDate());
                 // 入库水质数据
                 fishWaterQualityMapper.insertFishWaterQuality(individualFishWaterQuality);
             } else {
@@ -514,8 +392,8 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 individualValue.setPastureId(String.valueOf(binding.getPastureId()));
                 individualValue.setBatchId(String.valueOf(binding.getBatchId()));
                 individualValue.setDeviceId("");
-                individualValue.setTime(currentTime());
-                individualValue.setDate(currentDate());
+                individualValue.setTime(AlertProcessUtil.currentTime());
+                individualValue.setDate(AlertProcessUtil.currentDate());
                 // 根据传感器类型复制对应的数据字段
                 switch (sensorType) {
                     case "1": // 风向传感器
@@ -541,895 +419,38 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         }
     }
 
-    /**
-     * 解析风向传感器数据
-     * 假设数据格式：
-     * Byte0：传感器地址
-     * Byte3-4：风向档位（转换为整数）
-     * Byte5-6：风向角度（转换为整数）
-     *
-     * @param data 原始数据字节数组
-     * @return 包含解析后风向等级、角度以及风向描述的Map
-     */
-    private Map<String, Object> parseWindDirectionData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            int directionGrade = ((data[3] & 0xFF) << 8) | (data[4] & 0xFF);
-            int directionAngle = ((data[5] & 0xFF) << 8) | (data[6] & 0xFF);
-            String direction;
-            switch (directionGrade) {
-                case 0:
-                    direction = "北风";
-                    break;
-                case 1:
-                    direction = "东北风";
-                    break;
-                case 2:
-                    direction = "东风";
-                    break;
-                case 3:
-                    direction = "东南风";
-                    break;
-                case 4:
-                    direction = "南风";
-                    break;
-                case 5:
-                    direction = "西南风";
-                    break;
-                case 6:
-                    direction = "西风";
-                    break;
-                case 7:
-                    direction = "西北风";
-                    break;
-                default:
-                    direction = "未知风向";
-                    break;
-            }
-            map.put("direction_grade", directionGrade);
-            map.put("direction_angle", directionAngle);
-            map.put("direction", direction);
-        } catch (Exception e) {
-            System.err.println("解析风向数据出错: " + e.getMessage());
-        }
-        return map;
-    }
-
-    /**
-     * 解析风速传感器数据
-     * 假设数据格式：
-     * Byte3-4组合成一个整数，并除以10得到风速（单位：m/s）
-     *
-     * @param data 原始数据字节数组
-     * @return 包含风速的Map
-     */
-    private Map<String, Object> parseWindSpeedData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            int raw = ((data[3] & 0xFF) << 8) | (data[4] & 0xFF);
-            double speed = raw / 10.0;
-            map.put("speed", speed);
-        } catch (Exception e) {
-            System.err.println("解析风速数据出错: " + e.getMessage());
-        }
-        return map;
-    }
-
-    /**
-     * 解析百叶箱传感器数据
-     */
-    private Map<String, Object> parseBaiyeBoxData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            // 湿度 = (byte3 << 8 | byte4) / 10.0
-            double humidity = ((data[3] & 0xFF) << 8 | (data[4] & 0xFF)) / 10.0;
-            // 温度 = (byte5 << 8 | byte6) / 10.0
-            double temperature = ((data[5] & 0xFF) << 8 | (data[6] & 0xFF)) / 10.0;
-            // 噪音 = (byte7 << 8 | byte8) / 10.0
-            double noise = ((data[7] & 0xFF) << 8 | (data[8] & 0xFF)) / 10.0;
-            // PM2.5 = byte9 << 8 | byte10
-            int pm25 = ((data[9] & 0xFF) << 8 | (data[10] & 0xFF));
-            // PM10 = byte13 << 8 | byte14
-            int pm10 = ((data[13] & 0xFF) << 8 | (data[14] & 0xFF));
-            // 光照 = byte17 << 8 | byte18
-            int light = ((data[17] & 0xFF) << 8 | (data[18] & 0xFF));
-
-            map.put("humidity", humidity);
-            map.put("temperature", temperature);
-            map.put("noise", noise);
-            map.put("pm25", pm25);
-            map.put("pm10", pm10);
-            map.put("light", light);
-        } catch (Exception e) {
-            log.error("解析百叶箱数据出错: " + e.getMessage());
-        }
-        return map;
-    }
-
-    /**
-     * 解析土壤温度水分传感器数据
-     */
-    private Map<String, Object> parseSoilTemperatureMoistureData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            // 水分值 = (byte3 << 8 | byte4) / 10.0
-            double moisture = ((data[3] & 0xFF) << 8 | (data[4] & 0xFF)) / 10.0;
-
-            // 温度值处理，考虑负温度情况
-            int tempValue = ((data[5] & 0xFF) << 8 | (data[6] & 0xFF));
-            if (tempValue > 32767) {
-                tempValue = tempValue - 65536;
-            }
-            double temperature = tempValue / 10.0;
-
-            map.put("soil_temperature", temperature);
-            map.put("moisture", moisture);
-        } catch (Exception e) {
-            log.error("解析土壤温度水分数据出错: " + e.getMessage());
-        }
-        return map;
-    }
-
-    /**
-     * 解析土壤 pH 传感器数据
-     * 假设数据格式：
-     * Byte3-4：土壤 pH 值（除以10得到实际值）
-     *
-     * @param data 原始数据字节数组
-     * @return 包含pH值的Map
-     */
-    private Map<String, Object> parseSoilPHData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            double soilPh = (((data[3] & 0xFF) << 8) | (data[4] & 0xFF)) / 10.0;
-            map.put("soil_ph", soilPh);
-        } catch (Exception e) {
-            System.err.println("解析土壤 pH 数据出错: " + e.getMessage());
-        }
-        return map;
-    }
-
-    /**
-     * 解析土壤水分电导率传感器数据
-     */
-    private Map<String, Object> parseSoilMoistureConductivityData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            // 水分值 = (byte3 << 8 | byte4) / 10.0
-            double moisture = ((data[3] & 0xFF) << 8 | (data[4] & 0xFF)) / 10.0;
-
-            // 温度值处理，考虑负温度情况
-            int tempValue = ((data[5] & 0xFF) << 8 | (data[6] & 0xFF));
-            if (tempValue > 32767) {
-                tempValue = tempValue - 65536;
-            }
-            double temperature = tempValue / 10.0;
-
-            // 电导率 = byte7 << 8 | byte8
-            int conductivity = ((data[7] & 0xFF) << 8 | (data[8] & 0xFF));
-
-            map.put("moisture", moisture);
-            map.put("soil_temperature", temperature);
-            map.put("conductivity", conductivity);
-        } catch (Exception e) {
-            log.error("解析土壤水分电导率数据出错: " + e.getMessage());
-        }
-        return map;
-    }
-
-    /**
-     * 解析水质传感器数据
-     */
-    private Map<String, Object> parseWaterQualityData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            // 温度值和小数位处理
-            int tempValue = ((data[3] & 0xFF) << 8 | (data[4] & 0xFF));
-            int tempDecimal = ((data[5] & 0xFF) << 8 | (data[6] & 0xFF));
-            double temperature = tempValue / Math.pow(10, tempDecimal);
-            temperature = Math.round(temperature * Math.pow(10, tempDecimal)) / Math.pow(10, tempDecimal);
-
-            // pH值 = (byte7 << 8 | byte8) / 100.0
-            double phValue = ((data[7] & 0xFF) << 8 | (data[8] & 0xFF)) / 100.0;
-
-            map.put("temperature", temperature);
-            map.put("ph_value", phValue);
-        } catch (Exception e) {
-            log.error("解析水质传感器数据出错: " + e.getMessage());
-        }
-        return map;
-    }
-
-    /**
-     * 工具函数：将十六进制字符串（允许含空格）转换为字节数组
-     *
-     * @param s 输入的十六进制字符串
-     * @return 转换后的字节数组
-     */
-    private byte[] hexStringToByteArray(String s) {
-        s = s.replace(" ", "");
-        int len = s.length();
-        byte[] data = new byte[len / 2];
-        for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
-                    + Character.digit(s.charAt(i + 1), 16));
-        }
-        return data;
-    }
-
-    /**
-     * 获取当前系统的完整时间戳格式 yyyy-MM-dd HH:mm:ss
-     *
-     * @return 当前系统时间戳字符串
-     */
-    private String currentTimestamp() {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-    }
-
-    /**
-     * 获取当前系统时间（时分秒格式）
-     *
-     * @return 当前时间字符串
-     */
-    private String currentTime() {
-        return new SimpleDateFormat("HH:mm:ss").format(new Date());
-    }
-
-    /**
-     * 获取当前系统日期（年-月-日格式）
-     *
-     * @return 当前日期字符串
-     */
-    private String currentDate() {
-        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-    }
-
-    // ------------------------------ 以下为 SoilSensorValue 的 CRUD 接口实现 ------------------------------
-
-    /**
-     * 根据主键ID查询土壤环境数据
-     *
-     * @param id 土壤环境数据主键
-     * @return 土壤环境数据对象
-     */
     @Override
     public SoilSensorValue selectSoilSensorValueById(String id) {
-        return soilSensorValueMapper.selectSoilSensorValueById(id);
-    }
-
-    /**
-     * 根据大棚ID查询所有的土壤环境数据
-     *
-     * @param pastureId 大棚ID
-     * @return 土壤环境数据列表
-     */
-    @Override
-    public List<SoilSensorValue> getSoilSensorValuesByPastureId(String pastureId) {
-        return soilSensorValueMapper.findByPastureId(pastureId);
-    }
-
-    /**
-     * 根据筛选条件查询土壤环境数据列表
-     *
-     * @param soilSensorValue 土壤环境数据筛选条件对象
-     * @return 土壤环境数据列表
-     */
-    @Override
-    public List<SoilSensorValue> selectSoilSensorValueList(SoilSensorValue soilSensorValue) {
-        return soilSensorValueMapper.selectSoilSensorValueList(soilSensorValue);
-    }
-
-    /**
-     * 新增土壤环境数据
-     *
-     * @param soilSensorValue 土壤环境数据对象
-     * @return 新增操作影响的记录数
-     */
-    @Override
-    public int insertSoilSensorValue(SoilSensorValue soilSensorValue) {
-        return soilSensorValueMapper.insertSoilSensorValue(soilSensorValue);
-    }
-
-    /**
-     * 修改土壤环境数据信息
-     *
-     * @param soilSensorValue 土壤环境数据对象
-     * @return 更新操作影响的记录数
-     */
-    @Override
-    public int updateSoilSensorValue(SoilSensorValue soilSensorValue) {
-        return soilSensorValueMapper.updateSoilSensorValue(soilSensorValue);
-    }
-
-    /**
-     * 根据主键ID数组批量删除土壤环境数据
-     *
-     * @param ids 待删除的土壤环境数据主键数组
-     * @return 删除操作影响的记录数
-     */
-    @Override
-    public int deleteSoilSensorValueByIds(String[] ids) {
-        return soilSensorValueMapper.deleteSoilSensorValueByIds(ids);
-    }
-
-    /**
-     * 根据主键ID删除单条土壤环境数据信息
-     *
-     * @param id 土壤环境数据主键
-     * @return 删除操作影响的记录数
-     */
-    @Override
-    public int deleteSoilSensorValueById(String id) {
-        return soilSensorValueMapper.deleteSoilSensorValueById(id);
-    }
-
-    /**
-     * 检查传感器数据是否超过阈值，并生成预警信息
-     *
-     * @param sensorValue      土壤环境数据对象
-     * @param fishWaterQuality 水质数据对象
-     * @param sensorBindings   传感器绑定信息
-     */
-    private void checkThresholdsAndGenerateAlerts(SoilSensorValue sensorValue,
-                                                  FishWaterQuality fishWaterQuality,
-                                                  Map<String, Device> sensorBindings) {
-        // 检查土壤和环境数据
-        checkAndAlertForSoilData(sensorValue, sensorBindings);
-
-        // 检查水质数据
-        if (fishWaterQuality != null && fishWaterQuality.getWaterTemperature() != null) {
-            checkAndAlertForWaterData(fishWaterQuality, sensorBindings.get("8"));
-        }
-    }
-
-    /**
-     * 检查土壤和环境数据是否超过阈值并生成预警
-     *
-     * @param sensorValue    土壤环境数据对象
-     * @param sensorBindings 传感器绑定信息
-     */
-    private void checkAndAlertForSoilData(SoilSensorValue sensorValue, Map<String, Device> sensorBindings) {
-        // 检查温度
-        if (sensorValue.getTemperature() != null) {
-            try {
-                double temperature = Double.parseDouble(sensorValue.getTemperature());
-                checkThresholdAndAlert("temperature", temperature, "温度",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), sensorBindings.get("2"));
-            } catch (NumberFormatException e) {
-                log.warn("温度数据格式错误: " + sensorValue.getTemperature());
-            }
-        }
-
-        // 检查湿度
-        if (sensorValue.getHumidity() != null) {
-            try {
-                double humidity = Double.parseDouble(sensorValue.getHumidity());
-                checkThresholdAndAlert("humidity", humidity, "湿度",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), sensorBindings.get("2"));
-            } catch (NumberFormatException e) {
-                log.warn("湿度数据格式错误: " + sensorValue.getHumidity());
-            }
-        }
-
-        // 检查光照
-        if (sensorValue.getLightLux() != null) {
-            try {
-                double light = Double.parseDouble(sensorValue.getLightLux());
-                checkThresholdAndAlert("light", light, "光照",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), sensorBindings.get("2"));
-            } catch (NumberFormatException e) {
-                log.warn("光照数据格式错误: " + sensorValue.getLightLux());
-            }
-        }
-
-
-        // 检查风速
-        if (sensorValue.getSpeed() != null) {
-            try {
-                double speed = Double.parseDouble(sensorValue.getSpeed());
-                checkThresholdAndAlert("speed", speed, "风速",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), sensorBindings.get("3"));
-            } catch (NumberFormatException e) {
-                log.warn("风速数据格式错误: " + sensorValue.getSpeed());
-            }
-        }
-
-        // 检查土壤温度
-        if (sensorValue.getSoilTemperature() != null) {
-            try {
-                double soilTemp = Double.parseDouble(sensorValue.getSoilTemperature());
-                checkThresholdAndAlert("soil_temperature", soilTemp, "土壤温度",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), sensorBindings.get("4"));
-            } catch (NumberFormatException e) {
-                log.warn("土壤温度数据格式错误: " + sensorValue.getSoilTemperature());
-            }
-        }
-
-        // 检查土壤pH
-        if (sensorValue.getSoilPh() != null) {
-            try {
-                double soilPh = Double.parseDouble(sensorValue.getSoilPh());
-                checkThresholdAndAlert("soil_ph", soilPh, "土壤pH",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), sensorBindings.get("5"));
-            } catch (NumberFormatException e) {
-                log.warn("土壤pH数据格式错误: " + sensorValue.getSoilPh());
-            }
-        }
-
-        // 检查土壤电导率
-        if (sensorValue.getSoilConductivity() != null) {
-            try {
-                double conductivity = Double.parseDouble(sensorValue.getSoilConductivity());
-                checkThresholdAndAlert("conductivity", conductivity, "土壤电导率",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), sensorBindings.get("6"));
-            } catch (NumberFormatException e) {
-                log.warn("土壤电导率数据格式错误: " + sensorValue.getSoilConductivity());
-            }
-        }
-
-        // 检查土壤水分
-        if (sensorValue.getSoilMoisture() != null) {
-            try {
-                double moisture = Double.parseDouble(sensorValue.getSoilMoisture());
-                checkThresholdAndAlert("moisture", moisture, "土壤水分",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), sensorBindings.get("6"));
-            } catch (NumberFormatException e) {
-                log.warn("土壤水分数据格式错误: " + sensorValue.getSoilMoisture());
-            }
-        }
-    }
-
-    /**
-     * 检查水质数据是否超过阈值并生成预警
-     *
-     * @param fishWaterQuality 水质数据对象
-     * @param waterDevice      水质传感器设备信息
-     */
-    private void checkAndAlertForWaterData(FishWaterQuality fishWaterQuality, Device waterDevice) {
-        // 检查水温
-        if (fishWaterQuality.getWaterTemperature() != null) {
-            try {
-                double waterTemp = Double.parseDouble(fishWaterQuality.getWaterTemperature());
-                checkThresholdAndAlert("water_temperature", waterTemp, "水温",
-                        String.valueOf(fishWaterQuality.getFishPastureId()),
-                        String.valueOf(fishWaterQuality.getFishPastureBatchId()),
-                        waterDevice);
-            } catch (NumberFormatException e) {
-                log.warn("水温数据格式错误: " + fishWaterQuality.getWaterTemperature());
-            }
-        }
-
-        // 检查水pH
-        if (fishWaterQuality.getWaterPhValue() != null) {
-            try {
-                double waterPh = Double.parseDouble(fishWaterQuality.getWaterPhValue());
-                checkThresholdAndAlert("water_ph", waterPh, "水pH",
-                        String.valueOf(fishWaterQuality.getFishPastureId()),
-                        String.valueOf(fishWaterQuality.getFishPastureBatchId()),
-                        waterDevice);
-            } catch (NumberFormatException e) {
-                log.warn("水pH数据格式错误: " + fishWaterQuality.getWaterPhValue());
-            }
-        }
-
-        // 检查溶解氧
-        if (fishWaterQuality.getWaterOxygenContent() != null) {
-            try {
-                double oxygen = Double.parseDouble(fishWaterQuality.getWaterOxygenContent());
-                checkThresholdAndAlert("oxygen", oxygen, "溶解氧",
-                        String.valueOf(fishWaterQuality.getFishPastureId()),
-                        String.valueOf(fishWaterQuality.getFishPastureBatchId()),
-                        waterDevice);
-            } catch (NumberFormatException e) {
-                log.warn("溶解氧数据格式错误: " + fishWaterQuality.getWaterOxygenContent());
-            }
-        }
-
-        // 检查氨氮
-        if (fishWaterQuality.getWaterAmmoniaNitrogenContent() != null) {
-            try {
-                double ammonia = Double.parseDouble(fishWaterQuality.getWaterAmmoniaNitrogenContent());
-                checkThresholdAndAlert("ammonia", ammonia, "氨氮",
-                        String.valueOf(fishWaterQuality.getFishPastureId()),
-                        String.valueOf(fishWaterQuality.getFishPastureBatchId()),
-                        waterDevice);
-            } catch (NumberFormatException e) {
-                log.warn("氨氮数据格式错误: " + fishWaterQuality.getWaterAmmoniaNitrogenContent());
-            }
-        }
-
-        // 检查亚硝酸盐
-        if (fishWaterQuality.getWaterNitriteContent() != null) {
-            try {
-                double nitrite = Double.parseDouble(fishWaterQuality.getWaterNitriteContent());
-                checkThresholdAndAlert("nitrite", nitrite, "亚硝酸盐",
-                        String.valueOf(fishWaterQuality.getFishPastureId()),
-                        String.valueOf(fishWaterQuality.getFishPastureBatchId()),
-                        waterDevice);
-            } catch (NumberFormatException e) {
-                log.warn("亚硝酸盐数据格式错误: " + fishWaterQuality.getWaterNitriteContent());
-            }
-        }
-    }
-
-    /**
-     * 检查单个参数是否接近或超过阈值，并生成预警信息
-     */
-    private void checkThresholdAndAlert(String paramKey, double value, String paramName,
-                                        String pastureId, String batchId, Device device) {
-        // 获取参数阈值配置
-        double[] thresholds = thresholdConfig.get(paramKey);
-        if (thresholds == null) {
-            log.warn("未找到参数 " + paramKey + " 的阈值配置");
-            return;
-        }
-
-        // 定义接近阈值的警戒范围
-        double minBuffer, maxBuffer;
-
-        // 根据参数类型设置不同的警戒范围计算方式
-        switch (paramKey) {
-            case "temperature": // 温度 10-35℃
-                minBuffer = 2.0; // 低于12℃预警
-                maxBuffer = 3.0; // 高于32℃预警
-                break;
-            case "humidity": // 湿度 30-80%
-                minBuffer = 5.0; // 低于35%预警
-                maxBuffer = 5.0; // 高于75%预警
-                break;
-            case "light": // 光照 80-10000 lux
-                minBuffer = 40.0; // 低于120 lux预警
-                maxBuffer = 1000.0; // 高于9000 lux预警
-                break;
-            case "speed": // 风速 0-10 m/s
-                minBuffer = 0.0; // 不预警低值
-                maxBuffer = 1.5; // 高于8.5 m/s预警
-                break;
-            case "soil_temperature": // 土壤温度 5-30℃
-                minBuffer = 2.0; // 低于7℃预警
-                maxBuffer = 2.0; // 高于28℃预警
-                break;
-            case "soil_ph": // 土壤pH 5.0-7.5
-                minBuffer = 0.3; // 低于5.3预警
-                maxBuffer = 0.3; // 高于7.2预警
-                break;
-            case "conductivity": // 土壤电导率 100-2000 μS/cm
-                minBuffer = 10.0; // 低于110预警
-                maxBuffer = 200.0; // 高于1800预警
-                break;
-            case "moisture": // 土壤水分 20-60%
-                minBuffer = 5.0; // 低于25%预警
-                maxBuffer = 5.0; // 高于55%预警
-                break;
-            case "water_temperature": // 水温 15-30℃
-                minBuffer = 2.0; // 低于17℃预警
-                maxBuffer = 2.0; // 高于28℃预警
-                break;
-            case "water_ph": // 水pH 6.5-8.5
-                minBuffer = 0.3; // 低于6.8预警
-                maxBuffer = 0.3; // 高于8.2预警
-                break;
-            case "oxygen": // 溶解氧 5.0-8.0 mg/L
-                minBuffer = 0.5; // 低于5.5预警
-                maxBuffer = 0.5; // 高于7.5预警
-                break;
-            case "ammonia": // 氨氮 0-0.02 mg/L
-                minBuffer = 0.0; // 不预警低值
-                maxBuffer = 0.005; // 高于0.015预警
-                break;
-            case "nitrite": // 亚硝酸盐 0-0.1 mg/L
-                minBuffer = 0.0; // 不预警低值
-                maxBuffer = 0.02; // 高于0.08预警
-                break;
-            default:
-                minBuffer = 0.0;
-                maxBuffer = 0.0;
-        }
-
-        // 计算警戒范围
-        double minWarning = thresholds[0] + minBuffer;
-        double maxWarning = thresholds[1] - maxBuffer;
-
-        String alertType = null;
-        String alertMessage = null;
-
-        // 1. 检查数据是否低于最小阈值
-        if (value < thresholds[0]) {
-            alertMessage = paramName + "过低：当前值" + value + "，最小阈值" + thresholds[0];
-            alertType = value < thresholds[0] * 0.8 ? "严重低值警告" : "低值预警";
-            processAlert(paramKey, paramName, value, thresholds, minWarning, maxWarning,
-                        pastureId, batchId, device, alertType, alertMessage);
-            return;
-        }
-
-        // 2. 检查数据是否高于最大阈值
-        if (value > thresholds[1]) {
-            alertMessage = paramName + "过高：当前值" + value + "，最大阈值" + thresholds[1];
-            alertType = value > thresholds[1] * 1.2 ? "严重高值警告" : "高值预警";
-            processAlert(paramKey, paramName, value, thresholds, minWarning, maxWarning,
-                        pastureId, batchId, device, alertType, alertMessage);
-            return;
-        }
-
-        // 3. 检查特殊参数的高值预警
-        if ((paramKey.equals("speed") || paramKey.equals("ammonia") || paramKey.equals("nitrite")) 
-            && value > maxWarning) {
-            alertType = "接近高值预警";
-            alertMessage = paramName + "接近上限：当前值" + value + "，警戒值" + maxWarning;
-            processAlert(paramKey, paramName, value, thresholds, minWarning, maxWarning,
-                        pastureId, batchId, device, alertType, alertMessage);
-            return;
-        }
-
-        // 4. 处理其他参数的预警
-        if (shouldCheckBothThresholds(paramKey)) {
-            alertType = checkWarningThresholds(value, minWarning, maxWarning, paramName);
-            if (alertType != null) {
-                alertMessage = generateWarningMessage(value, alertType, paramName, minWarning, maxWarning);
-                processAlert(paramKey, paramName, value, thresholds, minWarning, maxWarning,
-                            pastureId, batchId, device, alertType, alertMessage);
-                return;
-            }
-        }
-
-        // 5. 如果没有触发任何预警，检查并更新未处理的预警
-        updateActiveAlerts(paramName, pastureId, batchId, device);
-    }
-
-    /**
-     * 处理预警信息的生成和保存
-     */
-    private void processAlert(String paramKey, String paramName, double value, double[] thresholds,
-                                double minWarning, double maxWarning, String pastureId, String batchId,
-                                Device device, String alertType, String alertMessage) {
-        if (!hasActiveAlert(paramName, alertType, pastureId, batchId, device)) {
-            if (alertType.contains("严重")) {
-                generateSeriousAlert(paramKey, paramName, value, thresholds, pastureId, batchId,
-                                   device, alertType, alertMessage);
-                // 触发严重警告时，发送继电器控制命令
-                try {
-                    serialPortUtil.sendMultipleRelays();
-                    AudioPlayer.playAlarmSound();//播放音频
-                    log.info("已发送严重警告继电器控制命令");
-                } catch (Exception e) {
-                    log.error("发送继电器控制命令失败: " + e.getMessage());
-                }
-            } else {
-                generateWarning(paramKey, paramName, value, thresholds, minWarning, maxWarning,
-                              pastureId, batchId, device, alertType, alertMessage);
-            }
-        }
-    }
-
-    /**
-     * 判断是否需要检查双向阈值
-     */
-    private boolean shouldCheckBothThresholds(String paramKey) {
-        return !paramKey.equals("speed") && !paramKey.equals("ammonia") && !paramKey.equals("nitrite");
-    }
-
-    /**
-     * 检查预警阈值并返回预警类型
-     */
-    private String checkWarningThresholds(double value, double minWarning, double maxWarning, String paramName) {
-        if (value < minWarning) {
-            return "接近低值预警";
-        }
-        if (value > maxWarning) {
-            return "接近高值预警";
-        }
         return null;
     }
 
-    /**
-     * 生成预警消息
-     */
-    private String generateWarningMessage(double value, String alertType, String paramName, 
-                                            double minWarning, double maxWarning) {
-        if (alertType.contains("低值")) {
-            return paramName + "接近下限：当前值" + value + "，警戒值" + minWarning;
-        } else {
-            return paramName + "接近上限：当前值" + value + "，警戒值" + maxWarning;
-        }
+    @Override
+    public List<SoilSensorValue> selectSoilSensorValueList(SoilSensorValue soilSensorValue) {
+        return Collections.emptyList();
     }
 
-    /**
-     * 更新未处理的预警状态为已处理
-     */
-    private void updateActiveAlerts(String paramName, String pastureId, String batchId, Device device) {
-        try {
-            // 构造查询条件
-            SensorAlert queryAlert = new SensorAlert();
-            queryAlert.setParamName(paramName);
-            queryAlert.setPastureId(pastureId);
-            queryAlert.setBatchId(batchId);
-            queryAlert.setStatus("0"); // 查询未处理的预警
-
-            // 设置pastureType
-            if (paramName.startsWith("水") ||
-                    paramName.equals("溶解氧") ||
-                    paramName.equals("氨氮") ||
-                    paramName.equals("亚硝酸盐")) {
-                queryAlert.setPastureType("1"); // 鱼棚
-            } else {
-                queryAlert.setPastureType("0"); // 大棚
-            }
-
-            // 如果设备信息不为空，添加设备相关条件
-            if (device != null) {
-                queryAlert.setSensorType(device.getSensorType());
-            }
-
-            // 查询未处理的预警
-            List<SensorAlert> activeAlerts = sensorAlertMapper.selectSensorAlertList(queryAlert);
-
-            if (activeAlerts != null && !activeAlerts.isEmpty()) {
-                for (SensorAlert alert : activeAlerts) {
-                    // 更新预警状态
-                    alert.setStatus("1"); // 设置为已处理
-                    alert.setRemark("数据恢复正常，系统自动处理");
-                    alert.setUpdateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-
-                    // 更新到数据库
-                    sensorAlertMapper.updateSensorAlert(alert);
-                    log.info("自动处理预警: " + paramName + " 数据恢复正常");
-                }
-
-                // 数据恢复正常时，发送继电器控制命令
-                try {
-                    // 先关闭所有继电器
-                    serialPortUtil.sendAllClose();
-                    // 停止报警音频
-                    AudioPlayer.stopAlarmSound();
-                    // 等待1秒
-                    Thread.sleep(2000);
-                    // 打开第4个继电器
-                    serialPortUtil.sendRelay4();
-                    log.info("已发送数据恢复继电器控制命令");
-                } catch (Exception e) {
-                    log.error("发送继电器控制命令失败: " + e.getMessage());
-                }
-            }
-        } catch (Exception e) {
-            log.error("更新预警状态失败: " + e.getMessage());
-        }
+    @Override
+    public int insertSoilSensorValue(SoilSensorValue soilSensorValue) {
+        return 0;
     }
 
-    /**
-     * 检查是否已存在未处理的相同类型预警
-     */
-    private boolean hasActiveAlert(String paramName, String alertType, String pastureId, String batchId, Device device) {
-        try {
-            // 构造查询条件
-            SensorAlert queryAlert = new SensorAlert();
-            queryAlert.setParamName(paramName);
-            queryAlert.setAlertType(alertType);
-            queryAlert.setPastureId(pastureId);
-            queryAlert.setBatchId(batchId);
-            queryAlert.setStatus("0"); // 0表示未处理
-
-            // 设置pastureType
-            if (paramName.startsWith("水") ||
-                    paramName.equals("溶解氧") ||
-                    paramName.equals("氨氮") ||
-                    paramName.equals("亚硝酸盐")) {
-                queryAlert.setPastureType("1"); // 鱼棚
-            } else {
-                queryAlert.setPastureType("0"); // 大棚
-            }
-
-            // 如果设备信息不为空，添加设备相关条件
-            if (device != null) {
-                queryAlert.setSensorType(device.getSensorType());
-            }
-
-            // 查询是否存在符合条件的未处理预警
-            List<SensorAlert> existingAlerts = sensorAlertMapper.selectSensorAlertList(queryAlert);
-
-            return existingAlerts != null && !existingAlerts.isEmpty();
-        } catch (Exception e) {
-            log.error("查询现有预警失败: " + e.getMessage());
-            return false;
-        }
+    @Override
+    public List<SoilSensorValue> getSoilSensorValuesByPastureId(String pastureId) {
+        return Collections.emptyList();
     }
 
-    /**
-     * 生成预警信息
-     */
-    private void generateWarning(String paramKey, String paramName, double value, double[] thresholds, 
-                                   double minWarning, double maxWarning, String pastureId, String batchId, 
-                                   Device device, String alertType, String alertMessage) {
-        SensorAlert alert = new SensorAlert();
-        alert.setAlertType(alertType);
-        alert.setAlertMessage(alertMessage);
-        alert.setParamName(paramName);
-        alert.setParamValue(String.valueOf(value));
-        alert.setThresholdMin(String.valueOf(thresholds[0]));
-        alert.setThresholdMax(String.valueOf(thresholds[1]));
-        alert.setPastureId(pastureId);
-        alert.setBatchId(batchId);
-        alert.setAlertLevel("0"); // 预警级别
-
-        // 设置场地类型
-        if (paramKey.startsWith("water_") ||
-                paramKey.equals("oxygen") ||
-                paramKey.equals("ammonia") ||
-                paramKey.equals("nitrite")) {
-            alert.setPastureType("1"); // 鱼棚
-        } else {
-            alert.setPastureType("0"); // 大棚
-        }
-
-        setAlertDeviceInfo(alert, device);
-        setAlertTimeInfo(alert);
-
-        // 保存预警信息到数据库
-        saveAlert(alert, "预警");
+    @Override
+    public int updateSoilSensorValue(SoilSensorValue soilSensorValue) {
+        return 0;
     }
 
-    /**
-     * 生成严重警告信息
-     */
-    private void generateSeriousAlert(String paramKey, String paramName, double value, double[] thresholds, 
-                                        String pastureId, String batchId, Device device, 
-                                        String alertType, String alertMessage) {
-        SensorAlert alert = new SensorAlert();
-        alert.setAlertType(alertType);
-        alert.setAlertMessage(alertMessage);
-        alert.setParamName(paramName);
-        alert.setParamValue(String.valueOf(value));
-        alert.setThresholdMin(String.valueOf(thresholds[0]));
-        alert.setThresholdMax(String.valueOf(thresholds[1]));
-        alert.setPastureId(pastureId);
-        alert.setBatchId(batchId);
-        alert.setAlertLevel("1"); // 严重警告级别
-
-        // 设置场地类型
-        if (paramKey.startsWith("water_") ||
-                paramKey.equals("oxygen") ||
-                paramKey.equals("ammonia") ||
-                paramKey.equals("nitrite")) {
-            alert.setPastureType("1"); // 鱼棚
-        } else {
-            alert.setPastureType("0"); // 大棚
-        }
-
-        setAlertDeviceInfo(alert, device);
-        setAlertTimeInfo(alert);
-
-        // 保存预警信息到数据库
-        saveAlert(alert, "严重警告");
+    @Override
+    public int deleteSoilSensorValueByIds(String[] ids) {
+        return 0;
     }
 
-    /**
-     * 设置预警信息的设备相关信息
-     */
-    private void setAlertDeviceInfo(SensorAlert alert, Device device) {
-        if (device != null) {
-            alert.setDeviceId(device.getDeviceId());
-            alert.setDeviceName(device.getDeviceName());
-            alert.setSensorType(device.getSensorType());
-        }
-    }
-
-    /**
-     * 设置预警信息的时间相关信息
-     */
-    private void setAlertTimeInfo(SensorAlert alert) {
-        alert.setAlertTime(currentTimestamp());
-        alert.setAlertDate(currentDate());
-        alert.setStatus("0"); // 0表示未处理
-    }
-
-    /**
-     * 保存预警信息到数据库
-     */
-    private void saveAlert(SensorAlert alert, String alertTypeName) {
-        try {
-            sensorAlertMapper.insertSensorAlert(alert);
-            log.info("生成" + alertTypeName + "信息: " + alert.getAlertMessage());
-        } catch (Exception e) {
-            log.error("保存" + alertTypeName + "信息失败: " + e.getMessage());
-        }
+    @Override
+    public int deleteSoilSensorValueById(String id) {
+        return 0;
     }
 }
