@@ -1091,7 +1091,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 maxBuffer = 0.3; // 高于7.2预警
                 break;
             case "conductivity": // 土壤电导率 100-2000 μS/cm
-                minBuffer = 50.0; // 低于150预警
+                minBuffer = 10.0; // 低于110预警
                 maxBuffer = 200.0; // 高于1800预警
                 break;
             case "moisture": // 土壤水分 20-60%
@@ -1130,29 +1130,35 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         String alertType = null;
         String alertMessage = null;
 
-        // 检查是否超出或接近阈值范围
+        // 判断数据是否在正常范围内
         if (value < thresholds[0]) {
-            alertType = "低于阈值";
-            serialPortUtil.sendMultipleRelays();//打开报警
-            alertMessage = paramName + "过低: " + value + ", 最低阈值: " + thresholds[0];
+            alertType = "低值预警";
+            alertMessage = paramName + "过低：当前值" + value + "，最小阈值" + thresholds[0];
         } else if (value > thresholds[1]) {
-            alertType = "超过阈值";
-            alertMessage = paramName + "过高: " + value + ", 最高阈值: " + thresholds[1];
-
+            alertType = "高值预警";
+            alertMessage = paramName + "过高：当前值" + value + "，最大阈值" + thresholds[1];
         } else if (paramKey.equals("speed") || paramKey.equals("ammonia") || paramKey.equals("nitrite")) {
             // 这些参数只在接近高阈值时预警
             if (value > maxWarning) {
-                alertType = "接近最高阈值";
-                alertMessage = paramName + "接近最高阈值,目前值为：" + value + ", 警戒值为: " + maxWarning;
+                alertType = "接近高值预警";
+                alertMessage = paramName + "接近上限：当前值" + value + "，警戒值" + maxWarning;
             }
-        } else if (value < minWarning) {
-            alertType = "接近最低阈值";
-            alertMessage = paramName + "接近最低阈值，目前值为：" + value + ", 警戒值为: " + minWarning;
-        } else if (value > maxWarning) {
-            alertType = "接近最高阈值";
-            alertMessage = paramName + "接近最高阈值，目前值为：" + value + ", 警戒值为: " + maxWarning;
+        } else {
+            // 其他参数在接近高低阈值时都预警
+            if (value < minWarning) {
+                alertType = "接近低值预警";
+                alertMessage = paramName + "接近下限：当前值" + value + "，警戒值" + minWarning;
+            } else if (value > maxWarning) {
+                alertType = "接近高值预警";
+                alertMessage = paramName + "接近上限：当前值" + value + "，警戒值" + maxWarning;
+            }
         }
-        
+
+        // 如果数据恢复正常，检查并更新未处理的预警
+        if (alertType == null) {
+            updateActiveAlerts(paramName, pastureId, batchId, device);
+        }
+
         // 如果需要生成预警，先检查是否存在未处理的相同类型预警
         if (alertType != null) {
             // 检查是否已存在未处理的相同类型预警
@@ -1200,6 +1206,53 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             } catch (Exception e) {
                 log.error("保存预警信息失败: " + e.getMessage());
             }
+        }
+    }
+
+    /**
+     * 更新未处理的预警状态为已处理
+     */
+    private void updateActiveAlerts(String paramName, String pastureId, String batchId, Device device) {
+        try {
+            // 构造查询条件
+            SensorAlert queryAlert = new SensorAlert();
+            queryAlert.setParamName(paramName);
+            queryAlert.setPastureId(pastureId);
+            queryAlert.setBatchId(batchId);
+            queryAlert.setStatus("0"); // 查询未处理的预警
+            
+            // 设置pastureType
+            if (paramName.startsWith("水") || 
+                paramName.equals("溶解氧") || 
+                paramName.equals("氨氮") || 
+                paramName.equals("亚硝酸盐")) {
+                queryAlert.setPastureType("1"); // 鱼棚
+            } else {
+                queryAlert.setPastureType("0"); // 大棚
+            }
+            
+            // 如果设备信息不为空，添加设备相关条件
+            if (device != null) {
+                queryAlert.setSensorType(device.getSensorType());
+            }
+            
+            // 查询未处理的预警
+            List<SensorAlert> activeAlerts = sensorAlertMapper.selectSensorAlertList(queryAlert);
+            
+            if (activeAlerts != null && !activeAlerts.isEmpty()) {
+                for (SensorAlert alert : activeAlerts) {
+                    // 更新预警状态
+                    alert.setStatus("1"); // 设置为已处理
+                    alert.setRemark("数据恢复正常，系统自动处理");
+                    alert.setUpdateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+                    
+                    // 更新到数据库
+                    sensorAlertMapper.updateSensorAlert(alert);
+                    log.info("自动处理预警: " + paramName + " 数据恢复正常");
+                }
+            }
+        } catch (Exception e) {
+            log.error("更新预警状态失败: " + e.getMessage());
         }
     }
 

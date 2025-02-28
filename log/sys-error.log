@@ -6087,3 +6087,31 @@ Consider defining a bean of type 'com.frog.agriculture.service.ISoilSensorValueS
 20:54:18.787 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,210] - 传感器6数据采集异常：null
 20:54:18.887 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,210] - 传感器8数据采集异常：null
 20:54:18.887 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,222] - 数据采集过程中发生异常，本次数据不做数据库插入。
+22:18:35.394 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+22:20:47.111 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器3数据采集异常：null
+22:20:47.213 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器4数据采集异常：null
+22:23:05.771 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+22:24:22.851 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器2数据采集异常：null
+22:24:22.953 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器3数据采集异常：null
+22:25:29.089 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+22:26:19.961 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器8数据采集异常：null
+22:26:19.964 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,218] - 数据采集过程中发生异常，本次数据不做数据库插入。
+22:26:20.069 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器1数据采集异常：null
+22:26:20.171 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器2数据采集异常：null
+22:26:20.271 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器3数据采集异常：null
+22:26:20.372 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器4数据采集异常：null
+22:26:20.472 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器5数据采集异常：null
+22:26:20.572 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器6数据采集异常：null
+22:26:20.673 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器8数据采集异常：null
+22:26:20.673 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,218] - 数据采集过程中发生异常，本次数据不做数据库插入。
+22:26:20.773 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器1数据采集异常：null
+22:26:20.874 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器2数据采集异常：null
+22:26:20.974 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器3数据采集异常：null
+22:26:21.075 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器4数据采集异常：null
+22:26:21.176 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器5数据采集异常：null
+22:26:21.276 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器6数据采集异常：null
+22:26:21.376 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器8数据采集异常：null
+22:26:21.376 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,218] - 数据采集过程中发生异常，本次数据不做数据库插入。
+22:26:21.476 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器1数据采集异常：null
+22:26:40.741 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+22:30:35.435 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器5数据采集异常：null
