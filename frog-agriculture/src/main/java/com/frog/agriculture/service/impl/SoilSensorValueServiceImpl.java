@@ -6,10 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ThreadLocalRandom;
-
 import javax.annotation.PostConstruct;
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.frog.IaAgriculture.domain.Device;
 import com.frog.IaAgriculture.mapper.DeviceMapper;
@@ -23,7 +20,6 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
 import com.frog.agriculture.domain.SoilSensorValue;
 import com.frog.agriculture.mapper.SoilSensorValueMapper;
 import com.frog.agriculture.service.ISoilSensorValueService;
@@ -135,7 +131,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         // 土壤pH阈值
         thresholdConfig.put("soil_ph", new double[]{5.0, 7.5});
         // 土壤电导率阈值（μS/cm）
-        thresholdConfig.put("conductivity", new double[]{0.0, 2000.0});
+        thresholdConfig.put("conductivity", new double[]{100.0, 2000.0});
         // 土壤水分阈值（百分比）
         thresholdConfig.put("moisture", new double[]{20.0, 60.0});
         // 水温阈值（摄氏度）
@@ -1054,14 +1050,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
     }
     
     /**
-     * 检查单个参数是否超过阈值，并生成预警信息
-     * 
-     * @param paramKey 参数键名
-     * @param value 参数值
-     * @param paramName 参数中文名称
-     * @param pastureId 大棚/鱼棚ID
-     * @param batchId 分区ID
-     * @param device 设备信息
+     * 检查单个参数是否接近或超过阈值，并生成预警信息
      */
     private void checkThresholdAndAlert(String paramKey, double value, String paramName, 
                                        String pastureId, String batchId, Device device) {
@@ -1072,19 +1061,99 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             return;
         }
         
-        // 检查是否超出阈值范围
+        // 定义接近阈值的警戒范围
+        double minBuffer, maxBuffer;
+        
+        // 根据参数类型设置不同的警戒范围计算方式
+        switch (paramKey) {
+            case "temperature": // 温度 10-35℃
+                minBuffer = 2.0; // 低于12℃预警
+                maxBuffer = 3.0; // 高于32℃预警
+                break;
+            case "humidity": // 湿度 30-80%
+                minBuffer = 5.0; // 低于35%预警
+                maxBuffer = 5.0; // 高于75%预警
+                break;
+            case "light": // 光照 80-10000 lux
+                minBuffer = 40.0; // 低于120 lux预警
+                maxBuffer = 1000.0; // 高于9000 lux预警
+                break;
+            case "speed": // 风速 0-10 m/s
+                minBuffer = 0.0; // 不预警低值
+                maxBuffer = 1.5; // 高于8.5 m/s预警
+                break;
+            case "soil_temperature": // 土壤温度 5-30℃
+                minBuffer = 2.0; // 低于7℃预警
+                maxBuffer = 2.0; // 高于28℃预警
+                break;
+            case "soil_ph": // 土壤pH 5.0-7.5
+                minBuffer = 0.3; // 低于5.3预警
+                maxBuffer = 0.3; // 高于7.2预警
+                break;
+            case "conductivity": // 土壤电导率 100-2000 μS/cm
+                minBuffer = 50.0; // 低于150预警
+                maxBuffer = 200.0; // 高于1800预警
+                break;
+            case "moisture": // 土壤水分 20-60%
+                minBuffer = 5.0; // 低于25%预警
+                maxBuffer = 5.0; // 高于55%预警
+                break;
+            case "water_temperature": // 水温 15-30℃
+                minBuffer = 2.0; // 低于17℃预警
+                maxBuffer = 2.0; // 高于28℃预警
+                break;
+            case "water_ph": // 水pH 6.5-8.5
+                minBuffer = 0.3; // 低于6.8预警
+                maxBuffer = 0.3; // 高于8.2预警
+                break;
+            case "oxygen": // 溶解氧 5.0-8.0 mg/L
+                minBuffer = 0.5; // 低于5.5预警
+                maxBuffer = 0.5; // 高于7.5预警
+                break;
+            case "ammonia": // 氨氮 0-0.02 mg/L
+                minBuffer = 0.0; // 不预警低值
+                maxBuffer = 0.005; // 高于0.015预警
+                break;
+            case "nitrite": // 亚硝酸盐 0-0.1 mg/L
+                minBuffer = 0.0; // 不预警低值
+                maxBuffer = 0.02; // 高于0.08预警
+                break;
+            default:
+                minBuffer = 0.0;
+                maxBuffer = 0.0;
+        }
+        
+        // 计算警戒范围
+        double minWarning = thresholds[0] + minBuffer;
+        double maxWarning = thresholds[1] - maxBuffer;
+        
         String alertType = null;
         String alertMessage = null;
 
+        // 检查是否超出或接近阈值范围
         if (value < thresholds[0]) {
             alertType = "低于阈值";
-            alertMessage = paramName + "过低: " + value + ", 阈值: " + thresholds[0];
+            serialPortUtil.sendMultipleRelays();//打开报警
+            alertMessage = paramName + "过低: " + value + ", 最低阈值: " + thresholds[0];
         } else if (value > thresholds[1]) {
             alertType = "超过阈值";
-            alertMessage = paramName + "过高: " + value + ", 阈值: " + thresholds[1];
+            alertMessage = paramName + "过高: " + value + ", 最高阈值: " + thresholds[1];
+
+        } else if (paramKey.equals("speed") || paramKey.equals("ammonia") || paramKey.equals("nitrite")) {
+            // 这些参数只在接近高阈值时预警
+            if (value > maxWarning) {
+                alertType = "接近最高阈值";
+                alertMessage = paramName + "接近最高阈值,目前值为：" + value + ", 警戒值为: " + maxWarning;
+            }
+        } else if (value < minWarning) {
+            alertType = "接近最低阈值";
+            alertMessage = paramName + "接近最低阈值，目前值为：" + value + ", 警戒值为: " + minWarning;
+        } else if (value > maxWarning) {
+            alertType = "接近最高阈值";
+            alertMessage = paramName + "接近最高阈值，目前值为：" + value + ", 警戒值为: " + maxWarning;
         }
         
-        // 如果超出阈值，检查是否已存在未处理的相同类型预警，避免重复生成
+        // 如果需要生成预警，先检查是否存在未处理的相同类型预警
         if (alertType != null) {
             // 检查是否已存在未处理的相同类型预警
             if (hasActiveAlert(paramName, alertType, pastureId, batchId, device)) {
@@ -1103,7 +1172,6 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             alert.setBatchId(batchId);
             
             // 根据参数类型判断pastureType
-            // 水质相关参数设置为1（鱼棚），其他参数设置为0（大棚）
             if (paramKey.startsWith("water_") || 
                 paramKey.equals("oxygen") || 
                 paramKey.equals("ammonia") || 
@@ -1137,13 +1205,6 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 
     /**
      * 检查是否已存在未处理的相同类型预警
-     * 
-     * @param paramName 参数名称
-     * @param alertType 预警类型
-     * @param pastureId 大棚/鱼棚ID
-     * @param batchId 分区ID
-     * @param device 设备信息
-     * @return 是否存在未处理的相同类型预警
      */
     private boolean hasActiveAlert(String paramName, String alertType, String pastureId, String batchId, Device device) {
         try {

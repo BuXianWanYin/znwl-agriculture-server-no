@@ -4501,3 +4501,933 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 19:53:34.360 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740743607525 started.
 19:53:38.913 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 19:53:49.194 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740743607525 paused.
+20:14:16.373 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 35964 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+20:14:16.377 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+20:14:16.403 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+20:14:22.098 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+20:14:22.098 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+20:14:22.099 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+20:14:22.368 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+20:14:27.324 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+20:14:27.324 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+20:14:27.325 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+20:14:27.358 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+20:14:30.502 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+20:14:30.504 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 884653942
+20:14:30.747 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+20:14:30.749 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+20:14:30.756 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+20:14:30.780 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+20:14:30.780 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+20:14:30.786 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+20:14:30.799 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+20:14:30.800 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+20:14:30.834 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+20:14:31.530 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:14:31.541 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+20:14:31.541 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:14:31.541 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+20:14:31.566 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+20:14:31.566 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+20:14:31.574 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1455
+20:14:32.309 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+20:14:33.498 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+20:14:33.515 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+20:14:33.515 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+20:14:33.525 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740744873500'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+20:14:33.526 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+20:14:33.526 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+20:14:33.528 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@5c76fec1
+20:14:34.569 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+20:14:34.570 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+20:14:34.570 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+20:14:34.570 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+20:14:34.570 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+20:14:34.570 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+20:14:34.570 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+20:14:34.570 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeThresholdConfig,152] - 传感器阈值配置初始化完成，共配置13个参数阈值
+20:14:38.742 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+20:14:39.369 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 23.583 seconds (JVM running for 26.005)
+20:14:40.330 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740744873500 started.
+20:14:47.138 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1849412138507046913 状态更新为在线
+20:14:47.144 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903556067594242 状态更新为在线
+20:14:47.150 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901569 状态更新为在线
+20:14:47.157 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901576 状态更新为在线
+20:14:47.164 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904084747030522 状态更新为在线
+20:14:47.170 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904151327412225 状态更新为在线
+20:14:47.194 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1136] - 生成预警信息: 光照接近低阈值: 262.0, 警戒值: 1072.0
+20:14:47.199 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1136] - 生成预警信息: 风速接近低阈值: 0.0, 警戒值: 1.0
+20:14:47.203 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1136] - 生成预警信息: 土壤pH接近低阈值: 5.1, 警戒值: 5.25
+20:14:47.207 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1136] - 生成预警信息: 土壤电导率接近低阈值: 144.0, 警戒值: 200.0
+20:14:54.935 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:14:54.937 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:14:54.938 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:14:54.940 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:15:02.656 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:15:02.658 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:15:02.659 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:15:02.661 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:15:10.378 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:15:10.380 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:15:10.382 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:15:10.385 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:15:18.100 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:15:18.102 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:15:18.103 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:15:18.106 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:15:25.824 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:15:25.826 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:15:25.828 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:15:25.829 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:15:33.548 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:15:33.549 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:15:33.550 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:15:33.551 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:15:38.100 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20:15:38.204 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+20:15:38.213 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+20:15:41.268 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:15:41.270 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:15:41.271 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:15:41.271 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:15:48.990 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:15:48.991 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:15:48.992 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:15:48.993 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:15:56.709 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:15:56.710 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:15:56.711 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:15:56.712 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:16:04.429 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:16:04.430 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:16:04.431 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:16:04.432 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:16:12.146 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:16:12.148 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:16:12.149 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:16:12.150 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:16:19.868 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:16:19.869 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:16:19.870 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:16:19.872 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:16:27.223 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740744873500 paused.
+20:18:09.733 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 13568 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+20:18:09.737 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+20:18:09.763 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+20:18:15.192 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+20:18:15.193 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+20:18:15.193 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+20:18:15.457 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+20:18:20.475 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+20:18:20.476 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+20:18:20.477 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+20:18:20.506 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+20:18:23.620 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+20:18:23.622 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1418163642
+20:18:23.870 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+20:18:23.872 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+20:18:23.880 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+20:18:23.905 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+20:18:23.905 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+20:18:23.911 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+20:18:23.923 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+20:18:23.925 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+20:18:23.956 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+20:18:24.590 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:18:24.602 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+20:18:24.602 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:18:24.602 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+20:18:24.628 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+20:18:24.628 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+20:18:24.639 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1455
+20:18:25.357 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+20:18:26.519 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+20:18:26.534 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+20:18:26.535 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+20:18:26.547 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740745106521'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+20:18:26.547 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+20:18:26.547 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+20:18:26.549 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2c65eb40
+20:18:27.545 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+20:18:27.545 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+20:18:27.545 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+20:18:27.545 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+20:18:27.545 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+20:18:27.545 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+20:18:27.546 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+20:18:27.546 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeThresholdConfig,152] - 传感器阈值配置初始化完成，共配置13个参数阈值
+20:18:31.668 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+20:18:32.269 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 23.071 seconds (JVM running for 25.282)
+20:18:33.245 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740745106521 started.
+20:18:39.984 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:18:39.986 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:18:39.988 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:18:39.995 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1136] - 生成预警信息: 土壤电导率过低: 144.0, 最低阈值: 200.0
+20:18:47.720 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:18:47.722 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:18:47.723 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:18:47.724 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:18:55.439 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:18:55.441 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:18:55.442 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:18:55.443 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:19:03.157 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:19:03.159 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:19:03.160 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:19:03.161 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:19:10.879 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:19:10.880 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:19:10.881 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:19:10.882 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:19:18.601 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的光照接近低阈值预警，不重复生成
+20:19:18.603 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:19:18.604 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:19:18.606 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1097] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:19:22.832 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740745106521 paused.
+20:22:55.529 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 24952 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+20:22:55.533 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+20:22:55.556 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+20:23:00.848 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+20:23:00.849 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+20:23:00.849 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+20:23:01.103 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+20:23:06.046 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+20:23:06.046 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+20:23:06.047 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+20:23:06.077 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+20:23:09.140 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+20:23:09.142 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1487987888
+20:23:09.397 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+20:23:09.399 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+20:23:09.407 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+20:23:09.417 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+20:23:09.418 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+20:23:09.423 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+20:23:09.436 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+20:23:09.438 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+20:23:09.469 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+20:23:10.106 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:23:10.118 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+20:23:10.118 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:23:10.118 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+20:23:10.146 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+20:23:10.146 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+20:23:10.154 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1455
+20:23:10.887 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+20:23:12.033 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+20:23:12.050 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+20:23:12.050 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+20:23:12.059 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740745392035'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+20:23:12.059 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+20:23:12.059 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+20:23:12.062 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@53c76a63
+20:23:13.079 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+20:23:13.079 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+20:23:13.080 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+20:23:13.080 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+20:23:13.080 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+20:23:13.080 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+20:23:13.080 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+20:23:13.080 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeThresholdConfig,152] - 传感器阈值配置初始化完成，共配置13个参数阈值
+20:23:17.225 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+20:23:17.821 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 22.815 seconds (JVM running for 25.011)
+20:23:18.789 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740745392035 started.
+20:23:25.575 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1849412138507046913 状态更新为在线
+20:23:25.581 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903556067594242 状态更新为在线
+20:23:25.588 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901569 状态更新为在线
+20:23:25.594 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901576 状态更新为在线
+20:23:25.599 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904084747030522 状态更新为在线
+20:23:25.606 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904151327412225 状态更新为在线
+20:23:25.627 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1161] - 生成预警信息: 风速接近低阈值: 0.0, 警戒值: 1.0
+20:23:25.633 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1161] - 生成预警信息: 土壤pH接近低阈值: 5.1, 警戒值: 5.25
+20:23:25.637 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1161] - 生成预警信息: 土壤电导率接近低阈值: 144.0, 警戒值: 290.0
+20:23:33.361 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:23:33.362 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:23:33.364 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:23:41.082 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:23:41.084 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:23:41.085 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:23:48.800 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:23:48.801 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:23:48.803 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:23:56.517 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:23:56.518 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:23:56.519 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:24:04.240 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:24:04.241 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:24:04.243 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:24:11.960 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:24:11.962 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:24:11.963 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:24:17.088 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20:24:17.156 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+20:24:17.164 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+20:24:19.682 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:24:19.684 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:24:19.686 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:24:27.403 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:24:27.404 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:24:27.405 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:24:35.121 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:24:35.122 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:24:35.123 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:24:42.839 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:24:42.840 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:24:42.841 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:24:50.558 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:24:50.559 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:24:50.560 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:24:58.276 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:24:58.276 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:24:58.277 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:25:05.994 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:25:05.996 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:25:05.997 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:25:13.711 [schedule-pool-12] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:25:13.712 [schedule-pool-12] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:25:13.713 [schedule-pool-12] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:25:21.433 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:25:21.434 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:25:21.436 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:25:23.043 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20:25:23.054 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+20:25:23.057 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+20:25:29.153 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的风速接近低阈值预警，不重复生成
+20:25:29.154 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤pH接近低阈值预警，不重复生成
+20:25:29.156 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1122] - 已存在未处理的土壤电导率接近低阈值预警，不重复生成
+20:25:35.653 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740745392035 paused.
+20:36:09.060 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 28024 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+20:36:09.064 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+20:36:09.086 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+20:36:14.473 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+20:36:14.474 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+20:36:14.474 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+20:36:14.731 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+20:36:19.673 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+20:36:19.674 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+20:36:19.674 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+20:36:19.705 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+20:36:22.808 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+20:36:22.810 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1197653555
+20:36:23.069 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+20:36:23.071 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+20:36:23.079 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+20:36:23.092 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+20:36:23.092 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+20:36:23.098 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+20:36:23.110 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+20:36:23.111 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+20:36:23.144 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+20:36:23.774 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:36:23.785 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+20:36:23.785 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:36:23.785 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+20:36:23.810 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+20:36:23.810 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+20:36:23.819 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1455
+20:36:24.539 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+20:36:25.696 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+20:36:25.711 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+20:36:25.711 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+20:36:25.720 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740746185697'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+20:36:25.721 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+20:36:25.721 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+20:36:25.723 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@4a4f61e
+20:36:26.720 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+20:36:26.720 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+20:36:26.720 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+20:36:26.720 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+20:36:26.720 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+20:36:26.720 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+20:36:26.720 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+20:36:26.721 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeThresholdConfig,152] - 传感器阈值配置初始化完成，共配置13个参数阈值
+20:36:30.819 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+20:36:31.415 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 22.865 seconds (JVM running for 25.05)
+20:36:32.381 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746185697 started.
+20:36:39.164 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1849412138507046913 状态更新为在线
+20:36:39.171 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903556067594242 状态更新为在线
+20:36:39.178 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901569 状态更新为在线
+20:36:39.185 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901576 状态更新为在线
+20:36:39.190 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904084747030522 状态更新为在线
+20:36:39.196 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904151327412225 状态更新为在线
+20:36:39.219 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1201] - 生成预警信息: 土壤pH接近最低阈值: 5.1, 警戒值: 5.3
+20:36:39.225 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1201] - 生成预警信息: 土壤电导率接近最低阈值: 144.0, 警戒值: 150.0
+20:36:46.952 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:36:46.954 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:36:54.669 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:36:54.670 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:37:02.387 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:37:02.389 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:37:10.105 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:37:10.107 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:37:17.828 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:37:17.830 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:37:25.543 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:37:25.545 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:37:31.084 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20:37:31.149 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+20:37:31.157 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+20:37:33.262 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:37:33.264 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:37:40.980 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:37:40.982 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:37:48.700 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:37:48.702 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:37:56.419 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:37:56.420 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:38:04.133 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:38:04.135 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:38:08.091 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746185697 paused.
+20:45:05.416 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 36604 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+20:45:05.420 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+20:45:05.444 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+20:45:10.927 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+20:45:10.928 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+20:45:10.928 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+20:45:11.192 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+20:45:16.076 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+20:45:16.077 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+20:45:16.078 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+20:45:16.112 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+20:45:19.261 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+20:45:19.263 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1491024634
+20:45:19.553 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+20:45:19.555 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+20:45:19.563 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+20:45:19.582 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+20:45:19.582 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+20:45:19.588 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+20:45:19.601 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+20:45:19.603 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+20:45:19.641 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+20:45:20.338 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:45:20.349 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+20:45:20.349 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:45:20.349 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+20:45:20.376 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+20:45:20.376 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+20:45:20.384 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1455
+20:45:21.134 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+20:45:22.331 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+20:45:22.348 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+20:45:22.348 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+20:45:22.358 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740746722333'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+20:45:22.358 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+20:45:22.358 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+20:45:22.360 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@488a9d35
+20:45:23.412 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+20:45:23.413 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+20:45:23.413 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+20:45:23.413 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+20:45:23.413 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+20:45:23.413 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+20:45:23.413 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+20:45:23.413 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeThresholdConfig,152] - 传感器阈值配置初始化完成，共配置13个参数阈值
+20:45:27.669 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+20:45:28.278 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 23.893 seconds (JVM running for 26.316)
+20:45:29.240 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746722333 started.
+20:45:36.036 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1849412138507046913 状态更新为在线
+20:45:36.044 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903556067594242 状态更新为在线
+20:45:36.051 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901569 状态更新为在线
+20:45:36.058 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901576 状态更新为在线
+20:45:36.065 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904084747030522 状态更新为在线
+20:45:36.072 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904151327412225 状态更新为在线
+20:45:36.097 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1201] - 生成预警信息: 土壤pH接近最低阈值，目前值为5.1, 警戒值为: 5.3
+20:45:36.103 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1201] - 生成预警信息: 土壤电导率接近最低阈值，目前值为144.0, 警戒值为: 150.0
+20:45:38.102 [Thread-48] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746722333 paused.
+20:45:38.977 [Thread-48] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746722333 shutting down.
+20:45:38.978 [Thread-48] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746722333 paused.
+20:45:38.979 [Thread-48] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746722333 shutdown complete.
+20:45:38.979 [Thread-48] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+20:45:38.985 [Thread-48] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+20:45:38.993 [Thread-48] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+20:45:39.594 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 36604 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+20:45:39.594 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+20:45:43.828 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+20:45:43.829 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+20:45:43.829 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+20:45:43.916 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+20:45:45.434 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+20:45:45.434 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+20:45:45.434 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+20:45:45.447 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+20:45:45.462 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+20:45:45.462 [nioEventLoopGroup-8-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 98686265
+20:45:45.466 [nioEventLoopGroup-8-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":1,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+20:45:45.466 [nioEventLoopGroup-8-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+20:45:45.469 [nioEventLoopGroup-8-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+20:45:45.493 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+20:45:45.493 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+20:45:45.493 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+20:45:45.494 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+20:45:45.494 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+20:45:45.548 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+20:45:45.586 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:45:45.586 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+20:45:45.587 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:45:45.587 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+20:45:45.608 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+20:45:45.608 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+20:45:45.618 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1455
+20:45:46.002 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-2} inited
+20:45:46.585 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+20:45:46.586 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+20:45:46.587 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+20:45:46.587 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740746746586'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+20:45:46.587 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+20:45:46.587 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+20:45:46.587 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6a4a827f
+20:45:47.246 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746746586 shutting down.
+20:45:47.246 [restartedMain] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746746586 paused.
+20:45:47.246 [restartedMain] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746746586 shutdown complete.
+20:45:47.247 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+20:45:47.249 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-2} closing ...
+20:45:47.250 [restartedMain] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-2} closed
+20:45:47.366 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+20:46:23.442 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 20352 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+20:46:23.446 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+20:46:23.475 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+20:46:29.110 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+20:46:29.110 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+20:46:29.110 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+20:46:29.375 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+20:46:34.465 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+20:46:34.466 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+20:46:34.467 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+20:46:34.498 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+20:46:37.732 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+20:46:37.736 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1808530209
+20:46:38.024 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+20:46:38.026 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+20:46:38.034 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+20:46:38.052 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+20:46:38.053 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+20:46:38.058 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+20:46:38.072 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+20:46:38.074 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+20:46:38.108 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+20:46:38.857 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:46:38.869 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+20:46:38.869 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:46:38.869 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+20:46:38.896 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+20:46:38.896 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+20:46:38.905 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1455
+20:46:39.689 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+20:46:40.899 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+20:46:40.914 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+20:46:40.915 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+20:46:40.924 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740746800900'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+20:46:40.924 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+20:46:40.924 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+20:46:40.926 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@401f1c31
+20:46:42.055 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+20:46:42.055 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+20:46:42.056 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+20:46:42.056 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+20:46:42.056 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+20:46:42.056 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+20:46:42.056 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+20:46:42.056 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeThresholdConfig,152] - 传感器阈值配置初始化完成，共配置13个参数阈值
+20:46:46.489 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+20:46:47.181 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 24.276 seconds (JVM running for 26.472)
+20:46:48.141 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746800900 started.
+20:46:54.920 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:46:54.922 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:47:02.647 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:47:02.650 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:47:10.365 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:47:10.366 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:47:18.080 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:47:18.082 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:47:25.798 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:47:25.800 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:47:33.520 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:47:33.521 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:47:41.238 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:47:41.239 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:47:46.074 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20:47:46.148 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+20:47:46.159 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+20:47:48.956 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:47:48.958 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:47:56.672 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:47:56.673 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:48:04.386 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:48:04.387 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:48:12.102 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:48:12.104 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:48:19.820 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:48:19.821 [schedule-pool-10] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:48:27.536 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:48:27.537 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:48:35.250 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:48:35.251 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:48:42.967 [schedule-pool-12] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:48:42.969 [schedule-pool-12] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:48:50.684 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:48:50.685 [schedule-pool-8] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:48:52.001 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20:48:52.046 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+20:48:52.049 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+20:48:58.399 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:48:58.400 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:49:06.115 [schedule-pool-14] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:49:06.116 [schedule-pool-14] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:49:13.832 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:49:13.833 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:49:21.547 [schedule-pool-11] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:49:21.548 [schedule-pool-11] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:49:29.262 [schedule-pool-16] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:49:29.263 [schedule-pool-16] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:49:36.979 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:49:36.980 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:49:44.691 [schedule-pool-9] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:49:44.692 [schedule-pool-9] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:49:52.409 [schedule-pool-18] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:49:52.412 [schedule-pool-18] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:49:58.057 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20:49:58.148 [lettuce-eventExecutorLoop-1-15] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+20:49:58.151 [lettuce-nioEventLoop-5-4] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+20:50:00.123 [schedule-pool-12] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:50:00.124 [schedule-pool-12] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:50:07.840 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:50:07.841 [schedule-pool-4] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:50:15.563 [schedule-pool-20] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1201] - 生成预警信息: 光照过低: 3.0, 最低阈值: 80.0
+20:50:15.565 [schedule-pool-20] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:50:15.566 [schedule-pool-20] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:50:23.280 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的光照低于阈值预警，不重复生成
+20:50:23.281 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:50:23.282 [schedule-pool-6] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:50:30.996 [schedule-pool-15] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的光照低于阈值预警，不重复生成
+20:50:30.997 [schedule-pool-15] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:50:30.998 [schedule-pool-15] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:50:38.713 [schedule-pool-22] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:50:38.714 [schedule-pool-22] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:50:46.428 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:50:46.432 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1201] - 生成预警信息: 土壤电导率过低: 0.0, 最低阈值: 100.0
+20:50:46.435 [schedule-pool-7] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1201] - 生成预警信息: 土壤水分过低: 0.0, 最低阈值: 20.0
+20:50:54.152 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH接近最低阈值预警，不重复生成
+20:50:54.153 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:50:54.154 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤水分低于阈值预警，不重复生成
+20:51:01.867 [schedule-pool-24] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1201] - 生成预警信息: 土壤pH过低: 3.0, 最低阈值: 5.0
+20:51:01.869 [schedule-pool-24] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:51:01.869 [schedule-pool-24] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤水分低于阈值预警，不重复生成
+20:51:04.086 [lettuce-nioEventLoop-5-4] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20:51:04.149 [lettuce-eventExecutorLoop-1-16] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+20:51:04.152 [lettuce-nioEventLoop-5-5] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+20:51:09.583 [schedule-pool-16] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH低于阈值预警，不重复生成
+20:51:09.584 [schedule-pool-16] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:51:09.585 [schedule-pool-16] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤水分低于阈值预警，不重复生成
+20:51:17.297 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH低于阈值预警，不重复生成
+20:51:17.298 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率低于阈值预警，不重复生成
+20:51:17.298 [schedule-pool-5] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤水分低于阈值预警，不重复生成
+20:51:25.014 [schedule-pool-26] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤pH低于阈值预警，不重复生成
+20:51:25.015 [schedule-pool-26] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:51:32.731 [schedule-pool-9] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1162] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:51:39.191 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746800900 paused.
+20:51:40.278 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746800900 shutting down.
+20:51:40.278 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746800900 paused.
+20:51:40.279 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1740746800900 shutdown complete.
+20:51:40.279 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+20:51:40.285 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+20:51:40.289 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+20:53:26.548 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 17720 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+20:53:26.553 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+20:53:26.576 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+20:53:32.029 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+20:53:32.030 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+20:53:32.030 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+20:53:32.290 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+20:53:37.084 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+20:53:37.084 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+20:53:37.085 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+20:53:37.117 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+20:53:40.217 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+20:53:40.220 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 2083071897
+20:53:40.462 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+20:53:40.465 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+20:53:40.472 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+20:53:40.498 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+20:53:40.499 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+20:53:40.503 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+20:53:40.515 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+20:53:40.517 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+20:53:40.550 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+20:53:41.200 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:53:41.210 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+20:53:41.211 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+20:53:41.211 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+20:53:41.238 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+20:53:41.238 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+20:53:41.246 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1455
+20:53:41.954 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+20:53:43.103 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+20:53:43.120 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+20:53:43.120 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+20:53:43.129 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740747223104'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+20:53:43.129 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+20:53:43.129 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+20:53:43.131 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@632a38f3
+20:53:44.132 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+20:53:44.132 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+20:53:44.132 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+20:53:44.132 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+20:53:44.132 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+20:53:44.132 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+20:53:44.132 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeSensorCommandsFromDB,109] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+20:53:44.133 [restartedMain] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [initializeThresholdConfig,152] - 传感器阈值配置初始化完成，共配置13个参数阈值
+20:53:48.235 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+20:53:48.880 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 22.962 seconds (JVM running for 25.276)
+20:53:49.858 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740747223104 started.
+20:53:56.637 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1849412138507046913 状态更新为在线
+20:53:56.643 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903556067594242 状态更新为在线
+20:53:56.650 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901569 状态更新为在线
+20:53:56.656 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893903642289901576 状态更新为在线
+20:53:56.662 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904084747030522 状态更新为在线
+20:53:56.668 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [lambda$updateDeviceStatus$0,286] - 设备:1893904151327412225 状态更新为在线
+20:53:56.683 [schedule-pool-2] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1164] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:54:04.411 [schedule-pool-3] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1164] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:54:12.330 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1164] - 已存在未处理的光照低于阈值预警，不重复生成
+20:54:12.333 [schedule-pool-1] INFO  c.f.a.s.i.SoilSensorValueServiceImpl - [checkThresholdAndAlert,1164] - 已存在未处理的土壤电导率接近最低阈值预警，不重复生成
+20:54:18.791 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740747223104 paused.

@@ -25,12 +25,13 @@
         <result property="pastureName"   column="pasture_name"      />
         <result property="batchName"     column="batch_name"        />
         <result property="batchHead"     column="batch_head"        />
+        <result property="updateTime"    column="update_time"       />
     </resultMap>
 
     <sql id="selectSensorAlertVo">
         select id, alert_type, alert_message, param_name, param_value, threshold_min, threshold_max,
                pasture_id, pasture_type, batch_id, device_id, device_name, sensor_type, alert_time, 
-               alert_date, status, remark
+               alert_date, status, remark, update_time
         from sensor_alert
     </sql>
 
@@ -86,6 +87,7 @@
             <if test="alertDate != null">alert_date,</if>
             <if test="status != null">status,</if>
             <if test="remark != null">remark,</if>
+            <if test="updateTime != null">update_time,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="alertType != null">#{alertType},</if>
@@ -104,6 +106,7 @@
             <if test="alertDate != null">#{alertDate},</if>
             <if test="status != null">#{status},</if>
             <if test="remark != null">#{remark},</if>
+            <if test="updateTime != null">#{updateTime},</if>
         </trim>
     </insert>
 
@@ -126,6 +129,7 @@
             <if test="alertDate != null">alert_date = #{alertDate},</if>
             <if test="status != null">status = #{status},</if>
             <if test="remark != null">remark = #{remark},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
         </trim>
         where id = #{id}
     </update>
@@ -163,6 +167,7 @@
                     sa.alert_date,
                     sa.status,
                     sa.remark,
+                    sa.update_time,
                     p.name AS pasture_name,
                     b.batch_name,
                     b.batch_head
@@ -194,6 +199,7 @@
                     sa.alert_date,
                     sa.status,
                     sa.remark,
+                    sa.update_time,
                     ft.name AS pasture_name,
                     b.batch_name,
                     b.batch_head
