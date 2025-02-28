@@ -120,4 +120,15 @@ public class SensorAlertServiceImpl implements ISensorAlertService {
         alert.setRemark(remark);
         return sensorAlertMapper.updateSensorAlert(alert);
     }
+
+    /**
+     * 根据大棚/鱼棚类型查询预警信息列表
+     * 
+     * @param pastureType 大棚/鱼棚类型（0：大棚，1：鱼棚）
+     * @return 预警信息列表
+     */
+    @Override
+    public List<SensorAlert> selectSensorAlertsByPastureType(String pastureType) {
+        return sensorAlertMapper.selectSensorAlertsByPastureType(pastureType);
+    }
 } 

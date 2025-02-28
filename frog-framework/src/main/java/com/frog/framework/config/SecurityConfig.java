@@ -118,6 +118,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .antMatchers("/ws/**").permitAll()
                 .antMatchers("/wav/**").permitAll()
                 .antMatchers("/ai/**").permitAll()
+                .antMatchers("/agriculture/**").permitAll()
                 .antMatchers("/soilsensorvaluevo/**").permitAll()
                 .antMatchers("/fishPasture/fishbatchTask/**").permitAll()
                 .antMatchers("/fishPasture/species/**").permitAll()

@@ -37,7 +37,39 @@ public class SensorAlert implements Serializable {
     
     /** 分区ID */
     private String batchId;
-    
+
+    /** 大棚/鱼棚名称 */
+    private String pastureName;
+
+    //责人id
+    private String batchHead;
+
+    public String getBatchHead() {
+        return batchHead;
+    }
+
+    public void setBatchHead(String batchHead) {
+        this.batchHead = batchHead;
+    }
+
+    public String getBatchName() {
+        return batchName;
+    }
+
+    public void setBatchName(String batchName) {
+        this.batchName = batchName;
+    }
+
+    public String getPastureName() {
+        return pastureName;
+    }
+
+    public void setPastureName(String pastureName) {
+        this.pastureName = pastureName;
+    }
+
+    /** 分区名称 */
+    private String batchName;
     /** 设备ID */
     private String deviceId;
     
@@ -52,7 +84,18 @@ public class SensorAlert implements Serializable {
     
     /** 预警日期 */
     private String alertDate;
-    
+
+    /** 区分大棚还是鱼棚  0是大棚 1是鱼棚 */
+    private String pastureType;
+
+    public String getPastureType() {
+        return pastureType;
+    }
+
+    public void setPastureType(String pastureType) {
+        this.pastureType = pastureType;
+    }
+
     /** 处理状态（0未处理，1已处理） */
     private String status;
     
