@@ -13,18 +13,25 @@ public class DeviceStatusTracker {
     private Map<String, Boolean> currentStatus = new ConcurrentHashMap<>();
     private static final int MAX_RETRY = 3;
 
-    public void recordSuccess(String sensorType) {
-        failureCounts.remove(sensorType);
-        currentStatus.put(sensorType, true);
+    public void recordSuccess(String deviceId) {
+        currentStatus.put(deviceId, true);
+        resetFailureCount(deviceId);
     }
 
-    public void recordFailure(String sensorType) {
-        int count = failureCounts.getOrDefault(sensorType, 0) + 1;
-        failureCounts.put(sensorType, count);
-        currentStatus.put(sensorType, count >= MAX_RETRY ? false : currentStatus.getOrDefault(sensorType, true));
+    public void recordFailure(String deviceId) {
+        currentStatus.put(deviceId, false);
+        failureCounts.merge(deviceId, 1, Integer::sum);
+    }
+
+    public void resetFailureCount(String deviceId) {
+        failureCounts.put(deviceId, 0);
+    }
+
+    public int getFailureCount(String deviceId) {
+        return failureCounts.getOrDefault(deviceId, 0);
     }
 
     public Map<String, Boolean> getCurrentStatus() {
-        return new HashMap<>(currentStatus);
+        return currentStatus;
     }
 }

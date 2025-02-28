@@ -206,6 +206,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                         statusTracker.recordFailure(sensorType);
                     }
                 } catch (Exception e) {
+                    valid = false;
                     log.error("传感器" + sensorType + "数据采集异常：" + e.getMessage());
                     currentRunStatus.put(sensorType, false);
                     statusTracker.recordFailure(sensorType);
@@ -246,10 +247,13 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 
     /**
      * 根据传感器状态更新设备状态，并记录在线/离线状态到数据库中
+     * 只有当设备连续多次（默认3次）采集失败时才标记为离线
      *
      * @param statusMap 传感器状态映射，key为传感器ID，value为是否在线
      */
     private void updateDeviceStatus(Map<String, Boolean> statusMap) {
+        final int OFFLINE_THRESHOLD = 3; // 连续失败次数阈值，超过此值才标记为离线
+        
         statusMap.forEach((sensorType, isOnline) -> {
             try {
                 // 从缓存或数据库中获取设备信息
@@ -259,13 +263,27 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                     return;
                 }
 
-                // 根据当前状态构造新的状态信息，1为在线，0为离线
-                String newStatus = isOnline ? "1" : "0";
+                String currentStatus = device.getStatus();
+                String newStatus = currentStatus; // 默认保持当前状态
+
+                if (isOnline) {
+                    // 如果数据采集成功，直接标记为在线
+                    newStatus = "1";
+                    statusTracker.resetFailureCount(sensorType); // 重置失败计数
+                } else {
+                    // 数据采集失败，增加失败计数
+                    int failureCount = statusTracker.getFailureCount(sensorType);
+                    if (failureCount >= OFFLINE_THRESHOLD) {
+                        // 只有连续失败次数达到阈值才标记为离线
+                        newStatus = "0";
+                    }
+                }
+
                 // 状态发生变化时才更新数据库
-                if (!newStatus.equals(device.getStatus())) {
+                if (!newStatus.equals(currentStatus)) {
                     device.setStatus(newStatus);
-                    deviceMapper.updateById(device); // 使用MyBatis-Plus更新方法
-                    log.info("设备:" + device.getDeviceId() + " 状态更新为" + (isOnline ? "在线" : "离线"));
+                    deviceMapper.updateById(device);
+                    log.info("设备:" + device.getDeviceId() + " 状态更新为" + (newStatus.equals("1") ? "在线" : "离线"));
                 }
             } catch (Exception e) {
                 log.error("更新设备状态失败:" + e.getMessage());
@@ -440,6 +458,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
      */
     private void processUnifiedSoilSensorData(SoilSensorValue sensorValue, Long[] unifiedBinding,
                                               Map<String, Device> sensorBindings, FishWaterQuality fishWaterQuality) {
+
         // 给非水质数据对象设置统一大棚和分区信息
         sensorValue.setPastureId(String.valueOf(unifiedBinding[0]));
         sensorValue.setBatchId(String.valueOf(unifiedBinding[1]));
@@ -495,7 +514,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 SoilSensorValue individualValue = new SoilSensorValue();
                 individualValue.setPastureId(String.valueOf(binding.getPastureId()));
                 individualValue.setBatchId(String.valueOf(binding.getBatchId()));
-                individualValue.setDeviceId(sensorType);
+                individualValue.setDeviceId("");
                 individualValue.setTime(currentTime());
                 individualValue.setDate(currentDate());
                 // 根据传感器类型复制对应的数据字段
