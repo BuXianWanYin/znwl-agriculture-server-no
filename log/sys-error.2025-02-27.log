@@ -1,0 +1,465 @@
+14:15:51.865 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+14:17:25.114 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+14:17:25.115 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+14:17:25.115 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+14:17:25.115 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+14:17:25.115 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+14:17:25.116 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+14:17:25.116 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+14:17:25.116 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+14:17:25.116 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+14:17:25.116 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+14:17:25.116 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+14:17:25.116 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+14:17:25.117 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+14:17:25.117 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+14:17:25.117 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+14:17:25.117 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+14:17:25.117 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+14:17:25.117 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+14:17:25.118 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+14:17:25.118 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+14:17:25.118 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+14:17:25.154 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+14:17:25.154 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+14:17:25.154 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+14:17:25.154 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+14:17:25.154 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+14:17:25.155 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+14:17:25.155 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+14:17:25.155 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+14:17:25.162 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+14:17:25.162 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+14:17:25.163 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+14:17:25.163 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+14:17:25.163 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+14:17:25.163 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+14:17:25.163 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+14:17:25.163 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+14:17:25.163 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+14:17:25.163 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+14:17:25.164 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+14:17:25.164 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+14:17:25.164 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+14:17:25.164 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+14:17:25.164 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+14:17:25.164 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+14:17:25.164 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:28:42.445 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+23:29:01.500 [restartedMain] ERROR o.s.b.SpringApplication - [reportFailure,843] - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'captchaController': Unsatisfied dependency expressed through field 'configService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysConfigServiceImpl': Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.frog.FrogApplication.main(FrogApplication.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysConfigServiceImpl': Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 25 common frames omitted
+Caused by: org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1671)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1579)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1365)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1348)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:1089)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:421)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
+	at org.springframework.data.redis.core.DefaultValueOperations.set(DefaultValueOperations.java:236)
+	at com.frog.common.core.redis.RedisCache.setCacheObject(RedisCache.java:33)
+	at com.frog.system.service.impl.SysConfigServiceImpl.loadingConfigCache(SysConfigServiceImpl.java:175)
+	at com.frog.system.service.impl.SysConfigServiceImpl.init(SysConfigServiceImpl.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	... 37 common frames omitted
+Caused by: org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.getConnection(LettucePoolingConnectionProvider.java:109)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1577)
+	... 58 common frames omitted
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:330)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:216)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115)
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.lambda$null$0(LettucePoolingConnectionProvider.java:97)
+	at io.lettuce.core.support.ConnectionPoolSupport$RedisPooledObjectFactory.create(ConnectionPoolSupport.java:211)
+	at io.lettuce.core.support.ConnectionPoolSupport$RedisPooledObjectFactory.create(ConnectionPoolSupport.java:201)
+	at org.apache.commons.pool2.BasePooledObjectFactory.makeObject(BasePooledObjectFactory.java:58)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:918)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:431)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:356)
+	at io.lettuce.core.support.ConnectionPoolSupport$1.borrowObject(ConnectionPoolSupport.java:122)
+	at io.lettuce.core.support.ConnectionPoolSupport$1.borrowObject(ConnectionPoolSupport.java:117)
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.getConnection(LettucePoolingConnectionProvider.java:103)
+	... 59 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+23:37:36.655 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+23:37:45.577 [restartedMain] ERROR o.s.b.SpringApplication - [reportFailure,843] - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'captchaController': Unsatisfied dependency expressed through field 'configService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysConfigServiceImpl': Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.frog.FrogApplication.main(FrogApplication.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysConfigServiceImpl': Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 25 common frames omitted
+Caused by: org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1671)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1579)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1365)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1348)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:1089)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:421)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:209)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:189)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
+	at org.springframework.data.redis.core.DefaultValueOperations.set(DefaultValueOperations.java:236)
+	at com.frog.common.core.redis.RedisCache.setCacheObject(RedisCache.java:33)
+	at com.frog.system.service.impl.SysConfigServiceImpl.loadingConfigCache(SysConfigServiceImpl.java:175)
+	at com.frog.system.service.impl.SysConfigServiceImpl.init(SysConfigServiceImpl.java:40)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	... 37 common frames omitted
+Caused by: org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.getConnection(LettucePoolingConnectionProvider.java:109)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1577)
+	... 58 common frames omitted
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:330)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:216)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115)
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.lambda$null$0(LettucePoolingConnectionProvider.java:97)
+	at io.lettuce.core.support.ConnectionPoolSupport$RedisPooledObjectFactory.create(ConnectionPoolSupport.java:211)
+	at io.lettuce.core.support.ConnectionPoolSupport$RedisPooledObjectFactory.create(ConnectionPoolSupport.java:201)
+	at org.apache.commons.pool2.BasePooledObjectFactory.makeObject(BasePooledObjectFactory.java:58)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:918)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:431)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:356)
+	at io.lettuce.core.support.ConnectionPoolSupport$1.borrowObject(ConnectionPoolSupport.java:122)
+	at io.lettuce.core.support.ConnectionPoolSupport$1.borrowObject(ConnectionPoolSupport.java:117)
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.getConnection(LettucePoolingConnectionProvider.java:103)
+	... 59 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+23:38:20.328 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+23:38:38.939 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:38:43.942 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:38:44.046 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:38:46.047 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:38:51.051 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:38:51.051 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:38:53.053 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:38:58.056 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:38:58.081 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:00.084 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:39:05.087 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:39:05.087 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:07.089 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:39:12.091 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:39:12.091 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:14.092 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:39:19.094 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:39:19.094 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:21.095 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:39:26.098 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:39:26.098 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:28.098 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:39:33.102 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:39:33.102 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:35.103 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:39:40.104 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:39:40.104 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:42.104 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:39:47.108 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:39:47.108 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:49.109 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:39:54.111 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:39:54.111 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:39:56.111 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:01.114 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:01.114 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:03.114 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:08.117 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:08.117 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:10.118 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:15.120 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:15.120 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:17.121 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:22.123 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:22.123 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:24.124 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:29.126 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:29.126 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:31.128 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:36.130 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:36.130 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:38.130 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:43.134 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:43.134 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:45.134 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:50.138 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:50.138 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:52.139 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:40:57.141 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:40:57.141 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:40:59.142 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:41:04.145 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:41:04.145 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:41:06.146 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:41:11.149 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:41:11.149 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:41:13.151 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:41:18.152 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:41:18.152 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:41:20.153 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:41:25.154 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:41:25.154 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:41:27.155 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:41:32.158 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:41:32.158 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:41:34.159 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:41:39.164 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:41:39.164 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:41:41.165 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:41:46.167 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:41:46.167 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:41:48.168 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:41:53.172 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:41:53.172 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:41:55.173 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:00.177 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:00.177 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:02.178 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:07.182 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:07.182 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:09.183 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:14.188 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:14.188 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:16.189 [schedule-pool-24] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:21.191 [schedule-pool-24] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:21.191 [schedule-pool-24] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:23.192 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.472 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.473 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.473 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.474 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.475 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.475 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.476 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.476 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.476 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.477 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.477 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.477 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.479 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.479 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.479 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.479 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.479 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.480 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.488 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.488 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.489 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.489 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.489 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.489 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.489 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.490 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.522 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.522 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.522 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.522 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.522 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.523 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.523 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.523 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.523 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.524 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.524 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.524 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.524 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.524 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.524 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.525 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.525 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.525 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.525 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.525 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.525 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.525 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.526 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.526 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.526 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.526 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.526 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.527 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.527 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.527 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.527 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.527 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.527 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.528 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.528 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.528 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.528 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.528 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.528 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.529 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.529 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.529 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.529 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.529 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.529 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.530 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.530 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.530 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.530 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.530 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.530 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.530 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.531 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.531 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.531 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.531 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.531 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.532 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.532 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.532 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.533 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.533 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.533 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.533 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.534 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.534 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.534 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.534 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.534 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.534 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.534 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.535 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.535 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:42:26.535 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器1数据采集异常：null
+23:42:26.535 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器2数据采集异常：null
+23:42:26.536 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器3数据采集异常：null
+23:42:26.536 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器4数据采集异常：null
+23:42:26.536 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器5数据采集异常：null
+23:42:26.536 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器6数据采集异常：null
+23:42:26.536 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,203] - 传感器8数据采集异常：null
+23:42:26.536 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,212] - 数据采集过程中发生异常，本次数据不做数据库插入。
+23:47:46.417 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file

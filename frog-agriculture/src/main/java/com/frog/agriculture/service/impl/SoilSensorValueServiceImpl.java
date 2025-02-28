@@ -81,8 +81,9 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
      */
     @PostConstruct
     public void init() {
-        // 初始化串口工具
+        // 初始化串口工具，配置与Python代码相同的参数
         serialPortUtil = new SerialPortUtil();
+
         // 从数据库中加载传感器指令
         initializeSensorCommandsFromDB();
         // 初始化传感器阈值配置
@@ -126,13 +127,13 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         // 湿度阈值（百分比）
         thresholdConfig.put("humidity", new double[]{30.0, 80.0});
         // 光照阈值（lux）
-        thresholdConfig.put("light", new double[]{50, 10000.0});
+        thresholdConfig.put("light", new double[]{80, 10000.0});
         // 风速阈值（m/s）
-        thresholdConfig.put("speed", new double[]{1.0, 10.0});
+        thresholdConfig.put("speed", new double[]{0.0, 10.0});
         // 土壤温度阈值（摄氏度）
         thresholdConfig.put("soil_temperature", new double[]{5.0, 30.0});
         // 土壤pH阈值
-        thresholdConfig.put("soil_ph", new double[]{5.5, 7.5});
+        thresholdConfig.put("soil_ph", new double[]{5.0, 7.5});
         // 土壤电导率阈值（μS/cm）
         thresholdConfig.put("conductivity", new double[]{0.0, 2000.0});
         // 土壤水分阈值（百分比）
@@ -171,36 +172,44 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
         // 清理全局传感器数据记录
         globalSensorData.clear();
 
-        // 遍历所有传感器指令，依次采集数据
-        for (Map.Entry<String, String> entry : sensorCommands.entrySet()) {
-            String sensorType = entry.getKey(); // 传感器ID
-            String hexCommand = entry.getValue(); // 十六进制指令字符串
+        // 使用串口锁确保串口操作的线程安全
+        synchronized (serialPortUtil) {
+            // 遍历所有传感器指令，依次采集数据
+            for (Map.Entry<String, String> entry : sensorCommands.entrySet()) {
+                String sensorType = entry.getKey();
+                String hexCommand = entry.getValue();
 
-            // 判断指令是否为空，若为空则跳过数据采集
-            if (hexCommand == null || hexCommand.trim().isEmpty()) {
-                log.warn("传感器" + sensorType + "指令为空，跳过采集");
-                continue;
-            }
+                if (hexCommand == null || hexCommand.trim().isEmpty()) {
+                    log.warn("传感器" + sensorType + "指令为空，跳过采集");
+                    continue;
+                }
 
-            try {
-                // 将16进制字符串转换为字节数组
-                byte[] command = hexStringToByteArray(hexCommand);
-                // 发送命令到传感器
-                serialPortUtil.writeBytes(command);
-                // 读取传感器响应的字节数组数据
-                byte[] response = serialPortUtil.readBytes();
-                // 解析传感器数据，采用switch分支分别处理各传感器数据
-                processSensorDataBySwitch(sensorType, response, sensorValue, fishWaterQuality);
-
-                // 标记当前传感器采集成功，并记录成功状态
-                currentRunStatus.put(sensorType, true);
-                statusTracker.recordSuccess(sensorType);
-            } catch (Exception e) {
-                // 若采集过程中出现异常，记录失败状态，并标记本次数据采集无效
-                currentRunStatus.put(sensorType, false);
-                statusTracker.recordFailure(sensorType);
-                valid = false;
-                log.error("传感器" + sensorType + "数据采集异常：" + e.getMessage());
+                try {
+                    // 发送命令到传感器
+                    byte[] command = hexStringToByteArray(hexCommand);
+                    serialPortUtil.writeBytes(command);
+                    
+                    // 等待传感器响应
+                    Thread.sleep(100);
+                    
+                    // 读取传感器响应数据
+                    byte[] response = serialPortUtil.readBytes();
+                    
+                    if (response != null && response.length > 0) {
+                        // 解析传感器数据
+                        processSensorDataBySwitch(sensorType, response, sensorValue, fishWaterQuality);
+                        currentRunStatus.put(sensorType, true);
+                        statusTracker.recordSuccess(sensorType);
+                    } else {
+                        log.warn("传感器" + sensorType + "未返回数据");
+                        currentRunStatus.put(sensorType, false);
+                        statusTracker.recordFailure(sensorType);
+                    }
+                } catch (Exception e) {
+                    log.error("传感器" + sensorType + "数据采集异常：" + e.getMessage());
+                    currentRunStatus.put(sensorType, false);
+                    statusTracker.recordFailure(sensorType);
+                }
             }
         }
 
@@ -303,7 +312,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 globalSensorData.put("wind_direction", parsedData);
                 sensorValue.setDirection(parsedData.get("direction").toString());
                 break;
-            /* 暂时注释掉百叶箱传感器处理
+
             case "2": // 百叶箱传感器
                 parsedData = parseBaiyeBoxData(response);
                 globalSensorData.put("baiye_box", parsedData);
@@ -311,7 +320,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 sensorValue.setHumidity(parsedData.get("humidity").toString());
                 sensorValue.setLightLux(parsedData.get("light").toString());
                 break;
-            */
+
             case "3": // 风速传感器
                 parsedData = parseWindSpeedData(response);
                 globalSensorData.put("wind_speed", parsedData);
@@ -589,20 +598,56 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
     }
 
     /**
-     * 解析土壤温度和水分传感器数据
-     * 假设数据格式：
-     * Byte5-6：土壤温度（除以10得到实际值）
-     *
-     * @param data 原始数据字节数组
-     * @return 包含土壤温度的Map
+     * 解析百叶箱传感器数据
+     */
+    private Map<String, Object> parseBaiyeBoxData(byte[] data) {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            // 湿度 = (byte3 << 8 | byte4) / 10.0
+            double humidity = ((data[3] & 0xFF) << 8 | (data[4] & 0xFF)) / 10.0;
+            // 温度 = (byte5 << 8 | byte6) / 10.0
+            double temperature = ((data[5] & 0xFF) << 8 | (data[6] & 0xFF)) / 10.0;
+            // 噪音 = (byte7 << 8 | byte8) / 10.0
+            double noise = ((data[7] & 0xFF) << 8 | (data[8] & 0xFF)) / 10.0;
+            // PM2.5 = byte9 << 8 | byte10
+            int pm25 = ((data[9] & 0xFF) << 8 | (data[10] & 0xFF));
+            // PM10 = byte13 << 8 | byte14
+            int pm10 = ((data[13] & 0xFF) << 8 | (data[14] & 0xFF));
+            // 光照 = byte17 << 8 | byte18
+            int light = ((data[17] & 0xFF) << 8 | (data[18] & 0xFF));
+            
+            map.put("humidity", humidity);
+            map.put("temperature", temperature);
+            map.put("noise", noise);
+            map.put("pm25", pm25);
+            map.put("pm10", pm10);
+            map.put("light", light);
+        } catch (Exception e) {
+            log.error("解析百叶箱数据出错: " + e.getMessage());
+        }
+        return map;
+    }
+
+    /**
+     * 解析土壤温度水分传感器数据
      */
     private Map<String, Object> parseSoilTemperatureMoistureData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
         try {
-            double soilTemperature = (((data[5] & 0xFF) << 8) | (data[6] & 0xFF)) / 10.0;
-            map.put("soil_temperature", soilTemperature);
+            // 水分值 = (byte3 << 8 | byte4) / 10.0
+            double moisture = ((data[3] & 0xFF) << 8 | (data[4] & 0xFF)) / 10.0;
+            
+            // 温度值处理，考虑负温度情况
+            int tempValue = ((data[5] & 0xFF) << 8 | (data[6] & 0xFF));
+            if (tempValue > 32767) {
+                tempValue = tempValue - 65536;
+            }
+            double temperature = tempValue / 10.0;
+            
+            map.put("soil_temperature", temperature);
+            map.put("moisture", moisture);
         } catch (Exception e) {
-            System.err.println("解析土壤温度水分数据出错: " + e.getMessage());
+            log.error("解析土壤温度水分数据出错: " + e.getMessage());
         }
         return map;
     }
@@ -628,28 +673,51 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 
     /**
      * 解析土壤水分电导率传感器数据
-     * 假设数据格式：
-     * Byte3-4：含水率（除以10）
-     * Byte5-6：土壤温度（除以10）
-     * Byte7-8：电导率（整数）
-     * Byte9-10：土壤 pH 值（除以10）
-     *
-     * @param data 原始数据字节数组
-     * @return 包含土壤水分、电导率和pH值的Map
      */
     private Map<String, Object> parseSoilMoistureConductivityData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
         try {
-            double moisture = (((data[3] & 0xFF) << 8) | (data[4] & 0xFF)) / 10.0;
-            double soilTemperature = (((data[5] & 0xFF) << 8) | (data[6] & 0xFF)) / 10.0;
-            int conductivity = ((data[7] & 0xFF) << 8) | (data[8] & 0xFF);
-            double phValue = (((data[9] & 0xFF) << 8) | (data[10] & 0xFF)) / 10.0;
+            // 水分值 = (byte3 << 8 | byte4) / 10.0
+            double moisture = ((data[3] & 0xFF) << 8 | (data[4] & 0xFF)) / 10.0;
+            
+            // 温度值处理，考虑负温度情况
+            int tempValue = ((data[5] & 0xFF) << 8 | (data[6] & 0xFF));
+            if (tempValue > 32767) {
+                tempValue = tempValue - 65536;
+            }
+            double temperature = tempValue / 10.0;
+            
+            // 电导率 = byte7 << 8 | byte8
+            int conductivity = ((data[7] & 0xFF) << 8 | (data[8] & 0xFF));
+            
             map.put("moisture", moisture);
-            map.put("soil_temperature", soilTemperature);
+            map.put("soil_temperature", temperature);
             map.put("conductivity", conductivity);
+        } catch (Exception e) {
+            log.error("解析土壤水分电导率数据出错: " + e.getMessage());
+        }
+        return map;
+    }
+
+    /**
+     * 解析水质传感器数据
+     */
+    private Map<String, Object> parseWaterQualityData(byte[] data) {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            // 温度值和小数位处理
+            int tempValue = ((data[3] & 0xFF) << 8 | (data[4] & 0xFF));
+            int tempDecimal = ((data[5] & 0xFF) << 8 | (data[6] & 0xFF));
+            double temperature = tempValue / Math.pow(10, tempDecimal);
+            temperature = Math.round(temperature * Math.pow(10, tempDecimal)) / Math.pow(10, tempDecimal);
+            
+            // pH值 = (byte7 << 8 | byte8) / 100.0
+            double phValue = ((data[7] & 0xFF) << 8 | (data[8] & 0xFF)) / 100.0;
+            
+            map.put("temperature", temperature);
             map.put("ph_value", phValue);
         } catch (Exception e) {
-            System.err.println("解析土壤水分电导率数据出错: " + e.getMessage());
+            log.error("解析水质传感器数据出错: " + e.getMessage());
         }
         return map;
     }
@@ -803,7 +871,6 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
      * @param sensorBindings 传感器绑定信息
      */
     private void checkAndAlertForSoilData(SoilSensorValue sensorValue, Map<String, Device> sensorBindings) {
-        /* 暂时注释掉百叶箱相关检查
         // 检查温度
         if (sensorValue.getTemperature() != null) {
             try {
@@ -836,7 +903,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 log.warn("光照数据格式错误: " + sensorValue.getLightLux());
             }
         }
-        */
+
         
         // 检查风速
         if (sensorValue.getSpeed() != null) {
