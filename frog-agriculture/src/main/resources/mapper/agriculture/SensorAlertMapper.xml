@@ -24,6 +24,7 @@
         <result property="remark"        column="remark"            />
         <result property="pastureName"   column="pasture_name"      />
         <result property="batchName"     column="batch_name"        />
+        <result property="batchHead"     column="batch_head"        />
     </resultMap>
 
     <sql id="selectSensorAlertVo">
@@ -142,33 +143,69 @@
 
     <!-- 根据大棚/鱼棚类型查询预警信息列表 -->
     <select id="selectSensorAlertsByPastureType" parameterType="String" resultMap="SensorAlertResult">
-        SELECT
-            sa.id,
-            sa.alert_type,
-            sa.alert_message,
-            sa.param_name,
-            sa.param_value,
-            sa.threshold_min,
-            sa.threshold_max,
-            sa.pasture_id,
-            sa.pasture_type,
-            sa.batch_id,
-            sa.device_id,
-            sa.device_name,
-            sa.sensor_type,
-            sa.alert_time,
-            sa.alert_date,
-            sa.status,
-            sa.remark,
-            p.name AS pasture_name,
-            b.batch_name
-        FROM
-            sensor_alert sa
-            LEFT JOIN ia_pasture p ON sa.pasture_id = p.id
-            LEFT JOIN agriculture_crop_batch b ON sa.batch_id = b.batch_id
-        WHERE
-            sa.pasture_type = #{pastureType}
-        ORDER BY
-            sa.alert_time DESC
+        <choose>
+            <when test="pastureType == '0'">
+                SELECT
+                    sa.id,
+                    sa.alert_type,
+                    sa.alert_message,
+                    sa.param_name,
+                    sa.param_value,
+                    sa.threshold_min,
+                    sa.threshold_max,
+                    sa.pasture_id,
+                    sa.pasture_type,
+                    sa.batch_id,
+                    sa.device_id,
+                    sa.device_name,
+                    sa.sensor_type,
+                    sa.alert_time,
+                    sa.alert_date,
+                    sa.status,
+                    sa.remark,
+                    p.name AS pasture_name,
+                    b.batch_name,
+                    b.batch_head
+                FROM
+                    sensor_alert sa
+                    LEFT JOIN ia_pasture p ON sa.pasture_id = p.id
+                    LEFT JOIN agriculture_crop_batch b ON sa.batch_id = b.batch_id
+                WHERE
+                    sa.pasture_type = '0'
+                ORDER BY
+                    sa.alert_time DESC
+            </when>
+            <otherwise>
+                SELECT
+                    sa.id,
+                    sa.alert_type,
+                    sa.alert_message,
+                    sa.param_name,
+                    sa.param_value,
+                    sa.threshold_min,
+                    sa.threshold_max,
+                    sa.pasture_id,
+                    sa.pasture_type,
+                    sa.batch_id,
+                    sa.device_id,
+                    sa.device_name,
+                    sa.sensor_type,
+                    sa.alert_time,
+                    sa.alert_date,
+                    sa.status,
+                    sa.remark,
+                    ft.name AS pasture_name,
+                    b.batch_name,
+                    b.batch_head
+                FROM
+                    sensor_alert sa
+                    LEFT JOIN fish_pasture ft ON sa.pasture_id = ft.id
+                    LEFT JOIN fish_pasture_batch b ON sa.batch_id = b.batch_id
+                WHERE
+                    sa.pasture_type = '1'
+                ORDER BY
+                    sa.alert_time DESC
+            </otherwise>
+        </choose>
     </select>
 </mapper>

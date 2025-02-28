@@ -4516,3 +4516,449 @@ java.util.concurrent.CancellationException: null
 17:33:50.379 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
 17:33:55.776 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
 17:33:55.877 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+17:37:02.102 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+17:37:23.697 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:37:31.434 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:37:39.167 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:37:46.892 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:37:54.616 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:38:02.340 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:38:10.064 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:38:17.792 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:38:25.520 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:38:33.247 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:38:40.972 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:38:48.694 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:38:56.422 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:39:04.149 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:39:11.874 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:39:19.597 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:39:27.323 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:39:35.043 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:39:42.763 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:39:50.485 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:39:58.204 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:40:05.926 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:40:13.646 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:40:21.365 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:40:29.086 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:40:36.807 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:40:44.527 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:40:52.247 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:40:59.969 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:41:07.688 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:41:15.407 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:41:23.128 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:41:30.851 [schedule-pool-24] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:41:38.573 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:41:46.293 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:41:54.015 [schedule-pool-26] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:42:01.735 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:42:09.455 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:42:17.177 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:42:24.895 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:42:32.617 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:42:40.336 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:42:48.054 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:42:55.774 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:43:03.495 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:43:11.213 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:43:18.933 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:43:26.655 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:43:34.375 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:43:42.092 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:43:49.811 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:43:57.530 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:44:05.252 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:44:12.972 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:44:20.693 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:44:28.412 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:44:36.132 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:44:43.851 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:44:51.571 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:44:59.290 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:45:07.017 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:45:14.739 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:45:22.458 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:45:30.175 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:45:37.898 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:45:45.615 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:45:53.334 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:46:01.051 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:46:08.770 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:46:16.488 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:46:24.206 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:46:31.929 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:46:39.646 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:46:47.365 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:46:55.086 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:47:02.806 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:47:10.523 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:47:18.279 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:47:25.999 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:47:33.719 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:47:41.437 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:47:49.155 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:47:56.873 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:48:04.592 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:48:12.312 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:48:20.030 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:48:27.751 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:48:35.471 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:48:43.191 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:48:50.914 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:48:58.633 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:49:06.351 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:49:14.068 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:49:21.785 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:49:29.504 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:49:37.225 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:49:44.943 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:49:52.659 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:50:00.376 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:50:08.097 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:50:15.814 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:50:23.535 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:50:31.255 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:50:38.972 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:50:46.688 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:50:54.408 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:51:02.128 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:51:09.845 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:51:17.565 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:51:25.285 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:51:33.004 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:51:40.723 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:51:48.440 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:51:56.158 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:52:03.876 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:52:11.598 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:52:19.317 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:52:27.035 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:52:34.758 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:52:42.482 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:52:46.976 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：sleep interrupted
+17:52:49.213 [schedule-pool-23] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 17:52:46 CST 2025
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve com.frog.IaAgriculture.mapper.DeviceMapper.selectSensorById
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 17:52:46 CST 2025
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy121.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:149)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:90)
+	at com.sun.proxy.$Proxy135.selectSensorById(Unknown Source)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.getSensorBindings(SoilSensorValueServiceImpl.java:386)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:226)
+	at sun.reflect.GeneratedMethodAccessor196.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 17:52:46 CST 2025
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve com.frog.IaAgriculture.mapper.DeviceMapper.selectSensorById
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 17:52:46 CST 2025
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:156)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75)
+	at sun.reflect.GeneratedMethodAccessor193.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 20 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 17:52:46 CST 2025
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:83)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at com.sun.proxy.$Proxy149.query(Unknown Source)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:169)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at com.sun.proxy.$Proxy149.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	... 27 common frames omitted
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 17:52:46 CST 2025
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1574)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1427)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5059)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:726)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5055)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1405)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1397)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:100)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:194)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	... 42 common frames omitted
+17:52:49.214 [schedule-pool-23] ERROR c.f.c.utils.Threads - [printException,96] - null
+java.util.concurrent.CancellationException: null
+	at java.util.concurrent.FutureTask.report(FutureTask.java:121)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at com.frog.common.utils.Threads.printException(Threads.java:78)
+	at com.frog.framework.config.ThreadPoolConfig$1.afterExecute(ThreadPoolConfig.java:58)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1157)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17:52:52.699 [restartedMain] ERROR o.s.b.SpringApplication - [reportFailure,843] - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionFoodSensorValueController': Unsatisfied dependency expressed through field 'iaPartitionFoodSensorValueService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionFoodSensorValueService': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionSensorValueMapper' defined in file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\com\frog\IaAgriculture\mapper\IaPartitionSensorValueMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.frog.FrogApplication.main(FrogApplication.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionFoodSensorValueService': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionSensorValueMapper' defined in file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\com\frog\IaAgriculture\mapper\IaPartitionSensorValueMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionSensorValueMapper' defined in file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\com\frog\IaAgriculture\mapper\IaPartitionSensorValueMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 39 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 63 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:680)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:553)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:711)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 64 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 204; columnNumber: 38; 元素内容必须由格式正确的字符数据或标记组成。
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:262)
+	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:127)
+	at com.baomidou.mybatisplus.core.MybatisXMLMapperBuilder.<init>(MybatisXMLMapperBuilder.java:87)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:677)
+	... 72 common frames omitted
+Caused by: org.xml.sax.SAXParseException: 元素内容必须由格式正确的字符数据或标记组成。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.startOfMarkup(XMLDocumentFragmentScannerImpl.java:2635)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2732)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:260)
+	... 75 common frames omitted
+17:54:41.598 [restartedMain] ERROR o.s.b.SpringApplication - [reportFailure,843] - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionFoodSensorValueController': Unsatisfied dependency expressed through field 'iaPartitionFoodSensorValueService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionFoodSensorValueService': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionSensorValueMapper' defined in file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\com\frog\IaAgriculture\mapper\IaPartitionSensorValueMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.frog.FrogApplication.main(FrogApplication.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionFoodSensorValueService': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionSensorValueMapper' defined in file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\com\frog\IaAgriculture\mapper\IaPartitionSensorValueMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'iaPartitionSensorValueMapper' defined in file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\com\frog\IaAgriculture\mapper\IaPartitionSensorValueMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1534)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 39 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1519)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 63 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\qkl-zhny\znwl-agriculture-server-no\frog-agriculture\target\classes\mapper\agriculture\SensorAlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:680)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:553)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:711)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 64 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error creating document instance.  Cause: org.xml.sax.SAXParseException; lineNumber: 205; columnNumber: 38; 元素内容必须由格式正确的字符数据或标记组成。
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:262)
+	at org.apache.ibatis.parsing.XPathParser.<init>(XPathParser.java:127)
+	at com.baomidou.mybatisplus.core.MybatisXMLMapperBuilder.<init>(MybatisXMLMapperBuilder.java:87)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:677)
+	... 72 common frames omitted
+Caused by: org.xml.sax.SAXParseException: 元素内容必须由格式正确的字符数据或标记组成。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.startOfMarkup(XMLDocumentFragmentScannerImpl.java:2635)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2732)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.apache.ibatis.parsing.XPathParser.createDocument(XPathParser.java:260)
+	... 75 common frames omitted
+17:55:49.733 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+17:56:10.759 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:56:18.499 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:56:26.227 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:56:33.952 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:56:41.680 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:56:47.062 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+17:56:47.162 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+17:57:56.688 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+17:58:17.426 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+17:58:18.280 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+17:58:18.380 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null

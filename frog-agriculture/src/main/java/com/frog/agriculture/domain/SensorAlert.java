@@ -41,6 +41,17 @@ public class SensorAlert implements Serializable {
     /** 大棚/鱼棚名称 */
     private String pastureName;
 
+    //责人id
+    private String batchHead;
+
+    public String getBatchHead() {
+        return batchHead;
+    }
+
+    public void setBatchHead(String batchHead) {
+        this.batchHead = batchHead;
+    }
+
     public String getBatchName() {
         return batchName;
     }
