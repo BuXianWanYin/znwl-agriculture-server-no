@@ -117,4 +117,8 @@ public class SensorAlert implements Serializable {
      */
     private String updateTime;
 
+    /**
+     * 警报级别（0-预警 1-严重警告）
+     */
+    private String alertLevel;
 } 

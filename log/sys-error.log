@@ -6115,3 +6115,8 @@ Consider defining a bean of type 'com.frog.agriculture.service.ISoilSensorValueS
 22:26:21.476 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器1数据采集异常：null
 22:26:40.741 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
 22:30:35.435 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,206] - 传感器5数据采集异常：null
+23:13:18.450 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+23:14:42.874 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,208] - 传感器5数据采集异常：null
+23:14:42.976 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,208] - 传感器6数据采集异常：null
+23:16:37.475 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+23:17:59.171 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,208] - 传感器3数据采集异常：null
