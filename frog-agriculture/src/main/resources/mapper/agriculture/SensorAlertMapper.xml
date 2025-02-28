@@ -22,11 +22,14 @@
         <result property="alertDate"     column="alert_date"        />
         <result property="status"        column="status"            />
         <result property="remark"        column="remark"            />
+        <result property="pastureName"   column="pasture_name"      />
+        <result property="batchName"     column="batch_name"        />
     </resultMap>
 
     <sql id="selectSensorAlertVo">
         select id, alert_type, alert_message, param_name, param_value, threshold_min, threshold_max,
-               pasture_id, pasture_type, batch_id, device_id, device_name, sensor_type, alert_time, alert_date, status, remark
+               pasture_id, pasture_type, batch_id, device_id, device_name, sensor_type, alert_time, 
+               alert_date, status, remark
         from sensor_alert
     </sql>
 
@@ -139,10 +142,33 @@
 
     <!-- 根据大棚/鱼棚类型查询预警信息列表 -->
     <select id="selectSensorAlertsByPastureType" parameterType="String" resultMap="SensorAlertResult">
-        select sa.*, d.device_name
-        from sensor_alert sa
-        left join device d on sa.device_id = d.device_id
-        where sa.pasture_type = #{pastureType}
-        order by sa.alert_time desc
+        SELECT
+            sa.id,
+            sa.alert_type,
+            sa.alert_message,
+            sa.param_name,
+            sa.param_value,
+            sa.threshold_min,
+            sa.threshold_max,
+            sa.pasture_id,
+            sa.pasture_type,
+            sa.batch_id,
+            sa.device_id,
+            sa.device_name,
+            sa.sensor_type,
+            sa.alert_time,
+            sa.alert_date,
+            sa.status,
+            sa.remark,
+            p.name AS pasture_name,
+            b.batch_name
+        FROM
+            sensor_alert sa
+            LEFT JOIN ia_pasture p ON sa.pasture_id = p.id
+            LEFT JOIN agriculture_crop_batch b ON sa.batch_id = b.batch_id
+        WHERE
+            sa.pasture_type = #{pastureType}
+        ORDER BY
+            sa.alert_time DESC
     </select>
 </mapper>

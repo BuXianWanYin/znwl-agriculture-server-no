@@ -3,6 +3,7 @@ package com.frog.agriculture.controller;
 import java.util.List;
 
 import com.frog.common.core.controller.BaseController;
+import com.frog.common.core.page.TableDataInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.frog.agriculture.domain.SensorAlert;
@@ -25,10 +26,10 @@ public class SensorAlertController extends BaseController {
      * 查询传感器预警信息列表
      */
     @GetMapping("/list")
-    public AjaxResult list(SensorAlert sensorAlert) {
+    public TableDataInfo list(SensorAlert sensorAlert) {
         startPage();
         List<SensorAlert> list = sensorAlertService.selectSensorAlertList(sensorAlert);
-        return AjaxResult.success(list);
+        return getDataTable(list);
     }
 
     /**
@@ -93,13 +94,9 @@ public class SensorAlertController extends BaseController {
      * 根据大棚/鱼棚类型查询预警信息
      */
     @GetMapping("/listByPastureType/{pastureType}")
-    public AjaxResult getAlertsByPastureType(@PathVariable("pastureType") String pastureType) {
-        try {
-            startPage();
-            List<SensorAlert> list = sensorAlertService.selectSensorAlertsByPastureType(pastureType);
-            return AjaxResult.success(list);
-        } catch (Exception e) {
-            return AjaxResult.error("查询预警信息失败：" + e.getMessage());
-        }
+    public TableDataInfo getAlertsByPastureType(@PathVariable("pastureType") String pastureType) {
+        startPage();
+        List<SensorAlert> list = sensorAlertService.selectSensorAlertsByPastureType(pastureType);
+        return getDataTable(list);
     }
 } 

@@ -49,7 +49,7 @@ public class FishWaterQualityController extends BaseController
     /**
      * 导出水质数据列表
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:quality:export')")
+   // @PreAuthorize("@ss.hasPermi('agriculture:quality:export')")
     @Log(title = "水质数据", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, FishWaterQuality fishWaterQuality)
@@ -62,7 +62,7 @@ public class FishWaterQualityController extends BaseController
     /**
      * 获取水质数据详细信息
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:quality:query')")
+ //   @PreAuthorize("@ss.hasPermi('agriculture:quality:query')")
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id)
     {
@@ -72,7 +72,7 @@ public class FishWaterQualityController extends BaseController
     /**
      * 新增水质数据
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:quality:add')")
+   // @PreAuthorize("@ss.hasPermi('agriculture:quality:add')")
     @Log(title = "水质数据", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody FishWaterQuality fishWaterQuality)
@@ -83,7 +83,7 @@ public class FishWaterQualityController extends BaseController
     /**
      * 修改水质数据
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:quality:edit')")
+   // @PreAuthorize("@ss.hasPermi('agriculture:quality:edit')")
     @Log(title = "水质数据", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody FishWaterQuality fishWaterQuality)
@@ -94,7 +94,7 @@ public class FishWaterQualityController extends BaseController
     /**
      * 删除水质数据
      */
-    @PreAuthorize("@ss.hasPermi('agriculture:quality:remove')")
+   // @PreAuthorize("@ss.hasPermi('agriculture:quality:remove')")
     @Log(title = "水质数据", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids)
