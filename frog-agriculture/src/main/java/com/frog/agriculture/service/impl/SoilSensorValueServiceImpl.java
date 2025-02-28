@@ -1083,6 +1083,17 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             alert.setPastureId(pastureId);
             alert.setBatchId(batchId);
             
+            // 根据参数类型判断pastureType
+            // 水质相关参数设置为1（鱼棚），其他参数设置为0（大棚）
+            if (paramKey.startsWith("water_") || 
+                paramKey.equals("oxygen") || 
+                paramKey.equals("ammonia") || 
+                paramKey.equals("nitrite")) {
+                alert.setPastureType("1"); // 鱼棚
+            } else {
+                alert.setPastureType("0"); // 大棚
+            }
+            
             // 设置设备信息
             if (device != null) {
                 alert.setDeviceId(device.getDeviceId());
@@ -1125,6 +1136,16 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             queryAlert.setBatchId(batchId);
             queryAlert.setStatus("0"); // 0表示未处理
             
+            // 设置pastureType
+            if (paramName.startsWith("水") || 
+                paramName.equals("溶解氧") || 
+                paramName.equals("氨氮") || 
+                paramName.equals("亚硝酸盐")) {
+                queryAlert.setPastureType("1"); // 鱼棚
+            } else {
+                queryAlert.setPastureType("0"); // 大棚
+            }
+            
             // 如果设备信息不为空，添加设备相关条件
             if (device != null) {
                 queryAlert.setSensorType(device.getSensorType());
@@ -1133,11 +1154,9 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
             // 查询是否存在符合条件的未处理预警
             List<SensorAlert> existingAlerts = sensorAlertMapper.selectSensorAlertList(queryAlert);
             
-            // 如果存在未处理的预警，则返回true
             return existingAlerts != null && !existingAlerts.isEmpty();
         } catch (Exception e) {
             log.error("查询现有预警失败: " + e.getMessage());
-            // 查询失败时，为安全起见返回false，允许生成新预警
             return false;
         }
     }

@@ -1,6 +1,8 @@
 package com.frog.agriculture.controller;
 
 import java.util.List;
+
+import com.frog.common.core.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.frog.agriculture.domain.SensorAlert;
@@ -15,7 +17,7 @@ import com.frog.common.core.domain.AjaxResult;
  */
 @RestController
 @RequestMapping("/agriculture/alert")
-public class SensorAlertController {
+public class SensorAlertController extends BaseController {
     @Autowired
     private ISensorAlertService sensorAlertService;
 
@@ -24,6 +26,7 @@ public class SensorAlertController {
      */
     @GetMapping("/list")
     public AjaxResult list(SensorAlert sensorAlert) {
+        startPage();
         List<SensorAlert> list = sensorAlertService.selectSensorAlertList(sensorAlert);
         return AjaxResult.success(list);
     }
@@ -84,5 +87,19 @@ public class SensorAlertController {
     @PutMapping("/handle/{id}")
     public AjaxResult handleAlert(@PathVariable("id") Long id, @RequestParam("remark") String remark) {
         return AjaxResult.success(sensorAlertService.handleAlert(id, remark));
+    }
+
+    /**
+     * 根据大棚/鱼棚类型查询预警信息
+     */
+    @GetMapping("/listByPastureType/{pastureType}")
+    public AjaxResult getAlertsByPastureType(@PathVariable("pastureType") String pastureType) {
+        try {
+            startPage();
+            List<SensorAlert> list = sensorAlertService.selectSensorAlertsByPastureType(pastureType);
+            return AjaxResult.success(list);
+        } catch (Exception e) {
+            return AjaxResult.error("查询预警信息失败：" + e.getMessage());
+        }
     }
 } 

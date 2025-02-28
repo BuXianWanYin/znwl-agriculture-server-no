@@ -52,7 +52,18 @@ public class SensorAlert implements Serializable {
     
     /** 预警日期 */
     private String alertDate;
-    
+
+    /** 区分大棚还是鱼棚  0是大棚 1是鱼棚 */
+    private String pastureType;
+
+    public String getPastureType() {
+        return pastureType;
+    }
+
+    public void setPastureType(String pastureType) {
+        this.pastureType = pastureType;
+    }
+
     /** 处理状态（0未处理，1已处理） */
     private String status;
     
