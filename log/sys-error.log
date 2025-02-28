@@ -4962,3 +4962,349 @@ Caused by: org.xml.sax.SAXParseException: 元素内容必须由格式正确的�
 17:58:17.426 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
 17:58:18.280 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
 17:58:18.380 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:00:13.167 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+18:00:33.631 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:00:41.371 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:00:49.147 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:00:56.874 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:01:04.598 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:01:12.322 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:01:20.044 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:01:27.771 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:01:35.496 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:01:43.221 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:01:50.946 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:01:58.668 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:02:06.390 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:02:14.111 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:02:21.834 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:02:29.556 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:02:37.279 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:02:45.002 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:02:52.725 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:03:00.445 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:03:08.169 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:03:15.892 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:03:23.617 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:03:31.337 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:03:39.057 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:03:46.780 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:03:54.500 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:04:02.220 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:04:09.942 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:04:17.663 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:04:25.384 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:04:33.104 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:04:40.825 [schedule-pool-24] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:04:48.546 [schedule-pool-16] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:04:56.268 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:05:03.987 [schedule-pool-26] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:05:11.706 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:05:19.426 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:05:27.147 [schedule-pool-28] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:05:34.865 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:05:42.586 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:05:50.305 [schedule-pool-30] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:05:58.026 [schedule-pool-20] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:06:05.744 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:06:13.465 [schedule-pool-32] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:06:21.181 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:06:28.901 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:06:36.626 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:06:44.347 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:06:52.063 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:06:59.782 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:07:07.501 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:07:15.221 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:07:22.941 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:07:30.662 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:07:38.382 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:07:46.102 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:07:53.820 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:08:01.540 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:08:09.260 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:08:16.977 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:08:24.697 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:08:32.416 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:08:40.135 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:08:47.856 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:08:55.574 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:09:03.294 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:09:11.013 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:09:18.731 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:09:26.448 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:09:34.168 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:09:41.888 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:09:49.605 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:09:57.322 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:10:05.038 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:10:12.757 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:10:20.478 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:10:28.234 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:10:35.951 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:10:43.671 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:10:51.390 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:10:59.110 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:11:06.832 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:11:14.551 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:11:22.269 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:11:29.987 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:11:37.708 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:11:45.426 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:11:53.146 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:12:00.864 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:12:08.582 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:12:16.302 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:12:24.024 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:12:31.753 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:12:39.471 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:12:47.189 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:12:54.910 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:13:02.630 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:13:10.349 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:13:18.068 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:13:25.785 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:13:33.505 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:13:41.223 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:13:48.943 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:13:56.661 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:14:04.382 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:14:12.103 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:14:19.820 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:14:27.543 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:14:35.263 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:14:42.979 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:14:50.696 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:14:58.417 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:15:06.144 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:15:13.862 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:15:21.590 [schedule-pool-23] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 18:15:20 CST 2025
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve com.frog.IaAgriculture.mapper.DeviceMapper.selectSensorById
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 18:15:20 CST 2025
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy121.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:149)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:90)
+	at com.sun.proxy.$Proxy135.selectSensorById(Unknown Source)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.getSensorBindings(SoilSensorValueServiceImpl.java:386)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:226)
+	at sun.reflect.GeneratedMethodAccessor187.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 18:15:20 CST 2025
+### The error may exist in com/frog/IaAgriculture/mapper/DeviceMapper.java (best guess)
+### The error may involve com.frog.IaAgriculture.mapper.DeviceMapper.selectSensorById
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 18:15:20 CST 2025
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:156)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75)
+	at sun.reflect.GeneratedMethodAccessor183.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 20 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 18:15:20 CST 2025
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:83)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at com.sun.proxy.$Proxy149.query(Unknown Source)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:169)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at com.sun.proxy.$Proxy149.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	... 27 common frames omitted
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Fri Feb 28 18:15:20 CST 2025
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1574)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1427)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5059)
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:726)
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5055)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1405)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1397)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:100)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:194)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	... 42 common frames omitted
+18:15:21.591 [schedule-pool-23] ERROR c.f.c.utils.Threads - [printException,96] - null
+java.util.concurrent.CancellationException: null
+	at java.util.concurrent.FutureTask.report(FutureTask.java:121)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at com.frog.common.utils.Threads.printException(Threads.java:78)
+	at com.frog.framework.config.ThreadPoolConfig$1.afterExecute(ThreadPoolConfig.java:58)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1157)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+18:15:27.205 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+18:15:29.367 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field soilSensorValueService in com.frog.agriculture.controller.SoilSensorValueController required a bean of type 'com.frog.agriculture.service.ISoilSensorValueService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.frog.agriculture.service.ISoilSensorValueService' in your configuration.
+
+18:16:19.854 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+18:16:22.227 [restartedMain] ERROR c.f.c.u.SerialPortUtil - [<init>,24] - java.lang.RuntimeException: 打开串口失败
+18:16:25.084 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:16:25.191 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:16:25.291 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:16:25.394 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:16:25.495 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:16:25.595 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:16:25.695 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:16:25.742 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:16:30.079 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:16:30.179 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:16:30.280 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:16:30.380 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:16:30.480 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:16:30.580 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:16:30.681 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:16:30.685 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:16:35.074 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:16:35.174 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:16:35.275 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:16:35.376 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:16:35.477 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:16:35.578 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:16:35.679 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:16:35.701 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:16:40.075 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:16:40.176 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:16:40.276 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:16:40.377 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:16:40.477 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:16:40.577 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:16:40.677 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:16:40.680 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:16:45.075 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:16:45.176 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:16:45.276 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:16:45.377 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:16:45.477 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:16:45.578 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:16:45.679 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:16:45.682 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:16:50.076 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:16:50.176 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:16:50.277 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:16:50.377 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:16:50.478 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:16:50.579 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:16:50.679 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:16:50.682 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:16:55.075 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:16:55.176 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:16:55.276 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:16:55.377 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:16:55.477 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:16:55.578 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:16:55.678 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:16:55.681 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:17:00.075 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:17:00.176 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:17:00.276 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:17:00.376 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:17:00.477 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:17:00.577 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:17:00.677 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:17:00.680 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:17:05.075 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:17:05.175 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:17:05.276 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:17:05.376 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:17:05.476 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:17:05.576 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:17:05.676 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:17:05.679 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:17:10.076 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:17:10.176 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:17:10.277 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:17:10.377 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:17:10.478 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:17:10.578 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:17:10.678 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:17:10.681 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:17:15.074 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:17:15.174 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:17:15.275 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:17:15.375 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:17:15.475 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:17:15.575 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:17:15.676 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:17:15.679 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:17:20.075 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:17:20.176 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:17:20.276 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:17:20.376 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:17:20.476 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:17:20.577 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:17:20.678 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:17:20.682 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:17:25.074 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器1数据采集异常：null
+18:17:25.174 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器2数据采集异常：null
+18:17:25.275 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器3数据采集异常：null
+18:17:25.376 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器4数据采集异常：null
+18:17:25.476 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器5数据采集异常：null
+18:17:25.576 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器6数据采集异常：null
+18:17:25.677 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,209] - 传感器8数据采集异常：null
+18:17:25.680 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [getUnifiedPastureAndBatch,426] - 设备ID转换异常: null
+18:17:32.248 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+18:17:34.253 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field soilSensorValueService in com.frog.agriculture.controller.SoilSensorValueController required a bean of type 'com.frog.agriculture.service.ISoilSensorValueService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.frog.agriculture.service.ISoilSensorValueService' in your configuration.
+
