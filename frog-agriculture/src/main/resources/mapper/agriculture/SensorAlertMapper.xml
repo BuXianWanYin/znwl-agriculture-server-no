@@ -144,7 +144,7 @@
     <!-- 根据大棚/鱼棚类型查询预警信息列表 -->
     <select id="selectSensorAlertsByPastureType" parameterType="String" resultMap="SensorAlertResult">
         <choose>
-            <when test="pastureType == '0'">
+            <when test="pastureType == '0'.toString()">
                 SELECT
                     sa.id,
                     sa.alert_type,
@@ -202,7 +202,7 @@
                     LEFT JOIN fish_pasture ft ON sa.pasture_id = ft.id
                     LEFT JOIN fish_pasture_batch b ON sa.batch_id = b.batch_id
                 WHERE
-                    sa.pasture_type = '1'
+                    sa.pasture_type = #{pastureType}
                 ORDER BY
                     sa.alert_time DESC
             </otherwise>
