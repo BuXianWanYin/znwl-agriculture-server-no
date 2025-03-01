@@ -1,5 +1,6 @@
 package com.frog.agriculture.domain;
 
+import lombok.Data;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.frog.common.annotation.Excel;
@@ -11,6 +12,7 @@ import com.frog.common.core.domain.BaseEntity;
  * @author nealtsiao
  * @date 2025-02-23
  */
+@Data
 public class SoilSensorValue extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
@@ -78,169 +80,4 @@ public class SoilSensorValue extends BaseEntity
     @Excel(name = "删除标志")
     private String del_flag;
 
-    public String getDel_flag() {
-        return del_flag;
-    }
-
-    public void setDel_flag(String del_flag) {
-        this.del_flag = del_flag;
-    }
-
-    public void setId(String id)
-    {
-        this.id = id;
-    }
-
-    public String getId() 
-    {
-        return id;
-    }
-    public void setDeviceId(String deviceId) 
-    {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceId() 
-    {
-        return deviceId;
-    }
-    public void setPastureId(String pastureId) 
-    {
-        this.pastureId = pastureId;
-    }
-
-    public String getPastureId() 
-    {
-        return pastureId;
-    }
-    public void setBatchId(String batchId) 
-    {
-        this.batchId = batchId;
-    }
-
-    public String getBatchId() 
-    {
-        return batchId;
-    }
-    public void setTemperature(String temperature) 
-    {
-        this.temperature = temperature;
-    }
-
-    public String getTemperature() 
-    {
-        return temperature;
-    }
-    public void setHumidity(String humidity) 
-    {
-        this.humidity = humidity;
-    }
-
-    public String getHumidity() 
-    {
-        return humidity;
-    }
-    public void setLightLux(String lightLux) 
-    {
-        this.lightLux = lightLux;
-    }
-
-    public String getLightLux() 
-    {
-        return lightLux;
-    }
-    public void setSoilMoisture(String soilMoisture) 
-    {
-        this.soilMoisture = soilMoisture;
-    }
-
-    public String getSoilMoisture() 
-    {
-        return soilMoisture;
-    }
-    public void setSoilTemperature(String soilTemperature) 
-    {
-        this.soilTemperature = soilTemperature;
-    }
-
-    public String getSoilTemperature() 
-    {
-        return soilTemperature;
-    }
-    public void setSoilPh(String soilPh) 
-    {
-        this.soilPh = soilPh;
-    }
-
-    public String getSoilPh() 
-    {
-        return soilPh;
-    }
-    public void setSoilConductivity(String soilConductivity) 
-    {
-        this.soilConductivity = soilConductivity;
-    }
-
-    public String getSoilConductivity() 
-    {
-        return soilConductivity;
-    }
-    public void setDirection(String direction) 
-    {
-        this.direction = direction;
-    }
-
-    public String getDirection() 
-    {
-        return direction;
-    }
-    public void setSpeed(String speed) 
-    {
-        this.speed = speed;
-    }
-
-    public String getSpeed() 
-    {
-        return speed;
-    }
-    public void setTime(String time) 
-    {
-        this.time = time;
-    }
-
-    public String getTime() 
-    {
-        return time;
-    }
-    public void setDate(String date) 
-    {
-        this.date = date;
-    }
-
-    public String getDate() 
-    {
-        return date;
-    }
-
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("id", getId())
-            .append("deviceId", getDeviceId())
-            .append("pastureId", getPastureId())
-            .append("batchId", getBatchId())
-            .append("temperature", getTemperature())
-            .append("humidity", getHumidity())
-            .append("lightLux", getLightLux())
-            .append("soilMoisture", getSoilMoisture())
-            .append("soilTemperature", getSoilTemperature())
-            .append("soilPh", getSoilPh())
-            .append("soilConductivity", getSoilConductivity())
-            .append("direction", getDirection())
-            .append("speed", getSpeed())
-            .append("time", getTime())
-            .append("date", getDate())
-            .append("del_flag", getDel_flag())
-            .toString();
-    }
 }

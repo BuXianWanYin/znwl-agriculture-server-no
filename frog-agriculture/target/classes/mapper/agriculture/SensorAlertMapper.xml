@@ -25,12 +25,15 @@
         <result property="pastureName"   column="pasture_name"      />
         <result property="batchName"     column="batch_name"        />
         <result property="batchHead"     column="batch_head"        />
+        <result property="updateTime"    column="update_time"       />
+        <!-- 新增字段 alert_level  警报级别（0-预警 1-严重警告） -->
+        <result property="alertLevel"    column="alert_level"       />
     </resultMap>
 
     <sql id="selectSensorAlertVo">
         select id, alert_type, alert_message, param_name, param_value, threshold_min, threshold_max,
-               pasture_id, pasture_type, batch_id, device_id, device_name, sensor_type, alert_time, 
-               alert_date, status, remark
+               pasture_id, pasture_type, batch_id, device_id, device_name, sensor_type, alert_time,
+               alert_date, status, remark, update_time, alert_level
         from sensor_alert
     </sql>
 
@@ -86,6 +89,11 @@
             <if test="alertDate != null">alert_date,</if>
             <if test="status != null">status,</if>
             <if test="remark != null">remark,</if>
+            <if test="updateTime != null">update_time,</if>
+            <!-- 新增 alert_level 字段 -->
+            <if test="alertLevel != null">alert_level,</if>
+            <!-- 当 alertLevel 为 null 时，依然插入该字段，由数据库默认值 '0' 来填充 -->
+            <if test="alertLevel == null">alert_level,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="alertType != null">#{alertType},</if>
@@ -104,6 +112,16 @@
             <if test="alertDate != null">#{alertDate},</if>
             <if test="status != null">#{status},</if>
             <if test="remark != null">#{remark},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <!-- 判断 alertLevel 字段：若传入值不为空，则插入对应值，否则插入默认 '0' -->
+            <choose>
+                <when test="alertLevel != null">
+                    #{alertLevel},
+                </when>
+                <otherwise>
+                    '0',
+                </otherwise>
+            </choose>
         </trim>
     </insert>
 
@@ -126,6 +144,9 @@
             <if test="alertDate != null">alert_date = #{alertDate},</if>
             <if test="status != null">status = #{status},</if>
             <if test="remark != null">remark = #{remark},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <!-- 更新 alert_level 字段（仅当传入了 alertLevel 时进行更新） -->
+            <if test="alertLevel != null">alert_level = #{alertLevel},</if>
         </trim>
         where id = #{id}
     </update>
@@ -146,65 +167,69 @@
         <choose>
             <when test="pastureType == '0'.toString()">
                 SELECT
-                    sa.id,
-                    sa.alert_type,
-                    sa.alert_message,
-                    sa.param_name,
-                    sa.param_value,
-                    sa.threshold_min,
-                    sa.threshold_max,
-                    sa.pasture_id,
-                    sa.pasture_type,
-                    sa.batch_id,
-                    sa.device_id,
-                    sa.device_name,
-                    sa.sensor_type,
-                    sa.alert_time,
-                    sa.alert_date,
-                    sa.status,
-                    sa.remark,
-                    p.name AS pasture_name,
-                    b.batch_name,
-                    b.batch_head
+                sa.id,
+                sa.alert_type,
+                sa.alert_message,
+                sa.param_name,
+                sa.param_value,
+                sa.threshold_min,
+                sa.threshold_max,
+                sa.pasture_id,
+                sa.pasture_type,
+                sa.batch_id,
+                sa.device_id,
+                sa.device_name,
+                sa.sensor_type,
+                sa.alert_time,
+                sa.alert_date,
+                sa.status,
+                sa.remark,
+                sa.update_time,
+                sa.alert_level,
+                p.name AS pasture_name,
+                b.batch_name,
+                b.batch_head
                 FROM
-                    sensor_alert sa
-                    LEFT JOIN ia_pasture p ON sa.pasture_id = p.id
-                    LEFT JOIN agriculture_crop_batch b ON sa.batch_id = b.batch_id
+                sensor_alert sa
+                LEFT JOIN ia_pasture p ON sa.pasture_id = p.id
+                LEFT JOIN agriculture_crop_batch b ON sa.batch_id = b.batch_id
                 WHERE
-                    sa.pasture_type = '0'
+                sa.pasture_type = '0'
                 ORDER BY
-                    sa.alert_time DESC
+                sa.alert_time DESC
             </when>
             <otherwise>
                 SELECT
-                    sa.id,
-                    sa.alert_type,
-                    sa.alert_message,
-                    sa.param_name,
-                    sa.param_value,
-                    sa.threshold_min,
-                    sa.threshold_max,
-                    sa.pasture_id,
-                    sa.pasture_type,
-                    sa.batch_id,
-                    sa.device_id,
-                    sa.device_name,
-                    sa.sensor_type,
-                    sa.alert_time,
-                    sa.alert_date,
-                    sa.status,
-                    sa.remark,
-                    ft.name AS pasture_name,
-                    b.batch_name,
-                    b.batch_head
+                sa.id,
+                sa.alert_type,
+                sa.alert_message,
+                sa.param_name,
+                sa.param_value,
+                sa.threshold_min,
+                sa.threshold_max,
+                sa.pasture_id,
+                sa.pasture_type,
+                sa.batch_id,
+                sa.device_id,
+                sa.device_name,
+                sa.sensor_type,
+                sa.alert_time,
+                sa.alert_date,
+                sa.status,
+                sa.remark,
+                sa.update_time,
+                sa.alert_level,
+                ft.name AS pasture_name,
+                b.batch_name,
+                b.batch_head
                 FROM
-                    sensor_alert sa
-                    LEFT JOIN fish_pasture ft ON sa.pasture_id = ft.id
-                    LEFT JOIN fish_pasture_batch b ON sa.batch_id = b.batch_id
+                sensor_alert sa
+                LEFT JOIN fish_pasture ft ON sa.pasture_id = ft.id
+                LEFT JOIN fish_pasture_batch b ON sa.batch_id = b.batch_id
                 WHERE
-                    sa.pasture_type = #{pastureType}
+                sa.pasture_type = #{pastureType}
                 ORDER BY
-                    sa.alert_time DESC
+                sa.alert_time DESC
             </otherwise>
         </choose>
     </select>
