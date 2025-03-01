@@ -116,6 +116,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                         "/profile/**"
                 ).permitAll()
                 .antMatchers("/ws/**").permitAll()
+                .antMatchers("/websocket/**").permitAll()
                 .antMatchers("/wav/**").permitAll()
                 .antMatchers("/ai/**").permitAll()
                 .antMatchers("/agriculture/**").permitAll()
