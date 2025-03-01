@@ -5,20 +5,24 @@ import com.frog.agriculture.domain.FishWaterQuality;
 import com.frog.agriculture.domain.SensorAlert;
 import com.frog.agriculture.domain.SoilSensorValue;
 import com.frog.agriculture.mapper.SensorAlertMapper;
+import com.frog.agriculture.websocket.AlertWebSocketServer;
 import com.frog.common.utils.AudioPlayer;
 import com.frog.common.utils.SerialPortUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * 预警处理工具类
  */
 public class AlertProcessUtil {
     private static final Log log = LogFactory.getLog(AlertProcessUtil.class);
+
     /**
      * 获取预警阈值缓冲区间
      */
@@ -31,7 +35,7 @@ public class AlertProcessUtil {
                 break;
             case "humidity":
                 minBuffer = 5.0;
-                maxBuffer = 5.0;
+                maxBuffer = 10.0;
                 break;
             case "light":
                 minBuffer = 40.0;
@@ -137,7 +141,6 @@ public class AlertProcessUtil {
     }
 
 
-    
     /**
      * 获取当前系统的完整时间戳格式 yyyy-MM-dd HH:mm:ss
      */
@@ -163,14 +166,14 @@ public class AlertProcessUtil {
      * 检查并处理预警信息
      */
     public static void processAlert(String paramKey, String paramName, double value, double[] thresholds,
-                                  double minWarning, double maxWarning, String pastureId, String batchId,
-                                  Device device, String alertType, String alertMessage, SensorAlertMapper sensorAlertMapper,
+                                    double minWarning, double maxWarning, String pastureId, String batchId,
+                                    Device device, String alertType, String alertMessage, SensorAlertMapper sensorAlertMapper,
                                     SerialPortUtil serialPortUtil) {
 
         if (!hasActiveAlert(paramName, alertType, pastureId, batchId, device, sensorAlertMapper)) {
             if (alertType.contains("严重")) {
                 generateSeriousAlert(paramKey, paramName, value, thresholds, pastureId, batchId,
-                        device, alertType, alertMessage, sensorAlertMapper,serialPortUtil);
+                        device, alertType, alertMessage, sensorAlertMapper, serialPortUtil);
             } else {
                 generateWarning(paramKey, paramName, value, thresholds, minWarning, maxWarning,
                         pastureId, batchId, device, alertType, alertMessage, sensorAlertMapper);
@@ -181,8 +184,8 @@ public class AlertProcessUtil {
     /**
      * 检查是否存在未处理的相同类型预警
      */
-    public static boolean hasActiveAlert(String paramName, String alertType, String pastureId, 
-                                       String batchId, Device device, SensorAlertMapper sensorAlertMapper) {
+    public static boolean hasActiveAlert(String paramName, String alertType, String pastureId,
+                                         String batchId, Device device, SensorAlertMapper sensorAlertMapper) {
         try {
             SensorAlert queryAlert = new SensorAlert();
             queryAlert.setParamName(paramName);
@@ -208,44 +211,89 @@ public class AlertProcessUtil {
     /**
      * 更新活跃预警状态
      */
-    public static void updateActiveAlerts(String paramName, String pastureId, String batchId, 
-                                        Device device, SensorAlertMapper sensorAlertMapper,
-                                        SerialPortUtil serialPortUtil) {
+    public static void updateActiveAlerts(String paramName, String pastureId, String batchId,
+                                          Device device, SensorAlertMapper sensorAlertMapper,
+                                          SerialPortUtil serialPortUtil) {
         try {
+            // 创建查询对象
             SensorAlert queryAlert = new SensorAlert();
+            // 设置参数名称
             queryAlert.setParamName(paramName);
+            // 设置大棚ID
             queryAlert.setPastureId(pastureId);
+            // 设置批次ID
             queryAlert.setBatchId(batchId);
+            // 设置状态为未处理
             queryAlert.setStatus("0");
-
+            // 设置警告级别为严重警告
+            queryAlert.setAlertLevel("1");
+            // 设置大棚类型（水产/土壤）
             queryAlert.setPastureType(isPastureTypeWater(paramName) ? "1" : "0");
 
+            // 如果设备不为空，设置传感器类型
             if (device != null) {
                 queryAlert.setSensorType(device.getSensorType());
             }
 
+            // 查询当前活跃的严重警告
             List<SensorAlert> activeAlerts = sensorAlertMapper.selectSensorAlertList(queryAlert);
 
-            if (activeAlerts != null && !activeAlerts.isEmpty()) {
+            // 处理严重警告   getAlertLevel eq 1
+            if (activeAlerts != null && !activeAlerts.isEmpty() && activeAlerts.get(0).getAlertLevel().equals("1")) {
+                // 遍历所有活跃的严重警告
                 for (SensorAlert alert : activeAlerts) {
+                    // 更新警告状态为已处理
                     alert.setStatus("1");
+                    // 添加处理备注
                     alert.setRemark("数据恢复正常，系统自动处理");
+                    // 更新处理时间
                     alert.setUpdateTime(currentTimestamp());
+                    // 保存更新到数据库
                     sensorAlertMapper.updateSensorAlert(alert);
-                    log.info("自动处理预警: " + paramName + " 数据恢复正常");
-                }
+                    // 记录日志
+                    log.info("自动处理严重警告: " + paramName + " 数据恢复正常");
 
-                try {
-                    serialPortUtil.sendAllClose();
-                    AudioPlayer.stopAlarmSound();
-                    Thread.sleep(2000);
-                    serialPortUtil.sendRelay4();
-                    log.info("已发送数据恢复继电器控制命令");
-                } catch (Exception e) {
-                    log.error("发送继电器控制命令失败: " + e.getMessage());
+                    try {
+                        // 发送关闭所有设备的命令
+                        serialPortUtil.sendAllClose();
+                        // 停止警报音频播放
+                        AudioPlayer.stopAlarmSound();
+                        // 等待2秒
+                        Thread.sleep(2000);
+                        // 收回推杆
+                        serialPortUtil.sendRelay4();
+                        // 记录命令发送日志
+                        log.info("已发送数据恢复继电器控制命令");
+                    } catch (Exception e) {
+                        // 记录错误日志
+                        log.error("发送继电器控制命令失败: " + e.getMessage());
+                    }
+                }
+            } else {
+                // 处理普通预警
+                // 修改查询条件为普通预警级别
+                queryAlert.setAlertLevel("0");
+                // 查询活跃的普通预警
+                activeAlerts = sensorAlertMapper.selectSensorAlertList(queryAlert);
+                // 如果存在普通预警
+                if (activeAlerts != null && !activeAlerts.isEmpty()) {
+                    // 遍历所有普通预警
+                    for (SensorAlert alert : activeAlerts) {
+                        // 更新预警状态为已处理
+                        alert.setStatus("1");
+                        // 添加处理备注
+                        alert.setRemark("数据恢复正常，系统自动处理");
+                        // 更新处理时间
+                        alert.setUpdateTime(currentTimestamp());
+                        // 保存更新到数据库
+                        sensorAlertMapper.updateSensorAlert(alert);
+                        // 记录日志
+                        log.info("自动处理预警: " + paramName + " 数据恢复正常");
+                    }
                 }
             }
         } catch (Exception e) {
+            // 记录错误日志
             log.error("更新预警状态失败: " + e.getMessage());
         }
     }
@@ -254,11 +302,11 @@ public class AlertProcessUtil {
      * 生成预警信息
      */
     private static void generateWarning(String paramKey, String paramName, double value, double[] thresholds,
-                                      double minWarning, double maxWarning, String pastureId, String batchId,
-                                      Device device, String alertType, String alertMessage, 
-                                      SensorAlertMapper sensorAlertMapper) {
-        SensorAlert alert = createBaseAlert(paramKey, paramName, value, thresholds, pastureId, 
-                                          batchId, device, alertType, alertMessage);
+                                        double minWarning, double maxWarning, String pastureId, String batchId,
+                                        Device device, String alertType, String alertMessage,
+                                        SensorAlertMapper sensorAlertMapper) {
+        SensorAlert alert = createBaseAlert(paramKey, paramName, value, thresholds, pastureId,
+                batchId, device, alertType, alertMessage);
         alert.setAlertLevel("0");
         saveAlert(alert, "预警", sensorAlertMapper);
     }
@@ -267,13 +315,14 @@ public class AlertProcessUtil {
      * 生成严重警告信息
      */
     private static void generateSeriousAlert(String paramKey, String paramName, double value, double[] thresholds,
-                                           String pastureId, String batchId, Device device, String alertType,
-                                           String alertMessage, SensorAlertMapper sensorAlertMapper,SerialPortUtil serialPortUtil) {
+                                             String pastureId, String batchId, Device device, String alertType,
+                                             String alertMessage, SensorAlertMapper sensorAlertMapper, SerialPortUtil serialPortUtil) {
 
-        SensorAlert alert = createBaseAlert(paramKey, paramName, value, thresholds, pastureId, 
-                                          batchId, device, alertType, alertMessage);
+        SensorAlert alert = createBaseAlert(paramKey, paramName, value, thresholds, pastureId,
+                batchId, device, alertType, alertMessage);
+        //严重警告 设置level 为1 打开继电器 播放音频
         alert.setAlertLevel("1");
-        serialPortUtil.sendAllOpen();
+        serialPortUtil.sendMultipleRelays(); //同时打开1  2 3 个继电器
         AudioPlayer.playAlarmSound();
         saveAlert(alert, "严重警告", sensorAlertMapper);
     }
@@ -281,9 +330,9 @@ public class AlertProcessUtil {
     /**
      * 创建基础预警对象
      */
-    private static SensorAlert createBaseAlert(String paramKey, String paramName, double value, 
-                                             double[] thresholds, String pastureId, String batchId,
-                                             Device device, String alertType, String alertMessage) {
+    private static SensorAlert createBaseAlert(String paramKey, String paramName, double value,
+                                               double[] thresholds, String pastureId, String batchId,
+                                               Device device, String alertType, String alertMessage) {
         SensorAlert alert = new SensorAlert();
         alert.setAlertType(alertType);
         alert.setAlertMessage(alertMessage);
@@ -306,6 +355,10 @@ public class AlertProcessUtil {
         try {
             sensorAlertMapper.insertSensorAlert(alert);
             log.info("生成" + alertTypeName + "信息: " + alert.getAlertMessage());
+            // 通过WebSocket推送预警信息到前端
+
+            AlertWebSocketServer.sendInfo(alert);
+            log.info("发送预警信息");
         } catch (Exception e) {
             log.error("保存" + alertTypeName + "信息失败: " + e.getMessage());
         }
@@ -316,9 +369,9 @@ public class AlertProcessUtil {
      */
     private static boolean isPastureTypeWater(String paramKey) {
         return paramKey.startsWith("water_") ||
-               paramKey.equals("oxygen") ||
-               paramKey.equals("ammonia") ||
-               paramKey.equals("nitrite");
+                paramKey.equals("oxygen") ||
+                paramKey.equals("ammonia") ||
+                paramKey.equals("nitrite");
     }
 
     /**
@@ -341,102 +394,126 @@ public class AlertProcessUtil {
     /**
      * 检查土壤和环境数据是否超过阈值并生成预警
      */
-    private static void checkAndAlertForSoilData(SoilSensorValue sensorValue, 
-                                               Map<String, Device> sensorBindings,
-                                               SensorAlertMapper sensorAlertMapper,
-                                               com.frog.common.utils.SerialPortUtil serialPortUtil) {
-        // 检查温度
+    private static void checkAndAlertForSoilData(SoilSensorValue sensorValue,
+                                                 Map<String, Device> sensorBindings,
+                                                 SensorAlertMapper sensorAlertMapper,
+                                                 com.frog.common.utils.SerialPortUtil serialPortUtil) {
+        // 检查温度数据
         if (sensorValue.getTemperature() != null) {
             try {
+                // 将温度字符串转换为double类型
                 double temperature = Double.parseDouble(sensorValue.getTemperature());
+                // 检查温度是否超过阈值并生成预警
                 checkThresholdAndAlert("temperature", temperature, "温度",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), 
+                        sensorValue.getPastureId(), sensorValue.getBatchId(),
                         sensorBindings.get("2"), sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("温度数据格式错误: " + sensorValue.getTemperature());
             }
         }
 
-        // 检查湿度
+        // 检查湿度数据
         if (sensorValue.getHumidity() != null) {
             try {
+                // 将湿度字符串转换为double类型
                 double humidity = Double.parseDouble(sensorValue.getHumidity());
+                // 检查湿度是否超过阈值并生成预警
                 checkThresholdAndAlert("humidity", humidity, "湿度",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), 
+                        sensorValue.getPastureId(), sensorValue.getBatchId(),
                         sensorBindings.get("2"), sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("湿度数据格式错误: " + sensorValue.getHumidity());
             }
         }
 
-        // 检查光照
+        // 检查光照数据
         if (sensorValue.getLightLux() != null) {
             try {
+                // 将光照字符串转换为double类型
                 double light = Double.parseDouble(sensorValue.getLightLux());
+                // 检查光照是否超过阈值并生成预警
                 checkThresholdAndAlert("light", light, "光照",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), 
+                        sensorValue.getPastureId(), sensorValue.getBatchId(),
                         sensorBindings.get("2"), sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("光照数据格式错误: " + sensorValue.getLightLux());
             }
         }
 
-        // 检查风速
+        // 检查风速数据
         if (sensorValue.getSpeed() != null) {
             try {
+                // 将风速字符串转换为double类型
                 double speed = Double.parseDouble(sensorValue.getSpeed());
+                // 检查风速是否超过阈值并生成预警
                 checkThresholdAndAlert("speed", speed, "风速",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), 
+                        sensorValue.getPastureId(), sensorValue.getBatchId(),
                         sensorBindings.get("3"), sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("风速数据格式错误: " + sensorValue.getSpeed());
             }
         }
 
-        // 检查土壤温度
+        // 检查土壤温度数据
         if (sensorValue.getSoilTemperature() != null) {
             try {
+                // 将土壤温度字符串转换为double类型
                 double soilTemp = Double.parseDouble(sensorValue.getSoilTemperature());
+                // 检查土壤温度是否超过阈值并生成预警
                 checkThresholdAndAlert("soil_temperature", soilTemp, "土壤温度",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), 
+                        sensorValue.getPastureId(), sensorValue.getBatchId(),
                         sensorBindings.get("4"), sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("土壤温度数据格式错误: " + sensorValue.getSoilTemperature());
             }
         }
 
-        // 检查土壤pH
+        // 检查土壤pH数据
         if (sensorValue.getSoilPh() != null) {
             try {
+                // 将土壤pH字符串转换为double类型
                 double soilPh = Double.parseDouble(sensorValue.getSoilPh());
+                // 检查土壤pH是否超过阈值并生成预警
                 checkThresholdAndAlert("soil_ph", soilPh, "土壤pH",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), 
+                        sensorValue.getPastureId(), sensorValue.getBatchId(),
                         sensorBindings.get("5"), sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("土壤pH数据格式错误: " + sensorValue.getSoilPh());
             }
         }
 
-        // 检查土壤电导率
+        // 检查土壤电导率数据
         if (sensorValue.getSoilConductivity() != null) {
             try {
+                // 将土壤电导率字符串转换为double类型
                 double conductivity = Double.parseDouble(sensorValue.getSoilConductivity());
+                // 检查土壤电导率是否超过阈值并生成预警
                 checkThresholdAndAlert("conductivity", conductivity, "土壤电导率",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), 
+                        sensorValue.getPastureId(), sensorValue.getBatchId(),
                         sensorBindings.get("6"), sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("土壤电导率数据格式错误: " + sensorValue.getSoilConductivity());
             }
         }
 
-        // 检查土壤水分
+        // 检查土壤水分数据
         if (sensorValue.getSoilMoisture() != null) {
             try {
+                // 将土壤水分字符串转换为double类型
                 double moisture = Double.parseDouble(sensorValue.getSoilMoisture());
+                // 检查土壤水分是否超过阈值并生成预警
                 checkThresholdAndAlert("moisture", moisture, "土壤水分",
-                        sensorValue.getPastureId(), sensorValue.getBatchId(), 
+                        sensorValue.getPastureId(), sensorValue.getBatchId(),
                         sensorBindings.get("6"), sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("土壤水分数据格式错误: " + sensorValue.getSoilMoisture());
             }
         }
@@ -445,64 +522,80 @@ public class AlertProcessUtil {
     /**
      * 检查水质数据是否超过阈值并生成预警
      */
-    private static void checkAndAlertForWaterData(FishWaterQuality fishWaterQuality, 
-                                                Device waterDevice,
-                                                SensorAlertMapper sensorAlertMapper,
-                                                com.frog.common.utils.SerialPortUtil serialPortUtil) {
+    private static void checkAndAlertForWaterData(FishWaterQuality fishWaterQuality,
+                                                  Device waterDevice,
+                                                  SensorAlertMapper sensorAlertMapper,
+                                                  com.frog.common.utils.SerialPortUtil serialPortUtil) {
+        // 从水质数据中获取大棚ID和批次ID
         String pastureId = String.valueOf(fishWaterQuality.getFishPastureId());
         String batchId = String.valueOf(fishWaterQuality.getFishPastureBatchId());
 
-        // 检查水温
+        // 检查水温数据
         if (fishWaterQuality.getWaterTemperature() != null) {
             try {
+                // 将水温字符串转换为double类型
                 double waterTemp = Double.parseDouble(fishWaterQuality.getWaterTemperature());
+                // 检查水温是否超过阈值并生成预警
                 checkThresholdAndAlert("water_temperature", waterTemp, "水温",
                         pastureId, batchId, waterDevice, sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("水温数据格式错误: " + fishWaterQuality.getWaterTemperature());
             }
         }
 
-        // 检查水pH
+        // 检查水pH值数据
         if (fishWaterQuality.getWaterPhValue() != null) {
             try {
+                // 将pH值字符串转换为double类型
                 double waterPh = Double.parseDouble(fishWaterQuality.getWaterPhValue());
+                // 检查pH值是否超过阈值并生成预警
                 checkThresholdAndAlert("water_ph", waterPh, "水pH",
                         pastureId, batchId, waterDevice, sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("水pH数据格式错误: " + fishWaterQuality.getWaterPhValue());
             }
         }
 
-        // 检查溶解氧
+        // 检查溶解氧数据
         if (fishWaterQuality.getWaterOxygenContent() != null) {
             try {
+                // 将溶解氧字符串转换为double类型
                 double oxygen = Double.parseDouble(fishWaterQuality.getWaterOxygenContent());
+                // 检查溶解氧是否超过阈值并生成预警
                 checkThresholdAndAlert("oxygen", oxygen, "溶解氧",
                         pastureId, batchId, waterDevice, sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("溶解氧数据格式错误: " + fishWaterQuality.getWaterOxygenContent());
             }
         }
 
-        // 检查氨氮
+        // 检查氨氮数据
         if (fishWaterQuality.getWaterAmmoniaNitrogenContent() != null) {
             try {
+                // 将氨氮字符串转换为double类型
                 double ammonia = Double.parseDouble(fishWaterQuality.getWaterAmmoniaNitrogenContent());
+                // 检查氨氮是否超过阈值并生成预警
                 checkThresholdAndAlert("ammonia", ammonia, "氨氮",
                         pastureId, batchId, waterDevice, sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("氨氮数据格式错误: " + fishWaterQuality.getWaterAmmoniaNitrogenContent());
             }
         }
 
-        // 检查亚硝酸盐
+        // 检查亚硝酸盐数据
         if (fishWaterQuality.getWaterNitriteContent() != null) {
             try {
+                // 将亚硝酸盐字符串转换为double类型
                 double nitrite = Double.parseDouble(fishWaterQuality.getWaterNitriteContent());
+                // 检查亚硝酸盐是否超过阈值并生成预警
                 checkThresholdAndAlert("nitrite", nitrite, "亚硝酸盐",
                         pastureId, batchId, waterDevice, sensorAlertMapper, serialPortUtil);
             } catch (NumberFormatException e) {
+                // 数据格式转换失败时记录警告日志
                 log.warn("亚硝酸盐数据格式错误: " + fishWaterQuality.getWaterNitriteContent());
             }
         }
@@ -512,52 +605,64 @@ public class AlertProcessUtil {
      * 检查单个参数是否接近或超过阈值，并生成预警信息
      */
     private static void checkThresholdAndAlert(String paramKey, double value, String paramName,
-                                             String pastureId, String batchId, Device device,
-                                             SensorAlertMapper sensorAlertMapper,
-                                             SerialPortUtil serialPortUtil) {
+                                               String pastureId, String batchId, Device device,
+                                               SensorAlertMapper sensorAlertMapper,
+                                               SerialPortUtil serialPortUtil) {
+        // 根据参数键获取阈值配置
         double[] thresholds = ThresholdConfigUtil.getThresholdByKey(paramKey);
         if (thresholds == null) {
+            // 如果未找到阈值配置，记录警告日志并返回
             log.warn("未找到参数 " + paramKey + " 的阈值配置");
             return;
         }
 
+        // 获取阈值缓冲区间
         double[] buffers = getThresholdBuffer(paramKey);
-        double minBuffer = buffers[0];
-        double maxBuffer = buffers[1];
+        double minBuffer = buffers[0];  // 最小缓冲值
+        double maxBuffer = buffers[1];  // 最大缓冲值
 
-        double minWarning = thresholds[0] + minBuffer;
-        double maxWarning = thresholds[1] - maxBuffer;
+        // 计算预警阈值
+        double minWarning = thresholds[0] + minBuffer;  // 最小预警值
+        double maxWarning = thresholds[1] - maxBuffer;  // 最大预警值
 
-        String alertType = null;
-        String alertMessage = null;
+        String alertType = null;    // 预警类型
+        String alertMessage = null; // 预警消息
 
         // 检查是否超出阈值范围
         if (value < thresholds[0]) {
+            // 当前值低于最小阈值
             alertMessage = paramName + "过低：当前值" + value + "，最小阈值" + thresholds[0];
+            // 如果低于最小阈值的80%，则为严重警告，否则为普通预警
             alertType = value < thresholds[0] * 0.8 ? "严重低值警告" : "低值预警";
         } else if (value > thresholds[1]) {
+            // 当前值高于最大阈值
             alertMessage = paramName + "过高：当前值" + value + "，最大阈值" + thresholds[1];
+            // 如果高于最大阈值的120%，则为严重警告，否则为普通预警
             alertType = value > thresholds[1] * 1.2 ? "严重高值警告" : "高值预警";
         }
 
+        // 如果存在预警，处理预警信息
         if (alertType != null) {
             processAlert(paramKey, paramName, value, thresholds, minWarning, maxWarning,
-                    pastureId, batchId, device, alertType, alertMessage, sensorAlertMapper,serialPortUtil);
+                    pastureId, batchId, device, alertType, alertMessage, sensorAlertMapper, serialPortUtil);
             return;
         }
 
-        // 检查是否需要生成预警
+        // 检查是否需要生成预警（对于需要检查双向阈值的参数）
         if (shouldCheckBothThresholds(paramKey)) {
+            // 检查是否接近预警阈值
             alertType = checkWarningThresholds(value, minWarning, maxWarning, paramName);
             if (alertType != null) {
+                // 生成预警消息
                 alertMessage = generateWarningMessage(value, alertType, paramName, minWarning, maxWarning);
+                // 处理预警信息
                 processAlert(paramKey, paramName, value, thresholds, minWarning, maxWarning,
-                        pastureId, batchId, device, alertType, alertMessage, sensorAlertMapper,serialPortUtil);
+                        pastureId, batchId, device, alertType, alertMessage, sensorAlertMapper, serialPortUtil);
                 return;
             }
         }
 
-        // 检查并更新未处理的预警
+        // 如果数据恢复正常，更新未处理的预警状态
         updateActiveAlerts(paramName, pastureId, batchId, device, sensorAlertMapper, serialPortUtil);
     }
 }

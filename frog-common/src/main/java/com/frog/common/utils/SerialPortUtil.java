@@ -103,8 +103,8 @@ public class SerialPortUtil {
      */
     public void sendAllClose() {
         writeBytes(hexStringToByteArray("1F 0F 00 00 00 04 01 00 BE 16"));
-//        sleep(200);
-//        sendRelay4();
+        sleep(200);
+        sendRelay4();
     }
 
     /**
