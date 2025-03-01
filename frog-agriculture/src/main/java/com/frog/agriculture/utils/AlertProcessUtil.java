@@ -217,7 +217,7 @@ public class AlertProcessUtil {
             queryAlert.setPastureId(pastureId);
             queryAlert.setBatchId(batchId);
             queryAlert.setStatus("0");
-
+            queryAlert.setAlertLevel("1"); // 只查询严重警告级别的预警
             queryAlert.setPastureType(isPastureTypeWater(paramName) ? "1" : "0");
 
             if (device != null) {
@@ -232,17 +232,35 @@ public class AlertProcessUtil {
                     alert.setRemark("数据恢复正常，系统自动处理");
                     alert.setUpdateTime(currentTimestamp());
                     sensorAlertMapper.updateSensorAlert(alert);
-                    log.info("自动处理预警: " + paramName + " 数据恢复正常");
+                    log.info("自动处理严重警告: " + paramName + " 数据恢复正常");
+                    
+                    // 当严重警告解除时，关闭设备和音频
+                    try {
+                        //全部关闭命令
+                        serialPortUtil.sendAllClose();
+                        //停止播放音频
+                        AudioPlayer.stopAlarmSound();
+                        //延时
+                        Thread.sleep(2000);
+                        //收回推杆
+                        serialPortUtil.sendRelay4();
+                        log.info("已发送数据恢复继电器控制命令");
+                    } catch (Exception e) {
+                        log.error("发送继电器控制命令失败: " + e.getMessage());
+                    }
                 }
-
-                try {
-                    serialPortUtil.sendAllClose();
-                    AudioPlayer.stopAlarmSound();
-                    Thread.sleep(2000);
-                    serialPortUtil.sendRelay4();
-                    log.info("已发送数据恢复继电器控制命令");
-                } catch (Exception e) {
-                    log.error("发送继电器控制命令失败: " + e.getMessage());
+            } else {
+                // 如果没有严重警告，只更新普通预警状态
+                queryAlert.setAlertLevel("0");
+                activeAlerts = sensorAlertMapper.selectSensorAlertList(queryAlert);
+                if (activeAlerts != null && !activeAlerts.isEmpty()) {
+                    for (SensorAlert alert : activeAlerts) {
+                        alert.setStatus("1");
+                        alert.setRemark("数据恢复正常，系统自动处理");
+                        alert.setUpdateTime(currentTimestamp());
+                        sensorAlertMapper.updateSensorAlert(alert);
+                        log.info("自动处理预警: " + paramName + " 数据恢复正常");
+                    }
                 }
             }
         } catch (Exception e) {
@@ -272,8 +290,9 @@ public class AlertProcessUtil {
 
         SensorAlert alert = createBaseAlert(paramKey, paramName, value, thresholds, pastureId, 
                                           batchId, device, alertType, alertMessage);
+        //严重警告 设置level 为1 打开继电器 播放音频
         alert.setAlertLevel("1");
-        serialPortUtil.sendAllOpen();
+        serialPortUtil.sendMultipleRelays(); //同时打开1  2 3 个继电器
         AudioPlayer.playAlarmSound();
         saveAlert(alert, "严重警告", sensorAlertMapper);
     }

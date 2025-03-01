@@ -6559,3 +6559,987 @@ java.io.IOException: 远程主机强迫关闭了一个现有的连接。
 01:21:32.926 [schedule-pool-2] INFO  c.f.c.u.AudioPlayer - [stopAlarmSound,55] - 停止播放报警音频
 01:21:34.927 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
 01:21:40.013 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740763256068 paused.
+09:45:23.666 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 34916 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+09:45:23.670 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+09:45:23.693 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+09:45:29.599 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+09:45:29.600 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+09:45:29.600 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+09:45:29.863 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+09:45:35.308 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+09:45:35.309 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+09:45:35.310 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+09:45:35.342 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+09:45:38.416 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+09:45:38.418 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 119885155
+09:45:38.665 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+09:45:38.668 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+09:45:38.677 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+09:45:38.707 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+09:45:38.708 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+09:45:38.713 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+09:45:38.726 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+09:45:38.728 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+09:45:38.761 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+09:45:39.466 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+09:45:39.476 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+09:45:39.477 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+09:45:39.477 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+09:45:39.502 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+09:45:39.502 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+09:45:39.509 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1459
+09:45:40.256 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+09:45:41.454 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+09:45:41.469 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09:45:41.470 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+09:45:41.480 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740793541456'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+09:45:41.480 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+09:45:41.480 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+09:45:41.483 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7a855fcc
+09:45:42.527 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+09:45:42.528 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+09:45:42.528 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+09:45:42.528 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+09:45:42.528 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+09:45:42.528 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+09:45:42.528 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+09:45:42.529 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+09:45:46.758 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+09:45:47.370 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 24.303 seconds (JVM running for 26.768)
+09:45:48.344 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740793541456 started.
+09:46:10.568 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1849412138507046913 状态更新为离线
+09:46:10.573 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903556067594242 状态更新为离线
+09:46:10.577 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903642289901569 状态更新为离线
+09:46:10.581 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903642289901576 状态更新为离线
+09:46:10.585 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893904084747030522 状态更新为离线
+09:46:10.590 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893904151327412225 状态更新为离线
+09:46:46.043 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+09:46:46.103 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+09:46:46.111 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+09:47:52.079 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+09:47:52.110 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+09:47:52.113 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+09:48:58.094 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+09:48:58.204 [lettuce-eventExecutorLoop-1-15] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+09:48:58.207 [lettuce-nioEventLoop-5-4] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+09:50:04.037 [lettuce-nioEventLoop-5-4] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+09:50:04.097 [lettuce-eventExecutorLoop-1-16] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+09:50:04.100 [lettuce-nioEventLoop-5-5] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+09:51:10.019 [lettuce-nioEventLoop-5-5] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+09:51:10.096 [lettuce-eventExecutorLoop-1-1] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+09:51:10.100 [lettuce-nioEventLoop-5-6] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+09:52:06.360 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740793541456 paused.
+09:52:07.539 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,666] - Scheduler RuoyiScheduler_$_BuXianWanYin1740793541456 shutting down.
+09:52:07.539 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740793541456 paused.
+09:52:07.540 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [shutdown,740] - Scheduler RuoyiScheduler_$_BuXianWanYin1740793541456 shutdown complete.
+09:52:07.540 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+09:52:07.546 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2071] - {dataSource-1} closing ...
+09:52:07.552 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2144] - {dataSource-1} closed
+15:10:23.231 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 5048 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+15:10:23.235 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+15:10:23.263 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+15:10:28.733 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+15:10:28.733 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+15:10:28.733 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+15:10:29.000 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+15:10:33.887 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+15:10:33.887 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+15:10:33.888 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+15:10:33.921 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+15:10:36.945 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+15:10:36.947 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 389162024
+15:10:37.219 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+15:10:37.221 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+15:10:37.230 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+15:10:37.262 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+15:10:37.263 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+15:10:37.268 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+15:10:37.280 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+15:10:37.281 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+15:10:37.315 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+15:10:37.999 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+15:10:38.009 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+15:10:38.010 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+15:10:38.010 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+15:10:38.040 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+15:10:38.041 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+15:10:38.054 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1464
+15:10:38.796 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+15:10:39.982 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+15:10:39.998 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:10:39.998 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+15:10:40.006 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740813039984'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+15:10:40.006 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+15:10:40.006 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+15:10:40.009 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2d5cd8b0
+15:10:41.025 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+15:10:41.025 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+15:10:41.025 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+15:10:41.025 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+15:10:41.025 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+15:10:41.025 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+15:10:41.025 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+15:10:41.027 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+15:10:45.174 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+15:10:45.781 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 23.11 seconds (JVM running for 25.529)
+15:10:46.748 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740813039984 started.
+15:10:53.533 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1849412138507046913 状态更新为在线
+15:10:53.540 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903556067594242 状态更新为在线
+15:10:53.546 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903642289901569 状态更新为在线
+15:10:53.552 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903642289901576 状态更新为在线
+15:10:53.557 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893904084747030522 状态更新为在线
+15:10:53.564 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893904151327412225 状态更新为在线
+15:10:53.728 [schedule-pool-2] INFO  c.f.c.u.AudioPlayer - [playAlarmSound,43] - 开始循环播放报警音频
+15:10:53.737 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成严重警告信息: 光照过低：当前值6.0，最小阈值80.0
+15:11:16.927 [schedule-pool-5] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 光照 数据恢复正常
+15:11:16.976 [schedule-pool-5] INFO  c.f.c.u.AudioPlayer - [stopAlarmSound,55] - 停止播放报警音频
+15:11:18.976 [schedule-pool-5] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+15:11:18.983 [schedule-pool-5] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成预警信息: 土壤电导率接近下限：当前值109.0，警戒值110.0
+15:11:26.705 [schedule-pool-4] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 土壤电导率 数据恢复正常
+15:11:28.706 [schedule-pool-4] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+15:11:45.064 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:11:45.101 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:11:45.109 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:12:15.021 [schedule-pool-7] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成预警信息: 土壤电导率接近下限：当前值106.0，警戒值110.0
+15:12:30.459 [schedule-pool-1] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 土壤电导率 数据恢复正常
+15:12:32.460 [schedule-pool-1] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+15:12:51.102 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:12:51.197 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:12:51.200 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:13:03.341 [schedule-pool-6] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成预警信息: 土壤电导率接近下限：当前值109.0，警戒值110.0
+15:13:11.062 [schedule-pool-14] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 土壤电导率 数据恢复正常
+15:13:13.062 [schedule-pool-14] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+15:13:57.088 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:13:57.097 [lettuce-eventExecutorLoop-1-15] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:13:57.100 [lettuce-nioEventLoop-5-4] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:13:59.362 [schedule-pool-18] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成预警信息: 土壤电导率接近下限：当前值105.0，警戒值110.0
+15:14:07.080 [schedule-pool-12] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 土壤电导率 数据恢复正常
+15:14:09.080 [schedule-pool-12] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+15:14:47.658 [schedule-pool-22] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成预警信息: 土壤电导率接近下限：当前值106.0，警戒值110.0
+15:15:03.068 [lettuce-nioEventLoop-5-4] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:15:03.090 [schedule-pool-3] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 土壤电导率 数据恢复正常
+15:15:03.098 [lettuce-eventExecutorLoop-1-16] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:15:03.101 [lettuce-nioEventLoop-5-5] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:15:05.092 [schedule-pool-3] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+15:15:35.967 [schedule-pool-26] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,308] - 生成预警信息: 土壤电导率接近下限：当前值109.0，警戒值110.0
+15:15:35.975 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740813039984 paused.
+15:40:19.774 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 28540 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+15:40:19.779 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+15:40:19.817 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+15:40:30.276 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+15:40:30.283 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+15:40:30.288 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+15:40:31.089 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+15:40:43.805 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+15:40:43.806 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+15:40:43.808 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+15:40:43.891 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+15:40:49.345 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+15:40:49.348 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 2041839173
+15:40:49.642 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+15:40:49.645 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+15:40:49.665 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+15:40:49.707 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+15:40:49.708 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+15:40:49.714 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+15:40:49.732 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+15:40:49.734 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+15:40:49.781 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+15:40:50.769 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+15:40:50.785 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+15:40:50.785 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+15:40:50.785 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+15:40:50.838 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+15:40:50.838 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+15:40:50.855 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1464
+15:40:52.069 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+15:40:53.765 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+15:40:53.786 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:40:53.787 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+15:40:53.800 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740814853768'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+15:40:53.800 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+15:40:53.800 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+15:40:53.802 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7fa3a171
+15:40:55.204 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+15:40:55.204 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+15:40:55.204 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+15:40:55.205 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+15:40:55.205 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+15:40:55.205 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+15:40:55.205 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+15:40:55.208 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+15:41:01.340 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+15:41:02.227 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 43.126 seconds (JVM running for 46.103)
+15:41:03.177 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740814853768 started.
+15:41:59.090 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:41:59.188 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:41:59.198 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:43:05.034 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:43:05.086 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:43:05.089 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:44:11.072 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:44:11.086 [lettuce-eventExecutorLoop-1-15] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:44:11.089 [lettuce-nioEventLoop-5-4] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:45:16.944 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:45:17.076 [lettuce-nioEventLoop-5-4] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:45:17.086 [lettuce-eventExecutorLoop-1-16] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:45:17.090 [lettuce-nioEventLoop-5-5] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:46:23.097 [lettuce-nioEventLoop-5-5] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:46:23.185 [lettuce-eventExecutorLoop-1-1] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:46:23.189 [lettuce-nioEventLoop-5-6] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:47:29.007 [lettuce-nioEventLoop-5-6] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:47:29.085 [lettuce-eventExecutorLoop-1-2] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:47:29.088 [lettuce-nioEventLoop-5-7] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:48:35.000 [lettuce-nioEventLoop-5-7] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:48:35.086 [lettuce-eventExecutorLoop-1-3] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:48:35.090 [lettuce-nioEventLoop-5-8] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:49:41.058 [lettuce-nioEventLoop-5-8] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:49:41.086 [lettuce-eventExecutorLoop-1-4] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:49:41.089 [lettuce-nioEventLoop-5-9] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:50:47.067 [lettuce-nioEventLoop-5-9] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:50:47.086 [lettuce-eventExecutorLoop-1-5] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:50:47.090 [lettuce-nioEventLoop-5-10] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:51:53.026 [lettuce-nioEventLoop-5-10] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:51:53.085 [lettuce-eventExecutorLoop-1-6] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:51:53.088 [lettuce-nioEventLoop-5-11] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:52:59.007 [lettuce-nioEventLoop-5-11] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:52:59.106 [lettuce-eventExecutorLoop-1-7] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:52:59.111 [lettuce-nioEventLoop-5-12] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:54:05.005 [lettuce-nioEventLoop-5-12] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:54:05.086 [lettuce-eventExecutorLoop-1-8] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:54:05.089 [lettuce-nioEventLoop-5-13] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:55:11.043 [lettuce-nioEventLoop-5-13] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:55:11.085 [lettuce-eventExecutorLoop-1-9] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:55:11.088 [lettuce-nioEventLoop-5-14] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:56:17.004 [lettuce-nioEventLoop-5-14] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:56:17.087 [lettuce-eventExecutorLoop-1-10] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:56:17.090 [lettuce-nioEventLoop-5-15] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:57:23.041 [lettuce-nioEventLoop-5-15] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:57:23.086 [lettuce-eventExecutorLoop-1-11] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:57:23.090 [lettuce-nioEventLoop-5-16] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:58:29.005 [lettuce-nioEventLoop-5-16] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:58:29.087 [lettuce-eventExecutorLoop-1-12] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:58:29.089 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+15:59:35.102 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+15:59:35.186 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+15:59:35.188 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+16:00:41.034 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+16:00:41.087 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+16:00:41.090 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+16:00:56.987 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740814853768 paused.
+16:01:39.219 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 32580 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+16:01:39.223 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+16:01:39.253 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+16:01:45.164 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+16:01:45.165 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:01:45.165 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+16:01:45.437 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:01:50.471 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+16:01:50.471 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+16:01:50.472 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+16:01:50.504 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+16:01:53.671 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+16:01:53.674 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 100117847
+16:01:53.935 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+16:01:53.937 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+16:01:53.945 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+16:01:53.971 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+16:01:53.972 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+16:01:53.977 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+16:01:53.990 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+16:01:53.992 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+16:01:54.032 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+16:01:54.740 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+16:01:54.751 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+16:01:54.751 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+16:01:54.751 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+16:01:54.777 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+16:01:54.778 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+16:01:54.793 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1464
+16:01:55.555 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+16:01:56.797 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+16:01:56.813 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:01:56.813 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+16:01:56.823 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740816116799'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+16:01:56.824 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+16:01:56.824 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+16:01:56.825 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7306fc69
+16:01:57.902 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+16:01:57.903 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+16:01:57.903 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+16:01:57.903 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+16:01:57.903 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+16:01:57.903 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+16:01:57.903 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+16:01:57.904 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+16:02:02.215 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+16:02:02.886 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 24.239 seconds (JVM running for 26.485)
+16:02:03.856 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740816116799 started.
+16:02:10.645 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1849412138507046913 状态更新为在线
+16:02:10.652 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903556067594242 状态更新为在线
+16:02:10.659 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903642289901569 状态更新为在线
+16:02:10.666 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903642289901576 状态更新为在线
+16:02:10.672 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893904084747030522 状态更新为在线
+16:02:10.679 [schedule-pool-2] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893904151327412225 状态更新为在线
+16:02:11.032 [schedule-pool-2] INFO  c.f.c.u.AudioPlayer - [playAlarmSound,43] - 开始循环播放报警音频
+16:02:11.042 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,309] - 生成严重警告信息: 光照过低：当前值3.0，最小阈值80.0
+16:02:11.062 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 土壤电导率 数据恢复正常
+16:02:11.150 [schedule-pool-2] INFO  c.f.c.u.AudioPlayer - [stopAlarmSound,55] - 停止播放报警音频
+16:02:13.151 [schedule-pool-2] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+16:02:36.329 [schedule-pool-5] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,309] - 生成预警信息: 土壤电导率接近下限：当前值104.0，警戒值110.0
+16:02:44.055 [schedule-pool-4] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 土壤电导率 数据恢复正常
+16:02:46.055 [schedule-pool-4] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+16:03:01.713 [schedule-pool-1] INFO  c.f.c.u.AudioPlayer - [playAlarmSound,43] - 开始循环播放报警音频
+16:03:01.717 [schedule-pool-1] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,309] - 生成严重警告信息: 光照过低：当前值3.0，最小阈值80.0
+16:03:02.050 [lettuce-nioEventLoop-5-1] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+16:03:02.096 [lettuce-eventExecutorLoop-1-13] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+16:03:02.106 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+16:03:24.884 [schedule-pool-4] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理预警: 光照 数据恢复正常
+16:03:24.944 [schedule-pool-4] INFO  c.f.c.u.AudioPlayer - [stopAlarmSound,55] - 停止播放报警音频
+16:03:26.946 [schedule-pool-4] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,243] - 已发送数据恢复继电器控制命令
+16:04:08.101 [lettuce-nioEventLoop-5-2] INFO  i.l.c.p.CommandHandler - [log,217] - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+16:04:08.193 [lettuce-eventExecutorLoop-1-14] INFO  i.l.c.p.ConnectionWatchdog - [log,171] - Reconnecting, last destination was localhost/127.0.0.1:6379
+16:04:08.197 [lettuce-nioEventLoop-5-3] INFO  i.l.c.p.ReconnectionHandler - [lambda$null$3,174] - Reconnected to localhost:6379
+16:04:30.204 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740816116799 paused.
+16:20:46.223 [restartedMain] INFO  c.f.FrogApplication - [logStarting,55] - Starting FrogApplication using Java 1.8.0_221 on BuXianWanYin with PID 39640 (D:\qkl-zhny\znwl-agriculture-server-no\frog-admin\target\classes started by guaji in D:\qkl-zhny\znwl-agriculture-server-no)
+16:20:46.227 [restartedMain] INFO  c.f.FrogApplication - [logStartupProfileInfo,659] - No active profile set, falling back to default profiles: default
+16:20:46.246 [background-preinit] INFO  o.h.v.i.util.Version - [<clinit>,21] - HV000001: Hibernate Validator 6.2.0.Final
+16:20:51.659 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8081"]
+16:20:51.659 [restartedMain] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+16:20:51.659 [restartedMain] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.54]
+16:20:51.921 [restartedMain] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+16:20:56.789 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [<init>,88] -  all connections, size: 1, list: [ConnectionInfo{host='192.168.1.157', port=20200}]
+16:20:56.790 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,167] - 
+* TRACE INFORMATION:
+----------------------------
+====> STEP1: try to connect nodes with ecdsa context...
+
+16:20:56.790 [restartedMain] INFO  o.f.b.s.n.NetworkImp - [start,174] - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+16:20:56.822 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [initSslContext,238] -  build ECDSA ssl context with configured certificates 
+16:20:59.880 [restartedMain] INFO  o.f.b.s.n.ConnectionManager - [checkConnectionResult,402] -  ssl handshake success 192.168.1.157:20200
+16:20:59.882 [nioEventLoopGroup-4-1] INFO  o.f.b.s.n.ChannelHandler - [userEventTriggered,73] -  handshake success, host: 192.168.1.157, port: 20200, ctx: 1636862996
+16:21:00.120 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,225] -  node: ClientVersion{version='2.11.0', supportedVersion='2.11.0', chainId='1', buildTime='20240520 01:38:47', buildType='Linux/g++/Release', gitBranch='HEAD', gitCommitHash='bee4dda033297443f02774973445d954933db885'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20240520 01:38:47","Build Type":"Linux/g++/Release","Chain Id":"1","FISCO-BCOS Version":"2.11.0","Git Branch":"HEAD","Git Commit Hash":"bee4dda033297443f02774973445d954933db885","Supported Version":"2.11.0"}}
+
+16:21:00.122 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,233] -  support channel handshake node
+16:21:00.130 [nioEventLoopGroup-4-1] INFO  o.f.b.s.c.ChannelImp - [onResponse,309] -  channel protocol handshake success, set socket channel protocol, host: 192.168.1.157:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.11.0, EnumProtocol=VERSION_3]
+16:21:00.133 [restartedMain] INFO  o.f.b.s.c.ChannelImp - [checkConnectionsToStartPeriodTask,126] -  Connect to  nodes: 192.168.1.157:20200, 
+16:21:00.133 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,77] - create BcosSDK, start channel success, cryptoType: 0
+16:21:00.138 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,87] - create BcosSDK, start channel succ, channelProcessorThreadSize: 16, receiptProcessorThreadSize: 16
+16:21:00.150 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerBlockNumberNotifyHandler,260] - registerBlockNumberNotifyHandler
+16:21:00.151 [restartedMain] INFO  o.f.b.s.s.GroupManagerServiceImpl - [registerTransactionNotifyHandler,282] - registerTransactionNotifyHandler
+16:21:00.185 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,98] - create BcosSDK, create groupManagerService success
+16:21:00.834 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+16:21:00.845 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [start,188] - amop module started
+16:21:00.845 [restartedMain] INFO  o.f.b.s.amop.AmopImp - [sendSubscribe,216] - update subscribe inform 1 peers
+16:21:00.845 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [<init>,103] - create BcosSDK, create Amop success
+16:21:00.870 [restartedMain] INFO  o.f.b.s.c.Client - [build,114] - build client success for group 1, crypto type 0
+16:21:00.871 [restartedMain] INFO  o.f.bcos.sdk.BcosSDK - [getClient,178] - create client for group 1 success
+16:21:00.879 [restartedMain] INFO  c.f.I.c.SdkBeanConfig - [client,55] - Chain connect successful. Current block number 1466
+16:21:01.627 [restartedMain] INFO  c.a.d.p.DruidDataSource - [init,998] - {dataSource-1} inited
+16:21:02.784 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1220] - Using default implementation for ThreadExecutor
+16:21:02.800 [restartedMain] INFO  o.q.c.SchedulerSignalerImpl - [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:21:02.801 [restartedMain] INFO  o.q.c.QuartzScheduler - [<init>,229] - Quartz Scheduler v.2.3.2 created.
+16:21:02.810 [restartedMain] INFO  o.q.c.QuartzScheduler - [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'RuoyiScheduler' with instanceId 'BuXianWanYin1740817262786'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+16:21:02.810 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1374] - Quartz scheduler 'RuoyiScheduler' initialized from an externally provided properties instance.
+16:21:02.810 [restartedMain] INFO  o.q.i.StdSchedulerFactory - [instantiate,1378] - Quartz scheduler version: 2.3.2
+16:21:02.812 [restartedMain] INFO  o.q.c.QuartzScheduler - [setJobFactory,2293] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@325901d5
+16:21:03.842 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：1，指令：01 03 00 00 00 02 C4 0B
+16:21:03.842 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：2，指令：02 03 01 F4 00 08 04 31
+16:21:03.842 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：3，指令：03 03 00 00 00 01 85 E8
+16:21:03.842 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：4，指令：04 03 00 00 00 02 C4 5E
+16:21:03.842 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：5，指令：05 03 00 00 00 01 85 8E
+16:21:03.842 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：6，指令：06 03 00 00 00 04 45 BE
+16:21:03.843 [restartedMain] INFO  c.f.a.u.DeviceStatusUtil - [lambda$initializeSensorCommands$2,85] - 加载传感器指令 - 类型：8，指令：08 03 00 05 00 03 15 53
+16:21:03.844 [restartedMain] INFO  c.f.a.u.ThresholdConfigUtil - [initializeThresholdConfig,48] - 传感器阈值配置初始化完成，共配置13个参数阈值
+16:21:08.031 [restartedMain] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8081"]
+16:21:08.641 [restartedMain] INFO  c.f.FrogApplication - [logStarted,61] - Started FrogApplication in 22.945 seconds (JVM running for 25.144)
+16:21:09.610 [Quartz Scheduler [RuoyiScheduler]] INFO  o.q.c.QuartzScheduler - [start,547] - Scheduler RuoyiScheduler_$_BuXianWanYin1740817262786 started.
+16:21:16.404 [schedule-pool-1] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1849412138507046913 状态更新为在线
+16:21:16.411 [schedule-pool-1] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903556067594242 状态更新为在线
+16:21:16.418 [schedule-pool-1] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903642289901569 状态更新为在线
+16:21:16.425 [schedule-pool-1] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893903642289901576 状态更新为在线
+16:21:16.432 [schedule-pool-1] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893904084747030522 状态更新为在线
+16:21:16.438 [schedule-pool-1] INFO  c.f.a.u.DeviceStatusUtil - [lambda$updateDeviceStatus$0,50] - 设备:1893904151327412225 状态更新为在线
+16:21:16.793 [schedule-pool-1] INFO  c.f.c.u.AudioPlayer - [playAlarmSound,43] - 开始循环播放报警音频
+16:21:16.802 [schedule-pool-1] INFO  c.f.a.u.AlertProcessUtil - [saveAlert,327] - 生成严重警告信息: 光照过低：当前值3.0，最小阈值80.0
+16:21:40.005 [schedule-pool-1] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,235] - 自动处理严重警告: 光照 数据恢复正常
+16:21:40.238 [schedule-pool-1] INFO  c.f.c.u.AudioPlayer - [stopAlarmSound,55] - 停止播放报警音频
+16:21:42.239 [schedule-pool-1] INFO  c.f.a.u.AlertProcessUtil - [updateActiveAlerts,247] - 已发送数据恢复继电器控制命令
+16:21:52.928 [SpringApplicationShutdownHook] INFO  o.q.c.QuartzScheduler - [standby,585] - Scheduler RuoyiScheduler_$_BuXianWanYin1740817262786 paused.

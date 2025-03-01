@@ -22,3 +22,4 @@
 20:45:47.247 [restartedMain] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
 20:51:40.279 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
 01:12:40.565 [Thread-48] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+09:52:07.540 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
