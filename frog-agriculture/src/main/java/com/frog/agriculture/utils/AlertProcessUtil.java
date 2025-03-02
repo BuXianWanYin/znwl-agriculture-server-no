@@ -10,6 +10,7 @@ import com.frog.agriculture.mapper.SensorAlertMapper;
 import com.frog.agriculture.websocket.AlertWebSocketServer;
 import com.frog.common.utils.AudioPlayer;
 import com.frog.common.utils.SerialPortUtil;
+import com.frog.common.utils.spring.SpringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.fisco.bcos.sdk.client.Client;
@@ -29,9 +30,6 @@ import java.util.Map;
  */
 public class AlertProcessUtil { // 定义AlertProcessUtil类
     private static final Log log = LogFactory.getLog(AlertProcessUtil.class);
-
-    @Autowired
-    private static Client client;
 
     /**
      * 获取预警阈值缓冲区间
@@ -402,6 +400,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
         //区块链工程师拿到报警信息之后 进行上链操作
         try {
+            Client client = SpringUtils.getBean(Client.class);
             SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
             TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()), alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(), alert.getThresholdMin(), alert.getThresholdMax(), alert.getSensorType(), alert.getAlertTime(), alert.getAlertLevel());
             if (transactionReceipt.isStatusOK()) {
