@@ -35,7 +35,12 @@ public interface ISoilSensorValueService
      */
     public int insertSoilSensorValue(SoilSensorValue soilSensorValue);
 
-
+    /**
+     * 通过大棚id查询环境信息
+     *
+     * @param pastureId 大棚id
+     * @return 结果
+     */
     public List<SoilSensorValue> getSoilSensorValuesByPastureId(String pastureId);
     /**
      * 修改菜的环境数据

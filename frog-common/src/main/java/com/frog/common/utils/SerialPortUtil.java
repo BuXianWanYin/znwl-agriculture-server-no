@@ -140,9 +140,9 @@ public class SerialPortUtil {
      */
     public void sendMultipleRelays() {
         writeBytes(hexStringToByteArray("1F 05 00 00 FF 00 8F 84"));
-        sleep(100);
+        sleep(500);
         writeBytes(hexStringToByteArray("1F 05 00 01 FF 00 DE 44"));
-        sleep(100);
+        sleep(500);
         writeBytes(hexStringToByteArray("1F 05 00 02 FF 00 2E 44"));
     }
 

@@ -11,6 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 设备状态工具类
+ * 用于管理和更新设备的在线状态
  */
 public class DeviceStatusUtil {
     private static final Log log = LogFactory.getLog(DeviceStatusUtil.class);
@@ -18,6 +19,11 @@ public class DeviceStatusUtil {
 
     /**
      * 更新设备状态
+     *
+     * @param statusMap 设备状态映射表,key为传感器类型,value为是否在线
+     * @param deviceMapper 设备数据库操作接口
+     * @param deviceCache 设备缓存,用于减少数据库查询
+     * @param statusTracker 设备状态跟踪器,记录设备失败次数
      */
     public static void updateDeviceStatus(Map<String, Boolean> statusMap,
                                           DeviceMapper deviceMapper,
@@ -58,6 +64,11 @@ public class DeviceStatusUtil {
 
     /**
      * 从缓存获取设备信息
+     *
+     * @param sensorType 传感器类型
+     * @param deviceMapper 设备数据库操作接口
+     * @param deviceCache 设备缓存Map
+     * @return 设备对象,如果不存在则返回null
      */
     public static Device getCachedDevice(String sensorType,
                                          DeviceMapper deviceMapper,
@@ -71,6 +82,10 @@ public class DeviceStatusUtil {
 
     /**
      * 初始化传感器指令
+     * 从数据库加载所有传感器的通信指令
+     *
+     * @param deviceMapper 设备数据库操作接口
+     * @param sensorCommands 传感器指令Map,key为传感器类型,value为十六进制指令
      */
     public static void initializeSensorCommands(DeviceMapper deviceMapper,
                                                 Map<String, String> sensorCommands) {
