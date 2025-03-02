@@ -15,3 +15,6 @@
 10:39:16.582 [schedule-pool-32] INFO  sys-user - [run,55] - [192.168.1.196]内网IP[admin][Success][登录成功]
 10:58:24.110 [Thread-50] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
 11:12:00.829 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+11:24:28.359 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:00:03.772 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====
+12:01:39.596 [SpringApplicationShutdownHook] INFO  sys-user - [shutdownAsyncManager,31] - ====关闭后台任务任务线程池====

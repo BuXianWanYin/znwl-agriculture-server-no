@@ -16141,3 +16141,1288 @@ com.frog.IaAgriculture.exception.ServerException: 合约服务出错
 11:18:20.421 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
 11:18:20.528 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
 11:18:20.528 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:20:36.548 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+11:21:13.135 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:21:17.813 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:21:17.913 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:21:44.769 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+11:22:03.607 [schedule-pool-2] ERROR c.f.a.u.SensorDataParser - [parseSoilPHData,159] - 解析土壤pH数据出错: 4
+11:22:03.607 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:22:05.833 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:23:24.879 [QuartzScheduler_RuoyiScheduler-BuXianWanYin1740885711979_ClusterManager] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,523] - slow sql 43424 millis. UPDATE QRTZ_SCHEDULER_STATE SET LAST_CHECKIN_TIME = ? WHERE SCHED_NAME = 'RuoyiScheduler' AND INSTANCE_NAME = ?[1740885761452,"BuXianWanYin1740885711979"]
+11:23:24.880 [nioEventLoopGroup-4-1] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:WRITER_IDLE connect192.168.1.157:20200 long time Inactive, disconnect
+11:23:24.884 [schedule-pool-3] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:23:32.737 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:23:34.922 [pool-1-thread-1] ERROR o.f.b.s.c.ResponseCallback - [onTimeout,39] - Processing message timeout:{}
+11:23:34.922 [pool-6-thread-1] ERROR o.f.b.s.c.JsonRpcService - [parseResponseIntoJsonRpcResponse,218] - parseResponseIntoJsonRpcResponse failed, method: getGroupList, group: null, seq: null, retErrorMessage: Processing message timeout, retErrorCode: 102
+11:23:40.515 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:23:48.589 [schedule-pool-4] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:23:56.807 [schedule-pool-6] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:24:04.584 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:24:12.329 [schedule-pool-3] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:24:20.066 [schedule-pool-8] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:24:27.215 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:24:27.216 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:24:27.317 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:24:27.417 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:24:27.518 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:24:27.618 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:24:27.718 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:24:27.818 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:24:27.919 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:24:27.919 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:24:28.019 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:24:28.119 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:24:28.219 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:24:28.320 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:24:28.352 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：sleep interrupted
+11:24:28.453 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:24:44.680 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+11:25:08.225 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:25:15.972 [schedule-pool-3] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:26:28.721 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:26:28.723 [nioEventLoopGroup-4-1] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:WRITER_IDLE connect192.168.1.157:20200 long time Inactive, disconnect
+11:26:32.978 [pool-1-thread-1] ERROR o.f.b.s.c.ResponseCallback - [onTimeout,39] - Processing message timeout:{}
+11:26:32.978 [pool-6-thread-1] ERROR o.f.b.s.c.JsonRpcService - [parseResponseIntoJsonRpcResponse,218] - parseResponseIntoJsonRpcResponse failed, method: getGroupList, group: null, seq: null, retErrorMessage: Processing message timeout, retErrorCode: 102
+11:26:36.725 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:26:44.505 [schedule-pool-4] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:26:52.249 [schedule-pool-6] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:26:59.989 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:413)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:222)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:758)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:539)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:486)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:27:07.445 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:27:07.446 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:27:07.554 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:57:24.499 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+12:00:02.689 [nioEventLoopGroup-4-1] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:WRITER_IDLE connect192.168.1.157:20200 long time Inactive, disconnect
+12:00:02.759 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:00:02.873 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+12:00:02.974 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+12:00:03.075 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+12:00:03.175 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+12:00:03.275 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+12:00:03.375 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+12:00:03.475 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+12:00:03.475 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+12:00:03.576 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+12:00:03.676 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+12:00:03.766 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：sleep interrupted
+12:00:03.867 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+12:00:03.975 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+12:00:18.194 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+12:00:38.994 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:00:46.736 [schedule-pool-3] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:00:54.480 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:01:02.223 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:01:09.969 [schedule-pool-4] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:01:17.714 [schedule-pool-6] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:01:33.289 [schedule-pool-3] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:01:38.457 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+12:01:38.558 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+12:01:38.659 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+12:01:38.659 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+12:01:38.759 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+12:01:38.859 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+12:01:38.959 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+12:01:39.060 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+12:01:39.160 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+12:01:39.261 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+12:01:39.361 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+12:01:39.361 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+12:01:39.461 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+12:01:39.562 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+12:01:39.590 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：sleep interrupted
+12:01:39.692 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+12:01:55.419 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+12:02:27.222 [nioEventLoopGroup-4-1] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:WRITER_IDLE connect192.168.1.157:20200 long time Inactive, disconnect
+12:02:27.230 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+12:02:34.959 [schedule-pool-3] ERROR o.f.b.s.c.JsonRpcService - [parseResponseIntoJsonRpcResponse,218] - parseResponseIntoJsonRpcResponse failed, method: sendRawTransaction, group: 1, seq: null, retErrorMessage: asyncSendMessageToGroup to group 1 failed, please check the connections., retErrorCode: -5000
+12:02:34.961 [schedule-pool-3] ERROR o.f.b.s.m.c.TransactionCallback - [onError,34] - transaction exception, errorCode: -5000, errorMessage: asyncSendMessageToGroup to group 1 failed, please check the connections.
+12:02:34.969 [schedule-pool-3] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:02:18.816 [nioEventLoopGroup-4-2] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:READER_IDLE connect192.168.1.157:20200 long time Inactive, disconnect
+15:02:18.825 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:419)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:02:18.983 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:14:14.539 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:17:48.059 [nioEventLoopGroup-4-1] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:WRITER_IDLE connect192.168.1.157:20200 long time Inactive, disconnect
+15:17:48.080 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:422)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:225)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:764)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:545)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:492)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:17:48.201 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:06.469 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:18:14.340 [restartedMain] ERROR c.f.c.u.SerialPortUtil - [<init>,24] - java.lang.RuntimeException: 打开串口失败
+15:18:19.251 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:19.360 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:19.470 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:19.578 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:19.689 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:19.795 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:19.905 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:19.927 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:18:24.264 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:24.373 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:24.480 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:24.590 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:24.700 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:24.809 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:24.918 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:24.918 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:18:29.265 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:29.375 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:29.484 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:29.593 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:29.703 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:29.811 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:29.920 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:29.920 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:18:34.261 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:34.371 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:34.481 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:34.591 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:34.698 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:34.807 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:34.917 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:34.917 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:18:39.267 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:39.373 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:39.482 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:39.591 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:39.701 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:39.810 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:39.921 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:39.921 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:18:44.259 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:44.369 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:44.479 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:44.587 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:44.697 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:44.806 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:44.906 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:44.906 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:18:49.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:49.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:49.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:49.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:49.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:49.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:49.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:49.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:18:54.244 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:54.344 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:54.445 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:54.545 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:54.645 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:54.746 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:54.847 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:54.847 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:18:59.245 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:18:59.346 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:18:59.446 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:18:59.547 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:18:59.647 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:18:59.747 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:18:59.847 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:18:59.847 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:04.245 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:04.478 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:04.579 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:04.679 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:04.780 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:04.880 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:04.981 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:04.981 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:09.244 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:09.344 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:09.444 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:09.545 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:09.646 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:09.746 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:09.847 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:09.847 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:14.245 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:14.345 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:14.445 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:14.546 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:14.646 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:14.746 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:14.846 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:14.846 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:19.244 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:19.344 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:19.445 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:19.545 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:19.645 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:19.746 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:19.846 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:19.846 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:24.245 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:24.345 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:24.446 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:24.546 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:24.647 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:24.748 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:24.848 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:24.848 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:29.245 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:29.345 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:29.446 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:29.546 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:29.647 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:29.748 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:29.848 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:29.848 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:34.244 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:34.345 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:34.445 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:34.546 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:34.646 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:34.746 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:34.847 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:34.847 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:39.246 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:39.346 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:39.446 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:39.547 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:39.647 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:39.747 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:39.847 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:39.847 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:44.245 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:44.346 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:44.446 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:44.546 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:44.647 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:44.747 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:44.847 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:44.847 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:49.244 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:49.345 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:49.446 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:49.546 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:49.647 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:49.748 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:49.848 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:49.848 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:54.245 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:54.345 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:54.445 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:54.546 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:54.646 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:54.746 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:54.847 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:54.847 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:19:59.244 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:19:59.344 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:19:59.444 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:19:59.545 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:19:59.645 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:19:59.745 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:19:59.846 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:19:59.846 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:04.245 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:04.345 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:04.446 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:04.546 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:04.646 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:04.746 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:04.847 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:04.847 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:09.245 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:09.345 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:09.446 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:09.547 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:09.647 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:09.747 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:09.848 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:09.848 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:14.245 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:14.345 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:14.446 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:14.546 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:14.646 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:14.747 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:14.848 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:14.848 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:19.246 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:19.346 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:19.446 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:19.547 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:19.647 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:19.748 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:19.849 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:19.849 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:24.244 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:24.344 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:24.445 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:24.545 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:24.645 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:24.745 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:24.846 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:24.846 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:29.244 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:29.344 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:29.445 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:29.545 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:29.645 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:29.746 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:29.847 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:29.847 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:34.244 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:34.344 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:34.445 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:34.545 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:34.646 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:34.746 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:34.846 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:34.846 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:39.244 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:39.344 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:39.445 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:39.545 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:39.645 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:39.746 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:39.846 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:39.846 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:44.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:44.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:44.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:44.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:44.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:44.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:44.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:44.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:49.245 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:49.346 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:49.446 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:49.546 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:49.647 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:49.747 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:49.848 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:49.848 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:54.244 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:54.345 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:54.445 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:54.545 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:54.646 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:54.747 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:54.848 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:54.848 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:20:59.246 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:20:59.347 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:20:59.447 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:20:59.548 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:20:59.649 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:20:59.749 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:20:59.849 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:20:59.849 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:04.245 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:04.345 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:04.446 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:04.547 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:04.647 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:04.747 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:04.848 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:04.848 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:09.244 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:09.344 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:09.445 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:09.546 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:09.646 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:09.746 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:09.847 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:09.847 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:14.244 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:14.344 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:14.444 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:14.545 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:14.645 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:14.745 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:14.846 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:14.846 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:19.244 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:19.345 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:19.446 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:19.547 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:19.647 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:19.747 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:19.848 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:19.848 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:24.245 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:24.345 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:24.445 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:24.546 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:24.646 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:24.747 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:24.848 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:24.848 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:29.244 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:29.344 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:29.445 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:29.545 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:29.646 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:29.746 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:29.846 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:29.846 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:34.245 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:34.346 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:34.447 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:34.547 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:34.647 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:34.748 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:34.848 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:34.848 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:39.245 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:39.346 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:39.446 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:39.546 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:39.647 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:39.747 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:39.847 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:39.847 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:44.244 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:44.344 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:44.444 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:44.545 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:44.645 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:44.745 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:44.846 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:44.846 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:49.245 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:49.345 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:49.446 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:49.546 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:49.647 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:49.747 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:49.847 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:49.847 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:54.245 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:54.345 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:54.446 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:54.546 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:54.646 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:54.746 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:54.847 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:54.847 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:21:59.245 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:21:59.345 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:21:59.445 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:21:59.546 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:21:59.646 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:21:59.746 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:21:59.846 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:21:59.846 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:04.245 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:04.345 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:04.446 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:04.547 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:04.647 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:04.747 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:04.847 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:04.847 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:09.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:09.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:09.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:09.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:09.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:09.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:09.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:09.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:14.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:14.344 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:14.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:14.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:14.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:14.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:14.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:14.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:19.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:19.344 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:19.444 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:19.544 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:19.645 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:19.745 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:19.845 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:19.845 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:24.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:24.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:24.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:24.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:24.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:24.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:24.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:24.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:29.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:29.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:29.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:29.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:29.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:29.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:29.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:29.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:34.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:34.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:34.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:34.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:34.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:34.748 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:34.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:34.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:39.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:39.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:39.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:39.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:39.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:39.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:39.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:39.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:44.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:44.346 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:44.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:44.547 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:44.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:44.748 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:44.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:44.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:49.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:49.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:49.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:49.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:49.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:49.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:49.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:49.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:54.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:54.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:54.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:54.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:54.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:54.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:54.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:54.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:22:59.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:22:59.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:22:59.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:22:59.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:22:59.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:22:59.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:22:59.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:22:59.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:04.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:04.344 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:04.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:04.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:04.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:04.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:04.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:04.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:09.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:09.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:09.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:09.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:09.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:09.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:09.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:09.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:14.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:14.344 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:14.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:14.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:14.645 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:14.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:14.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:14.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:19.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:19.346 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:19.447 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:19.548 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:19.649 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:19.749 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:19.849 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:19.849 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:24.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:24.344 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:24.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:24.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:24.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:24.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:24.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:24.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:29.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:29.346 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:29.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:29.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:29.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:29.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:29.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:29.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:34.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:34.344 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:34.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:34.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:34.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:34.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:34.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:34.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:39.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:39.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:39.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:39.547 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:39.648 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:39.748 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:39.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:39.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:44.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:44.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:44.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:44.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:44.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:44.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:44.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:44.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:49.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:49.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:49.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:49.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:49.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:49.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:49.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:49.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:54.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:54.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:54.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:54.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:54.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:54.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:54.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:54.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:23:59.246 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:23:59.346 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:23:59.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:23:59.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:23:59.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:23:59.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:23:59.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:23:59.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:24:04.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:24:04.344 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:24:04.444 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:24:04.544 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:24:04.645 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:24:04.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:24:04.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:24:04.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:24:09.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:24:09.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:24:09.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:24:09.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:24:09.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:24:09.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:24:09.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:24:09.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:24:14.244 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:24:14.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:24:14.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:24:14.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:24:14.645 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:24:14.746 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:24:14.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:24:14.846 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:24:19.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:24:19.345 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:24:19.445 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:24:19.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:24:19.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:24:19.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:24:19.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:24:19.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:24:24.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:24:24.346 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:24:24.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:24:24.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:24:24.646 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:24:24.747 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:24:24.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:24:24.847 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:24:29.245 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:24:29.346 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:24:29.446 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:24:29.546 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:24:29.647 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:24:29.748 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:24:29.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:24:29.848 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。

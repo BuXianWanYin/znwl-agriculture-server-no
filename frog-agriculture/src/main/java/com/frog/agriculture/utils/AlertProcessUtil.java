@@ -1,5 +1,6 @@
 package com.frog.agriculture.utils;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.frog.IaAgriculture.domain.Device;
 import com.frog.IaAgriculture.dto.ErrorCodeEnum;
 import com.frog.IaAgriculture.exception.ServerException;
@@ -17,6 +18,8 @@ import org.fisco.bcos.sdk.client.Client;
 import org.fisco.bcos.sdk.model.TransactionReceipt;
 import org.fisco.bcos.sdk.transaction.model.exception.ContractException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import vip.blockchain.agriculture.utils.BaseUtil;
 
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
@@ -398,6 +401,12 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         SensorAlert alert = createBaseAlert(paramKey, paramName, value, thresholds, pastureId,
                 batchId, device, alertType, alertMessage);
 
+        String snowflakeId = BaseUtil.getSnowflakeId();
+        alert.setId(Long.valueOf(snowflakeId));
+
+        // 设置为严重警告级别
+        alert.setAlertLevel("1"); // 1表示严重警告级别
+
         //区块链工程师拿到报警信息之后 进行上链操作
         try {
             Client client = SpringUtils.getBean(Client.class);
@@ -412,9 +421,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             e.printStackTrace();
             throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
         }
-
-        // 设置为严重警告级别
-        alert.setAlertLevel("1"); // 1表示严重警告级别
 
         // 触发硬件警报
         serialPortUtil.sendMultipleRelays(); // 激活多个继电器进行警报
