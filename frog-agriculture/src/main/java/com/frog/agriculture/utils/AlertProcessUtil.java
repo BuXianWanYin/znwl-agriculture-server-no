@@ -1,6 +1,5 @@
 package com.frog.agriculture.utils;
 
-import cn.hutool.core.bean.BeanUtil;
 import com.frog.IaAgriculture.domain.Device;
 import com.frog.IaAgriculture.dto.ErrorCodeEnum;
 import com.frog.IaAgriculture.exception.ServerException;
@@ -18,7 +17,6 @@ import org.fisco.bcos.sdk.client.Client;
 import org.fisco.bcos.sdk.model.TransactionReceipt;
 import org.fisco.bcos.sdk.transaction.model.exception.ContractException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import vip.blockchain.agriculture.utils.BaseUtil;
 
 import java.math.BigInteger;
@@ -411,7 +409,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         try {
             Client client = SpringUtils.getBean(Client.class);
             SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
-            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()), alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(), alert.getThresholdMin(), alert.getThresholdMax(), alert.getSensorType(), alert.getAlertTime(), alert.getAlertLevel());
+            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()), alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(), alert.getThresholdMin(), alert.getThresholdMax(), alert.getAlertTime(), alert.getAlertLevel());
             if (transactionReceipt.isStatusOK()) {
                 alert.setContractAddress(transactionReceipt.getContractAddress());
             } else {
