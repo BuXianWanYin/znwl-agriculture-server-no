@@ -409,8 +409,8 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             } else {
                 throw new ServerException("合约地址不存在"); // 抛出服务器异常
             }
-        } catch (Exception e) { // 捕获异常
-            e.printStackTrace(); // 打印异常
+        } catch (Exception e) {
+            e.printStackTrace();
             throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
         }
 
