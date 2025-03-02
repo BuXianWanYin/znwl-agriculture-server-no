@@ -15528,3 +15528,616 @@ org.springframework.web.bind.MethodArgumentNotValidException: Validation failed 
 11:07:27.058 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
 11:07:27.159 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
 11:07:27.159 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:08:28.649 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+11:10:20.976 [schedule-pool-7] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:414)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:224)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:759)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:540)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:487)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:10:25.049 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:10:25.151 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:11:18.472 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+11:11:41.111 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:414)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:224)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:759)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:540)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:487)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:11:59.731 [schedule-pool-3] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+com.frog.IaAgriculture.exception.ServerException: 合约服务出错
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:414)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:224)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:759)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:540)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:487)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+11:11:59.736 [nioEventLoopGroup-4-1] ERROR o.f.b.s.n.ChannelHandler - [userEventTriggered,58] -  idle state event:WRITER_IDLE connect192.168.1.157:20200 long time Inactive, disconnect
+11:11:59.846 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:11:59.947 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:12:00.050 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:12:00.150 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:12:00.251 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:12:00.351 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:12:00.451 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:12:00.451 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:12:00.551 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:12:00.652 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:12:00.752 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:12:00.822 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：sleep interrupted
+11:12:00.922 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:12:42.095 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+11:12:49.936 [restartedMain] ERROR c.f.c.u.SerialPortUtil - [<init>,24] - java.lang.RuntimeException: 打开串口失败
+11:12:54.867 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:12:54.974 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:12:55.083 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:12:55.195 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:12:55.304 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:12:55.413 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:12:55.513 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:12:55.533 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:12:59.863 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:12:59.963 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:00.064 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:00.164 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:00.265 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:00.365 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:00.465 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:00.465 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:04.860 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:04.960 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:05.060 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:05.161 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:05.261 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:05.362 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:05.463 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:05.550 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:09.878 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:09.989 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:10.099 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:10.208 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:10.316 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:10.425 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:10.532 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:10.532 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:14.869 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:14.977 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:15.086 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:15.193 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:15.302 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:15.410 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:15.519 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:15.519 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:19.874 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:19.984 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:20.092 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:20.201 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:20.312 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:20.422 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:20.529 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:20.529 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:24.882 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:24.992 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:25.101 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:25.209 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:25.319 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:25.428 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:25.537 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:25.537 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:29.869 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:29.978 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:30.086 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:30.193 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:30.301 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:30.411 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:30.521 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:30.522 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:34.879 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:34.989 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:35.097 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:35.206 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:35.315 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:35.424 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:35.532 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:35.532 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:39.876 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:39.987 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:40.094 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:40.203 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:40.311 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:40.420 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:40.529 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:40.529 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:44.873 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:44.981 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:45.089 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:45.198 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:45.307 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:45.415 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:45.525 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:45.525 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:49.880 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:49.988 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:50.096 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:50.204 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:50.313 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:50.421 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:50.530 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:50.530 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:54.873 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:54.983 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:13:55.091 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:13:55.200 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:13:55.309 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:13:55.416 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:13:55.524 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:13:55.524 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:13:59.883 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:13:59.992 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:00.101 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:00.210 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:00.319 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:00.427 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:00.537 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:00.537 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:04.871 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:04.980 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:05.089 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:05.198 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:05.307 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:05.415 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:05.525 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:05.525 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:09.876 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:09.986 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:10.095 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:10.204 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:10.316 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:10.425 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:10.533 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:10.533 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:14.865 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:14.973 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:15.082 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:15.190 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:15.297 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:15.406 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:15.513 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:15.513 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:19.881 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:19.990 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:20.099 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:20.208 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:20.316 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:20.426 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:20.535 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:20.535 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:24.868 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:24.978 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:25.086 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:25.195 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:25.303 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:25.411 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:25.521 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:25.521 [schedule-pool-15] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:29.875 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:29.984 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:30.093 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:30.202 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:30.310 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:30.419 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:30.529 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:30.529 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:34.873 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:34.982 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:35.088 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:35.198 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:35.308 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:35.416 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:35.526 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:35.526 [schedule-pool-8] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:39.881 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:39.991 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:40.102 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:40.210 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:40.319 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:40.428 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:40.537 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:40.537 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:44.883 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:44.991 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:45.099 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:45.209 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:45.318 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:45.426 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:45.535 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:45.535 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:49.872 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:49.983 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:50.092 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:50.201 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:50.311 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:50.419 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:50.527 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:50.527 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:54.881 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:54.991 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:14:55.099 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:14:55.206 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:14:55.315 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:14:55.424 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:14:55.532 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:14:55.532 [schedule-pool-19] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:14:59.878 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:14:59.986 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:00.093 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:00.201 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:00.309 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:00.418 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:00.527 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:00.527 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:04.876 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:04.983 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:05.095 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:05.206 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:05.315 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:05.424 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:05.533 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:05.533 [schedule-pool-14] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:09.880 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:09.989 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:10.095 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:10.203 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:10.314 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:10.422 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:10.530 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:10.530 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:14.874 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:14.982 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:15.092 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:15.200 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:15.308 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:15.416 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:15.526 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:15.526 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:19.871 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:19.978 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:20.088 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:20.196 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:20.306 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:20.414 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:20.522 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:20.522 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:24.880 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:24.988 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:25.097 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:25.205 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:25.315 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:25.424 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:25.533 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:25.533 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:29.876 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:29.984 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:30.093 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:30.201 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:30.310 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:30.418 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:30.526 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:30.526 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:34.878 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:34.988 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:35.096 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:35.205 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:35.312 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:35.422 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:35.530 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:35.530 [schedule-pool-11] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:39.880 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:39.990 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:40.098 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:40.207 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:40.316 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:40.425 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:40.535 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:40.535 [schedule-pool-25] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:44.874 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:44.983 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:45.091 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:45.201 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:45.310 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:45.421 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:45.529 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:45.529 [schedule-pool-17] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:49.875 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:49.984 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:50.095 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:50.202 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:50.311 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:50.421 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:50.530 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:50.530 [schedule-pool-18] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:54.881 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:54.990 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:15:55.100 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:15:55.209 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:15:55.316 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:15:55.424 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:15:55.532 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:15:55.532 [schedule-pool-27] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:15:59.875 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:15:59.983 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:00.091 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:00.200 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:00.309 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:00.418 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:00.528 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:00.528 [schedule-pool-6] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:04.883 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:04.993 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:05.101 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:05.212 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:05.320 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:05.429 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:05.538 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:05.538 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:09.867 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:09.977 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:10.085 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:10.195 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:10.304 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:10.412 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:10.522 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:10.522 [schedule-pool-29] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:14.870 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:14.980 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:15.088 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:15.197 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:15.305 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:15.414 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:15.524 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:15.524 [schedule-pool-13] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:19.874 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:19.984 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:20.093 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:20.202 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:20.311 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:20.421 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:20.531 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:20.531 [schedule-pool-9] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:24.879 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:24.988 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:25.097 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:25.207 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:25.317 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:25.426 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:25.534 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:25.534 [schedule-pool-31] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:29.873 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:29.982 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:30.091 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:30.201 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:30.310 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:30.418 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:30.526 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:30.526 [schedule-pool-21] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:34.871 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:34.980 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:35.090 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:35.199 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:35.306 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:35.413 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:35.522 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:35.522 [schedule-pool-22] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:39.870 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:39.978 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:40.089 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:40.197 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:40.306 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:40.413 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:40.522 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:40.522 [schedule-pool-33] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:44.870 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:44.978 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:45.083 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:45.190 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:45.297 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:45.407 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:45.514 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:45.514 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:49.878 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:49.989 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:50.097 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:50.205 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:50.312 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:50.421 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:50.531 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:50.531 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:54.874 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:54.983 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:16:55.091 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:16:55.200 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:16:55.309 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:16:55.421 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:16:55.531 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:16:55.531 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:16:59.873 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:16:59.982 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:00.091 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:00.200 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:00.309 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:00.418 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:00.527 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:00.527 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:04.870 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:04.980 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:05.091 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:05.201 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:05.309 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:05.417 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:05.527 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:05.527 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:09.875 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:09.985 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:10.094 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:10.201 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:10.310 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:10.420 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:10.528 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:10.528 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:14.875 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:14.985 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:15.094 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:15.202 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:15.311 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:15.421 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:15.530 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:15.530 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:19.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:19.986 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:20.094 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:20.204 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:20.312 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:20.421 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:20.529 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:20.529 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:24.885 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:24.996 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:25.104 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:25.215 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:25.324 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:25.434 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:25.542 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:25.542 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:29.883 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:29.992 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:30.100 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:30.209 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:30.317 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:30.427 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:30.536 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:30.536 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:34.868 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:34.975 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:35.085 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:35.194 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:35.301 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:35.410 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:35.518 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:35.518 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:39.870 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:39.979 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:40.089 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:40.199 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:40.309 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:40.417 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:40.526 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:40.526 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:44.870 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:44.979 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:45.089 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:45.196 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:45.305 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:45.414 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:45.522 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:45.522 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:49.869 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:49.978 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:50.087 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:50.195 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:50.304 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:50.412 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:50.522 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:50.522 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:54.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:54.985 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:17:55.092 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:17:55.202 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:17:55.310 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:17:55.419 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:17:55.526 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:17:55.526 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:17:59.882 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:17:59.990 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:18:00.099 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:18:00.208 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:18:00.318 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:18:00.426 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:18:00.536 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:18:00.536 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:18:04.882 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:18:04.992 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:18:05.100 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:18:05.209 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:18:05.318 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:18:05.428 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:18:05.537 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:18:05.537 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:18:09.873 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:18:09.983 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:18:10.092 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:18:10.202 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:18:10.311 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:18:10.419 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:18:10.526 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:18:10.526 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:18:14.873 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:18:14.984 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:18:15.093 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:18:15.202 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:18:15.311 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:18:15.420 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:18:15.529 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:18:15.529 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+11:18:19.877 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+11:18:19.986 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+11:18:20.096 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+11:18:20.204 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+11:18:20.313 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+11:18:20.421 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+11:18:20.528 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+11:18:20.528 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
