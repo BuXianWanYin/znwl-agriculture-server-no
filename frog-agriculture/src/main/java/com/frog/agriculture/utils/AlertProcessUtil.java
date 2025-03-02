@@ -402,7 +402,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         try {
             Client client = SpringUtils.getBean(Client.class);
             SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
-            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()), alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(), alert.getThresholdMin(), alert.getThresholdMax(), alert.getSensorType(), alert.getAlertTime(), alert.getAlertLevel());
+            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()), alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(), alert.getThresholdMin(), alert.getThresholdMax(), alert.getAlertTime(), alert.getAlertLevel());
             if (transactionReceipt.isStatusOK()) {
                 alert.setContractAddress(transactionReceipt.getContractAddress());
             } else {
