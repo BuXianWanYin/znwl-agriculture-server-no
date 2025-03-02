@@ -1,5 +1,6 @@
 package com.frog.agriculture.utils;
 
+import lombok.Getter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.HashMap;
@@ -7,14 +8,22 @@ import java.util.Map;
 
 /**
  * 传感器阈值配置工具类
+ * 用于管理各类传感器的阈值范围配置
  */
 public class ThresholdConfigUtil {
     private static final Log log = LogFactory.getLog(ThresholdConfigUtil.class);
 
+    /**
+     * 阈值配置Map
+     * key: 参数键名
+     * value: double数组[最小值, 最大值]
+     */
+    @Getter
     private static Map<String, double[]> thresholdConfig = new HashMap<>();
 
     /**
      * 初始化传感器阈值配置
+     * 设置各类传感器参数的正常值范围
      */
     public static void initializeThresholdConfig() {
         // 配置格式：[最小值, 最大值]，超出范围则触发预警
@@ -49,14 +58,10 @@ public class ThresholdConfigUtil {
     }
 
     /**
-     * 获取阈值配置
-     */
-    public static Map<String, double[]> getThresholdConfig() {
-        return thresholdConfig;
-    }
-
-    /**
      * 获取指定参数的阈值配置
+     *
+     * @param key 参数键名
+     * @return double数组[最小值, 最大值], 如果不存在则返回null
      */
     public static double[] getThresholdByKey(String key) {
         return thresholdConfig.get(key);

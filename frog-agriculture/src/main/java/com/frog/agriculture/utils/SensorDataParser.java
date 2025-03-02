@@ -7,12 +7,19 @@ import java.util.Map;
 
 /**
  * 传感器数据解析工具类
+ * 用于解析各类传感器返回的原始数据
  */
 public class SensorDataParser {
     private static final Log log = LogFactory.getLog(SensorDataParser.class);
 
     /**
      * 解析风向传感器数据
+     *
+     * @param data 原始字节数据
+     * @return Map包含:
+     *         direction_grade: 风向等级(0-7)
+     *         direction_angle: 风向角度
+     *         direction: 风向描述(如"北风","东北风"等)
      */
     public static Map<String, Object> parseWindDirectionData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
@@ -60,6 +67,15 @@ public class SensorDataParser {
 
     /**
      * 解析百叶箱传感器数据
+     *
+     * @param data 原始字节数据
+     * @return Map包含:
+     *         humidity: 湿度(%)
+     *         temperature: 温度(℃)
+     *         noise: 噪音(dB)
+     *         pm25: PM2.5浓度(μg/m³)
+     *         pm10: PM10浓度(μg/m³)
+     *         light: 光照强度(lux)
      */
     public static Map<String, Object> parseBaiyeBoxData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
@@ -85,6 +101,10 @@ public class SensorDataParser {
 
     /**
      * 解析风速传感器数据
+     *
+     * @param data 原始字节数据
+     * @return Map包含:
+     *         speed: 风速(m/s)
      */
     public static Map<String, Object> parseWindSpeedData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
@@ -100,6 +120,11 @@ public class SensorDataParser {
 
     /**
      * 解析土壤温度水分传感器数据
+     *
+     * @param data 原始字节数据
+     * @return Map包含:
+     *         soil_temperature: 土壤温度(℃)
+     *         moisture: 土壤水分含量(%)
      */
     public static Map<String, Object> parseSoilTemperatureMoistureData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
@@ -120,6 +145,10 @@ public class SensorDataParser {
 
     /**
      * 解析土壤pH传感器数据
+     *
+     * @param data 原始字节数据
+     * @return Map包含:
+     *         soil_ph: 土壤pH值
      */
     public static Map<String, Object> parseSoilPHData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
@@ -134,6 +163,12 @@ public class SensorDataParser {
 
     /**
      * 解析土壤水分电导率传感器数据
+     *
+     * @param data 原始字节数据
+     * @return Map包含:
+     *         moisture: 土壤水分含量(%)
+     *         soil_temperature: 土壤温度(℃)
+     *         conductivity: 土壤电导率(μS/cm)
      */
     public static Map<String, Object> parseSoilMoistureConductivityData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
@@ -157,6 +192,11 @@ public class SensorDataParser {
 
     /**
      * 解析水质传感器数据
+     *
+     * @param data 原始字节数据
+     * @return Map包含:
+     *         temperature: 水温(℃)
+     *         ph_value: 水质pH值
      */
     public static Map<String, Object> parseWaterQualityData(byte[] data) {
         Map<String, Object> map = new HashMap<>();
@@ -177,6 +217,9 @@ public class SensorDataParser {
 
     /**
      * 将十六进制字符串转换为字节数组
+     *
+     * @param s 十六进制字符串(可包含空格)
+     * @return 转换后的字节数组
      */
     public static byte[] hexStringToByteArray(String s) {
         s = s.replace(" ", "");
