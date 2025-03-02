@@ -113,7 +113,7 @@ public class SensorAlert implements Serializable {
     private String remark;
 
     /**
-     * 处理备注
+     * 修改时间
      */
     private String updateTime;
 
@@ -121,4 +121,9 @@ public class SensorAlert implements Serializable {
      * 警报级别（0-预警 1-严重警告）
      */
     private String alertLevel;
-} 
+
+    /**
+     * 区块链地址
+     */
+    private String contractAddress;
+}
