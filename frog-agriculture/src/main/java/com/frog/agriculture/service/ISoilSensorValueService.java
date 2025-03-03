@@ -65,4 +65,6 @@ public interface ISoilSensorValueService
      * @return 结果
      */
     public int deleteSoilSensorValueById(String id);
+
+    List<SoilSensorValue> selectSoilSensorValuesByBatchIdAndDateRange(Long batchId, String startDate, String endDate);
 }
