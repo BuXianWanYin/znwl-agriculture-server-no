@@ -129,7 +129,7 @@ public class AIController {
         SseEmitter emitter = new SseEmitter();
         new Thread(() -> {
             try {
-                CloseableHttpResponse response = AIModelApiUtils.chatVLStream(BotConfig.getAiVLUrl(), prompt, file);
+                CloseableHttpResponse response = AIModelApiUtils.chatVLStream(BotConfig.getAiVLUrl() + "chat", prompt, file);
                 InputStream contentInputStream = response.getEntity().getContent();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(contentInputStream, StandardCharsets.UTF_8));
                 String line;
@@ -145,5 +145,16 @@ public class AIController {
             }
         }).start();
         return emitter;
+    }
+
+    /**
+     * AI识别
+     *
+     * @param prompt
+     * @return
+     */
+    @PostMapping(value = "/identify")
+    public String identify(String prompt, MultipartFile file) {
+        return AIModelApiUtils.chatVLJson(BotConfig.getAiVLUrl() + "identify", prompt, file);
     }
 }

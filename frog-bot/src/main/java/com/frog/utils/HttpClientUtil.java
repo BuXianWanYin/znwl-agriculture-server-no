@@ -252,6 +252,60 @@ public class HttpClientUtil {
      * @return
      * @throws IOException
      */
+    public static String doPost4Json(String url, Map<String, String> paramMap, MultipartFile file) throws IOException {
+        // 创建Httpclient对象
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        CloseableHttpResponse response = null;
+        String resultString = "";
+
+        try {
+            // 创建Http Post请求
+            HttpPost httpPost = new HttpPost(url);
+
+            // 构建multipart请求体
+            MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+
+            // 添加表单参数
+            for (Map.Entry<String, String> param : paramMap.entrySet()) {
+                builder.addTextBody(param.getKey(), param.getValue(),
+                        ContentType.create("text/plain", "UTF-8"));
+            }
+
+            if (!ObjectUtils.isEmpty(file)) {
+                // 添加文件
+                builder.addBinaryBody("prompt_image", file.getInputStream(),
+                        ContentType.create("application/octet-stream"), "prompt_image");
+            }
+
+            HttpEntity multipart = builder.build();
+
+            httpPost.setEntity(multipart);
+            httpPost.setConfig(builderRequestConfig());
+
+            // 执行http请求
+            response = httpClient.execute(httpPost);
+
+            resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            try {
+                response.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return resultString;
+    }
+
+    /**
+     * 发送POST方式请求
+     *
+     * @param url
+     * @param paramMap
+     * @return
+     * @throws IOException
+     */
     public static CloseableHttpResponse doPost4JsonStream(String url, Map<String, String> paramMap) throws IOException {
         // 创建Httpclient对象
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -308,7 +362,7 @@ public class HttpClientUtil {
                         ContentType.create("text/plain", "UTF-8"));
             }
 
-            if (!ObjectUtils.isEmpty(file)){
+            if (!ObjectUtils.isEmpty(file)) {
                 // 添加文件
                 builder.addBinaryBody("prompt_image", file.getInputStream(),
                         ContentType.create("application/octet-stream"), "prompt_image");
