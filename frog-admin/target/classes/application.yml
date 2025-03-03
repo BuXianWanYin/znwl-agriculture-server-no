@@ -13,7 +13,7 @@ bot:
   promptText: 希望你以后能够做的比我还好呦。
   promptWav: static/cross_lingual_prompt.wav
   instructText: Theo \'Crimson\', is a fiery, passionate rebel leader. \ Fights with fervor for justice, but struggles with impulsiveness.
-  aiVLUrl: http://192.168.1.194:10095/chat
+  aiVLUrl: http://192.168.1.194:10095/
 # 项目相关配置
 ruoyi:
   # 名称
@@ -315,4 +315,4 @@ mqtt:
   subTopic: "pop"
 # 条形码前端地址
 barcode:
-  path: http://127.0.0.1:8080/#/mobile?id=
+  path: http://192.168.1.156/originIndex?code=
