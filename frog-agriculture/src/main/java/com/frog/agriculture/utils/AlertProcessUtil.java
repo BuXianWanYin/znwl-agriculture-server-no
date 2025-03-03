@@ -411,7 +411,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
             TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()), alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(), alert.getThresholdMin(), alert.getThresholdMax(), alert.getAlertTime(), alert.getAlertLevel());
             if (transactionReceipt.isStatusOK()) {
-                alert.setContractAddress(transactionReceipt.getContractAddress());
+                alert.setContractAddress(sensorAlertService.getContractAddress());
             } else {
                 throw new ServerException("合约地址不存在"); // 抛出服务器异常
             }
