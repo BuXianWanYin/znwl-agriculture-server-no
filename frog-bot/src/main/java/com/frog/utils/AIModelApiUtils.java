@@ -108,6 +108,22 @@ public class AIModelApiUtils {
         return null;
     }
 
+    /**
+     * 聊天流式
+     *
+     * @return
+     */
+    public static String chatVLJson(String url, String prompt, MultipartFile file) {
+        try {
+            Map paramMap = new HashMap<String, Object>();
+            paramMap.put("prompt_text", prompt);
+            return HttpClientUtil.doPost4Json(url, paramMap, file);
+        } catch (IOException e) {
+            log.error(e);
+        }
+        return null;
+    }
+
 
     /**
      * ai处理物种周期
