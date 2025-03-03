@@ -495,4 +495,9 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
     {
         return soilSensorValueMapper.deleteSoilSensorValueById(id);
     }
+
+    @Override
+    public List<SoilSensorValue> selectSoilSensorValuesByBatchIdAndDateRange(Long batchId, String startDate, String endDate) {
+        return soilSensorValueMapper.selectSoilSensorValuesByBatchIdAndDateRange(batchId, startDate, endDate);
+    }
 }

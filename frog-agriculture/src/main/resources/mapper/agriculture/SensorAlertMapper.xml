@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        "http/mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.frog.agriculture.mapper.SensorAlertMapper">
 
     <resultMap type="com.frog.agriculture.domain.SensorAlert" id="SensorAlertResult">
@@ -26,14 +26,14 @@
         <result property="batchName"     column="batch_name"        />
         <result property="batchHead"     column="batch_head"        />
         <result property="updateTime"    column="update_time"       />
-        <!-- 新增字段 alert_level  警报级别（0-预警 1-严重警告） -->
         <result property="alertLevel"    column="alert_level"       />
+        <result property="contractAddr"  column="contract_addr"     />
     </resultMap>
 
     <sql id="selectSensorAlertVo">
         select id, alert_type, alert_message, param_name, param_value, threshold_min, threshold_max,
-               pasture_id, pasture_type, batch_id, device_id, device_name, sensor_type, alert_time,
-               alert_date, status, remark, update_time, alert_level
+        pasture_id, pasture_type, batch_id, device_id, device_name, sensor_type, alert_time,
+        alert_date, status, remark, update_time, alert_level, contract_addr
         from sensor_alert
     </sql>
 
@@ -90,10 +90,9 @@
             <if test="status != null">status,</if>
             <if test="remark != null">remark,</if>
             <if test="updateTime != null">update_time,</if>
-            <!-- 新增 alert_level 字段 -->
             <if test="alertLevel != null">alert_level,</if>
-            <!-- 当 alertLevel 为 null 时，依然插入该字段，由数据库默认值 '0' 来填充 -->
             <if test="alertLevel == null">alert_level,</if>
+            <if test="contractAddr != null">contract_addr,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="alertType != null">#{alertType},</if>
@@ -113,7 +112,6 @@
             <if test="status != null">#{status},</if>
             <if test="remark != null">#{remark},</if>
             <if test="updateTime != null">#{updateTime},</if>
-            <!-- 判断 alertLevel 字段：若传入值不为空，则插入对应值，否则插入默认 '0' -->
             <choose>
                 <when test="alertLevel != null">
                     #{alertLevel},
@@ -122,6 +120,7 @@
                     '0',
                 </otherwise>
             </choose>
+            <if test="contractAddr != null">#{contractAddr},</if>
         </trim>
     </insert>
 
@@ -145,8 +144,8 @@
             <if test="status != null">status = #{status},</if>
             <if test="remark != null">remark = #{remark},</if>
             <if test="updateTime != null">update_time = #{updateTime},</if>
-            <!-- 更新 alert_level 字段（仅当传入了 alertLevel 时进行更新） -->
             <if test="alertLevel != null">alert_level = #{alertLevel},</if>
+            <if test="contractAddr != null">contract_addr = #{contractAddr},</if>
         </trim>
         where id = #{id}
     </update>
@@ -162,7 +161,6 @@
         </foreach>
     </delete>
 
-    <!-- 根据大棚/鱼棚类型查询预警信息列表 -->
     <select id="selectSensorAlertsByPastureType" parameterType="String" resultMap="SensorAlertResult">
         <choose>
             <when test="pastureType == '0'.toString()">
@@ -186,6 +184,7 @@
                 sa.remark,
                 sa.update_time,
                 sa.alert_level,
+                sa.contract_addr,
                 p.name AS pasture_name,
                 b.batch_name,
                 b.batch_head
@@ -219,6 +218,7 @@
                 sa.remark,
                 sa.update_time,
                 sa.alert_level,
+                sa.contract_addr,
                 ft.name AS pasture_name,
                 b.batch_name,
                 b.batch_head

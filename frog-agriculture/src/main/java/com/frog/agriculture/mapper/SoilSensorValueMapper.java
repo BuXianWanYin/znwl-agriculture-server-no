@@ -2,6 +2,7 @@ package com.frog.agriculture.mapper;
 
 import java.util.List;
 import com.frog.agriculture.domain.SoilSensorValue;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 /**
@@ -61,6 +62,8 @@ public interface SoilSensorValueMapper
      */
     public int deleteSoilSensorValueById(String id);
 
+
+
     /**
      * 批量删除土壤环境数据
      * 
@@ -68,4 +71,23 @@ public interface SoilSensorValueMapper
      * @return 结果
      */
     public int deleteSoilSensorValueByIds(String[] ids);
+
+
+    /**
+     * 根据批次ID和日期范围查询土壤传感器数据
+     *
+     * 示例SQL:
+     * SELECT * FROM soil_sensor_value
+     * WHERE batch_id = #{batchId}
+     *   AND date BETWEEN #{startDate} AND #{endDate}
+     *
+     * @param batchId   批次ID
+     * @param startDate 开始日期（格式：YYYY-MM-DD）
+     * @param endDate   结束日期（格式：YYYY-MM-DD）
+     * @return 查询结果列表
+     */
+    @Select("SELECT * FROM soil_sensor_value WHERE batch_id = #{batchId} AND date BETWEEN #{startDate} AND #{endDate}")
+    List<SoilSensorValue> selectSoilSensorValuesByBatchIdAndDateRange(@Param("batchId") Long batchId,
+                                                                      @Param("startDate") String startDate,
+                                                                      @Param("endDate") String endDate);
 }

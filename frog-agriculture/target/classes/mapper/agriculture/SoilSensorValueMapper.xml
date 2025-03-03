@@ -51,6 +51,7 @@ and del_flag = 0
         <include refid="selectSoilSensorValueVo"/>
         where id = #{id} and del_flag=0
     </select>
+
         
     <insert id="insertSoilSensorValue" parameterType="SoilSensorValue">
         insert into soil_sensor_value
