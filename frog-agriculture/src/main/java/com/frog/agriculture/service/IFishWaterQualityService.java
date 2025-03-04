@@ -59,4 +59,14 @@ public interface IFishWaterQualityService
      * @return 结果
      */
     public int deleteFishWaterQualityById(Long id);
+
+    /**
+     * 根据批次ID和日期范围查询水质数据
+     *
+     * @param batchId 批次ID
+     * @param startDate 开始日期
+     * @param endDate 结束日期
+     * @return 水质数据列表
+     */
+    List<FishWaterQuality> selectFishWaterQualityByBatchIdAndDateRange(Long batchId, String startDate, String endDate);
 }
