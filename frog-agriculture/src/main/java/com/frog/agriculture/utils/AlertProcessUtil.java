@@ -61,7 +61,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
     }
 
 
-
     /**
      * 获取预警阈值缓冲区间
      *
@@ -335,16 +334,28 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      * @param queryAlert 查询对象
      */
     private static void handleSeriousAlerts(SensorAlert queryAlert) {
+        // 查询当前活跃的严重报警列表
         List<SensorAlert> activeAlerts = getSensorAlertMapper().selectSensorAlertList(queryAlert);
+
+        // 如果没有报警记录,或者不是严重报警(级别不为1),则直接返回
         if (activeAlerts == null || activeAlerts.isEmpty() || !activeAlerts.get(0).getAlertLevel().equals("1")) {
             return;
         }
 
+        // 遍历所有活跃的报警记录
         for (SensorAlert alert : activeAlerts) {
+            // 更新报警状态为已处理
             updateAlertStatus(alert, "自动处理报警");
-            handleHardwareReset();
+
+            // 关闭硬件报警设备
+            serialPortUtil.closeRedLight();  // 关闭报警红灯
+            AudioPlayer.stopAlarmSound();    // 停止报警音频
+
+            // 记录日志
+            log.info("已发送数据恢复继电器控制命令");
         }
     }
+
     /**
      * 处理普通预警
      * 查询并处理系统中的普通预警，更新预警状态
@@ -375,25 +386,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         alert.setUpdateTime(currentTimestamp());
         getSensorAlertMapper().updateSensorAlert(alert);
         log.info(logPrefix + ": " + alert.getParamName() + " 数据恢复正常");
-    }
-    /**
-     * 重置硬件设备
-     * 关闭所有设备、停止报警声音、控制继电器等硬件操作
-     * 包含以下步骤：
-     * 1. 发送关闭所有设备的命令
-     * 2. 停止报警声音
-     * 3. 等待2秒
-     * 4. 发送继电器控制命令
-     */
-    private static void handleHardwareReset() {
-        try {
-            serialPortUtil.closeRedLight();//关闭红灯
-            AudioPlayer.stopAlarmSound();
-            Thread.sleep(2000);
-            log.info("已发送数据恢复继电器控制命令");
-        } catch (Exception e) {
-            log.error("发送继电器控制命令失败: " + e.getMessage());
-        }
     }
 
     /**
@@ -810,8 +802,8 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         /**
          * 构造函数
          *
-         * @param paramKey    参数键名
-         * @param paramName   参数显示名称
+         * @param paramKey   参数键名
+         * @param paramName  参数显示名称
          * @param value      参数当前值
          * @param thresholds 阈值数组
          * @param minWarning 最小预警值

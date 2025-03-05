@@ -19630,3 +19630,9 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying b
 16:56:03.116 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
 16:58:03.683 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器2数据采集异常：null
 16:58:03.784 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器3数据采集异常：null
+17:31:26.339 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+17:32:41.763 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器4数据采集异常：null
+17:32:41.863 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器5数据采集异常：null
+18:08:34.314 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+18:11:57.522 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器2数据采集异常：null
+18:11:57.623 [schedule-pool-12] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器3数据采集异常：null
