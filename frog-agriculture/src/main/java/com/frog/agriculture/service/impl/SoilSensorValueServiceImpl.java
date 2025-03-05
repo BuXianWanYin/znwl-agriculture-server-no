@@ -171,7 +171,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 
         // 检查数据是否超过阈值，生成预警信息
         AlertProcessUtil.checkThresholdsAndGenerateAlerts(sensorValue, fishWaterQuality, 
-            sensorBindings, sensorAlertMapper, serialPortUtil);
+            sensorBindings);
 
         // 将全局传感器数据转换为JSON字符串，打印日志便于调试
         Gson gson = new Gson();
