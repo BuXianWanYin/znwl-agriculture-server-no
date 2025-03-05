@@ -4,14 +4,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.frog.common.annotation.Log;
 import com.frog.common.core.controller.BaseController;
 import com.frog.common.core.domain.AjaxResult;
@@ -101,4 +94,22 @@ public class FishWaterQualityController extends BaseController
     {
         return toAjax(fishWaterQualityService.deleteFishWaterQualityByIds(ids));
     }
+
+    /**
+     * 根据批次ID和日期范围查询水质数据
+     *
+     * @param batchId 批次ID
+     * @param startDate 开始日期
+     * @param endDate 结束日期
+     * @return 水质数据列表
+     */
+    @GetMapping("/range")
+    public List<FishWaterQuality> getFishWaterQualityByBatchIdAndDateRange(
+            @RequestParam Long batchId,
+            @RequestParam String startDate,
+            @RequestParam String endDate) {
+        return fishWaterQualityService.selectFishWaterQualityByBatchIdAndDateRange(batchId, startDate, endDate);
+    }
+
+
 }

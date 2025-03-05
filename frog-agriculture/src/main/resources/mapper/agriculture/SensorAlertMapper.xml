@@ -27,13 +27,13 @@
         <result property="batchHead"     column="batch_head"        />
         <result property="updateTime"    column="update_time"       />
         <result property="alertLevel"    column="alert_level"       />
-        <result property="contractAddr"  column="contract_addr"     />
+        <result property="contractAddress"  column="contract_address"     />
     </resultMap>
 
     <sql id="selectSensorAlertVo">
         select id, alert_type, alert_message, param_name, param_value, threshold_min, threshold_max,
         pasture_id, pasture_type, batch_id, device_id, device_name, sensor_type, alert_time,
-        alert_date, status, remark, update_time, alert_level, contract_addr
+        alert_date, status, remark, update_time, alert_level, contract_address
         from sensor_alert
     </sql>
 
@@ -92,7 +92,7 @@
             <if test="updateTime != null">update_time,</if>
             <if test="alertLevel != null">alert_level,</if>
             <if test="alertLevel == null">alert_level,</if>
-            <if test="contractAddr != null">contract_addr,</if>
+            <if test="contractAddress != null">contract_address,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="alertType != null">#{alertType},</if>
@@ -120,7 +120,7 @@
                     '0',
                 </otherwise>
             </choose>
-            <if test="contractAddr != null">#{contractAddr},</if>
+            <if test="contractAddress != null">#{contractAddress},</if>
         </trim>
     </insert>
 
@@ -145,7 +145,7 @@
             <if test="remark != null">remark = #{remark},</if>
             <if test="updateTime != null">update_time = #{updateTime},</if>
             <if test="alertLevel != null">alert_level = #{alertLevel},</if>
-            <if test="contractAddr != null">contract_addr = #{contractAddr},</if>
+            <if test="contractAddress != null">contract_address = #{contractAddress},</if>
         </trim>
         where id = #{id}
     </update>
@@ -184,7 +184,7 @@
                 sa.remark,
                 sa.update_time,
                 sa.alert_level,
-                sa.contract_addr,
+                sa.contract_address,
                 p.name AS pasture_name,
                 b.batch_name,
                 b.batch_head
@@ -218,7 +218,7 @@
                 sa.remark,
                 sa.update_time,
                 sa.alert_level,
-                sa.contract_addr,
+                sa.contract_address,
                 ft.name AS pasture_name,
                 b.batch_name,
                 b.batch_head

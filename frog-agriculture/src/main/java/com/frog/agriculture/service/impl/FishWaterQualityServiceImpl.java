@@ -91,4 +91,9 @@ public class FishWaterQualityServiceImpl implements IFishWaterQualityService
     {
         return fishWaterQualityMapper.deleteFishWaterQualityById(id);
     }
+
+    @Override
+    public List<FishWaterQuality> selectFishWaterQualityByBatchIdAndDateRange(Long batchId, String startDate, String endDate) {
+        return fishWaterQualityMapper.selectFishWaterQualityByBatchIdAndDateRange(batchId, startDate, endDate);
+    }
 }

@@ -42,7 +42,7 @@ public class ThresholdConfigUtil {
         // 土壤电导率阈值（μS/cm）
         thresholdConfig.put("conductivity", new double[]{100.0, 2000.0});
         // 土壤水分阈值（百分比）
-        thresholdConfig.put("moisture", new double[]{20.0, 60.0});
+        thresholdConfig.put("moisture", new double[]{20.0, 65.0});
         // 水温阈值（摄氏度）
         thresholdConfig.put("water_temperature", new double[]{15.0, 30.0});
         // 水pH阈值

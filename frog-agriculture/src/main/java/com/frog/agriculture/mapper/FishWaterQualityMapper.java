@@ -2,6 +2,8 @@ package com.frog.agriculture.mapper;
 
 import java.util.List;
 import com.frog.agriculture.domain.FishWaterQuality;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * 水质数据Mapper接口
@@ -58,4 +60,17 @@ public interface FishWaterQualityMapper
      * @return 结果
      */
     public int deleteFishWaterQualityByIds(Long[] ids);
+
+    /**
+     * 根据批次ID和日期范围查询水质数据
+     *
+     * @param batchId 批次ID
+     * @param startDate 开始日期
+     * @param endDate 结束日期
+     * @return 水质数据列表
+     */
+    @Select("SELECT * FROM fish_water_quality WHERE fish_pasture_batch_id = #{batchId} AND date BETWEEN #{startDate} AND #{endDate}")
+    List<FishWaterQuality> selectFishWaterQualityByBatchIdAndDateRange(@Param("batchId") Long batchId,
+                                                                       @Param("startDate") String startDate,
+                                                                       @Param("endDate") String endDate);
 }

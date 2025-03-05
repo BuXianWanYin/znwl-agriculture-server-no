@@ -107,12 +107,38 @@ public class SerialPortUtil {
         sendRelay4();
     }
 
+
+
+    /**
+     * 发送打开红灯命令
+     */
+    public void turnOnRedLight() {
+        writeBytes(hexStringToByteArray("1F 05 00 00 FF 00 8F 84"));
+    }
+
+    /**
+     * 发送关闭红灯命令
+     */
+    public void turnOffRedLight() {
+        writeBytes(hexStringToByteArray("1F 05 00 00 00 00 CE 38"));
+    }
+
+
+
+
+
+
+
+
     /**
      * 发送打开第1个继电器（亮红灯）的命令
      */
     public void sendRelay1() {
         writeBytes(hexStringToByteArray("1F 05 00 00 FF 00 8F 84"));
     }
+
+
+
 
     /**
      * 发送打开第2个继电器（电风扇）的命令

@@ -218,7 +218,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
         if (!hasActiveAlert(paramName, alertType, pastureId, batchId, device, sensorAlertMapper)) { // 如果不存在未处理的相同预警
             if (alertType.contains("严重")) { // 如果预警类型包含"严重"
-
                 //调用方法生成报警
                 generateSeriousAlert(paramKey, paramName, value, thresholds, pastureId, batchId,
                         device, alertType, alertMessage, sensorAlertMapper, serialPortUtil);
@@ -741,8 +740,8 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         double minWarning = thresholds[0] + minBuffer;  // 最小预警值为阈值下限加缓冲
         double maxWarning = thresholds[1] - maxBuffer;  // 最大预警值为阈值上限减缓冲
 
-        String alertType = null;    // 定义预警类型变量
-        String alertMessage = null; // 定义预警消息变量
+        String alertType = null;    // 预警类型变量
+        String alertMessage = null; // 预警消息变量
 
         // 检查是否超出阈值范围
         if (value < thresholds[0]) { // 如果当前值小于阈值下限
