@@ -2,6 +2,7 @@ package com.frog.agriculture.mapper;
 
 import java.util.List;
 import com.frog.agriculture.domain.SensorAlert;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 传感器预警信息数据层
@@ -80,4 +81,12 @@ public interface SensorAlertMapper {
      * @return 预警信息列表
      */
     public List<SensorAlert> selectSensorAlertsByPastureType(String pastureType);
+
+    /**
+     * 查询最近处理过的预警
+     * @param alert 查询条件
+     * @param minutes 时间范围（分钟）
+     * @return 最近处理过的预警列表
+     */
+    List<SensorAlert> selectRecentProcessedAlerts(@Param("alert") SensorAlert alert, @Param("minutes") int minutes);
 } 

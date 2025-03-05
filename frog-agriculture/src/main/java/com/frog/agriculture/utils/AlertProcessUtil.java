@@ -230,7 +230,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      */
     private static void processAlert(AlertParams params, String alertType, String alertMessage) {
 
-        // 如果已存在活跃的相同类型预警，则不重复生成
+        // 如果近期 30 分钟 已存在相同类型预警，则不重复生成
         if (hasActiveAlert(params.paramName, alertType, params.pastureId, params.batchId, params.device)) {
             return;
         }
@@ -272,8 +272,18 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
                 queryAlert.setSensorType(device.getSensorType()); // 设置设备的传感器类型
             }
 
-            List<SensorAlert> existingAlerts = getSensorAlertMapper().selectSensorAlertList(queryAlert); // 查询当前符合条件的预警列表
-            return existingAlerts != null && !existingAlerts.isEmpty(); // 如果存在预警则返回true，否则返回false
+            
+            // 检查未处理的预警
+            queryAlert.setStatus("0");
+            List<SensorAlert> activeAlerts = getSensorAlertMapper().selectSensorAlertList(queryAlert);
+            if (activeAlerts != null && !activeAlerts.isEmpty()) {
+                return true;
+            }
+
+            // 检查最近处理过的预警（30分钟内）  如果有 则不再生成同类型预警
+            queryAlert.setStatus("1");
+            List<SensorAlert> recentAlerts = getSensorAlertMapper().selectRecentProcessedAlerts(queryAlert, 1);
+            return recentAlerts != null && !recentAlerts.isEmpty(); // 如果存在预警则返回true，否则返回false
         } catch (Exception e) {
             log.error("查询现有预警失败: " + e.getMessage()); // 记录错误日志
             return false;
