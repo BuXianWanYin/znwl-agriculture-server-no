@@ -1,5 +1,6 @@
 package com.frog.agriculture.utils;
 
+import cn.hutool.extra.spring.SpringUtil;
 import com.frog.IaAgriculture.domain.Device;
 import com.frog.IaAgriculture.dto.ErrorCodeEnum;
 import com.frog.IaAgriculture.exception.ServerException;
@@ -406,27 +407,103 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         alert.setAlertLevel("1"); // 1表示严重警告级别
 
         //区块链工程师拿到报警信息之后 进行上链操作
-        try {
-            Client client = SpringUtils.getBean(Client.class);
-            SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
-            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()), alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(), alert.getThresholdMin(), alert.getThresholdMax(), alert.getAlertTime(), alert.getAlertLevel());
-            if (transactionReceipt.isStatusOK()) {
-                alert.setContractAddress(sensorAlertService.getContractAddress());
-            } else {
-                throw new ServerException("合约地址不存在"); // 抛出服务器异常
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
-        }
 
-        // 触发硬件警报
-        serialPortUtil.sendMultipleRelays(); // 激活多个继电器进行警报
+//        try {
+//            // 获取Spring容器中的Client实例，用于与区块链交互
+//            Client client = SpringUtils.getBean(Client.class);
+//            //与区块链建立链接，获取智能合约
+//            SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
+//
+//            //将报警数据添加到区块链， `addSensorAlertData` 方法将报警信息写入合约。
+////            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()), alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(), alert.getThresholdMin(), alert.getThresholdMax(), alert.getAlertTime(), alert.getAlertLevel());
+//            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(alert.getBatchId(),alert.getAlertType(),alert.getAlertMessage(),alert.getThresholdMax(),alert.getThresholdMin(),alert.getAlertLevel(),alert.getAlertTime());
+//            //获取状态值，检查交易是否成功
+//            if (transactionReceipt.isStatusOK()) {
+//                // 获取合约地址并保存到alert对象中
+//                alert.setContractAddress(sensorAlertService.getContractAddress());
+//            } else {
+//                //交易失败，抛出异常
+//                throw new ServerException("合约地址不存在"); // 抛出服务器异常
+//            }
+//        } catch (Exception e) {
+//            //捕获异常打印
+//            e.printStackTrace();
+//            throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR); // 抛出服务器错误异常
+//        }
+//
+//        // 触发硬件警报
+//        serialPortUtil.sendMultipleRelays(); // 激活多个继电器进行警报
+//
+//        AudioPlayer.playAlarmSound(); // 播放声音警报
+//
+//        // 保存警告信息并推送到前端   全栈工程师做
+//        saveAlert(alert, "严重警告", sensorAlertMapper);
 
-        AudioPlayer.playAlarmSound(); // 播放声音警报
+//        1、获取Spring容器中的Client实例，用于与区块链交互
+//        2、与区块链建立链接获取智能合约
+//        3、将报警数据添加到区块链， `addSensorAlertData` 方法将报警信息写入合约。
+//        4、获取状态值，判断是否交易成功
+//        5、获取合约地址并保存到Alert对象，或者交易失败
+//        6、捕获打印
+//        7、保存异常信息，调用saveAlert方法将报警信息推送到前端
 
-        // 保存警告信息并推送到前端   全栈工程师做
-        saveAlert(alert, "严重警告", sensorAlertMapper);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     /**
@@ -459,7 +536,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             log.info("生成" + alertTypeName + "信息: " + alert.getAlertMessage()); // 记录生成预警信息的日志
 
             // 通过WebSocket推送预警信息到前端  全站工程师做
-            AlertWebSocketServer.sendInfo(alert); // 通过WebSocket发送预警信息到前端
+            AlertWebSocketServer.sendInfo(alert);// 通过WebSocket发送预警信息到前端
 
             log.info("发送预警信息"); // 记录预警信息发送日志
         } catch (Exception e) {
