@@ -19438,3 +19438,192 @@ java.lang.NoClassDefFoundError: Could not initialize class com.frog.agriculture.
 15:27:44.339 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
 15:28:33.230 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
 15:28:33.331 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:45:52.298 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:46:15.076 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.frog.common.utils.SerialPortUtil' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:351)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:342)
+	at com.frog.common.utils.spring.SpringUtils.getBean(SpringUtils.java:62)
+	at com.frog.agriculture.utils.AlertProcessUtil.getSerialPortUtil(AlertProcessUtil.java:39)
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:779)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:228)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndProcessSeriousAlert(AlertProcessUtil.java:662)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:734)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:495)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:449)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:46:21.515 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:47:29.938 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:47:52.506 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.frog.common.utils.SerialPortUtil' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:351)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:342)
+	at com.frog.common.utils.spring.SpringUtils.getBean(SpringUtils.java:62)
+	at com.frog.agriculture.utils.AlertProcessUtil.getSerialPortUtil(AlertProcessUtil.java:39)
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:779)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:228)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndProcessSeriousAlert(AlertProcessUtil.java:662)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:734)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:495)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:449)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:47:55.595 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:47:55.696 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:49:28.157 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:49:36.851 [restartedMain] ERROR c.f.c.u.SerialPortUtil - [<init>,26] - java.lang.RuntimeException: 打开串口失败
+15:49:41.782 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:49:41.883 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:49:41.999 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:49:42.109 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:49:42.220 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:49:42.328 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:49:42.437 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:49:42.464 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:49:46.772 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:49:46.873 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:49:46.973 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:49:47.073 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:49:47.174 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:49:47.274 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:49:47.374 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:49:47.374 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:50:10.304 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:50:19.119 [restartedMain] ERROR c.f.c.u.SerialPortUtil - [<init>,26] - java.lang.RuntimeException: 打开串口失败
+15:50:24.040 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:50:24.147 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:50:24.257 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器3数据采集异常：null
+15:50:24.368 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:50:24.476 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:50:24.587 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:50:24.695 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器8数据采集异常：null
+15:50:24.716 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,155] - 数据采集过程中发生异常，本次数据不做数据库插入。
+15:50:29.035 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+15:50:29.135 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+15:51:04.938 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:51:27.418 [schedule-pool-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.frog.common.utils.SerialPortUtil' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:351)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:342)
+	at com.frog.common.utils.spring.SpringUtils.getBean(SpringUtils.java:62)
+	at com.frog.agriculture.utils.AlertProcessUtil.getSerialPortUtil(AlertProcessUtil.java:39)
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:779)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:228)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndProcessSeriousAlert(AlertProcessUtil.java:662)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:734)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:495)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:449)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:51:32.445 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:51:32.546 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:52:34.091 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:52:56.076 [schedule-pool-2] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.frog.common.utils.SerialPortUtil' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:351)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:342)
+	at com.frog.common.utils.spring.SpringUtils.getBean(SpringUtils.java:62)
+	at com.frog.agriculture.utils.AlertProcessUtil.getSerialPortUtil(AlertProcessUtil.java:39)
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:779)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:228)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndProcessSeriousAlert(AlertProcessUtil.java:662)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:734)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:495)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:449)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:53:04.367 [schedule-pool-3] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - [handleError,95] - Unexpected error occurred in scheduled task
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.frog.common.utils.SerialPortUtil' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:351)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:342)
+	at com.frog.common.utils.spring.SpringUtils.getBean(SpringUtils.java:62)
+	at com.frog.agriculture.utils.AlertProcessUtil.getSerialPortUtil(AlertProcessUtil.java:39)
+	at com.frog.agriculture.utils.AlertProcessUtil.generateSeriousAlert(AlertProcessUtil.java:779)
+	at com.frog.agriculture.utils.AlertProcessUtil.processAlert(AlertProcessUtil.java:228)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndProcessSeriousAlert(AlertProcessUtil.java:662)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdAndAlert(AlertProcessUtil.java:734)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkAndAlertForSoilData(AlertProcessUtil.java:495)
+	at com.frog.agriculture.utils.AlertProcessUtil.checkThresholdsAndGenerateAlerts(AlertProcessUtil.java:449)
+	at com.frog.agriculture.service.impl.SoilSensorValueServiceImpl.fetchAllSensorData(SoilSensorValueServiceImpl.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:53:07.979 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器4数据采集异常：null
+15:53:08.080 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:55:18.370 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+15:55:40.516 [schedule-pool-1] ERROR c.f.c.u.SerialPortUtil - [<init>,25] - java.lang.RuntimeException: 打开串口失败
+15:56:04.938 [schedule-pool-1] ERROR c.f.c.u.SerialPortUtil - [<init>,25] - java.lang.RuntimeException: 打开串口失败
+15:56:07.195 [schedule-pool-1] ERROR c.f.c.u.SerialPortUtil - [<init>,25] - java.lang.RuntimeException: 打开串口失败
+15:56:12.096 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器5数据采集异常：null
+15:56:12.198 [schedule-pool-4] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+15:59:12.582 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+16:00:16.677 [schedule-pool-6] ERROR c.f.c.u.SerialPortUtil - [<init>,25] - java.lang.RuntimeException: 打开串口失败
+16:01:04.496 [schedule-pool-10] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器6数据采集异常：null
+16:03:09.378 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+16:03:31.283 [schedule-pool-2] ERROR c.f.c.u.SerialPortUtil - [<init>,25] - java.lang.RuntimeException: 打开串口失败
+16:03:39.152 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器1数据采集异常：null
+16:03:39.254 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,140] - 传感器2数据采集异常：null
+16:06:11.555 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+16:12:52.873 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器5数据采集异常：null
+16:12:52.974 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器6数据采集异常：null
+16:12:53.075 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器8数据采集异常：null
+16:12:53.075 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,157] - 数据采集过程中发生异常，本次数据不做数据库插入。

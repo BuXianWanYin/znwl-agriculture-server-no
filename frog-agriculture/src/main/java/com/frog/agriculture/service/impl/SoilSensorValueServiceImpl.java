@@ -25,6 +25,8 @@ import com.frog.agriculture.utils.SensorDataParser;
 import com.frog.agriculture.utils.ThresholdConfigUtil;
 import com.frog.agriculture.utils.DeviceStatusUtil;
 
+import static com.frog.agriculture.utils.AlertProcessUtil.getSerialPortUtil;
+
 /**
  * 土壤环境数据Service业务层处理类
  * 整合传感器数据的采集、解析、入库等功能
@@ -76,7 +78,7 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
      */
     @PostConstruct
     public void init() {
-        serialPortUtil = new SerialPortUtil();
+        serialPortUtil = getSerialPortUtil();
         DeviceStatusUtil.initializeSensorCommands(deviceMapper, sensorCommands);
         ThresholdConfigUtil.initializeThresholdConfig();
         thresholdConfig = ThresholdConfigUtil.getThresholdConfig();

@@ -30,23 +30,36 @@ import java.util.Map;
 public class AlertProcessUtil { // 定义AlertProcessUtil类
     private static final Log log = LogFactory.getLog(AlertProcessUtil.class);
 
-    private static SerialPortUtil serialPortUtil;
+    private static SerialPortUtil serialPortUtil = new SerialPortUtil();
     private static SensorAlertMapper sensorAlertMapper;
 
-    // 删除静态初始化块，改用懒加载方式
-    private static SerialPortUtil getSerialPortUtil() {
+
+    /**
+     * 获取SerialPortUtil实例
+     * 使用双重检查锁定模式实现线程安全的单例
+     */
+    public static SerialPortUtil getSerialPortUtil() {
         if (serialPortUtil == null) {
-            serialPortUtil = SpringUtils.getBean(SerialPortUtil.class);
+            synchronized (AlertProcessUtil.class) {
+                if (serialPortUtil == null) {
+                    serialPortUtil = new SerialPortUtil();
+                }
+            }
         }
         return serialPortUtil;
     }
 
+    /**
+     * 获取SensorAlertMapper实例
+     * 使用懒加载方式获取Spring Bean
+     */
     private static SensorAlertMapper getSensorAlertMapper() {
         if (sensorAlertMapper == null) {
             sensorAlertMapper = SpringUtils.getBean(SensorAlertMapper.class);
         }
         return sensorAlertMapper;
     }
+
 
 
     /**
@@ -332,7 +345,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             handleHardwareReset();
         }
     }
-
     /**
      * 处理普通预警
      * 查询并处理系统中的普通预警，更新预警状态
@@ -364,7 +376,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         getSensorAlertMapper().updateSensorAlert(alert);
         log.info(logPrefix + ": " + alert.getParamName() + " 数据恢复正常");
     }
-
     /**
      * 重置硬件设备
      * 关闭所有设备、停止报警声音、控制继电器等硬件操作
@@ -376,10 +387,10 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      */
     private static void handleHardwareReset() {
         try {
-            getSerialPortUtil().sendAllClose();
+            serialPortUtil.sendAllClose();
             AudioPlayer.stopAlarmSound();
             Thread.sleep(2000);
-            getSerialPortUtil().sendRelay4();
+            serialPortUtil.sendRelay4();
             log.info("已发送数据恢复继电器控制命令");
         } catch (Exception e) {
             log.error("发送继电器控制命令失败: " + e.getMessage());
@@ -776,7 +787,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         }
 
         // 触发硬件警报
-        getSerialPortUtil().sendMultipleRelays();
+        serialPortUtil.sendMultipleRelays();
         AudioPlayer.playAlarmSound();
 
         // 保存警告信息并推送到前端
