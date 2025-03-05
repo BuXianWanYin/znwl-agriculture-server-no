@@ -19627,3 +19627,6 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying b
 16:12:52.974 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器6数据采集异常：null
 16:12:53.075 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器8数据采集异常：null
 16:12:53.075 [schedule-pool-23] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,157] - 数据采集过程中发生异常，本次数据不做数据库插入。
+16:56:03.116 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+16:58:03.683 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器2数据采集异常：null
+16:58:03.784 [schedule-pool-5] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器3数据采集异常：null

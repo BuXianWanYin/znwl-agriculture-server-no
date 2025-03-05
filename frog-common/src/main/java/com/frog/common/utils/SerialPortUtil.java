@@ -92,87 +92,125 @@ public class SerialPortUtil {
 
     // 以下各方法为独立的发送命令方法，调用时直接执行相应方法即可
 
+    // 根据实际情况调整的等待时间（毫秒）
+    private static final int SHORT_DELAY_MS = 100;
+    private static final int PUSH_ROD_RETRACTION_DELAY_MS = 9000; //等待9秒 推杆缩回
+
+    // 以下各方法为独立的发送命令方法，调用时直接执行相应方法即可
+
     /**
-     * 发送全部打开命令
+     * 打开全部设备：
+     * 1. 打开红灯
+     * 2. 打开电风扇
+     * 3. 伸出推杆
      */
-    public void sendAllOpen() {
-        writeBytes(hexStringToByteArray("1F 0F 00 00 00 04 01 FF FE 56"));
+    public void openAllDevices() {
+        openRedLight();
+        delay(SHORT_DELAY_MS);
+        openFan();
+        delay(SHORT_DELAY_MS);
+        extendPushRod();
     }
 
     /**
-     * 发送全部关闭命令
+     * 关闭全部设备：
+     * 1. 关闭红灯
+     * 2. 关闭电风扇
+     * 3. 停止伸出推杆
+     * 4. 激活推杆缩回
+     * 5. 等待推杆缩回结束
+     * 6. 关闭推杆缩回继电器
      */
-    public void sendAllClose() {
-        writeBytes(hexStringToByteArray("1F 0F 00 00 00 04 01 00 BE 16"));
-        sleep(200);
-        sendRelay4();
+    public void closeAllDevices() {
+        closeRedLight();
+        delay(SHORT_DELAY_MS);
+        closeFan();
+        delay(SHORT_DELAY_MS);
+        stopExtendPushRod();
+        delay(SHORT_DELAY_MS);
+        activatePushRodRetraction();
+        // 等待推杆完成缩回，具体延时需依据实际动作时间调整
+        delay(PUSH_ROD_RETRACTION_DELAY_MS);
+        deactivatePushRodRetraction();
     }
 
-
-
     /**
-     * 发送打开红灯命令
+     * 打开红灯（第1个继电器）
      */
-    public void turnOnRedLight() {
-        writeBytes(hexStringToByteArray("1F 05 00 00 FF 00 8F 84"));
+    public void openRedLight() {
+        writeBytes(hexStringToByteArray("FE 05 00 00 FF 00 98 35"));
     }
 
-
-
     /**
-     * 发送关闭红灯命令
+     * 关闭红灯（第1个继电器）
      */
-    public void turnOffRedLight() {
-        writeBytes(hexStringToByteArray("1F 05 00 00 00 00 CE 38"));
+    public void closeRedLight() {
+        writeBytes(hexStringToByteArray("FE 05 00 00 00 00 D9 C5"));
     }
 
-
-
-
-
-
-
-
     /**
-     * 发送打开第1个继电器（亮红灯）的命令
+     * 打开电风扇（第2个继电器）
      */
-    public void sendRelay1() {
-        writeBytes(hexStringToByteArray("1F 05 00 00 FF 00 8F 84"));
-    }
-
-
-
-
-    /**
-     * 发送打开第2个继电器（电风扇）的命令
-     */
-    public void sendRelay2() {
+    public void openFan() {
         writeBytes(hexStringToByteArray("1F 05 00 01 FF 00 DE 44"));
     }
 
     /**
-     * 发送打开第3个继电器（打开推杆）的命令
+     * 关闭电风扇（第2个继电器）
      */
-    public void sendRelay3() {
+    public void closeFan() {
+        writeBytes(hexStringToByteArray("1F 05 00 01 00 00 9F B4"));
+    }
+
+    /**
+     * 伸出推杆（打开第3个继电器）
+     */
+    public void extendPushRod() {
         writeBytes(hexStringToByteArray("1F 05 00 02 FF 00 2E 44"));
     }
 
     /**
-     * 发送打开第4个继电器（缩回推杆）的命令
+     * 停止伸出推杆（关闭第3个继电器）
      */
-    public void sendRelay4() {
+    public void stopExtendPushRod() {
+        writeBytes(hexStringToByteArray("1F 05 00 02 00 00 6F B4"));
+    }
+
+    /**
+     * 激活推杆缩回（打开控制推杆缩回的继电器）
+     */
+    public void activatePushRodRetraction() {
         writeBytes(hexStringToByteArray("1F 05 00 03 FF 00 7F 84"));
     }
 
     /**
-     * 发送同时打开第1、第2、第3个继电器的命令（按顺序发送三条指令）
+     * 关闭推杆缩回（关闭控制推杆缩回的继电器）
+     *
      */
-    public void sendMultipleRelays() {
-        writeBytes(hexStringToByteArray("1F 05 00 00 FF 00 8F 84"));
-        sleep(500);
-        writeBytes(hexStringToByteArray("1F 05 00 01 FF 00 DE 44"));
-        sleep(500);
-        writeBytes(hexStringToByteArray("1F 05 00 02 FF 00 2E 44"));
+    public void deactivatePushRodRetraction() {
+        writeBytes(hexStringToByteArray("1F 05 00 03 00 00 3E 74"));
+    }
+
+    /**
+     * 同时打开红灯、电风扇和推杆（按顺序发送三条指令，中间插入延时）
+     */
+    public void openMultipleDevices() {
+        openRedLight();
+        delay(SHORT_DELAY_MS);
+        openFan();
+        delay(SHORT_DELAY_MS);
+        extendPushRod();
+    }
+
+    /**
+     * 简单延时方法，使用 Thread.sleep 实现
+     */
+    private void delay(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     /**
@@ -182,20 +220,18 @@ public class SerialPortUtil {
         System.out.println("退出程序");
         close();
     }
-
     public static void main(String[] args) {
         SerialPortUtil util = new SerialPortUtil();
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("\n请选择要发送的命令：");
         while (true) {
-            System.out.println("1: 全部打开");
-            System.out.println("2: 全部关闭");
-            System.out.println("3: 打开第1个继电器 (亮红灯)");
-            System.out.println("4: 打开第2个继电器 (电风扇)");
-            System.out.println("5: 打开第3个继电器 (打开推杆)");
-            System.out.println("6: 打开第4个继电器 (缩回推杆)");
-            System.out.println("7: 同时打开第1、第2、第3个继电器");
+            System.out.println("1: 打开全部设备");
+            System.out.println("2: 关闭全部设备");
+            System.out.println("3: 打开红灯");
+            System.out.println("4: 打开电风扇");
+            System.out.println("5: 伸出推杆");
+            System.out.println("6: 缩回推杆");
+            System.out.println("7: 同时打开红灯、电风扇和推杆");
             System.out.println("q: 退出");
             System.out.print("请输入选项: ");
 
@@ -203,25 +239,29 @@ public class SerialPortUtil {
                 String input = reader.readLine().trim();
                 switch (input) {
                     case "1":
-                        util.sendAllOpen();
+                        util.openAllDevices();
                         break;
                     case "2":
-                        util.sendAllClose();
+                        util.closeAllDevices();
                         break;
                     case "3":
-                        util.sendRelay1();
+                        util.openRedLight();
                         break;
                     case "4":
-                        util.sendRelay2();
+                        util.openFan();
                         break;
                     case "5":
-                        util.sendRelay3();
+                        util.extendPushRod();
                         break;
                     case "6":
-                        util.sendRelay4();
+                        // 对于推杆缩回，先停止伸出，再启动缩回操作
+                        util.stopExtendPushRod();
+                        util.activatePushRodRetraction();
+                        util.delay(PUSH_ROD_RETRACTION_DELAY_MS);
+                        util.deactivatePushRodRetraction();
                         break;
                     case "7":
-                        util.sendMultipleRelays();
+                        util.openMultipleDevices();
                         break;
                     case "q":
                         util.quit();
@@ -230,7 +270,7 @@ public class SerialPortUtil {
                         System.out.println("无效的选项，请重新选择。");
                 }
             } catch (Exception e) {
-                log.error("读取输入出错", e);
+                System.err.println("读取输入出错：" + e.getMessage());
             }
         }
     }

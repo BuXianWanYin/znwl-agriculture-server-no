@@ -387,10 +387,9 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      */
     private static void handleHardwareReset() {
         try {
-            serialPortUtil.sendAllClose();
+            serialPortUtil.closeRedLight();//关闭红灯
             AudioPlayer.stopAlarmSound();
             Thread.sleep(2000);
-            serialPortUtil.sendRelay4();
             log.info("已发送数据恢复继电器控制命令");
         } catch (Exception e) {
             log.error("发送继电器控制命令失败: " + e.getMessage());
@@ -785,9 +784,8 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             e.printStackTrace();
             throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR);
         }
-
-        // 触发硬件警报
-        serialPortUtil.sendMultipleRelays();
+        // 触发红灯警报
+        serialPortUtil.openRedLight();
         AudioPlayer.playAlarmSound();
 
         // 保存警告信息并推送到前端
