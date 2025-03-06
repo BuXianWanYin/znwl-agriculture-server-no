@@ -118,12 +118,4 @@ public class CommonController
             log.error("下载文件失败", e);
         }
     }
-
-    /**
-     * 智能分析
-     */
-    @GetMapping("/ai/speciesGermplasm/analysis")
-    public ResultVO<TraceabilityDTO> analysis() {
-        return ResultVO.succeed();
-    }
 }

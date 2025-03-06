@@ -2,6 +2,8 @@ package com.frog.agriculture.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
+
+import com.frog.service.AiOptimalAnalysisService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,18 +31,19 @@ import com.frog.common.core.page.TableDataInfo;
  */
 @RestController
 @RequestMapping("/agriculture/germplasm")
-public class GermplasmController extends BaseController
-{
+public class GermplasmController extends BaseController {
     @Autowired
     private IGermplasmService germplasmService;
+
+    @Autowired
+    private AiOptimalAnalysisService aiOptimalAnalysisService;
 
     /**
      * 查询种质列表
      */
     @PreAuthorize("@ss.hasPermi('agriculture:germplasm:list')")
     @GetMapping("/list")
-    public TableDataInfo list(Germplasm germplasm)
-    {
+    public TableDataInfo list(Germplasm germplasm) {
         startPage();
         List<Germplasm> list = germplasmService.selectGermplasmList(germplasm);
         return getDataTable(list);
@@ -52,8 +55,7 @@ public class GermplasmController extends BaseController
     @PreAuthorize("@ss.hasPermi('agriculture:germplasm:export')")
     @Log(title = "种质", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
-    public void export(HttpServletResponse response, Germplasm germplasm)
-    {
+    public void export(HttpServletResponse response, Germplasm germplasm) {
         List<Germplasm> list = germplasmService.selectGermplasmList(germplasm);
         ExcelUtil<Germplasm> util = new ExcelUtil<Germplasm>(Germplasm.class);
         util.exportExcel(response, list, "种质数据");
@@ -64,8 +66,7 @@ public class GermplasmController extends BaseController
      */
     @PreAuthorize("@ss.hasPermi('agriculture:germplasm:query')")
     @GetMapping(value = "/{germplasmId}")
-    public AjaxResult getInfo(@PathVariable("germplasmId") Long germplasmId)
-    {
+    public AjaxResult getInfo(@PathVariable("germplasmId") Long germplasmId) {
         return AjaxResult.success(germplasmService.selectGermplasmByGermplasmId(germplasmId));
     }
 
@@ -75,8 +76,7 @@ public class GermplasmController extends BaseController
     @PreAuthorize("@ss.hasPermi('agriculture:germplasm:add')")
     @Log(title = "种质", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody Germplasm germplasm)
-    {
+    public AjaxResult add(@RequestBody Germplasm germplasm) {
         return toAjax(germplasmService.insertGermplasm(germplasm));
     }
 
@@ -86,8 +86,7 @@ public class GermplasmController extends BaseController
     @PreAuthorize("@ss.hasPermi('agriculture:germplasm:edit')")
     @Log(title = "种质", businessType = BusinessType.UPDATE)
     @PutMapping
-    public AjaxResult edit(@RequestBody Germplasm germplasm)
-    {
+    public AjaxResult edit(@RequestBody Germplasm germplasm) {
         return toAjax(germplasmService.updateGermplasm(germplasm));
     }
 
@@ -96,9 +95,26 @@ public class GermplasmController extends BaseController
      */
     @PreAuthorize("@ss.hasPermi('agriculture:germplasm:remove')")
     @Log(title = "种质", businessType = BusinessType.DELETE)
-	@DeleteMapping("/{germplasmIds}")
-    public AjaxResult remove(@PathVariable Long[] germplasmIds)
-    {
+    @DeleteMapping("/{germplasmIds}")
+    public AjaxResult remove(@PathVariable Long[] germplasmIds) {
         return toAjax(germplasmService.deleteGermplasmByGermplasmIds(germplasmIds));
+    }
+
+    /**
+     * 智能分析
+     */
+    @PostMapping("/ai/addData")
+    public AjaxResult addData(@RequestBody Germplasm germplasm) {
+        return toAjax(aiOptimalAnalysisService.addData(null, germplasm.getGermplasmId(), germplasm.getGermplasmName(), germplasm.getCropName()));
+    }
+
+    /**
+     * 获取智能分析报告
+     */
+    @GetMapping("/ai/getData/{germplasmId}")
+    public AjaxResult getData(@PathVariable("germplasmId") Long germplasmId)
+    {
+
+        return AjaxResult.success(aiOptimalAnalysisService.getDataByGermplasmId(germplasmId));
     }
 }

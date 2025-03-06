@@ -1,6 +1,7 @@
 package com.frog.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.frog.config.BotConfig;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
@@ -217,6 +218,7 @@ public class HttpClientUtil {
                 for (Map.Entry<String, String> param : paramMap.entrySet()) {
                     jsonObject.put(param.getKey(), param.getValue());
                 }
+
                 StringEntity entity = new StringEntity(jsonObject.toString(), "utf-8");
                 //设置请求编码
                 entity.setContentEncoding("utf-8");
