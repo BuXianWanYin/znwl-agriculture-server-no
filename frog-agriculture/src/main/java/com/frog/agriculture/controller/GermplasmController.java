@@ -23,7 +23,7 @@ import com.frog.common.core.page.TableDataInfo;
 
 /**
  * 种质Controller
- * 
+ *
  * @author nealtsiao
  * @date 2023-05-13
  */
