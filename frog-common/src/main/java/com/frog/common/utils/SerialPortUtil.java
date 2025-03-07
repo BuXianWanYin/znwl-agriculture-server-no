@@ -107,8 +107,6 @@ public class SerialPortUtil {
     public void openAllDevices() {
         openRedLight();
         delay(SHORT_DELAY_MS);
-        openFan();
-        delay(SHORT_DELAY_MS);
         extendPushRod();
     }
 
@@ -124,8 +122,6 @@ public class SerialPortUtil {
     public void closeAllDevices() {
         closeRedLight();
         delay(SHORT_DELAY_MS);
-        closeFan();
-        delay(SHORT_DELAY_MS);
         stopExtendPushRod();
         delay(SHORT_DELAY_MS);
         activatePushRodRetraction();
@@ -138,28 +134,14 @@ public class SerialPortUtil {
      * 打开红灯（第1个继电器）
      */
     public void openRedLight() {
-        writeBytes(hexStringToByteArray("FE 05 00 00 FF 00 98 35"));
+        writeBytes(hexStringToByteArray("1F 05 00 00 FF 00 8F 84"));
     }
 
     /**
      * 关闭红灯（第1个继电器）
      */
     public void closeRedLight() {
-        writeBytes(hexStringToByteArray("FE 05 00 00 00 00 D9 C5"));
-    }
-
-    /**
-     * 打开电风扇（第2个继电器）
-     */
-    public void openFan() {
-        writeBytes(hexStringToByteArray("1F 05 00 01 FF 00 DE 44"));
-    }
-
-    /**
-     * 关闭电风扇（第2个继电器）
-     */
-    public void closeFan() {
-        writeBytes(hexStringToByteArray("1F 05 00 01 00 00 9F B4"));
+        writeBytes(hexStringToByteArray("1F 05 00 00 00 00 CE 74"));
     }
 
     /**
@@ -167,6 +149,8 @@ public class SerialPortUtil {
      */
     public void extendPushRod() {
         writeBytes(hexStringToByteArray("1F 05 00 02 FF 00 2E 44"));
+        delay(PUSH_ROD_RETRACTION_DELAY_MS); //等待伸出完毕后 关闭继电器
+        stopExtendPushRod();
     }
 
     /**
@@ -197,8 +181,6 @@ public class SerialPortUtil {
     public void openMultipleDevices() {
         openRedLight();
         delay(SHORT_DELAY_MS);
-        openFan();
-        delay(SHORT_DELAY_MS);
         extendPushRod();
     }
 
@@ -228,10 +210,9 @@ public class SerialPortUtil {
             System.out.println("1: 打开全部设备");
             System.out.println("2: 关闭全部设备");
             System.out.println("3: 打开红灯");
-            System.out.println("4: 打开电风扇");
             System.out.println("5: 伸出推杆");
             System.out.println("6: 缩回推杆");
-            System.out.println("7: 同时打开红灯、电风扇和推杆");
+            System.out.println("7: 同时打开红灯、推杆");
             System.out.println("q: 退出");
             System.out.print("请输入选项: ");
 
@@ -247,15 +228,11 @@ public class SerialPortUtil {
                     case "3":
                         util.openRedLight();
                         break;
-                    case "4":
-                        util.openFan();
-                        break;
                     case "5":
                         util.extendPushRod();
                         break;
                     case "6":
                         // 对于推杆缩回，先停止伸出，再启动缩回操作
-                        util.stopExtendPushRod();
                         util.activatePushRodRetraction();
                         util.delay(PUSH_ROD_RETRACTION_DELAY_MS);
                         util.deactivatePushRodRetraction();

@@ -34,7 +34,7 @@ public class ThresholdConfigUtil {
         // 光照阈值（lux）
         thresholdConfig.put("light", new double[]{80, 10000.0});
         // 风速阈值（m/s）
-        thresholdConfig.put("speed", new double[]{0.0, 10.0});
+        thresholdConfig.put("speed", new double[]{-1.0, 10.0});
         // 土壤温度阈值（摄氏度）
         thresholdConfig.put("soil_temperature", new double[]{5.0, 30.0});
         // 土壤pH阈值
