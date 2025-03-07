@@ -111,4 +111,5 @@ public class SoilSensorValueController extends BaseController
         List<SoilSensorValue> list = soilSensorValueService.selectSoilSensorValuesByBatchIdAndDateRange(batchId, startDate, endDate);
         return getDataTable(list);
     }
+
 }

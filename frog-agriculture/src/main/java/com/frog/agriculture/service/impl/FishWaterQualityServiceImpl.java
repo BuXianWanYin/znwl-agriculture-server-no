@@ -96,4 +96,11 @@ public class FishWaterQualityServiceImpl implements IFishWaterQualityService
     public List<FishWaterQuality> selectFishWaterQualityByBatchIdAndDateRange(Long batchId, String startDate, String endDate) {
         return fishWaterQualityMapper.selectFishWaterQualityByBatchIdAndDateRange(batchId, startDate, endDate);
     }
+
+
+    @Override
+    public List<FishWaterQuality> selectFishWaterQualityDetailList(FishWaterQuality fishWaterQuality)
+    {
+        return fishWaterQualityMapper.selectFishWaterQualityDetailList(fishWaterQuality);
+    }
 }

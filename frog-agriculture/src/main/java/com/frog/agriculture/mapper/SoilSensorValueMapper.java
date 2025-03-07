@@ -90,4 +90,5 @@ public interface SoilSensorValueMapper
     List<SoilSensorValue> selectSoilSensorValuesByBatchIdAndDateRange(@Param("batchId") Long batchId,
                                                                       @Param("startDate") String startDate,
                                                                       @Param("endDate") String endDate);
+
 }

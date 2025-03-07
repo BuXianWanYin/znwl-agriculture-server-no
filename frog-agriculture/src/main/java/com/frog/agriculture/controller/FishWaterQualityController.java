@@ -111,5 +111,15 @@ public class FishWaterQualityController extends BaseController
         return fishWaterQualityService.selectFishWaterQualityByBatchIdAndDateRange(batchId, startDate, endDate);
     }
 
+    /**
+     * 查询水质数据详细列表 最新日期排序
+     */
+    @GetMapping("/detailList")
+    public TableDataInfo detailList(FishWaterQuality fishWaterQuality)
+    {
+        startPage();
+        List<FishWaterQuality> list = fishWaterQualityService.selectFishWaterQualityDetailList(fishWaterQuality);
+        return getDataTable(list);
+    }
 
 }
