@@ -765,8 +765,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
     private static void generateSeriousAlert(AlertParams params, String alertType, String alertMessage) {
         // 创建基础警告对象
         SensorAlert alert = createBaseAlert(params, alertType, alertMessage);
-        String snowflakeId = BaseUtil.getSnowflakeId();
-        alert.setId(Long.valueOf(snowflakeId));
         alert.setAlertLevel("1"); // 1表示报警级别
 
         //区块链工程师拿到报警信息之后 进行上链操作
