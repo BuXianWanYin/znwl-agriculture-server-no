@@ -61,7 +61,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
     }
 
 
-
     /**
      * 获取预警阈值缓冲区间
      *
@@ -231,7 +230,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      */
     private static void processAlert(AlertParams params, String alertType, String alertMessage) {
 
-        // 如果已存在活跃的相同类型预警，则不重复生成
+        // 如果近期 30 分钟 已存在相同类型预警，则不重复生成
         if (hasActiveAlert(params.paramName, alertType, params.pastureId, params.batchId, params.device)) {
             return;
         }
@@ -273,8 +272,18 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
                 queryAlert.setSensorType(device.getSensorType()); // 设置设备的传感器类型
             }
 
-            List<SensorAlert> existingAlerts = getSensorAlertMapper().selectSensorAlertList(queryAlert); // 查询当前符合条件的预警列表
-            return existingAlerts != null && !existingAlerts.isEmpty(); // 如果存在预警则返回true，否则返回false
+            
+            // 检查未处理的预警
+            queryAlert.setStatus("0");
+            List<SensorAlert> activeAlerts = getSensorAlertMapper().selectSensorAlertList(queryAlert);
+            if (activeAlerts != null && !activeAlerts.isEmpty()) {
+                return true;
+            }
+
+            // 检查最近处理过的预警（30分钟内）  如果有 则不再生成同类型预警
+            queryAlert.setStatus("1");
+            List<SensorAlert> recentAlerts = getSensorAlertMapper().selectRecentProcessedAlerts(queryAlert, 1);
+            return recentAlerts != null && !recentAlerts.isEmpty(); // 如果存在预警则返回true，否则返回false
         } catch (Exception e) {
             log.error("查询现有预警失败: " + e.getMessage()); // 记录错误日志
             return false;
@@ -335,16 +344,28 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      * @param queryAlert 查询对象
      */
     private static void handleSeriousAlerts(SensorAlert queryAlert) {
+        // 查询当前活跃的严重报警列表
         List<SensorAlert> activeAlerts = getSensorAlertMapper().selectSensorAlertList(queryAlert);
+
+        // 如果没有报警记录,或者不是严重报警(级别不为1),则直接返回
         if (activeAlerts == null || activeAlerts.isEmpty() || !activeAlerts.get(0).getAlertLevel().equals("1")) {
             return;
         }
 
+        // 遍历所有活跃的报警记录
         for (SensorAlert alert : activeAlerts) {
+            // 更新报警状态为已处理
             updateAlertStatus(alert, "自动处理报警");
-            handleHardwareReset();
+
+            // 关闭硬件报警设备
+            serialPortUtil.closeRedLight();  // 关闭报警红灯
+            AudioPlayer.stopAlarmSound();    // 停止报警音频
+
+            // 记录日志
+            log.info("已发送数据恢复继电器控制命令");
         }
     }
+
     /**
      * 处理普通预警
      * 查询并处理系统中的普通预警，更新预警状态
@@ -375,26 +396,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         alert.setUpdateTime(currentTimestamp());
         getSensorAlertMapper().updateSensorAlert(alert);
         log.info(logPrefix + ": " + alert.getParamName() + " 数据恢复正常");
-    }
-    /**
-     * 重置硬件设备
-     * 关闭所有设备、停止报警声音、控制继电器等硬件操作
-     * 包含以下步骤：
-     * 1. 发送关闭所有设备的命令
-     * 2. 停止报警声音
-     * 3. 等待2秒
-     * 4. 发送继电器控制命令
-     */
-    private static void handleHardwareReset() {
-        try {
-            serialPortUtil.sendAllClose();
-            AudioPlayer.stopAlarmSound();
-            Thread.sleep(2000);
-            serialPortUtil.sendRelay4();
-            log.info("已发送数据恢复继电器控制命令");
-        } catch (Exception e) {
-            log.error("发送继电器控制命令失败: " + e.getMessage());
-        }
     }
 
     /**
@@ -781,9 +782,8 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             e.printStackTrace();
             throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR);
         }
-
-        // 触发硬件警报
-        serialPortUtil.sendMultipleRelays();
+        // 触发红灯警报
+        serialPortUtil.openRedLight();
         AudioPlayer.playAlarmSound();
 
 //         保存警告信息并推送到前端
@@ -809,8 +809,8 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         /**
          * 构造函数
          *
-         * @param paramKey    参数键名
-         * @param paramName   参数显示名称
+         * @param paramKey   参数键名
+         * @param paramName  参数显示名称
          * @param value      参数当前值
          * @param thresholds 阈值数组
          * @param minWarning 最小预警值

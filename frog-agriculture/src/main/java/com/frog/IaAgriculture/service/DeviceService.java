@@ -47,8 +47,10 @@ public class DeviceService extends ServiceImpl<DeviceMapper, Device> { // Device
         // 新增设备类型判断逻辑
         if (isFishPastureDevice(device)) { // 鱼棚设备
             device.setPastureId(null);     // 清空大棚相关字段
-            device.setFishPastureBatchId(device.getBatchId());//设置批次为鱼的批次
             device.setBatchId(null);//清空大棚批次字段
+
+
+
         } else if (isVegetablePastureDevice(device)) { // 蔬菜大棚设备
             device.setFishPastureId(null);       // 清空鱼棚相关字段
             device.setFishPastureBatchId(null);
@@ -139,11 +141,18 @@ public class DeviceService extends ServiceImpl<DeviceMapper, Device> { // Device
         }
     }
 
-    public void updateDevice(Device device) { // 更新设备方法，根据传入的设备对象进行更新
-        int result = deviceMapper.updateDevice(device); // 调用设备映射器的更新方法，并返回受影响的记录数
-        if (result == 0) { // 如果受影响的记录数为0，表明更新操作没有成功
-            throw new RuntimeException("更新失败：未找到对应的设备 ID"); // 抛出运行时异常，提示未找到对应的设备ID
+    public ResultVO deviceUpdate(Device device) {
+        if (StrUtil.isBlank(device.getId())) {
+            return ResultVO.failed(ErrorCodeEnum.PARAMETER_ERROR);
         }
-        System.out.println("设备更新成功"); // 打印设备更新成功的信息
+
+        // 直接根据id更新整个实体
+        int updateCount = baseMapper.updateById(device);
+
+        return updateCount > 0
+                ? ResultVO.succeed("更新成功")
+                : ResultVO.failed("更新失败，ID不存在");
     }
+
+
 }

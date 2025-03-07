@@ -1,8 +1,8 @@
 # bot配置  qwen2.5:14b
 bot:
   name: bot
-  aiModel: deepseek-r1:8b
-  aiUrl: http://192.168.1.153:11434/api
+  aiModel: deepseek-r1:14b
+  aiUrl: http://192.168.1.242:11434/api
   aiDoc: chat
   stream: false
   aiTimeoutMsec: 60000

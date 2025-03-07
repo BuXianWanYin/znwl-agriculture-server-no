@@ -67,14 +67,11 @@ public class DeviceController {
     @ApiIgnore
     @PutMapping(value = "/update")
     @ApiOperation("更新设备")
-    public ResultVO deviceUpdate(@ApiParam(value = "id", required = true) @RequestParam String id,
-                                 @ApiParam(value = "设备名称", required = false) @RequestParam(required = false) String deviceName ,
-                                 @ApiParam(value = "备注", required = false) @RequestParam(required = false) String remark) {
-
-        if (StrUtil.isBlank(id)) {
+    public ResultVO deviceUpdate(@RequestBody Device device) {
+        if (StrUtil.isBlank(device.getId())) {
             return ResultVO.failed(ErrorCodeEnum.PARAMETER_ERROR);
         }
-        return deviceService.deviceUpdate(id,deviceName,remark);
+        return deviceService.deviceUpdate(device);
     }
 
     @GetMapping(value = "/listAll")

@@ -233,4 +233,18 @@
             </otherwise>
         </choose>
     </select>
+
+    <select id="selectRecentProcessedAlerts" resultMap="SensorAlertResult">
+        SELECT *
+        FROM sensor_alert
+        WHERE param_name = #{alert.paramName}
+        AND alert_type = #{alert.alertType}
+        AND pasture_id = #{alert.pastureId}
+        AND batch_id = #{alert.batchId}
+        AND pasture_type = #{alert.pastureType}
+        AND status = '1'
+        AND update_time >= DATE_SUB(NOW(), INTERVAL #{minutes} MINUTE)
+        ORDER BY update_time DESC
+        LIMIT 1
+    </select>
 </mapper>

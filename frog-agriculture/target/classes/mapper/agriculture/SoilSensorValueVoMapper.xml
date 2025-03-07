@@ -46,6 +46,7 @@
                 AND ss.humidity = #{humidity}
             </if>
         </where>
+        ORDER BY ss.date DESC, ss.time DESC
     </select>
 
 </mapper>

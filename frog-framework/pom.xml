@@ -58,6 +58,7 @@
             <groupId>com.frog</groupId>
             <artifactId>frog-system</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-extension</artifactId>
