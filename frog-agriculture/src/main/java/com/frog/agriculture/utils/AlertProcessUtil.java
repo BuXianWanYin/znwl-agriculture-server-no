@@ -770,7 +770,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         alert.setId(Long.valueOf(snowflakeId));
 
         //设置报警 1表示报警   物联网
-        alert.setAlertLevel("1");
+        alert.setAlertLevel("1"); // 1表示报警级别
 
 
 
