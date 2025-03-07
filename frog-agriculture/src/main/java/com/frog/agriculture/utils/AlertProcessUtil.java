@@ -764,13 +764,17 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      * @param alertMessage 警告消息内容
      */
     private static void generateSeriousAlert(AlertParams params, String alertType, String alertMessage) {
-        // 创建基础警告对象
+        // 创建基础警告对象  物联网
         SensorAlert alert = createBaseAlert(params, alertType, alertMessage);
         String snowflakeId = BaseUtil.getSnowflakeId();
         alert.setId(Long.valueOf(snowflakeId));
-        alert.setAlertLevel("1"); // 1表示报警级别
 
-        //区块链工程师拿到报警信息之后 进行上链操作
+        //设置报警 1表示报警   物联网
+        alert.setAlertLevel("1");
+
+
+
+        //全栈工程师拿到报警信息之后 进行上链操作
         try {
             Client client = SpringUtils.getBean(Client.class);
             SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
@@ -786,11 +790,14 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             e.printStackTrace();
             throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR);
         }
-        // 触发红灯警报
+
+
+
+        // 触发红灯警报  物联网
         serialPortUtil.openRedLight();
         AudioPlayer.playAlarmSound();
 
-        // 保存警告信息并推送到前端
+        // 保存警告信息  物联网
         saveAlert(alert, "报警");
     }
 
