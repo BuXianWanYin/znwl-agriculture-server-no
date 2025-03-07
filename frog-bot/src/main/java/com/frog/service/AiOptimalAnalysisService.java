@@ -62,27 +62,12 @@ public class AiOptimalAnalysisService extends ServiceImpl<AiOptimalAnalysisMappe
             aiOptimalAnalysis.setOptimalSoilPh(environmentalParams.get("ph").toString());
             aiOptimalAnalysis.setFeedConversion((Integer) coreIndicators.get("fertilizer_conversion"));
             aiOptimalAnalysis.setCultivationDifficulty(comprehensiveAssessment.get("cultivation_difficulty").toString());
-            // 处理种植建议
-            for (int i = 0; i < plantingSuggestions.size(); i++) {
-                JSONObject suggestion = plantingSuggestions.getJSONObject(i);
-                String type = suggestion.getString("type");
-                String content = suggestion.getString("content");
 
-                switch (type) {
-                    case "water_management":
-                        aiOptimalAnalysis.setWaterManagement(content);
-                        break;
-                    case "fertilizer_management":
-                        aiOptimalAnalysis.setFeedingManagement(content);
-                        break;
-                    case "disease_control":
-                        aiOptimalAnalysis.setDiseasePrevention(content);
-                        break;
-                    case "environmental_monitoring":
-                        aiOptimalAnalysis.setEnvironmentMonitoring(content);
-                        break;
-                }
-            }
+            // 按顺序填充种植建议
+            aiOptimalAnalysis.setWaterManagement(plantingSuggestions.getJSONObject(0).getString("content"));
+            aiOptimalAnalysis.setFeedingManagement(plantingSuggestions.getJSONObject(1).getString("content"));
+            aiOptimalAnalysis.setDiseasePrevention(plantingSuggestions.getJSONObject(2).getString("content"));
+            aiOptimalAnalysis.setEnvironmentMonitoring(plantingSuggestions.getJSONObject(3).getString("content"));
 
         }
         aiOptimalAnalysis.setGrowthRate((Integer) coreIndicators.get("growth_rate"));
