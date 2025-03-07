@@ -10,6 +10,7 @@ import com.frog.common.core.page.TableDataInfo;
 import com.frog.common.enums.BusinessType;
 import com.frog.common.utils.poi.ExcelUtil;
 import com.frog.domain.Species;
+import com.frog.service.AiOptimalAnalysisService;
 import com.frog.service.IspeciesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,6 +25,9 @@ public class SpeciesController  extends BaseController {
 
     @Autowired
     private IspeciesService ispeciesService;
+
+    @Autowired
+    private AiOptimalAnalysisService aiOptimalAnalysisService;
 
     /**
      * 查询鱼种列表
@@ -92,4 +96,24 @@ public class SpeciesController  extends BaseController {
     {
         return toAjax(ispeciesService.deleteSpeciesBySpeciesIds(speciesIds));
     }
+
+    /**
+     * 智能分析
+     */
+    @PostMapping("/ai/addData")
+    public AjaxResult addData(@RequestBody Species species)
+    {
+        return toAjax(aiOptimalAnalysisService.addData(species.getSpeciesId(),null,species.getFishSpeciesName(),species.getFishName()));
+    }
+
+    /**
+     * 获取智能分析报告
+     */
+    @GetMapping("/ai/getData/{speciesId}")
+    public AjaxResult getData(@PathVariable("speciesId") Long speciesId)
+    {
+
+        return AjaxResult.success(aiOptimalAnalysisService.getDataBySpeciesId(speciesId));
+    }
+
 }

@@ -73,11 +73,6 @@
 <!--            <artifactId>frog-sip-server</artifactId>-->
 <!--            <version>${frog.version}</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>com.frog</groupId>
-            <artifactId>frog-agriculture</artifactId>
-            <version>${frog.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>com.frog</groupId>

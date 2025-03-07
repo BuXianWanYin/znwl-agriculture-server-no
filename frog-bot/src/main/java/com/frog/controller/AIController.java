@@ -157,4 +157,6 @@ public class AIController {
     public String identify(String prompt, MultipartFile file) {
         return AIModelApiUtils.chatVLJson(BotConfig.getAiVLUrl() + "identify", prompt, file);
     }
+
+
 }
