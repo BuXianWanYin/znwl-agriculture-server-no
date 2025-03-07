@@ -502,4 +502,5 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
     public List<SoilSensorValue> selectSoilSensorValuesByBatchIdAndDateRange(Long batchId, String startDate, String endDate) {
         return soilSensorValueMapper.selectSoilSensorValuesByBatchIdAndDateRange(batchId, startDate, endDate);
     }
+
 }

@@ -73,4 +73,10 @@ public interface FishWaterQualityMapper
     List<FishWaterQuality> selectFishWaterQualityByBatchIdAndDateRange(@Param("batchId") Long batchId,
                                                                        @Param("startDate") String startDate,
                                                                        @Param("endDate") String endDate);
+
+
+    /**
+     * 查询水质数据详细列表（包含鱼塘名称和批次名称）
+     */
+     List<FishWaterQuality> selectFishWaterQualityDetailList(FishWaterQuality fishWaterQuality);
 }

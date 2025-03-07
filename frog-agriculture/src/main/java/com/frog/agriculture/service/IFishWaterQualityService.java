@@ -69,4 +69,10 @@ public interface IFishWaterQualityService
      * @return 水质数据列表
      */
     List<FishWaterQuality> selectFishWaterQualityByBatchIdAndDateRange(Long batchId, String startDate, String endDate);
+
+
+    /**
+     * 查询水质数据详细列表 最新日期在前
+     */
+    public List<FishWaterQuality> selectFishWaterQualityDetailList(FishWaterQuality fishWaterQuality);
 }
