@@ -137,6 +137,7 @@ public class SerialPortUtil {
         writeBytes(hexStringToByteArray("1F 05 00 00 FF 00 8F 84"));
     }
 
+
     /**
      * 关闭红灯（第1个继电器）
      */
