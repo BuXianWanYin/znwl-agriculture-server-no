@@ -126,4 +126,22 @@
             #{id}
         </foreach>
     </update>
+
+    <!-- 查询水质数据详细列表 日期在前 -->
+    <select id="selectFishWaterQualityDetailList" resultMap="FishWaterQualityResult" parameterType="com.frog.agriculture.domain.FishWaterQuality">
+        SELECT
+            fwq.water_ph_value,
+            fwq.water_temperature,
+            fwq.water_oxygen_content,
+            fwq.water_ammonia_nitrogen_content,
+            fwq.water_nitrite_content,
+            fwq.TIME,
+            fwq.DATE,
+            fp.NAME AS fishPastureName,
+            fpb.batch_name AS fishPastureBatchName
+        FROM fish_water_quality fwq
+                 LEFT JOIN fish_pasture fp ON fwq.fish_pasture_id = fp.id
+                 LEFT JOIN fish_pasture_batch fpb ON fwq.fish_pasture_batch_id = fpb.batch_id
+        ORDER BY fwq.DATE DESC, fwq.TIME DESC
+    </select>
 </mapper>
