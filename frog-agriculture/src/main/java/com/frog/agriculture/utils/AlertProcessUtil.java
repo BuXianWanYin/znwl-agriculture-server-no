@@ -773,9 +773,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         try {
             Client client = SpringUtils.getBean(Client.class);
             SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
-            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()),
-                    alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(),
-                    alert.getThresholdMin(), alert.getThresholdMax(), alert.getAlertTime(), alert.getAlertLevel());
+            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(alert.getBatchId(),alert.getAlertType(),alert.getAlertMessage(),alert.getThresholdMax(),alert.getThresholdMin(),alert.getAlertLevel(),alert.getAlertTime());
             if (transactionReceipt.isStatusOK()) {
                 alert.setContractAddress(sensorAlertService.getContractAddress());
             } else {
@@ -790,8 +788,9 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         serialPortUtil.sendMultipleRelays();
         AudioPlayer.playAlarmSound();
 
-        // 保存警告信息并推送到前端
+//         保存警告信息并推送到前端
         saveAlert(alert, "报警");
+
     }
 
 
