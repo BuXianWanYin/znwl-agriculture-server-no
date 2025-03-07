@@ -47,8 +47,10 @@ public class DeviceService extends ServiceImpl<DeviceMapper, Device> { // Device
         // 新增设备类型判断逻辑
         if (isFishPastureDevice(device)) { // 鱼棚设备
             device.setPastureId(null);     // 清空大棚相关字段
-            device.setFishPastureBatchId(device.getBatchId());//设置批次为鱼的批次
             device.setBatchId(null);//清空大棚批次字段
+
+
+
         } else if (isVegetablePastureDevice(device)) { // 蔬菜大棚设备
             device.setFishPastureId(null);       // 清空鱼棚相关字段
             device.setFishPastureBatchId(null);
