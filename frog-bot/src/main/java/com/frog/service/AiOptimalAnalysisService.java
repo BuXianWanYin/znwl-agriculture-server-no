@@ -11,6 +11,8 @@ import com.frog.common.utils.SecurityUtils;
 import com.frog.mapper.AiOptimalAnalysisMapper;
 import com.frog.model.domain.AiOptimalAnalysis;
 import com.frog.utils.AIModelApiUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,10 +22,13 @@ import java.util.List;
 @Service
 public class AiOptimalAnalysisService extends ServiceImpl<AiOptimalAnalysisMapper, AiOptimalAnalysis> {
 
+    private static final Log log = LogFactory.getLog(AiOptimalAnalysisService.class);
+
     public int addData(Long speciesId, Long germplasmId, String fishSpeciesName, String fishName) {
         String data = AIModelApiUtils.aiAnalysisJson(speciesId, germplasmId, fishSpeciesName, fishName);
         JSONObject jsonObject = JSON.parseObject(data);
         JSONObject contentObject = jsonObject.getJSONObject("message").getJSONObject("content");
+        log.info(contentObject);
         JSONObject environmentalParams = contentObject.getJSONObject("environmental_params");
         JSONObject coreIndicators = contentObject.getJSONObject("core_indicators");
         JSONObject comprehensiveAssessment = contentObject.getJSONObject("comprehensive_assessment");
@@ -39,27 +44,12 @@ public class AiOptimalAnalysisService extends ServiceImpl<AiOptimalAnalysisMappe
             aiOptimalAnalysis.setFeedConversion((Integer) coreIndicators.get("feed_conversion"));
             aiOptimalAnalysis.setCultivationDifficulty(comprehensiveAssessment.get("breeding_difficulty").toString());
 
-            // 处理养殖建议
-            for (int i = 0; i < breedingSuggestions.size(); i++) {
-                JSONObject suggestion = breedingSuggestions.getJSONObject(i);
-                String type = suggestion.getString("type");
-                String content = suggestion.getString("content");
+            // 按顺序填充养殖建议
+            aiOptimalAnalysis.setWaterManagement(breedingSuggestions.getJSONObject(0).getString("content"));
+            aiOptimalAnalysis.setFeedingManagement(breedingSuggestions.getJSONObject(1).getString("content"));
+            aiOptimalAnalysis.setDiseasePrevention(breedingSuggestions.getJSONObject(2).getString("content"));
+            aiOptimalAnalysis.setEnvironmentMonitoring(breedingSuggestions.getJSONObject(3).getString("content"));
 
-                switch (type) {
-                    case "water_quality_management":
-                        aiOptimalAnalysis.setWaterManagement(content);
-                        break;
-                    case "feeding_management":
-                        aiOptimalAnalysis.setFeedingManagement(content);
-                        break;
-                    case "disease_prevention":
-                        aiOptimalAnalysis.setDiseasePrevention(content);
-                        break;
-                    case "environmental_monitoring":
-                        aiOptimalAnalysis.setEnvironmentMonitoring(content);
-                        break;
-                }
-            }
         }
         if (germplasmId != null) {
             JSONArray plantingSuggestions = contentObject.getJSONArray("planting_suggestions");
