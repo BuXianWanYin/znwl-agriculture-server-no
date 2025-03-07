@@ -26,7 +26,7 @@ ruoyi:
   demoEnabled: true
   # 文件路径，以uploadPath结尾 示例（ Windows配置 D:/uploadPath，Linux配置 /uploadPath, Mac /Users/xxx）
   # D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
-  profile: D:\qkl-zhny\znwl-agriculture-server-no\uploadPath
+  profile: E:\idea\project\Java\znwl-agriculture-server-no\uploadPath
   #  profile: F:/ny/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
 
   #  profile: C:/Users/tanmin/Desktop/区块链技术应用/若依农业/frog-smart-agriculture-master/frog-agriculture-server/uploadPath
