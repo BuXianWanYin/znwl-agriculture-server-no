@@ -80,10 +80,10 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
                 minBuffer = 40.0; // 设置最小缓冲值为40.0
                 maxBuffer = 1000.0; // 设置最大缓冲值为1000.0
                 break;
-            case "speed": // 如果参数为speed（风速）
-                minBuffer = 0.0; // 设置最小缓冲值为0.0
-                maxBuffer = 1.5; // 设置最大缓冲值为1.5
-                break;
+//            case "speed": // 如果参数为speed（风速）
+//                minBuffer = 0.0; // 设置最小缓冲值为0.0
+//                maxBuffer = 1.5; // 设置最大缓冲值为1.5
+//                break;
             case "soil_temperature": // 如果参数为soil_temperature（土壤温度）
                 minBuffer = 2.0; // 设置最小缓冲值为2.0
                 maxBuffer = 2.0; // 设置最大缓冲值为2.0

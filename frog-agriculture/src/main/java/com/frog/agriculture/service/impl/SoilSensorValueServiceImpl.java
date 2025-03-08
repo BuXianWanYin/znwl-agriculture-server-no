@@ -203,11 +203,11 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                                            SoilSensorValue sensorValue, FishWaterQuality fishWaterQuality) {
         Map<String, Object> parsedData = new HashMap<>();
         switch (sensorType) {
-            case "1": // 风向传感器
-                parsedData = SensorDataParser.parseWindDirectionData(response);
-                globalSensorData.put("wind_direction", parsedData);
-                sensorValue.setDirection(parsedData.get("direction").toString());
-                break;
+//            case "1": // 风向传感器
+//                parsedData = SensorDataParser.parseWindDirectionData(response);
+//                globalSensorData.put("wind_direction", parsedData);
+//                sensorValue.setDirection(parsedData.get("direction").toString());
+//                break;
 
             case "2": // 百叶箱传感器
                 parsedData = SensorDataParser.parseBaiyeBoxData(response);
@@ -217,11 +217,11 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 sensorValue.setLightLux(parsedData.get("light").toString());
                 break;
 
-            case "3": // 风速传感器
-                parsedData = SensorDataParser.parseWindSpeedData(response);
-                globalSensorData.put("wind_speed", parsedData);
-                sensorValue.setSpeed(parsedData.get("speed").toString());
-                break;
+//            case "3": // 风速传感器
+//                parsedData = SensorDataParser.parseWindSpeedData(response);
+//                globalSensorData.put("wind_speed", parsedData);
+//                sensorValue.setSpeed(parsedData.get("speed").toString());
+//                break;
             case "4": // 土壤温度和水分传感器
                 parsedData = SensorDataParser.parseSoilTemperatureMoistureData(response);
                 globalSensorData.put("soil_temperature_moisture", parsedData);
