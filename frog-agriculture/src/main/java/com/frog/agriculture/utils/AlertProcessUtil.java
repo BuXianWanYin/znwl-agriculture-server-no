@@ -235,7 +235,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
             return;
         }
 
-        // 处理报警（严重警告）
+        // 处理报警（严重警告）  物联网
         if (alertType.contains("报警")) {
             generateSeriousAlert(params, alertType, alertMessage);
             return;
@@ -272,7 +272,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
                 queryAlert.setSensorType(device.getSensorType()); // 设置设备的传感器类型
             }
 
-            
+
             // 检查未处理的预警
             queryAlert.setStatus("0");
             List<SensorAlert> activeAlerts = getSensorAlertMapper().selectSensorAlertList(queryAlert);
@@ -432,9 +432,10 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      */
     private static void saveAlert(SensorAlert alert, String alertTypeName) {
         try {
+
             getSensorAlertMapper().insertSensorAlert(alert); // 插入预警记录到数据库
-            log.info("生成" + alertTypeName + "信息: " + alert.getAlertMessage()); // 记录生成预警信息的日志
-            // 通过WebSocket推送预警信息到前端  全站工程师做
+
+            // 通过WebSocket推送预警信息到前端  全栈工程师做
             AlertWebSocketServer.sendInfo(alert); // 通过WebSocket发送预警信息到前端
 
         } catch (Exception e) {
@@ -764,34 +765,38 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      * @param alertMessage 警告消息内容
      */
     private static void generateSeriousAlert(AlertParams params, String alertType, String alertMessage) {
-        // 创建基础警告对象
+        // 创建基础警告对象  物联网
         SensorAlert alert = createBaseAlert(params, alertType, alertMessage);
-        String snowflakeId = BaseUtil.getSnowflakeId();
-        alert.setId(Long.valueOf(snowflakeId));
-        alert.setAlertLevel("1"); // 1表示报警级别
+        // 1表示报警级别  物联网
+        alert.setAlertLevel("1");
 
-        //区块链工程师拿到报警信息之后 进行上链操作
+        //全栈工程师拿到报警信息之后 进行上链操作
         try {
             Client client = SpringUtils.getBean(Client.class);
             SensorAlertService sensorAlertService = SensorAlertService.deploy(client, client.getCryptoSuite().getCryptoKeyPair());
-            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(BigInteger.valueOf(alert.getId()),
-                    alert.getAlertType(), alert.getAlertMessage(), alert.getParamName(), alert.getParamValue(),
-                    alert.getThresholdMin(), alert.getThresholdMax(), alert.getAlertTime(), alert.getAlertLevel());
+
+            TransactionReceipt transactionReceipt = sensorAlertService.addSensorAlertData(alert.getBatchId(),
+                    alert.getAlertType(), alert.getAlertMessage(), alert.getThresholdMax(), alert.getThresholdMin(),
+                    alert.getAlertLevel(), alert.getAlertTime());
+
             if (transactionReceipt.isStatusOK()) {
                 alert.setContractAddress(sensorAlertService.getContractAddress());
             } else {
                 throw new ServerException("合约地址不存在");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("上链发生异常" + e.getMessage());
             throw new ServerException(ErrorCodeEnum.CONTENT_SERVER_ERROR);
         }
-        // 触发红灯警报
+
+
+        // 触发红灯警报  物联网
         serialPortUtil.openRedLight();
         AudioPlayer.playAlarmSound();
 
-        // 保存警告信息并推送到前端
+        //保存警告信息  物联网
         saveAlert(alert, "报警");
+
     }
 
 
