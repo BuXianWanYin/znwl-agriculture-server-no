@@ -15,9 +15,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.fisco.bcos.sdk.client.Client;
 import org.fisco.bcos.sdk.model.TransactionReceipt;
-import vip.blockchain.agriculture.utils.BaseUtil;
 
-import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -760,7 +758,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
     /**
      * 生成报警信息并执行相应的警报操作
-     *
+     * @param params       报警参数数据传输对象
      * @param alertType    警告类型（如"严重低值报警"、"严重高值报警"等）
      * @param alertMessage 警告消息内容
      */
