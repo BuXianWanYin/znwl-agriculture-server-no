@@ -208,8 +208,12 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 //                globalSensorData.put("wind_direction", parsedData);
 //                sensorValue.setDirection(parsedData.get("direction").toString());
 //                break;
-
-            case "1": // 百叶箱传感器
+            case "1": // 土壤温度和水分传感器
+                parsedData = SensorDataParser.parseSoilTemperatureMoistureData(response);
+                globalSensorData.put("soil_temperature_moisture", parsedData);
+                sensorValue.setSoilTemperature(parsedData.get("soil_temperature").toString());
+                break;
+            case "2": // 百叶箱传感器
                 parsedData = SensorDataParser.parseBaiyeBoxData(response);
                 globalSensorData.put("baiye_box", parsedData);
                 sensorValue.setTemperature(parsedData.get("temperature").toString());
@@ -222,22 +226,18 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
 //                globalSensorData.put("wind_speed", parsedData);
 //                sensorValue.setSpeed(parsedData.get("speed").toString());
 //                break;
-            case "2": // 土壤水分电导率传感器
+            case "3": // 土壤水分电导率传感器
                 parsedData = SensorDataParser.parseSoilMoistureConductivityData(response);
                 globalSensorData.put("soil_moisture_conductivity", parsedData);
                 sensorValue.setSoilConductivity(parsedData.get("conductivity").toString());
                 sensorValue.setSoilMoisture(parsedData.get("moisture").toString());
                 break;
-            case "3": // 土壤pH传感器
+            case "4": // 土壤pH传感器
                 parsedData = SensorDataParser.parseSoilPHData(response);
                 globalSensorData.put("soil_ph", parsedData);
                 sensorValue.setSoilPh(parsedData.get("soil_ph").toString());
                 break;
-            case "4": // 土壤温度和水分传感器
-                parsedData = SensorDataParser.parseSoilTemperatureMoistureData(response);
-                globalSensorData.put("soil_temperature_moisture", parsedData);
-                sensorValue.setSoilTemperature(parsedData.get("soil_temperature").toString());
-                break;
+
 
 
             /* 暂时注释掉水质传感器处理
@@ -400,19 +400,19 @@ public class SoilSensorValueServiceImpl implements ISoilSensorValueService {
                 individualValue.setDate(AlertProcessUtil.currentDate());
                 // 根据传感器类型复制对应的数据字段
                 switch (sensorType) {
-                    case "1": // 风向传感器
-                        individualValue.setDirection(sensorValue.getDirection());
-                        break;
-                    case "3": // 风速传感器
-                        individualValue.setSpeed(sensorValue.getSpeed());
-                        break;
-                    case "4": // 土壤温度传感器
+//                    case "1": // 风向传感器
+//                        individualValue.setDirection(sensorValue.getDirection());
+//                        break;
+//                    case "3": // 风速传感器
+//                        individualValue.setSpeed(sensorValue.getSpeed());
+//                        break;
+                    case "1": // 土壤温度传感器
                         individualValue.setSoilTemperature(sensorValue.getSoilTemperature());
                         break;
-                    case "5": // 土壤pH传感器
+                    case "4": // 土壤pH传感器
                         individualValue.setSoilPh(sensorValue.getSoilPh());
                         break;
-                    case "6": // 土壤水分电导率传感器
+                    case "3": // 土壤水分电导率传感器
                         individualValue.setSoilConductivity(sensorValue.getSoilConductivity());
                         individualValue.setSoilMoisture(sensorValue.getSoilMoisture());
                         break;
