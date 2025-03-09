@@ -125,7 +125,7 @@ public class SerialPortUtil {
         stopExtendPushRod();
         delay(SHORT_DELAY_MS);
         activatePushRodRetraction();
-        // 等待推杆完成缩回，具体延时需依据实际动作时间调整
+        // 延时等待推杆完成缩回
         delay(PUSH_ROD_RETRACTION_DELAY_MS);
         deactivatePushRodRetraction();
     }
@@ -187,7 +187,7 @@ public class SerialPortUtil {
     }
 
     /**
-     * 简单延时方法，使用 Thread.sleep 实现
+     * 延时方法
      */
     private void delay(int milliseconds) {
         try {
