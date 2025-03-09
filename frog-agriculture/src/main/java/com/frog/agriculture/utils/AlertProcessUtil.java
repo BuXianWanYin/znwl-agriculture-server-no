@@ -257,7 +257,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
             // 检查最近处理过的预警（30分钟内）  如果有 则不再生成同类型预警
             queryAlert.setStatus("1");
-            List<SensorAlert> recentAlerts = getSensorAlertMapper().selectRecentProcessedAlerts(queryAlert, 1);
+            List<SensorAlert> recentAlerts = getSensorAlertMapper().selectRecentProcessedAlerts(queryAlert, 30);
             return recentAlerts != null && !recentAlerts.isEmpty(); // 如果存在预警则返回true，否则返回false
         } catch (Exception e) {
             log.error("查询现有预警失败: " + e.getMessage()); // 记录错误日志
@@ -707,7 +707,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         // 创建参数对象
         AlertParams params = new AlertParams(paramKey, paramName, value, thresholds, minWarning, maxWarning, pastureId, batchId, device);
 
-        // 首先检查是否需要报警（优先级更高）
+        // 首先检查是否需要报警
         if (checkAndProcessSeriousAlert(params)) {
             return;
         }
