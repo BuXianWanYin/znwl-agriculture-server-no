@@ -44,8 +44,8 @@ public class SoilSensorValue extends BaseEntity
     @Excel(name = "光照强度")
     private String lightLux;
 
-    /** 土壤湿度 */
-    @Excel(name = "土壤湿度")
+    /** 土壤含水率 */
+    @Excel(name = "土壤含水率")
     private String soilMoisture;
 
     /** 土壤温度 */

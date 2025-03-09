@@ -220,30 +220,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         return new SimpleDateFormat("yyyy-MM-dd").format(new Date()); // 返回格式化后的当前日期字符串
     }
 
-    /**
-     * 检查并处理预警信息
-     *
-     * @param alertType    预警类型
-     * @param alertMessage 预警消息
-     */
-    private static void processAlert(AlertParams params, String alertType, String alertMessage) {
 
-        // 如果近期 30 分钟 已存在相同类型预警，则不重复生成
-        if (hasActiveAlert(params.paramName, alertType, params.pastureId, params.batchId, params.device)) {
-            return;
-        }
-
-        // 处理报警（严重警告）  物联网
-        if (alertType.contains("报警")) {
-            generateSeriousAlert(params, alertType, alertMessage);
-            return;
-        }
-
-        // 处理预警
-        if (alertType.contains("预警")) {
-            generateWarning(params, alertType, alertMessage);
-        }
-    }
 
     /**
      * 检查是否存在未处理的相同类型预警
@@ -651,31 +628,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
     }
 
 
-    /**
-     * 检查并处理严重报警情况
-     *
-     * @param params 告警参数对象
-     * @return true 如果生成了报警，false 如果没有报警
-     */
-    private static boolean checkAndProcessSeriousAlert(AlertParams params) {
-        String alertType = null;
-        String alertMessage = null;
 
-        if (params.value < params.thresholds[0]) {
-            alertMessage = params.paramName + "过低：当前值" + params.value + "，最小阈值" + params.thresholds[0];
-            alertType = "严重低值报警";
-        } else if (params.value > params.thresholds[1]) {
-            alertMessage = params.paramName + "过高：当前值" + params.value + "，最大阈值" + params.thresholds[1];
-            alertType = "严重高值报警";
-        }
-
-        if (alertType != null) {
-            processAlert(params, alertType, alertMessage);
-            return true;
-        }
-
-        return false;
-    }
 
     /**
      * 检查并处理预警情况
@@ -755,6 +708,56 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         updateActiveAlerts(paramName, pastureId, batchId, device);
     }
 
+    /**
+     * 检查并处理严重报警情况
+     *
+     * @param params 告警参数对象
+     * @return true 如果生成了报警，false 如果没有报警
+     */
+    private static boolean checkAndProcessSeriousAlert(AlertParams params) {
+        String alertType = null;
+        String alertMessage = null;
+
+        if (params.value < params.thresholds[0]) {
+            alertMessage = params.paramName + "过低：当前值" + params.value + "，最小阈值" + params.thresholds[0];
+            alertType = "严重低值报警";
+        } else if (params.value > params.thresholds[1]) {
+            alertMessage = params.paramName + "过高：当前值" + params.value + "，最大阈值" + params.thresholds[1];
+            alertType = "严重高值报警";
+        }
+
+        if (alertType != null) {
+            processAlert(params, alertType, alertMessage);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * 检查并处理预警信息
+     *
+     * @param alertType    预警类型
+     * @param alertMessage 预警消息
+     */
+    private static void processAlert(AlertParams params, String alertType, String alertMessage) {
+
+        // 如果近期 30 分钟 已存在相同类型预警，则不重复生成
+        if (hasActiveAlert(params.paramName, alertType, params.pastureId, params.batchId, params.device)) {
+            return;
+        }
+
+        // 处理报警（严重警告）  物联网
+        if (alertType.contains("报警")) {
+            generateSeriousAlert(params, alertType, alertMessage);
+            return;
+        }
+
+        // 处理预警
+        if (alertType.contains("预警")) {
+            generateWarning(params, alertType, alertMessage);
+        }
+    }
 
     /**
      * 生成报警信息并执行相应的警报操作
