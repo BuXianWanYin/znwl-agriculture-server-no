@@ -1441,3 +1441,14 @@
 11:19:44.655 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器8数据采集异常：null
 11:19:44.665 [schedule-pool-1] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,157] - 数据采集过程中发生异常，本次数据不做数据库插入。
 11:19:52.997 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+21:21:26.393 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+21:21:41.786 [schedule-pool-2] ERROR c.f.a.u.SensorDataParser - [parseBaiyeBoxData,97] - 解析百叶箱数据出错: 13
+21:21:41.786 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器2数据采集异常：null
+21:21:45.165 [schedule-pool-2] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,157] - 数据采集过程中发生异常，本次数据不做数据库插入。
+21:21:47.368 [schedule-pool-3] ERROR c.f.a.u.SensorDataParser - [parseBaiyeBoxData,97] - 解析百叶箱数据出错: 13
+21:21:47.368 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器2数据采集异常：null
+21:21:49.670 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器8数据采集异常：null
+21:21:49.670 [schedule-pool-3] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,157] - 数据采集过程中发生异常，本次数据不做数据库插入。
+21:23:49.112 [restartedMain] ERROR c.b.m.c.MybatisConfiguration - [addMappedStatement,110] - mapper[com.frog.mapper.PastureBatchMapper.updatePastureBatch] is ignored, because it exists, maybe from xml file
+21:25:00.444 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器2数据采集异常：null
+21:25:00.545 [schedule-pool-7] ERROR c.f.a.s.i.SoilSensorValueServiceImpl - [fetchAllSensorData,142] - 传感器3数据采集异常：null
