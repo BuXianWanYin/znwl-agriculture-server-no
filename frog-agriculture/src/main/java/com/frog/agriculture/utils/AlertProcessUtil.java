@@ -628,8 +628,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
     }
 
 
-
-
     /**
      * 检查并处理预警情况
      *
@@ -637,31 +635,46 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      */
     private static boolean checkAndProcessWarning(AlertParams params) {
         String alertType = null;
-        String alertMessage = null;
 
+        // 第一层预警检查
         if (params.value >= params.thresholds[0] && params.value <= params.minWarning) {
-            alertMessage = params.paramName + "接近下限：当前值" + params.value + "，警戒值" + params.minWarning;
             alertType = "低值预警";
         } else if (params.value <= params.thresholds[1] && params.value >= params.maxWarning) {
-            alertMessage = params.paramName + "接近上限：当前值" + params.value + "，警戒值" + params.maxWarning;
             alertType = "高值预警";
         }
 
-        if (alertType != null) {
-            processAlert(params, alertType, alertMessage);
+        if (tryProcessAlert(params, alertType, buildAlertMessage(params, alertType))) {
             return true;
         }
 
+        // 针对某些参数需做额外阈值检查
         if (shouldCheckBothThresholds(params.paramKey)) {
             alertType = checkWarningThresholds(params.value, params.minWarning, params.maxWarning, params.paramName);
             if (alertType != null) {
-                alertMessage = generateWarningMessage(params.value, alertType, params.paramName, params.minWarning, params.maxWarning);
-                processAlert(params, alertType, alertMessage);
-                return true;
+                return tryProcessAlert(params, alertType, buildAlertMessage(params, alertType));
             }
         }
 
         return false;
+    }
+
+
+    /**
+     * 检查并处理严重报警情况
+     *
+     * @param params 告警参数对象
+     * @return true 如果生成了报警，false 如果没有报警
+     */
+    private static boolean checkAndProcessSeriousAlert(AlertParams params) {
+        String alertType = null;
+
+        if (params.value < params.thresholds[0]) {
+            alertType = "严重低值报警";
+        } else if (params.value > params.thresholds[1]) {
+            alertType = "严重高值报警";
+        }
+
+        return tryProcessAlert(params, alertType, buildAlertMessage(params, alertType));
     }
 
     /**
@@ -708,56 +721,6 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         updateActiveAlerts(paramName, pastureId, batchId, device);
     }
 
-    /**
-     * 检查并处理严重报警情况
-     *
-     * @param params 告警参数对象
-     * @return true 如果生成了报警，false 如果没有报警
-     */
-    private static boolean checkAndProcessSeriousAlert(AlertParams params) {
-        String alertType = null;
-        String alertMessage = null;
-
-        if (params.value < params.thresholds[0]) {
-            alertMessage = params.paramName + "过低：当前值" + params.value + "，最小阈值" + params.thresholds[0];
-            alertType = "严重低值报警";
-        } else if (params.value > params.thresholds[1]) {
-            alertMessage = params.paramName + "过高：当前值" + params.value + "，最大阈值" + params.thresholds[1];
-            alertType = "严重高值报警";
-        }
-
-        if (alertType != null) {
-            processAlert(params, alertType, alertMessage);
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * 检查并处理预警信息
-     *
-     * @param alertType    预警类型
-     * @param alertMessage 预警消息
-     */
-    private static void processAlert(AlertParams params, String alertType, String alertMessage) {
-
-        // 如果近期 30 分钟 已存在相同类型预警，则不重复生成
-        if (hasActiveAlert(params.paramName, alertType, params.pastureId, params.batchId, params.device)) {
-            return;
-        }
-
-        // 处理报警（严重警告）  物联网
-        if (alertType.contains("报警")) {
-            generateSeriousAlert(params, alertType, alertMessage);
-            return;
-        }
-
-        // 处理预警
-        if (alertType.contains("预警")) {
-            generateWarning(params, alertType, alertMessage);
-        }
-    }
 
     /**
      * 生成报警信息并执行相应的警报操作
@@ -800,7 +763,72 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
     }
 
+    /**
+     * 检查并处理预警信息
+     *
+     * @param alertType    预警类型
+     * @param alertMessage 预警消息
+     */
+    private static void processAlert(AlertParams params, String alertType, String alertMessage) {
 
+        // 如果近期 30 分钟 已存在相同类型预警，则不重复生成
+        if (hasActiveAlert(params.paramName, alertType, params.pastureId, params.batchId, params.device)) {
+            return;
+        }
+
+        // 处理报警（严重警告）  物联网
+        if (alertType.contains("报警")) {
+            generateSeriousAlert(params, alertType, alertMessage);
+            return;
+        }
+
+        // 处理预警
+        if (alertType.contains("预警")) {
+            generateWarning(params, alertType, alertMessage);
+        }
+    }
+
+    /**
+     * 根据告警类型生成告警消息
+     *
+     * @param params    告警参数对象
+     * @param alertType 告警类型
+     * @return         生成的告警消息字符串
+     */
+    private static String buildAlertMessage(AlertParams params, String alertType) {
+        if (alertType == null) {
+            return null;
+        }
+
+        switch (alertType) {
+            case "低值预警":
+                return params.paramName + "接近下限：当前值" + params.value + "，警戒值" + params.minWarning;
+            case "高值预警":
+                return params.paramName + "接近上限：当前值" + params.value + "，警戒值" + params.maxWarning;
+            case "严重低值报警":
+                return params.paramName + "过低：当前值" + params.value + "，最小阈值" + params.thresholds[0];
+            case "严重高值报警":
+                return params.paramName + "过高：当前值" + params.value + "，最大阈值" + params.thresholds[1];
+            default:
+                return "";
+        }
+    }
+
+    /**
+     * 尝试处理告警，如果 alertType 不为 null，则调用 processAlert 并返回 true，否则返回 false
+     *
+     * @param params       告警参数对象
+     * @param alertType    告警类型
+     * @param alertMessage 告警消息
+     * @return true 如果告警已经被处理，否则 false
+     */
+    private static boolean tryProcessAlert(AlertParams params, String alertType, String alertMessage) {
+        if (alertType != null) {
+            processAlert(params, alertType, alertMessage);
+            return true;
+        }
+        return false;
+    }
     /**
      * 告警参数数据传输对象
      */
