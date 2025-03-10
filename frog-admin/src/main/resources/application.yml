@@ -13,7 +13,7 @@ bot:
   promptText: 希望你以后能够做的比我还好呦。
   promptWav: static/cross_lingual_prompt.wav
   instructText: Theo \'Crimson\', is a fiery, passionate rebel leader. \ Fights with fervor for justice, but struggles with impulsiveness.
-  aiVLUrl: http://192.168.1.194:10095/
+  aiVLUrl: http://192.168.1.136:10095/
 # 项目相关配置
 ruoyi:
   # 名称
