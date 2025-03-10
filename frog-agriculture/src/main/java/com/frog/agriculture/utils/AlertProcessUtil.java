@@ -15,9 +15,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.fisco.bcos.sdk.client.Client;
 import org.fisco.bcos.sdk.model.TransactionReceipt;
-import vip.blockchain.agriculture.utils.BaseUtil;
 
-import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -82,10 +80,10 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
                 minBuffer = 40.0; // 设置最小缓冲值为40.0
                 maxBuffer = 1000.0; // 设置最大缓冲值为1000.0
                 break;
-            case "speed": // 如果参数为speed（风速）
-                minBuffer = 0.0; // 设置最小缓冲值为0.0
-                maxBuffer = 1.5; // 设置最大缓冲值为1.5
-                break;
+//            case "speed": // 如果参数为speed（风速）
+//                minBuffer = 0.0; // 设置最小缓冲值为0.0
+//                maxBuffer = 1.5; // 设置最大缓冲值为1.5
+//                break;
             case "soil_temperature": // 如果参数为soil_temperature（土壤温度）
                 minBuffer = 2.0; // 设置最小缓冲值为2.0
                 maxBuffer = 2.0; // 设置最大缓冲值为2.0
@@ -222,30 +220,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         return new SimpleDateFormat("yyyy-MM-dd").format(new Date()); // 返回格式化后的当前日期字符串
     }
 
-    /**
-     * 检查并处理预警信息
-     *
-     * @param alertType    预警类型
-     * @param alertMessage 预警消息
-     */
-    private static void processAlert(AlertParams params, String alertType, String alertMessage) {
 
-        // 如果近期 30 分钟 已存在相同类型预警，则不重复生成
-        if (hasActiveAlert(params.paramName, alertType, params.pastureId, params.batchId, params.device)) {
-            return;
-        }
-
-        // 处理报警（严重警告）  物联网
-        if (alertType.contains("报警")) {
-            generateSeriousAlert(params, alertType, alertMessage);
-            return;
-        }
-
-        // 处理预警
-        if (alertType.contains("预警")) {
-            generateWarning(params, alertType, alertMessage);
-        }
-    }
 
     /**
      * 检查是否存在未处理的相同类型预警
@@ -282,7 +257,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
             // 检查最近处理过的预警（30分钟内）  如果有 则不再生成同类型预警
             queryAlert.setStatus("1");
-            List<SensorAlert> recentAlerts = getSensorAlertMapper().selectRecentProcessedAlerts(queryAlert, 1);
+            List<SensorAlert> recentAlerts = getSensorAlertMapper().selectRecentProcessedAlerts(queryAlert, 30);
             return recentAlerts != null && !recentAlerts.isEmpty(); // 如果存在预警则返回true，否则返回false
         } catch (Exception e) {
             log.error("查询现有预警失败: " + e.getMessage()); // 记录错误日志
@@ -654,6 +629,37 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
 
     /**
+     * 检查并处理预警情况
+     *
+     * @return true 如果生成了预警，false 如果没有预警
+     */
+    private static boolean checkAndProcessWarning(AlertParams params) {
+        String alertType = null;
+
+        // 第一层预警检查
+        if (params.value >= params.thresholds[0] && params.value <= params.minWarning) {
+            alertType = "低值预警";
+        } else if (params.value <= params.thresholds[1] && params.value >= params.maxWarning) {
+            alertType = "高值预警";
+        }
+
+        if (tryProcessAlert(params, alertType, buildAlertMessage(params, alertType))) {
+            return true;
+        }
+
+        // 针对某些参数需做额外阈值检查
+        if (shouldCheckBothThresholds(params.paramKey)) {
+            alertType = checkWarningThresholds(params.value, params.minWarning, params.maxWarning, params.paramName);
+            if (alertType != null) {
+                return tryProcessAlert(params, alertType, buildAlertMessage(params, alertType));
+            }
+        }
+
+        return false;
+    }
+
+
+    /**
      * 检查并处理严重报警情况
      *
      * @param params 告警参数对象
@@ -661,56 +667,14 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
      */
     private static boolean checkAndProcessSeriousAlert(AlertParams params) {
         String alertType = null;
-        String alertMessage = null;
 
         if (params.value < params.thresholds[0]) {
-            alertMessage = params.paramName + "过低：当前值" + params.value + "，最小阈值" + params.thresholds[0];
             alertType = "严重低值报警";
         } else if (params.value > params.thresholds[1]) {
-            alertMessage = params.paramName + "过高：当前值" + params.value + "，最大阈值" + params.thresholds[1];
             alertType = "严重高值报警";
         }
 
-        if (alertType != null) {
-            processAlert(params, alertType, alertMessage);
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * 检查并处理预警情况
-     *
-     * @return true 如果生成了预警，false 如果没有预警
-     */
-    private static boolean checkAndProcessWarning(AlertParams params) {
-        String alertType = null;
-        String alertMessage = null;
-
-        if (params.value >= params.thresholds[0] && params.value <= params.minWarning) {
-            alertMessage = params.paramName + "接近下限：当前值" + params.value + "，警戒值" + params.minWarning;
-            alertType = "低值预警";
-        } else if (params.value <= params.thresholds[1] && params.value >= params.maxWarning) {
-            alertMessage = params.paramName + "接近上限：当前值" + params.value + "，警戒值" + params.maxWarning;
-            alertType = "高值预警";
-        }
-
-        if (alertType != null) {
-            processAlert(params, alertType, alertMessage);
-            return true;
-        }
-
-        if (shouldCheckBothThresholds(params.paramKey)) {
-            alertType = checkWarningThresholds(params.value, params.minWarning, params.maxWarning, params.paramName);
-            if (alertType != null) {
-                alertMessage = generateWarningMessage(params.value, alertType, params.paramName, params.minWarning, params.maxWarning);
-                processAlert(params, alertType, alertMessage);
-                return true;
-            }
-        }
-
-        return false;
+        return tryProcessAlert(params, alertType, buildAlertMessage(params, alertType));
     }
 
     /**
@@ -743,7 +707,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
         // 创建参数对象
         AlertParams params = new AlertParams(paramKey, paramName, value, thresholds, minWarning, maxWarning, pastureId, batchId, device);
 
-        // 首先检查是否需要报警（优先级更高）
+        // 首先检查是否需要报警
         if (checkAndProcessSeriousAlert(params)) {
             return;
         }
@@ -760,7 +724,7 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
     /**
      * 生成报警信息并执行相应的警报操作
-     *
+     * @param params       报警参数数据传输对象
      * @param alertType    警告类型（如"严重低值报警"、"严重高值报警"等）
      * @param alertMessage 警告消息内容
      */
@@ -799,7 +763,72 @@ public class AlertProcessUtil { // 定义AlertProcessUtil类
 
     }
 
+    /**
+     * 检查并处理预警信息
+     *
+     * @param alertType    预警类型
+     * @param alertMessage 预警消息
+     */
+    private static void processAlert(AlertParams params, String alertType, String alertMessage) {
 
+        // 如果近期 30 分钟 已存在相同类型预警，则不重复生成
+        if (hasActiveAlert(params.paramName, alertType, params.pastureId, params.batchId, params.device)) {
+            return;
+        }
+
+        // 处理报警（严重警告）  物联网
+        if (alertType.contains("报警")) {
+            generateSeriousAlert(params, alertType, alertMessage);
+            return;
+        }
+
+        // 处理预警
+        if (alertType.contains("预警")) {
+            generateWarning(params, alertType, alertMessage);
+        }
+    }
+
+    /**
+     * 根据告警类型生成告警消息
+     *
+     * @param params    告警参数对象
+     * @param alertType 告警类型
+     * @return         生成的告警消息字符串
+     */
+    private static String buildAlertMessage(AlertParams params, String alertType) {
+        if (alertType == null) {
+            return null;
+        }
+
+        switch (alertType) {
+            case "低值预警":
+                return params.paramName + "接近下限：当前值" + params.value + "，警戒值" + params.minWarning;
+            case "高值预警":
+                return params.paramName + "接近上限：当前值" + params.value + "，警戒值" + params.maxWarning;
+            case "严重低值报警":
+                return params.paramName + "过低：当前值" + params.value + "，最小阈值" + params.thresholds[0];
+            case "严重高值报警":
+                return params.paramName + "过高：当前值" + params.value + "，最大阈值" + params.thresholds[1];
+            default:
+                return "";
+        }
+    }
+
+    /**
+     * 尝试处理告警，如果 alertType 不为 null，则调用 processAlert 并返回 true，否则返回 false
+     *
+     * @param params       告警参数对象
+     * @param alertType    告警类型
+     * @param alertMessage 告警消息
+     * @return true 如果告警已经被处理，否则 false
+     */
+    private static boolean tryProcessAlert(AlertParams params, String alertType, String alertMessage) {
+        if (alertType != null) {
+            processAlert(params, alertType, alertMessage);
+            return true;
+        }
+        return false;
+    }
     /**
      * 告警参数数据传输对象
      */

@@ -12,58 +12,58 @@ import java.util.Map;
 public class SensorDataParser {
     private static final Log log = LogFactory.getLog(SensorDataParser.class);
 
-    /**
-     * 解析风向传感器数据
-     *
-     * @param data 原始字节数据
-     * @return Map包含:
-     *         direction_grade: 风向等级(0-7)
-     *         direction_angle: 风向角度
-     *         direction: 风向描述(如"北风","东北风"等)
-     */
-    public static Map<String, Object> parseWindDirectionData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            int directionGrade = ((data[3] & 0xFF) << 8) | (data[4] & 0xFF);
-            int directionAngle = ((data[5] & 0xFF) << 8) | (data[6] & 0xFF);
-            String direction;
-            switch (directionGrade) {
-                case 0:
-                    direction = "北风";
-                    break;
-                case 1:
-                    direction = "东北风";
-                    break;
-                case 2:
-                    direction = "东风";
-                    break;
-                case 3:
-                    direction = "东南风";
-                    break;
-                case 4:
-                    direction = "南风";
-                    break;
-                case 5:
-                    direction = "西南风";
-                    break;
-                case 6:
-                    direction = "西风";
-                    break;
-                case 7:
-                    direction = "西北风";
-                    break;
-                default:
-                    direction = "未知风向";
-                    break;
-            }
-            map.put("direction_grade", directionGrade);
-            map.put("direction_angle", directionAngle);
-            map.put("direction", direction);
-        } catch (Exception e) {
-            log.error("解析风向数据出错: " + e.getMessage());
-        }
-        return map;
-    }
+//    /**
+//     * 解析风向传感器数据
+//     *
+//     * @param data 原始字节数据
+//     * @return Map包含:
+//     *         direction_grade: 风向等级(0-7)
+//     *         direction_angle: 风向角度
+//     *         direction: 风向描述(如"北风","东北风"等)
+//     */
+//    public static Map<String, Object> parseWindDirectionData(byte[] data) {
+//        Map<String, Object> map = new HashMap<>();
+//        try {
+//            int directionGrade = ((data[3] & 0xFF) << 8) | (data[4] & 0xFF);
+//            int directionAngle = ((data[5] & 0xFF) << 8) | (data[6] & 0xFF);
+//            String direction;
+//            switch (directionGrade) {
+//                case 0:
+//                    direction = "北风";
+//                    break;
+//                case 1:
+//                    direction = "东北风";
+//                    break;
+//                case 2:
+//                    direction = "东风";
+//                    break;
+//                case 3:
+//                    direction = "东南风";
+//                    break;
+//                case 4:
+//                    direction = "南风";
+//                    break;
+//                case 5:
+//                    direction = "西南风";
+//                    break;
+//                case 6:
+//                    direction = "西风";
+//                    break;
+//                case 7:
+//                    direction = "西北风";
+//                    break;
+//                default:
+//                    direction = "未知风向";
+//                    break;
+//            }
+//            map.put("direction_grade", directionGrade);
+//            map.put("direction_angle", directionAngle);
+//            map.put("direction", direction);
+//        } catch (Exception e) {
+//            log.error("解析风向数据出错: " + e.getMessage());
+//        }
+//        return map;
+//    }
 
     /**
      * 解析百叶箱传感器数据
@@ -98,25 +98,25 @@ public class SensorDataParser {
         }
         return map;
     }
-
-    /**
-     * 解析风速传感器数据
-     *
-     * @param data 原始字节数据
-     * @return Map包含:
-     *         speed: 风速(m/s)
-     */
-    public static Map<String, Object> parseWindSpeedData(byte[] data) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            int raw = ((data[3] & 0xFF) << 8) | (data[4] & 0xFF);
-            double speed = raw / 10.0;
-            map.put("speed", speed);
-        } catch (Exception e) {
-            log.error("解析风速数据出错: " + e.getMessage());
-        }
-        return map;
-    }
+//
+//    /**
+//     * 解析风速传感器数据
+//     *
+//     * @param data 原始字节数据
+//     * @return Map包含:
+//     *         speed: 风速(m/s)
+//     */
+//    public static Map<String, Object> parseWindSpeedData(byte[] data) {
+//        Map<String, Object> map = new HashMap<>();
+//        try {
+//            int raw = ((data[3] & 0xFF) << 8) | (data[4] & 0xFF);
+//            double speed = raw / 10.0;
+//            map.put("speed", speed);
+//        } catch (Exception e) {
+//            log.error("解析风速数据出错: " + e.getMessage());
+//        }
+//        return map;
+//    }
 
     /**
      * 解析土壤温度水分传感器数据
